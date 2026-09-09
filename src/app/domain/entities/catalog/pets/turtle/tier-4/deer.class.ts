@@ -1,0 +1,107 @@
+import type { EngineContext } from 'app/runtime/engine-context';
+import { Chili } from 'app/domain/entities/catalog/equipment/turtle/chili.class';
+import { AbilityService } from 'app/integrations/ability/ability.service';
+import { LogService } from 'app/integrations/log.service';
+import { Equipment } from '../../../../equipment.class';
+import { Pack, Pet } from '../../../../pet.class';
+import { Player } from '../../../../player.class';
+import { Bus } from '../../hidden/bus.class';
+import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+
+export class Deer extends Pet {
+  name = 'Deer';
+  tier = 4;
+  pack: Pack = 'Turtle';
+  attack = 2;
+  health = 2;
+  initAbilities(): void {
+    this.addAbility(
+      new DeerAbility(this.runtime, this, this.logService, this.abilityService),
+    );
+    super.initAbilities();
+  }
+
+  constructor(runtime: EngineContext,
+    protected logService: LogService,
+    protected abilityService: AbilityService,
+    parent: Player,
+    health?: number,
+    attack?: number,
+    mana?: number,
+    exp?: number,
+    equipment?: Equipment,
+    triggersConsumed?: number,
+  ) {
+    super(runtime, logService, abilityService, parent);
+    this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
+  }
+}
+//Faint: Summon one 5/3 *level Bus with Chili.
+
+export class DeerAbility extends Ability {
+  private logService: LogService;
+  private abilityService: AbilityService;
+
+  constructor(runtime: EngineContext,
+    owner: Pet,
+    logService: LogService,
+    abilityService: AbilityService,
+  ) {
+    super(runtime, {
+      name: 'DeerAbility',
+      owner: owner,
+      triggers: ['PostRemovalFaint'],
+      abilityType: 'Pet',
+      native: true,
+      abilitylevel: owner.level,
+      abilityFunction: (context) => {
+        this.executeAbility(context);
+      },
+    });
+    this.logService = logService;
+    this.abilityService = abilityService;
+  }
+
+  private executeAbility(context: AbilityContext): void {
+    const { gameApi, triggerPet, tiger, pteranodon } = context;
+    const owner = this.owner;
+    const busAttack = 5 * this.level;
+    const busHealth = 3 * this.level;
+
+    let bus = new Bus(this.runtime,
+      this.logService,
+      this.abilityService,
+      owner.parent,
+      busHealth,
+      busAttack,
+      null,
+      this.minExpForLevel,
+      new Chili(this.runtime, this.logService, this.abilityService),
+    );
+
+    let summonResult = owner.parent.summonPet(
+      bus,
+      owner.savedPosition,
+      false,
+      owner,
+    );
+    if (summonResult.success) {
+      if (this.logService.isEnabled()) this.logService.createLog({
+        message: `${owner.name} spawned Bus level ${this.level}`,
+        type: 'ability',
+        player: owner.parent,
+        tiger: tiger,
+        pteranodon: pteranodon,
+        randomEvent: summonResult.randomEvent,
+      });
+    }
+
+    // Tiger system: trigger Tiger execution at the end
+    this.triggerTigerExecution(context);
+  }
+
+  copy(newOwner: Pet): DeerAbility {
+    return new DeerAbility(this.runtime, newOwner, this.logService, this.abilityService);
+  }
+}
+

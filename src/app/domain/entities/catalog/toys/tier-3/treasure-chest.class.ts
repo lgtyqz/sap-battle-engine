@@ -1,0 +1,36 @@
+import type { EngineContext } from 'app/runtime/engine-context';
+import { Toy } from '../../../toy.class';
+import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+import { Pet } from '../../../pet.class';
+import { LogService } from 'app/integrations/log.service';
+
+export class TreasureChest extends Toy {
+  name = 'Treasure Chest';
+  tier = 3;
+}
+
+export class TreasureChestAbility extends Ability {
+  private logService: LogService;
+
+  constructor(runtime: EngineContext, owner: Pet, logService: LogService) {
+    super(runtime, {
+      name: 'TreasureChestAbility',
+      owner: owner,
+      triggers: [],
+      abilityType: 'Pet',
+      native: true,
+      abilitylevel: owner.level,
+      abilityFunction: (context) => {
+        this.executeAbility(context);
+      },
+    });
+    this.logService = logService;
+  }
+
+  private executeAbility(context: AbilityContext): void { }
+
+  copy(newOwner: Pet): TreasureChestAbility {
+    return new TreasureChestAbility(this.runtime, newOwner, this.logService);
+  }
+}
+

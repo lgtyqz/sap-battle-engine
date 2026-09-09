@@ -1,0 +1,42 @@
+{
+  "node": "v21.7.3",
+  "description": "Single run per fixture; 10000-battle budget, seed 42. Not a statistically robust throughput comparison.",
+  "results": [
+    {
+      "name": "simple",
+      "termination": "cycle",
+      "responses": 5,
+      "simulations": 255,
+      "evaluatedMatchups": 17,
+      "potentialMatchups": 14400,
+      "cacheHits": 13,
+      "engineCalls": 17,
+      "seed": 42,
+      "elapsedMs": 397.96025000000003
+    },
+    {
+      "name": "random-targeting",
+      "termination": "cycle",
+      "responses": 17,
+      "simulations": 5475,
+      "evaluatedMatchups": 365,
+      "potentialMatchups": 14400,
+      "cacheHits": 22,
+      "engineCalls": 365,
+      "seed": 42,
+      "elapsedMs": 8402.928708
+    },
+    {
+      "name": "summons",
+      "termination": "simulation-budget",
+      "responses": 9,
+      "simulations": 10000,
+      "evaluatedMatchups": 667,
+      "potentialMatchups": 14400,
+      "cacheHits": 11,
+      "engineCalls": 667,
+      "seed": 42,
+      "elapsedMs": 43906.03195799999
+    }
+  ]
+}

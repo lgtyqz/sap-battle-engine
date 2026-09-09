@@ -1,0 +1,83 @@
+import type { EngineContext } from 'app/runtime/engine-context';
+import { AbilityService } from 'app/integrations/ability/ability.service';
+import { LogService } from 'app/integrations/log.service';
+import { Equipment } from '../../../../equipment.class';
+import { Pack, Pet } from '../../../../pet.class';
+import { Player } from '../../../../player.class';
+import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+
+export class TaitaThrush extends Pet {
+  name = 'Taita Thrush';
+  tier = 5;
+  pack: Pack = 'Danger';
+  attack = 3;
+  health = 4;
+
+  initAbilities(): void {
+    this.addAbility(new TaitaThrushAbility(this.runtime, this, this.logService));
+    super.initAbilities();
+  }
+
+  constructor(runtime: EngineContext,
+    protected logService: LogService,
+    protected abilityService: AbilityService,
+    parent: Player,
+    health?: number,
+    attack?: number,
+    mana?: number,
+    exp?: number,
+    equipment?: Equipment,
+    triggersConsumed?: number,
+  ) {
+    super(runtime, logService, abilityService, parent);
+    this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
+  }
+}
+
+export class TaitaThrushAbility extends Ability {
+  private logService: LogService;
+
+  constructor(runtime: EngineContext, owner: Pet, logService: LogService) {
+    super(runtime, {
+      name: 'TaitaThrushAbility',
+      owner: owner,
+      triggers: ['AdjacentFriendAttacked'],
+      abilityType: 'Pet',
+      native: true,
+      abilitylevel: owner.level,
+      maxUses: 3,
+      abilityFunction: (context) => {
+        this.executeAbility(context);
+      },
+    });
+    this.logService = logService;
+  }
+
+  private executeAbility(context: AbilityContext): void {
+    const { gameApi, triggerPet, tiger, pteranodon } = context;
+    const owner = this.owner;
+
+    let power = this.level; // 1/2/3 based on level
+
+    let friendsResp = owner.parent.getAll(false, owner, false);
+
+    for (let friend of friendsResp.pets) {
+      friend.increaseAttack(power);
+      friend.increaseHealth(power);
+
+      if (this.logService.isEnabled()) this.logService.createLog({
+        message: `${owner.name} gave ${friend.name} +${power} attack and +${power} health`,
+        type: 'ability',
+        player: owner.parent,
+        tiger: tiger,
+        randomEvent: friendsResp.random,
+      });
+    } // Tiger system: trigger Tiger execution at the end
+    this.triggerTigerExecution(context);
+  }
+
+  copy(newOwner: Pet): TaitaThrushAbility {
+    return new TaitaThrushAbility(this.runtime, newOwner, this.logService);
+  }
+}
+

@@ -1,0 +1,51 @@
+{
+  "name": "sap-battle-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/types-cjs/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "PROVENANCE.md",
+    "VALIDATION.md",
+    "OPTIMIZER.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "benchmark": "node scripts/benchmark.mjs",
+    "reference:prepare": "node scripts/prepare-reference.mjs",
+    "test:parity": "node scripts/parity.mjs",
+    "test:package": "node --experimental-vm-modules scripts/package-smoke.mjs",
+    "test:all": "npm run build && npm test && npm run test:parity && npm run test:package"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.1",
+    "esbuild": "0.28.1",
+    "lodash-es": "4.17.21",
+    "typescript": "5.9.3",
+    "vitest": "4.0.16"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "description": "Framework-independent Super Auto Pets battle simulation with upstream-compatible mechanics and replayable randomness",
+  "sideEffects": false,
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,15 @@
+{
+  "upstreamRevision": "d165eb0a02f8aa0b54d72ed1d5490a44390d07f4",
+  "unitTests": {
+    "files": 63,
+    "passed": 111
+  },
+  "differentialTests": 2096,
+  "typecheck": true,
+  "esmCommonJsRuntimeSmoke": true,
+  "browserVmSmoke": true,
+  "strictNodeNextDeclarations": {
+    "esm": true,
+    "commonjs": true
+  }
+}

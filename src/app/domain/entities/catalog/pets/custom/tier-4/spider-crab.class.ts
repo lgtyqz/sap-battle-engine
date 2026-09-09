@@ -1,0 +1,125 @@
+import type { EngineContext } from 'app/runtime/engine-context';
+import { AbilityService } from 'app/integrations/ability/ability.service';
+import { LogService } from 'app/integrations/log.service';
+import { Equipment } from 'app/domain/entities/equipment.class';
+import { Pack, Pet } from 'app/domain/entities/pet.class';
+import { Player } from 'app/domain/entities/player.class';
+import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+import { hasSilly } from 'app/domain/entities/player/player-utils';
+
+import { formatPetScopedRandomLabel } from 'app/runtime/random-decision-label';
+
+export class SpiderCrab extends Pet {
+  name = 'Spider Crab';
+  tier = 2;
+  pack: Pack = 'Custom';
+  attack = 1;
+  health = 5;
+  initAbilities(): void {
+    this.addAbility(new SpiderCrabAbility(this.runtime, this, this.logService));
+    super.initAbilities();
+  }
+  constructor(runtime: EngineContext,
+    protected logService: LogService,
+    protected abilityService: AbilityService,
+    parent: Player,
+    health?: number,
+    attack?: number,
+    mana?: number,
+    exp?: number,
+    equipment?: Equipment,
+    triggersConsumed?: number,
+  ) {
+    super(runtime, logService, abilityService, parent);
+    this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
+  }
+}
+
+export class SpiderCrabAbility extends Ability {
+  private logService: LogService;
+  private affectedPets = new Set<Pet>();
+
+  constructor(runtime: EngineContext, owner: Pet, logService: LogService) {
+    super(runtime, {
+      name: 'Spider Crab Ability',
+      owner: owner,
+      triggers: ['FriendAttacked', 'StartTurn'],
+      abilityType: 'Pet',
+      native: true,
+      abilitylevel: owner.level,
+      abilityFunction: (context) => this.executeAbility(context),
+    });
+    this.logService = logService;
+  }
+
+  private executeAbility(context: AbilityContext): void {
+    const owner = this.owner;
+    const { triggerPet, tiger, pteranodon } = context;
+
+    if (context.trigger === 'StartTurn') {
+      this.affectedPets.clear();
+      this.triggerTigerExecution(context);
+      return;
+    }
+
+    if (!triggerPet || triggerPet.parent !== owner.parent) {
+      this.triggerTigerExecution(context);
+      return;
+    }
+
+    if (!triggerPet.alive) {
+      this.triggerTigerExecution(context);
+      return;
+    }
+
+    if (this.affectedPets.has(triggerPet)) {
+      this.triggerTigerExecution(context);
+      return;
+    }
+
+    if (this.affectedPets.size >= this.level) {
+      this.triggerTigerExecution(context);
+      return;
+    }
+
+    let target = triggerPet;
+    if (hasSilly(owner)) {
+      const candidates = owner.parent.petArray.filter((pet) => pet.alive);
+      if (candidates.length === 0) {
+        this.triggerTigerExecution(context);
+        return;
+      }
+      const targetChoice = this.runtime.random.chooseLegacyRandomOption(
+        () => ({
+          key: 'pet.spider-crab-silly-target',
+          label: formatPetScopedRandomLabel(owner, 'Spider Crab silly target'),
+          options: candidates.map((pet) => ({
+            id: `${pet.name}-${pet.savedPosition}`,
+            label: pet.name,
+          })),
+        }),
+        () => this.runtime.random.getRandomInt(0, candidates.length - 1), (candidates).length
+      );
+      target = candidates[targetChoice.index];
+    }
+
+    target.increaseHealth(4);
+    target.parent.pushPetToBack(target);
+    this.affectedPets.add(triggerPet);
+
+    if (this.logService.isEnabled()) this.logService.createLog({
+      message: `${owner.name} moved ${target.name} to the back and gave it +4 health.`,
+      type: 'ability',
+      player: owner.parent,
+      tiger: tiger,
+      pteranodon: pteranodon,
+    });
+
+    this.triggerTigerExecution(context);
+  }
+
+  copy(newOwner: Pet): SpiderCrabAbility {
+    return new SpiderCrabAbility(this.runtime, newOwner, this.logService);
+  }
+}
+

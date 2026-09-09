@@ -1,0 +1,72 @@
+import type { EngineContext } from 'app/runtime/engine-context';
+import { AbilityService } from 'app/integrations/ability/ability.service';
+import { LogService } from 'app/integrations/log.service';
+import { Equipment, EquipmentClass } from '../../../equipment.class';
+import { Pet } from '../../../pet.class';
+import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+
+export class ChocolateCake extends Equipment {
+  name = 'Chocolate Cake';
+  equipmentClass = 'beforeAttack' as EquipmentClass;
+  callback = (pet: Pet) => {
+    const equipment = pet.getEquippedEquipmentInstance(this);
+    pet.addAbility(
+      new ChocolateCakeAbility(this.runtime, pet, equipment, this.logService, this.abilityService),
+    );
+  };
+
+  constructor(runtime: EngineContext,
+    protected logService: LogService,
+    protected abilityService: AbilityService,
+  ) {
+    super(runtime);
+  }
+}
+
+export class ChocolateCakeAbility extends Ability {
+  private equipment: Equipment;
+  private logService: LogService;
+  private abilityService: AbilityService;
+
+  constructor(runtime: EngineContext,
+    owner: Pet,
+    equipment: Equipment,
+    logService: LogService,
+    abilityService: AbilityService,
+  ) {
+    super(runtime, {
+      name: 'ChocolateCakeAbility',
+      owner: owner,
+      triggers: ['BeforeThisAttacks'],
+      abilityType: 'Equipment',
+      native: true,
+      abilitylevel: 1,
+      abilityFunction: (context) => {
+        this.executeAbility(context);
+      },
+    });
+    this.equipment = equipment;
+    this.logService = logService;
+    this.abilityService = abilityService;
+  }
+
+  private executeAbility(context: AbilityContext): void {
+    const owner = this.owner;
+
+    let multiplier = this.equipment.multiplier;
+    let expGain = 3 * multiplier;
+
+    if (this.logService.isEnabled()) this.logService.createLog({
+      message: `${owner.name} gained ${expGain} exp. (Chocolate Cake)${this.equipment.multiplierMessage}`,
+      type: 'equipment',
+      player: owner.parent,
+      sourcePet: owner,
+    });
+
+    owner.increaseExp(expGain);
+    owner.health = 0;
+
+    this.abilityService.triggerKillEvents(owner, owner);
+  }
+}
+

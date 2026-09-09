@@ -1,0 +1,111 @@
+import type { EngineContext } from 'app/runtime/engine-context';
+import { AbilityService } from 'app/integrations/ability/ability.service';
+import { LogService } from 'app/integrations/log.service';
+import { Equipment } from '../../../../equipment.class';
+import { Pack, Pet } from '../../../../pet.class';
+import { Player } from '../../../../player.class';
+import { ZombieFly } from '../../hidden/zombie-fly.class';
+import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+
+export class Fly extends Pet {
+  name = 'Fly';
+  tier = 6;
+  pack: Pack = 'Turtle';
+  attack = 4;
+  health = 4;
+  initAbilities(): void {
+    this.addAbility(new FlyAbility(this.runtime, this, this.logService, this.abilityService));
+    super.initAbilities();
+  }
+  constructor(runtime: EngineContext,
+    protected logService: LogService,
+    protected abilityService: AbilityService,
+    parent: Player,
+    health?: number,
+    attack?: number,
+    mana?: number,
+    exp?: number,
+    equipment?: Equipment,
+    triggersConsumed?: number,
+  ) {
+    super(runtime, logService, abilityService, parent);
+    this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
+  }
+}
+
+export class FlyAbility extends Ability {
+  private logService: LogService;
+  private abilityService: AbilityService;
+
+  constructor(runtime: EngineContext,
+    owner: Pet,
+    logService: LogService,
+    abilityService: AbilityService,
+  ) {
+    super(runtime, {
+      name: 'FlyAbility',
+      owner: owner,
+      triggers: ['PostRemovalFriendFaints'],
+      abilityType: 'Pet',
+      native: true,
+      abilitylevel: owner.level,
+      maxUses: 3,
+      condition: (context: AbilityContext) => {
+        const { triggerPet, tiger, pteranodon } = context;
+        const owner = this.owner;
+        if (
+          (triggerPet && triggerPet instanceof ZombieFly) ||
+          owner.parent.petArray.length >= 5
+        ) {
+          return false;
+        }
+        return true;
+      },
+      abilityFunction: (context) => {
+        this.executeAbility(context);
+      },
+    });
+    this.logService = logService;
+    this.abilityService = abilityService;
+  }
+
+  private executeAbility(context: AbilityContext): void {
+    const { gameApi, triggerPet, tiger, pteranodon } = context;
+    const owner = this.owner;
+
+    let zombie = new ZombieFly(this.runtime,
+      this.logService,
+      this.abilityService,
+      owner.parent,
+      this.level * 4,
+      this.level * 4,
+      null,
+      this.minExpForLevel,
+    );
+
+    let summonResult = owner.parent.summonPet(
+      zombie,
+      triggerPet.savedPosition,
+      false,
+      owner,
+    );
+
+    if (summonResult.success) {
+      if (this.logService.isEnabled()) this.logService.createLog({
+        message: `${owner.name} spawned Zombie Fly Level ${this.level}`,
+        type: 'ability',
+        player: owner.parent,
+        tiger: tiger,
+        randomEvent: summonResult.randomEvent,
+      });
+    }
+
+    // Tiger system: trigger Tiger execution at the end
+    this.triggerTigerExecution(context);
+  }
+
+  copy(newOwner: Pet): FlyAbility {
+    return new FlyAbility(this.runtime, newOwner, this.logService, this.abilityService);
+  }
+}
+
