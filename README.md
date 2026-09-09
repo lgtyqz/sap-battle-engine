@@ -68,10 +68,22 @@ Reuse an engine for repeated queries to avoid rebuilding its registries and serv
 - `createBattleEngine({ entropy? })` creates an isolated engine. The optional entropy function must return finite numbers in `[0, 1)`. A stateful function explicitly shared by the caller remains caller-owned.
 - `engine.runSimulation(config, hooks?)` preserves upstream simulation inputs and defaults, including logging on by default and the upstream simulation-count fallback.
 - `engine.runHeadlessSimulation(config, { enableLogs?, includeBattles? }, hooks?)` defaults logging off unless the config specifies otherwise. Battle records are omitted unless `includeBattles` is true.
+- `engine.projectLineupAfterEndTurn(baseConfig, side, lineup)` applies both teams' end-turn events and returns the selected side as a five-slot `PetConfig` lineup. It is available as a top-level convenience function too. Inputs are cloned, and seeded projections restart from the configured seed.
 - `hooks` supports `onProgress`, `progressInterval`, and `shouldAbort`, checked between battles. Counts describe completed battles. Reentrant calls through hooks use an isolated temporary engine.
 - `catalogs` exposes deeply frozen pets, toys, food, and perks metadata. `UPSTREAM_REVISION` identifies the compatibility baseline.
 
 Inputs are cloned before execution. Runs do not mutate caller inputs or previously returned results. Mutable queues, players, factories, RNG state, and overrides belong to one engine. A failed run rebuilds that engine's mutable state before its next use.
+
+SAP-Calculator's positioning optimizer can use the engine directly as its projection callback:
+
+```ts
+const engine = createBattleEngine();
+const projectEndTurnLineup = ({ baseConfig, side, lineup }: {
+  baseConfig: SimulationConfig;
+  side: 'player' | 'opponent';
+  lineup: SimulationConfig['playerPets'];
+}) => engine.projectLineupAfterEndTurn(baseConfig, side, lineup);
+```
 
 All 581 registered pets, 105 equipment/ailment entries, and 59 toys are represented in the test inventory. Food support consists of upstream metadata and implemented battle behavior, including food-derived perks and food-related counters; this is not an API for buying or feeding shop food.
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { createBattleEngine, runSimulation, catalogs, UPSTREAM_REVISION, type SimulationConfig } from '../src/index';
+import { createBattleEngine, projectLineupAfterEndTurn, runSimulation, catalogs, UPSTREAM_REVISION, type SimulationConfig } from '../src/index';
 const config: SimulationConfig = {
 playerPack: 'Turtle', opponentPack: 'Turtle', turn: 5, seed: 17, simulationCount: 3, logsEnabled: true, captureRandomDecisions: true, captureRandomDraws: true,
   playerPets: [{ name: 'Mosquito', attack: 3, health: 5 }, { name: 'Ant', attack: 3, health: 2 }, { name: 'Cricket', attack: 2, health: 3 }],
@@ -72,5 +72,55 @@ progressInterval: 1, onProgress() {
   it('keeps convenience defaults and headless inclusion controls', () => {
     const e = engine(); expect(e.runHeadlessSimulation(config, { includeBattles: true }).battles).toHaveLength(3);
     expect(runSimulation({ ...config, simulationCount: 1, logsEnabled: false }).playerWins).toBeGreaterThanOrEqual(0);
+  });
+  it('projects end-turn effects through the public API without mutating inputs', () => {
+    const lineup: SimulationConfig['playerPets'] = [
+      { name: 'Fish', attack: 3, health: 5 },
+      { name: 'Monkey', attack: 1, health: 2 },
+      null,
+    ];
+    const baseConfig: SimulationConfig = {
+      ...config,
+      turn: 9,
+      playerPets: lineup,
+      opponentPets: [],
+    };
+    const originalConfig = structuredClone(baseConfig);
+    const originalLineup = structuredClone(lineup);
+    const expected = [
+      expect.objectContaining({ name: 'Fish', attack: 5, health: 7 }),
+      expect.objectContaining({ name: 'Monkey', attack: 1, health: 2 }),
+      null,
+      null,
+      null,
+    ];
+
+    const reusableEngine = engine();
+    const simulationBeforeProjection = reusableEngine.runSimulation(config);
+    expect(reusableEngine.projectLineupAfterEndTurn(baseConfig, 'player', lineup)).toEqual(expected);
+    expect(reusableEngine.runSimulation(config)).toEqual(simulationBeforeProjection);
+    expect(projectLineupAfterEndTurn(baseConfig, 'player', lineup)).toEqual(expected);
+    expect(engine().projectLineupAfterEndTurn(
+      { ...baseConfig, playerPets: [], opponentPets: lineup },
+      'opponent',
+      lineup,
+    )).toEqual(expected);
+    expect(baseConfig).toEqual(originalConfig);
+    expect(lineup).toEqual(originalLineup);
+  });
+  it('uses engine entropy for unseeded random end-turn targets', () => {
+    const lineup: SimulationConfig['playerPets'] = [
+      { name: 'Fish', attack: 3, health: 5 },
+      { name: 'Pig', attack: 7, health: 3 },
+      { name: 'Bluebird', attack: 2, health: 1 },
+    ];
+    const projected = createBattleEngine({ entropy: () => 0 }).projectLineupAfterEndTurn(
+      { ...config, seed: null, playerPack: 'Puppy', playerPets: lineup, opponentPets: [] },
+      'player',
+      lineup,
+    );
+
+    expect(projected[0]).toMatchObject({ name: 'Fish', attack: 4, health: 5 });
+    expect(projected[1]).toMatchObject({ name: 'Pig', attack: 7, health: 3 });
   });
 });

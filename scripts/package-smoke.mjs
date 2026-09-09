@@ -73,6 +73,18 @@ try {
   const runtimeCheck = `
 const config = ${JSON.stringify(config)};
 const result = engine.runSimulation(config);
+const lineup = [
+  {name: 'Fish', attack: 3, health: 5},
+  {name: 'Monkey', attack: 1, health: 2},
+];
+const projected = engine.projectLineupAfterEndTurn(
+  {...config, turn: 9, playerPets: lineup, opponentPets: []},
+  'player',
+  lineup,
+);
+if (projected[0]?.attack !== 5 || projected[0]?.health !== 7) {
+  throw new Error('End-turn projection did not apply Monkey');
+}
 console.log(JSON.stringify(result));
 `;
   writeFileSync(path.join(consumer, 'check.mjs'), `
@@ -118,6 +130,7 @@ createBattleEngine().runSimulation(config, {
     console.log(progress.completed, firstPet.Name);
   },
 });
+createBattleEngine().projectLineupAfterEndTurn(config, 'player', config.playerPets);
 `;
   for (const extension of ['mts', 'cts']) {
     const file = path.join(consumer, `check.${extension}`);

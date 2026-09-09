@@ -3,6 +3,7 @@ import {
   SimulationConfig,
   SimulationResult,
   SimulationRunHooks,
+  PetConfig,
 } from './app/domain/interfaces/simulation-config.interface';
 import { LogService } from './app/integrations/log.service';
 import { GameService } from './app/runtime/state/game.service';
@@ -23,6 +24,12 @@ export interface HeadlessSimulationOptions { enableLogs?: boolean; includeBattle
 export interface BattleEngine {
   runSimulation(config: SimulationConfig, hooks?: SimulationRunHooks): SimulationResult;
   runHeadlessSimulation(config: SimulationConfig, options?: HeadlessSimulationOptions, hooks?: SimulationRunHooks): SimulationResult;
+  /** Apply end-turn events and return the selected side as a five-slot lineup. */
+  projectLineupAfterEndTurn(
+    baseConfig: SimulationConfig,
+    side: 'player' | 'opponent',
+    lineup: (PetConfig | null)[],
+  ): (PetConfig | null)[];
 }
 function createRunner(runtime: EngineContext): SimulationRunner {
   const logService = new LogService(runtime);
@@ -92,8 +99,22 @@ export function createBattleEngine(options: BattleEngineOptions = {}): BattleEng
     catch (error) { runner = createRunner(new EngineContext(options.entropy)); throw error; }
     finally { busy = false; }
   };
+  const projectLineupAfterEndTurn: BattleEngine['projectLineupAfterEndTurn'] = (baseConfig, side, lineup) => {
+    // Reentrant calls get isolated state just like runSimulation calls.
+    if (busy) return createBattleEngine(options).projectLineupAfterEndTurn(baseConfig, side, lineup);
+    busy = true;
+    try {
+      return runner.projectLineupAfterEndTurn(
+        structuredClone(baseConfig),
+        side,
+        structuredClone(lineup),
+      );
+    }
+    catch (error) { runner = createRunner(new EngineContext(options.entropy)); throw error; }
+    finally { busy = false; }
+  };
   return {
-    runSimulation, runHeadlessSimulation(config, headless = {}, hooks) {
+    runSimulation, projectLineupAfterEndTurn, runHeadlessSimulation(config, headless = {}, hooks) {
       const result = runSimulation({ ...config, logsEnabled: headless.enableLogs ?? config.logsEnabled ?? false }, hooks);
       if (!headless.includeBattles) delete result.battles;
       return result;
@@ -105,6 +126,13 @@ export function runSimulation(config: SimulationConfig, hooks?: SimulationRunHoo
 }
 export function runHeadlessSimulation(config: SimulationConfig, options?: HeadlessSimulationOptions, hooks?: SimulationRunHooks): SimulationResult {
   return createBattleEngine().runHeadlessSimulation(config, options, hooks);
+}
+export function projectLineupAfterEndTurn(
+  baseConfig: SimulationConfig,
+  side: 'player' | 'opponent',
+  lineup: (PetConfig | null)[],
+): (PetConfig | null)[] {
+  return createBattleEngine().projectLineupAfterEndTurn(baseConfig, side, lineup);
 }
 export type { SimulationConfig, SimulationResult, PetConfig, CustomPackConfig, CustomPackItem, RandomDecisionCapture, RandomDecisionOverride, RandomDecisionOption, SimulationProgress, SimulationRunHooks } from './app/domain/interfaces/simulation-config.interface';
 export type { PetMemoryField, PetMemoryNumberField, PetMemoryState, PetMemoryStringField } from './app/domain/interfaces/pet-memory.interface';

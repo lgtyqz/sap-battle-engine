@@ -211,6 +211,10 @@ export class SimulationRunner {
     side: 'player' | 'opponent',
     lineup: (PetConfig | null)[],
   ): (PetConfig | null)[] {
+    // Projection is a standalone operation. Reset the main random stream so a
+    // seed (or the engine's configured entropy source) behaves exactly as it
+    // does at the start of a simulation and is not inherited from a prior run.
+    this.runtime.random.begin(baseConfig.seed);
     const config: SimulationConfig = {
       ...baseConfig,
       playerPets:
