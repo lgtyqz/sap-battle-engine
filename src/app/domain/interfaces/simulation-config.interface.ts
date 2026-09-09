@@ -9,7 +9,8 @@ export interface PetConfig extends PetMemoryState {
   attack?: number;
   health?: number;
   exp?: number;
-  equipment?: { name: string } | null;
+  /** Equipment may be supplied as its catalog name or as the legacy form object. */
+  equipment?: string | { name: string; uses?: number } | null;
   equipmentUses?: number | null;
   mana?: number;
   triggersConsumed?: number;
@@ -113,4 +114,19 @@ export interface RandomDecisionOverride {
   optionId: string;
   key?: string;
   label?: string;
+}
+
+export interface SimulationProgress {
+  completed: number;
+  total: number;
+  playerWins: number;
+  opponentWins: number;
+  draws: number;
+  loggedBattles: number;
+}
+
+export interface SimulationRunHooks {
+  shouldAbort?: () => boolean;
+  onProgress?: (progress: SimulationProgress) => void;
+  progressInterval?: number;
 }

@@ -3,6 +3,7 @@ import {
   SimulationConfig,
   SimulationResult,
   PetConfig,
+  SimulationRunHooks,
 } from 'app/domain/interfaces/simulation-config.interface';
 import { Player } from 'app/domain/entities/player.class';
 import { LogService } from 'app/integrations/log.service';
@@ -24,19 +25,6 @@ import {
 
 import { coerceLogService } from 'app/runtime/log-service-fallback';
 import { BenchmarkPet } from 'app/domain/entities/combat/benchmark-pet.class';
-
-export interface SimulationRunHooks {
-  shouldAbort?: () => boolean;
-  onProgress?: (progress: {
-    completed: number;
-    total: number;
-    playerWins: number;
-    opponentWins: number;
-    draws: number;
-    loggedBattles: number;
-  }) => void;
-  progressInterval?: number;
-}
 
 export class SimulationRunner {
   protected player: Player;
@@ -691,4 +679,3 @@ function normalizeLineupLength(
   }
   return normalized;
 }
-

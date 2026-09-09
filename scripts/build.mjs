@@ -1,8 +1,9 @@
 import { build } from 'esbuild';
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, writeFileSync, readdirSync, readFileSync, rmSync, cpSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync, readdirSync, readFileSync, rmSync, cpSync } from 'node:fs';
 import path from 'node:path';
-const root = path.resolve(import.meta.dirname, '..');
+import { fileURLToPath } from 'node:url';
+const root = fileURLToPath(new URL('..', import.meta.url));
 process.chdir(root);
 rmSync('dist', {recursive:true, force:true});
 mkdirSync('dist', {recursive:true});
@@ -23,6 +24,33 @@ for(const file of readdirSync('dist/types',{recursive:true}).filter(f=>f.endsWit
  });
  source = source.replace(/(['"])(\.\.?\/[^'"]+)\1/g, (_m, q, target) => q + (target.endsWith('.js') || target.endsWith('.json') ? target : target + '.js') + q);
  writeFileSync(full,source);
+}
+
+// Ship only declarations reachable from the package entry point. Emitting the
+// entire source tree is useful to TypeScript during the build, but exposes
+// implementation details and previously added roughly 1,700 package entries.
+const typesRoot = path.resolve('dist/types');
+const reachable = new Set();
+const declarationImports = /\bfrom\s*['"]([^'"]+)['"]|\bimport\s*\(\s*['"]([^'"]+)['"]\s*\)|\bimport\s*['"]([^'"]+)['"]/g;
+function visitDeclaration(file) {
+  const absolute = path.resolve(file);
+  if (reachable.has(absolute)) return;
+  if (!existsSync(absolute)) throw new Error(`Missing public declaration dependency: ${absolute}`);
+  reachable.add(absolute);
+  const source = readFileSync(absolute, 'utf8');
+  for (const match of source.matchAll(declarationImports)) {
+    const specifier = match[1] ?? match[2] ?? match[3];
+    if (!specifier.startsWith('.')) continue;
+    const target = specifier.endsWith('.js')
+      ? specifier.slice(0, -3) + '.d.ts'
+      : specifier + '.d.ts';
+    visitDeclaration(path.resolve(path.dirname(absolute), target));
+  }
+}
+visitDeclaration(path.join(typesRoot, 'index.d.ts'));
+for (const file of readdirSync(typesRoot, {recursive:true}).filter(file => file.endsWith('.d.ts'))) {
+  const absolute = path.resolve(typesRoot, file);
+  if (!reachable.has(absolute)) rmSync(absolute);
 }
 
 // NodeNext consumers need declarations with matching ESM/CommonJS module identity.

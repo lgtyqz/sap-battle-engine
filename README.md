@@ -2,7 +2,27 @@
 
 A standalone TypeScript Super Auto Pets battle engine for Node and browsers. It extracts the mechanics of SAP-Calculator revision `d165eb0a02f8aa0b54d72ed1d5490a44390d07f4`, including its existing quirks. There are no runtime dependencies, Angular imports, injectors, UI modules, or global simulation sessions.
 
-This repository is a local, private package. It contains the battle library; no UI, shop simulator, or migration of `sap-board-query` is included.
+It contains the battle library; no UI, shop simulator, or migration of `sap-board-query` is included. Because the pinned upstream did not include a license grant, this package remains `private` and `UNLICENSED`; use it only where you have the necessary rights. See [PROVENANCE.md](PROVENANCE.md).
+
+## Install
+
+Install a pinned Git revision directly. npm runs the package's `prepare` script, so a clean checkout builds automatically during installation:
+
+```sh
+npm install github:lgtyqz/sap-battle-engine#<commit-or-tag>
+```
+
+For local development, install dependencies and build this repository once, then add it to a consuming project by path:
+
+```sh
+# In sap-battle-engine
+npm ci
+
+# In the consuming project
+npm install ../sap-battle-engine
+```
+
+Commit the resulting lockfile so consumers resolve the same source revision. The package is intentionally blocked from npm registry publication until its licensing status changes.
 
 ## Build and use
 
@@ -15,7 +35,7 @@ npm test
 npm run test:package
 ```
 
-The build produces `dist/index.js` (ESM and browser), `dist/index.cjs` (CommonJS), source maps, and TypeScript declarations. Build before installing this folder as a local dependency in another project. A browser can import the ESM bundle directly or through an application bundler.
+The build produces `dist/index.js` (ESM and browser), `dist/index.cjs` (CommonJS), source maps, and TypeScript declarations. A browser can import the ESM bundle through an application bundler or directly. The packed artifact is tested as an actual dependency in ESM, CommonJS, browser-like, and strict TypeScript consumers.
 
 ```ts
 import { createBattleEngine, type SimulationConfig } from 'sap-battle-engine';
@@ -41,7 +61,7 @@ const result = engine.runHeadlessSimulation(config);
 console.log(result.playerWins, result.opponentWins, result.draws);
 ```
 
-Reuse an engine for repeated queries to avoid rebuilding its registries and services. Convenience `runSimulation(config, hooks?)` and `runHeadlessSimulation(config, options?)` functions construct a new engine per call. CommonJS consumers use `require('sap-battle-engine')`.
+Reuse an engine for repeated queries to avoid rebuilding its registries and services. Convenience `runSimulation(config, hooks?)` and `runHeadlessSimulation(config, options?, hooks?)` functions construct a new engine per call. CommonJS consumers use `require('sap-battle-engine')`.
 
 ## API and compatibility
 

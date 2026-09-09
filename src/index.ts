@@ -2,6 +2,7 @@ import { SimulationRunner } from './app/gameplay/simulation-runner';
 import {
   SimulationConfig,
   SimulationResult,
+  SimulationRunHooks,
 } from './app/domain/interfaces/simulation-config.interface';
 import { LogService } from './app/integrations/log.service';
 import { GameService } from './app/runtime/state/game.service';
@@ -23,8 +24,6 @@ export interface BattleEngine {
   runSimulation(config: SimulationConfig, hooks?: SimulationRunHooks): SimulationResult;
   runHeadlessSimulation(config: SimulationConfig, options?: HeadlessSimulationOptions, hooks?: SimulationRunHooks): SimulationResult;
 }
-import type { SimulationRunHooks } from './app/gameplay/simulation-runner';
-
 function createRunner(runtime: EngineContext): SimulationRunner {
   const logService = new LogService(runtime);
   const gameService = new GameService(runtime);
@@ -104,14 +103,15 @@ export function createBattleEngine(options: BattleEngineOptions = {}): BattleEng
 export function runSimulation(config: SimulationConfig, hooks?: SimulationRunHooks): SimulationResult {
   return createBattleEngine().runSimulation(config, hooks);
 }
-export function runHeadlessSimulation(config: SimulationConfig, options?: HeadlessSimulationOptions): SimulationResult {
-  return createBattleEngine().runHeadlessSimulation(config, options);
+export function runHeadlessSimulation(config: SimulationConfig, options?: HeadlessSimulationOptions, hooks?: SimulationRunHooks): SimulationResult {
+  return createBattleEngine().runHeadlessSimulation(config, options, hooks);
 }
-export type { SimulationConfig, SimulationResult, PetConfig, CustomPackConfig, RandomDecisionCapture, RandomDecisionOverride, RandomDecisionOption } from './app/domain/interfaces/simulation-config.interface';
-export type { SimulationRunHooks } from './app/gameplay/simulation-runner';
+export type { SimulationConfig, SimulationResult, PetConfig, CustomPackConfig, CustomPackItem, RandomDecisionCapture, RandomDecisionOverride, RandomDecisionOption, SimulationProgress, SimulationRunHooks } from './app/domain/interfaces/simulation-config.interface';
+export type { PetMemoryField, PetMemoryNumberField, PetMemoryState, PetMemoryStringField } from './app/domain/interfaces/pet-memory.interface';
 export type { Battle } from './app/domain/interfaces/battle.interface';
 export type { BattleEvent, BoardSnapshot, PetSnapshot, RandomDraw, Side } from './events';
 export { catalogs, UPSTREAM_REVISION } from './catalogs';
+export type { CatalogAbility, Catalogs, FoodCatalogEntry, PerkCatalogEntry, PetCatalogEntry, ToyCatalogEntry } from './catalogs';
 
 export { optimizeFight, generatePositionings, getPetPositioningHint } from './optimizer/index';
-export type { FightOptimizerOptions, FightOptimizerResult, Positioning, MatchupEstimate, ResponseStep, OptimizerProgress, OptimizerSide, PetPositioningHint } from './optimizer/index';
+export type { FightOptimizerOptions, FightOptimizerResult, Lineup, Positioning, MatchupEstimate, ResponseStep, OptimizerProgress, OptimizerSide, PetPositioningHint } from './optimizer/index';

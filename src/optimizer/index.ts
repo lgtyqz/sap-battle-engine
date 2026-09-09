@@ -14,4 +14,4 @@ export function optimizeFight(config: SimulationConfig, options: FightOptimizerO
   });
 }
 export { generatePositionings, getPetPositioningHint } from './positionings';
-export type { FightOptimizerOptions, FightOptimizerResult, Positioning, MatchupEstimate, ResponseStep, OptimizerProgress, OptimizerSide, PetPositioningHint } from './types';
+export type { FightOptimizerOptions, FightOptimizerResult, Lineup, Positioning, MatchupEstimate, ResponseStep, OptimizerProgress, OptimizerSide, PetPositioningHint } from './types';
