@@ -7,7 +7,25 @@ const positioningSensitiveConfig = {
   playerPets: [{name:'Fish', attack:2, health:2}, {name:'Fish', attack:5, health:5}],
   opponentPets: [{name:'Fish', attack:5, health:1}, {name:'Fish', attack:2, health:6}],
   simulationCount:1
-}
+} as SimulationConfig;
+
+const cyclePositioningConfig = {
+  playerPets: [
+    {name: "Scorpion", attack: 10, health: 1},
+    {name: "Rhino", attack: 7, health: 8},
+    {name: "Gorilla", attack: 7, health: 7},
+    null,
+    null
+  ],
+  opponentPets: [
+    {name: "Scorpion", attack: 10, health: 1},
+    {name: "Rhino", attack: 7, health: 8},
+    {name: "Gorilla", attack: 7, health: 7},
+    null,
+    null
+  ],
+  simulationCount: 1
+} as SimulationConfig;
 describe('fight optimizer integration', () => {
   it('runs real battles reproducibly without mutating inputs', () => {
     const before = structuredClone(config);
@@ -100,8 +118,13 @@ describe('fight optimizer integration', () => {
   });
 
   it("positions fucking properly", () => {
-    const a = optimizeFight(config, {seed:67});
+    const a = optimizeFight(positioningSensitiveConfig, {seed:67});
     console.log(a);
     expect(a.termination, "no-sampled-counter");
+  })
+
+  it("positions fucking properly, part 2", () => {
+    const a = optimizeFight(cyclePositioningConfig, {seed:67});
+    console.log(a.cycle);
   })
 });

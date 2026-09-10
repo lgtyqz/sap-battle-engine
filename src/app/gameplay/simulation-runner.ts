@@ -468,7 +468,10 @@ export class SimulationRunner {
   protected createPets(player: Player, petsConfig: (PetConfig | null)[]) {
     for (let i = 0; i < 5; i++) {
       const petConfig = petsConfig[i];
-      if (!petConfig || !petConfig.name) continue;
+      if (!petConfig || !petConfig.name) {
+        player.setPet(i, null, true);
+        continue;
+      }
 
       if (petConfig.benchmark) {
         const attack = Math.max(1, Math.trunc(petConfig.attack ?? 1));
