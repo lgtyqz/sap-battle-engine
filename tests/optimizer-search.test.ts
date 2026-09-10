@@ -30,6 +30,16 @@ describe('alternating positioning responses', () => {
     expect(result.cycle).toEqual({startState: 1, endState: 5, length: 4});
     expect(calls.every(c => c[2] === 15)).toBe(true);
     expect(result.steps[0].searchComplete).toBe(false);
+    expect(result.steps.at(-1)?.searchComplete).toBe(true);
+  });
+  it('searches for an equally good unvisited response before accepting a cycle', () => {
+    const {result} = matrixSearch([[1, 0], [0, 1], [1, 1]]);
+    expect(result.termination).toBe('no-sampled-counter');
+    expect(result.unbeatenSide).toBe('player');
+    expect(result.steps.slice(0, 5).map(s => [s.side, s.playerPosition, s.opponentPosition])).toEqual([
+      ['player', 0, 0], ['opponent', 0, 1], ['player', 1, 1], ['opponent', 1, 0], ['player', 2, 0],
+    ]);
+    expect(result.steps[4]).toMatchObject({bestResponses: [0, 2], searchedPositions: 3, searchComplete: true});
   });
   it('fully checks counters before reporting an unbeaten positioning', () => {
     const {result} = matrixSearch([[1, 1, 1], [0, 0, 0]]);

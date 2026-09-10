@@ -45,12 +45,17 @@ export function searchResponses(control: SearchControls): DynamicsResult {
       if (difference > 0) { best = estimate; bestResponses = [position]; }
       else if (difference === 0) bestResponses.push(position);
     };
-    for (let position = 0; position < count; position++) {
-      const estimate = control.evaluate(side === 'player' ? position : player, side === 'opponent' ? position : opponent, control.initialSamples);
-      if (!estimate) return finish(control.interruption() ?? 'simulation-budget');
+    const evaluatePosition = (position: number, samples: number) => {
+      const estimate = control.evaluate(side === 'player' ? position : player, side === 'opponent' ? position : opponent, samples);
+      if (!estimate) return null;
       estimates.push(estimate);
       hasUniformOutcome ||= estimate.sampledOutcome !== null;
       consider(estimate, position);
+      return estimate;
+    };
+    for (let position = 0; position < count; position++) {
+      const estimate = evaluatePosition(position, control.initialSamples);
+      if (!estimate) return finish(control.interruption() ?? 'simulation-budget');
       if (!control.collectAll && wins(estimate, side) === estimate.simulations) break;
     }
     let refined = false, changedEvidence = false;
@@ -67,10 +72,35 @@ export function searchResponses(control: SearchControls): DynamicsResult {
         consider(estimate, position);
       }
     }
-    if (side === 'player') player = bestResponses[0];
-    else opponent = bestResponses[0];
+    // A refinement can overturn an earlier best response. Do not reuse cycle evidence
+    // collected against the previous estimates. Adding an unseen pair cannot do that.
+    if (changedEvidence) seen.clear();
+    const nextSide: OptimizerSide = side === 'player' ? 'opponent' : 'player';
+    const stateKey = (position: number) => side === 'player'
+      ? `${position}:${opponent}:${nextSide}`
+      : `${player}:${position}:${nextSide}`;
+    let response = bestResponses[0];
+    let cycleStart = seen.get(stateKey(response));
+    if (cycleStart !== undefined) {
+      // Early all-win exits normally leave the rest of the response set unsearched.
+      // Once that provisional choice would cycle, inspect the remaining positions and
+      // prefer an equally ranked (or newly discovered better) unvisited response.
+      for (let position = estimates.length; position < count; position++) {
+        if (!evaluatePosition(position, control.initialSamples)) return finish(control.interruption() ?? 'simulation-budget');
+      }
+      const alternative = bestResponses.find(position => !seen.has(stateKey(position)));
+      if (alternative !== undefined) {
+        response = alternative;
+        cycleStart = undefined;
+      } else {
+        response = bestResponses[0];
+        cycleStart = seen.get(stateKey(response));
+      }
+    }
+    if (side === 'player') player = response;
+    else opponent = response;
     const step: ResponseStep = {
-      index, side, playerPosition: player, opponentPosition: opponent, matchup: {...best},
+      index, side, playerPosition: player, opponentPosition: opponent, matchup: {...estimates[response]},
       bestResponses, searchedPositions: estimates.length, searchComplete: estimates.length === count, refined,
     };
     steps.push(step);
@@ -79,13 +109,9 @@ export function searchResponses(control: SearchControls): DynamicsResult {
     if (step.searchComplete && estimates.every(estimate => wins(estimate, side) === 0)) {
       return {...finish('no-sampled-counter'), unbeatenSide: side === 'player' ? 'opponent' : 'player'};
     }
-    side = side === 'player' ? 'opponent' : 'player';
-    // A refinement can overturn an earlier best response. Do not reuse cycle evidence
-    // collected against the previous estimates. Adding an unseen pair cannot do that.
-    if (changedEvidence) seen.clear();
+    side = nextSide;
     const key = `${player}:${opponent}:${side}`;
     const stateIndex = steps.length;
-    const cycleStart = seen.get(key);
     if (cycleStart !== undefined) return {...finish('cycle'), cycle: {startState: cycleStart, endState: stateIndex, length: stateIndex - cycleStart}};
     seen.set(key, stateIndex);
   }
