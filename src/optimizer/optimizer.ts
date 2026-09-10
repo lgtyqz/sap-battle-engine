@@ -1,5 +1,6 @@
 import type { SimulationConfig, SimulationResult } from '../app/domain/interfaces/simulation-config.interface';
 import { createSeededRandom } from '../app/gameplay/simulation-randomness';
+import { condenseResponseTrace } from './counterposition-graph';
 import { createEndTurnLineupResolver, type EndTurnProjector } from './end-turn';
 import { generatePositionings, normalizeLineup } from './positionings';
 import { searchResponses } from './search';
@@ -97,12 +98,16 @@ export function runFightOptimizer(input: SimulationConfig, options: FightOptimiz
   const dynamics = searchResponses({playerCount: playerPositions.length, opponentCount: opponentPositions.length,
     initialSamples: initial, refinedSamples: refinement, collectAll: options.collectAllBestResponses ?? false, maxSteps,
     evaluate, interruption, onStep() { completedResponses++; progress('response'); }});
+  const trace = condenseResponseTrace(dynamics.steps, dynamics.termination, dynamics.cycle, (player, opponent) => {
+    const match = cache.get(player * opponentPositions.length + opponent);
+    return match ? summarize(match) : undefined;
+  });
   const p = playerPositions[dynamics.player], o = opponentPositions[dynamics.opponent];
   const finalPlayerLineup = playerLineup(dynamics.player), finalOpponentLineup = opponentLineup(dynamics.opponent);
   const finalMatch = cache.get(dynamics.player * opponentPositions.length + dynamics.opponent);
   return {
-    evidence: 'sampled', termination: dynamics.termination, positionings: {player: playerPositions, opponent: opponentPositions}, steps: dynamics.steps,
-    ...(dynamics.cycle ? {cycle: dynamics.cycle} : {}), ...(dynamics.unbeatenSide ? {unbeatenSide: dynamics.unbeatenSide} : {}),
+    evidence: 'sampled', termination: dynamics.termination, positionings: {player: playerPositions, opponent: opponentPositions}, steps: trace.steps,
+    ...(trace.cycle ? {cycle: trace.cycle} : {}), ...(dynamics.unbeatenSide ? {unbeatenSide: dynamics.unbeatenSide} : {}),
     finalPosition: {playerOrder: p.order.slice(), opponentOrder: o.order.slice(),
       playerPets: structuredClone(finalPlayerLineup), opponentPets: structuredClone(finalOpponentLineup),
       ...(finalMatch ? {matchup: summarize(finalMatch)} : {})},

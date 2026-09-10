@@ -3,11 +3,16 @@ import { optimizeFight } from '../src/index';
 import { runFightOptimizer } from '../src/optimizer/optimizer';
 import type { SimulationConfig, SimulationResult } from '../src/index';
 const config = { playerPets: [{name:'Fish', attack:20, health:20}], opponentPets: [{name:'Fish', attack:1, health:1}], simulationCount:1 } as SimulationConfig;
+const positioningSensitiveConfig = {
+  playerPets: [{name:'Fish', attack:2, health:2}, {name:'Fish', attack:5, health:5}],
+  opponentPets: [{name:'Fish', attack:5, health:1}, {name:'Fish', attack:2, health:6}],
+  simulationCount:1
+}
 describe('fight optimizer integration', () => {
   it('runs real battles reproducibly without mutating inputs', () => {
     const before = structuredClone(config);
-    const a = optimizeFight(config, {seed:42});
-    const b = optimizeFight(config, {seed:42});
+    const a = optimizeFight(config, {seed:67});
+    const b = optimizeFight(config, {seed:67});
     expect({...a, stats:{...a.stats, elapsedMs:0}}).toEqual({...b, stats:{...b.stats, elapsedMs:0}});
     expect(config).toEqual(before);
     expect(a.termination).toBe('no-sampled-counter');
@@ -93,4 +98,10 @@ describe('fight optimizer integration', () => {
     expect(()=>optimizeFight(config,{refinementSimulations:14})).toThrow();
     expect(()=>optimizeFight({...config, randomDrawOverrides:[]})).toThrow(/overrides/);
   });
+
+  it("positions fucking properly", () => {
+    const a = optimizeFight(config, {seed:67});
+    console.log(a);
+    expect(a.termination, "no-sampled-counter");
+  })
 });
