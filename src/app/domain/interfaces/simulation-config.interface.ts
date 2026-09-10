@@ -95,6 +95,12 @@ export interface SimulationResult {
   randomOverrideError?: string | null;
 }
 
+export interface BattleDeterminismProbeResult {
+  deterministic: boolean;
+  /** Present when determining the result required one instrumented battle. */
+  simulation?: SimulationResult;
+}
+
 export interface RandomDecisionOption {
   id: string;
   label: string;

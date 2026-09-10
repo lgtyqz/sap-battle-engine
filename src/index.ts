@@ -4,6 +4,7 @@ import {
   SimulationResult,
   SimulationRunHooks,
   PetConfig,
+  BattleDeterminismProbeResult,
 } from './app/domain/interfaces/simulation-config.interface';
 import { LogService } from './app/integrations/log.service';
 import { GameService } from './app/runtime/state/game.service';
@@ -24,6 +25,10 @@ export interface HeadlessSimulationOptions { enableLogs?: boolean; includeBattle
 export interface BattleEngine {
   runSimulation(config: SimulationConfig, hooks?: SimulationRunHooks): SimulationResult;
   runHeadlessSimulation(config: SimulationConfig, options?: HeadlessSimulationOptions, hooks?: SimulationRunHooks): SimulationResult;
+  /** Run one probe battle and report whether it contains any potential or encountered randomness. */
+  isBattleDeterministic(config: SimulationConfig): boolean;
+  /** Run the determinism probe and retain its one-battle result when one was needed. */
+  probeBattleDeterminism(config: SimulationConfig): BattleDeterminismProbeResult;
   /** Apply end-turn events and return the selected side as a five-slot lineup. */
   projectLineupAfterEndTurn(
     baseConfig: SimulationConfig,
@@ -113,8 +118,17 @@ export function createBattleEngine(options: BattleEngineOptions = {}): BattleEng
     catch (error) { runner = createRunner(new EngineContext(options.entropy)); throw error; }
     finally { busy = false; }
   };
+  const probeBattleDeterminism: BattleEngine['probeBattleDeterminism'] = (config) => {
+    if (busy) return createBattleEngine(options).probeBattleDeterminism(config);
+    busy = true;
+    try { return runner.probeBattleDeterminism(structuredClone(config)); }
+    catch (error) { runner = createRunner(new EngineContext(options.entropy)); throw error; }
+    finally { busy = false; }
+  };
+  const isBattleDeterministic: BattleEngine['isBattleDeterministic'] = (config) =>
+    probeBattleDeterminism(config).deterministic;
   return {
-    runSimulation, projectLineupAfterEndTurn, runHeadlessSimulation(config, headless = {}, hooks) {
+    runSimulation, projectLineupAfterEndTurn, isBattleDeterministic, probeBattleDeterminism, runHeadlessSimulation(config, headless = {}, hooks) {
       const result = runSimulation({ ...config, logsEnabled: headless.enableLogs ?? config.logsEnabled ?? false }, hooks);
       if (!headless.includeBattles) delete result.battles;
       return result;
@@ -127,6 +141,10 @@ export function runSimulation(config: SimulationConfig, hooks?: SimulationRunHoo
 export function runHeadlessSimulation(config: SimulationConfig, options?: HeadlessSimulationOptions, hooks?: SimulationRunHooks): SimulationResult {
   return createBattleEngine().runHeadlessSimulation(config, options, hooks);
 }
+/** Run one probe battle and report whether it contains any potential or encountered randomness. */
+export function isBattleDeterministic(config: SimulationConfig): boolean {
+  return createBattleEngine().isBattleDeterministic(config);
+}
 export function projectLineupAfterEndTurn(
   baseConfig: SimulationConfig,
   side: 'player' | 'opponent',
@@ -134,7 +152,7 @@ export function projectLineupAfterEndTurn(
 ): (PetConfig | null)[] {
   return createBattleEngine().projectLineupAfterEndTurn(baseConfig, side, lineup);
 }
-export type { SimulationConfig, SimulationResult, PetConfig, CustomPackConfig, CustomPackItem, RandomDecisionCapture, RandomDecisionOverride, RandomDecisionOption, SimulationProgress, SimulationRunHooks } from './app/domain/interfaces/simulation-config.interface';
+export type { SimulationConfig, SimulationResult, PetConfig, CustomPackConfig, CustomPackItem, RandomDecisionCapture, RandomDecisionOverride, RandomDecisionOption, SimulationProgress, SimulationRunHooks, BattleDeterminismProbeResult } from './app/domain/interfaces/simulation-config.interface';
 export type { PetMemoryField, PetMemoryNumberField, PetMemoryState, PetMemoryStringField } from './app/domain/interfaces/pet-memory.interface';
 export type { Battle } from './app/domain/interfaces/battle.interface';
 export type { BattleEvent, BoardSnapshot, PetSnapshot, RandomDraw, Side } from './events';

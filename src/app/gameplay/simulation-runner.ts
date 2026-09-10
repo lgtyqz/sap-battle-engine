@@ -4,6 +4,7 @@ import {
   SimulationResult,
   PetConfig,
   SimulationRunHooks,
+  BattleDeterminismProbeResult,
 } from 'app/domain/interfaces/simulation-config.interface';
 import { Player } from 'app/domain/entities/player.class';
 import { LogService } from 'app/integrations/log.service';
@@ -19,9 +20,7 @@ import {
   EventProcessor,
   EventProcessorContext,
 } from './event-processor';
-import {
-  isBattleDeterministic,
-} from './simulation-randomness';
+import { isBattleStaticallyDeterministic } from './simulation-randomness';
 
 import { coerceLogService } from 'app/runtime/log-service-fallback';
 import { BenchmarkPet } from 'app/domain/entities/combat/benchmark-pet.class';
@@ -133,7 +132,7 @@ export class SimulationRunner {
 
       if (
         config.optimizeDeterministicSimulations &&
-        isBattleDeterministic(
+        isBattleStaticallyDeterministic(
           config,
           this.petService,
           this.equipmentService,
@@ -204,6 +203,46 @@ export class SimulationRunner {
     simulationResult.randomOverrideError = randomSessionResult.invalidOverrideError;
     if (config.captureRandomDraws) simulationResult.randomDraws = this.runtime.random.draws.slice();
     return simulationResult;
+  }
+
+  /** Probe one battle for both potential and encountered randomness. */
+  public probeBattleDeterminism(
+    config: SimulationConfig,
+  ): BattleDeterminismProbeResult {
+    const staticallyDeterministic = isBattleStaticallyDeterministic(
+      config,
+      this.petService,
+      this.equipmentService,
+      this.toyService,
+    );
+    if (!staticallyDeterministic) {
+      return { deterministic: false };
+    }
+
+    const simulation = this.run({
+      ...config,
+      simulationCount: 1,
+      logsEnabled: true,
+      maxLoggedBattles: 1,
+      captureRandomDecisions: true,
+      optimizeDeterministicSimulations: false,
+    });
+    const encounteredRandomDecision =
+      (simulation.randomDecisions?.length ?? 0) > 0;
+    const encounteredRandomEvent =
+      simulation.battles?.some((battle) =>
+        battle.logs.some((event) => event.randomEvent === true),
+      ) ?? false;
+
+    return {
+      deterministic:
+        !encounteredRandomDecision && !encounteredRandomEvent,
+      simulation,
+    };
+  }
+
+  public isBattleDeterministic(config: SimulationConfig): boolean {
+    return this.probeBattleDeterminism(config).deterministic;
   }
 
   public projectLineupAfterEndTurn(

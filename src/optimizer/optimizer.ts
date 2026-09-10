@@ -1,4 +1,8 @@
-import type { SimulationConfig, SimulationResult } from '../app/domain/interfaces/simulation-config.interface';
+import type {
+  BattleDeterminismProbeResult,
+  SimulationConfig,
+  SimulationResult,
+} from '../app/domain/interfaces/simulation-config.interface';
 import { createSeededRandom } from '../app/gameplay/simulation-randomness';
 import { condenseResponseTrace } from './counterposition-graph';
 import { createEndTurnLineupResolver, type EndTurnProjector } from './end-turn';
@@ -8,7 +12,19 @@ import type { FightOptimizerOptions, FightOptimizerResult, MatchupEstimate } fro
 
 /** Test seam; the public API always uses the real battle engine. */
 export type BattleSampler = (config: SimulationConfig, entropy: () => number, shouldAbort: () => boolean) => SimulationResult;
-interface CachedMatchup { player: number; opponent: number; playerWins: number; opponentWins: number; draws: number; random: () => number; }
+export type BattleDeterminismProbe = (
+  config: SimulationConfig,
+  entropy: () => number,
+) => BattleDeterminismProbeResult;
+interface CachedMatchup {
+  player: number;
+  opponent: number;
+  playerWins: number;
+  opponentWins: number;
+  draws: number;
+  random: () => number;
+  deterministic?: boolean;
+}
 function summarize(match: CachedMatchup): MatchupEstimate {
   const n = match.playerWins + match.opponentWins + match.draws;
   return {playerPosition: match.player, opponentPosition: match.opponent, simulations: n,
@@ -21,7 +37,13 @@ function integer(value: number | undefined, fallback: number, minimum: number, n
   if (!Number.isSafeInteger(resolved) || resolved < minimum) throw new Error(`${name} must be an integer >= ${minimum}`);
   return resolved;
 }
-export function runFightOptimizer(input: SimulationConfig, options: FightOptimizerOptions, sample: BattleSampler, projectEndTurn?: EndTurnProjector): FightOptimizerResult {
+export function runFightOptimizer(
+  input: SimulationConfig,
+  options: FightOptimizerOptions,
+  sample: BattleSampler,
+  projectEndTurn?: EndTurnProjector,
+  probeDeterminism?: BattleDeterminismProbe,
+): FightOptimizerResult {
   const start = performance.now();
   const initial = integer(options.initialSimulations, 15, 1, 'initialSimulations');
   const refinement = integer(options.refinementSimulations, 50, initial, 'refinementSimulations');
@@ -73,7 +95,7 @@ export function runFightOptimizer(input: SimulationConfig, options: FightOptimiz
     let entry = cache.get(key);
     if (entry) {
       const n = entry.playerWins + entry.opponentWins + entry.draws;
-      if (n >= target) { cacheHits++; return summarize(entry); }
+      if (entry.deterministic || n >= target) { cacheHits++; return summarize(entry); }
     }
     if (simulations >= budget) return null;
     if (!entry) {
@@ -83,15 +105,52 @@ export function runFightOptimizer(input: SimulationConfig, options: FightOptimiz
       entry = {player, opponent, playerWins: 0, opponentWins: 0, draws: 0, random: createSeededRandom(pairSeed)};
       cache.set(key, entry);
     }
+    const matchupConfig = (simulationCount: number): SimulationConfig => ({
+      ...base,
+      playerPets: playerLineup(player),
+      opponentPets: opponentLineup(opponent),
+      simulationCount,
+    });
+    const record = (outcome: SimulationResult, requested: number): number => {
+      const actual = outcome.playerWins + outcome.opponentWins + outcome.draws;
+      if (
+        ![outcome.playerWins, outcome.opponentWins, outcome.draws]
+          .every(n => Number.isSafeInteger(n) && n >= 0) ||
+        actual > requested
+      ) {
+        throw new Error('Battle engine returned invalid sample counts');
+      }
+      if (outcome.randomOverrideError) throw new Error(outcome.randomOverrideError);
+      entry.playerWins += outcome.playerWins;
+      entry.opponentWins += outcome.opponentWins;
+      entry.draws += outcome.draws;
+      simulations += actual;
+      engineCalls++;
+      progress('sampling');
+      return actual;
+    };
+
+    if (probeDeterminism && entry.deterministic === undefined) {
+      const probe = probeDeterminism(matchupConfig(1), entry.random);
+      entry.deterministic = probe.deterministic;
+      if (probe.simulation) {
+        const actual = record(probe.simulation, 1);
+        if (actual < 1) {
+          throw new Error('Battle engine stopped before completing the determinism probe');
+        }
+      } else if (probe.deterministic) {
+        throw new Error('Deterministic battle probe did not return its simulation');
+      }
+      if (shouldAbort()) return null;
+    }
+
     const previous = entry.playerWins + entry.opponentWins + entry.draws;
+    if (entry.deterministic || previous >= target) return summarize(entry);
+    if (simulations >= budget) return null;
+
     const requested = Math.min(target - previous, budget - simulations);
-    const outcome = sample({...base, playerPets: playerLineup(player), opponentPets: opponentLineup(opponent), simulationCount: requested}, entry.random, shouldAbort);
-    const actual = outcome.playerWins + outcome.opponentWins + outcome.draws;
-    if (![outcome.playerWins, outcome.opponentWins, outcome.draws].every(n => Number.isSafeInteger(n) && n >= 0) || actual > requested) throw new Error('Battle engine returned invalid sample counts');
-    if (outcome.randomOverrideError) throw new Error(outcome.randomOverrideError);
-    entry.playerWins += outcome.playerWins; entry.opponentWins += outcome.opponentWins; entry.draws += outcome.draws;
-    simulations += actual; engineCalls++;
-    progress('sampling');
+    const outcome = sample(matchupConfig(requested), entry.random, shouldAbort);
+    const actual = record(outcome, requested);
     if (actual < requested && !shouldAbort()) throw new Error('Battle engine stopped before completing the requested samples');
     return shouldAbort() || previous + actual < target ? null : summarize(entry);
   };

@@ -73,6 +73,19 @@ try {
   const runtimeCheck = `
 const config = ${JSON.stringify(config)};
 const result = engine.runSimulation(config);
+if (!engine.isBattleDeterministic(config)) {
+  throw new Error('Determinism probe misclassified a deterministic battle');
+}
+const probe = engine.createBattleEngine().probeBattleDeterminism(config);
+if (!probe.deterministic ||
+    !probe.simulation ||
+    probe.simulation.playerWins + probe.simulation.opponentWins + probe.simulation.draws !== 1) {
+  throw new Error('Determinism probe did not retain exactly one battle');
+}
+const optimized = engine.optimizeFight(config, {maxResponseSteps: 1});
+if (optimized.matchups.some(matchup => matchup.simulations !== 1)) {
+  throw new Error('Optimizer did not collapse deterministic matchups');
+}
 const lineup = [
   {name: 'Fish', attack: 3, health: 5},
   {name: 'Monkey', attack: 1, health: 2},
@@ -116,6 +129,7 @@ ${runtimeCheck}
 import {
   catalogs,
   createBattleEngine,
+  isBattleDeterministic,
   type PetCatalogEntry,
   type SimulationConfig,
   type SimulationProgress,
@@ -131,6 +145,8 @@ createBattleEngine().runSimulation(config, {
   },
 });
 createBattleEngine().projectLineupAfterEndTurn(config, 'player', config.playerPets);
+const deterministic: boolean = isBattleDeterministic(config);
+console.log(deterministic);
 `;
   for (const extension of ['mts', 'cts']) {
     const file = path.join(consumer, `check.${extension}`);

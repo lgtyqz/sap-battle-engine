@@ -40,8 +40,24 @@ describe('fight optimizer integration', () => {
     a.finalPosition.playerPets[0]!.attack = 999;
     expect(config).toEqual(before);
   });
-  it('honors exact budgets and publishes no incomplete response', () => {
+  it('uses one simulation for deterministic matchups', () => {
     const result = optimizeFight(config, {maxSimulations:7});
+    expect(result.stats.simulations).toBe(5);
+    expect(result.termination).toBe('no-sampled-counter');
+    expect(result.matchups).toHaveLength(5);
+    expect(result.matchups.every(matchup =>
+      matchup.simulations === 1 && matchup.playerWins === 1,
+    )).toBe(true);
+  });
+  it('honors exact budgets and publishes no incomplete random response', () => {
+    const randomConfig = {
+      ...config,
+      playerPets: [
+        {name:'Ant', attack:2, health:1},
+        {name:'Fish', attack:3, health:3},
+      ],
+    } as SimulationConfig;
+    const result = optimizeFight(randomConfig, {maxSimulations:7});
     expect(result.stats.simulations).toBe(7);
     expect(result.termination).toBe('simulation-budget');
     expect(result.steps).toHaveLength(0);
@@ -53,8 +69,20 @@ describe('fight optimizer integration', () => {
       stop = true;
     }});
     expect(result.termination).toBe('cancelled');
-    expect(result.stats.simulations).toBe(15);
+    expect(result.stats.simulations).toBe(1);
     expect(optimizeFight(config).unbeatenSide).toBe('player');
+  });
+  it('reuses a runtime-random probe as the first optimizer sample', () => {
+    const result = optimizeFight({
+      ...config,
+      playerPets: [{name:'Fish', attack:5, health:10}],
+      opponentPets: [{name:'Pig', attack:5, health:10}],
+    }, {refinementSimulations:15, maxResponseSteps:1});
+
+    expect(result.matchups).toHaveLength(5);
+    expect(result.matchups.every(matchup => matchup.simulations === 15)).toBe(true);
+    expect(result.stats.simulations).toBe(75);
+    expect(result.stats.engineCalls).toBe(result.matchups.length * 2);
   });
   it('extends mixed pairs by 35 samples and reuses cached estimates', () => {
     const batches:number[] = [];

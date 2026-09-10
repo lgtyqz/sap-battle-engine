@@ -6,7 +6,7 @@ import { EquipmentService } from 'app/integrations/equipment/equipment.service';
 import { PetService } from 'app/integrations/pet/pet.service';
 import { ToyService } from 'app/integrations/toy/toy.service';
 
-export function isBattleDeterministic(
+export function isBattleStaticallyDeterministic(
   config: SimulationConfig,
   petService: PetService,
   equipmentService: EquipmentService,
@@ -19,7 +19,16 @@ export function isBattleDeterministic(
   if (config.playerToy && toyService.isToyRandom(config.playerToy)) {
     return false;
   }
+  if (config.playerHardToy && toyService.isToyRandom(config.playerHardToy)) {
+    return false;
+  }
   if (config.opponentToy && toyService.isToyRandom(config.opponentToy)) {
+    return false;
+  }
+  if (
+    config.opponentHardToy &&
+    toyService.isToyRandom(config.opponentHardToy)
+  ) {
     return false;
   }
 
@@ -40,7 +49,10 @@ export function isBattleDeterministic(
         equipmentName = pet.equipment.name;
       }
 
-      if (equipmentName && equipmentService.isEquipmentRandom(equipmentName)) {
+      if (
+        equipmentName === 'Silly' ||
+        (equipmentName && equipmentService.isEquipmentRandom(equipmentName))
+      ) {
         return false;
       }
     }

@@ -68,13 +68,14 @@ Reuse an engine for repeated queries to avoid rebuilding its registries and serv
 - `createBattleEngine({ entropy? })` creates an isolated engine. The optional entropy function must return finite numbers in `[0, 1)`. A stateful function explicitly shared by the caller remains caller-owned.
 - `engine.runSimulation(config, hooks?)` preserves upstream simulation inputs and defaults, including logging on by default and the upstream simulation-count fallback.
 - `engine.runHeadlessSimulation(config, { enableLogs?, includeBattles? }, hooks?)` defaults logging off unless the config specifies otherwise. Battle records are omitted unless `includeBattles` is true.
+- `engine.isBattleDeterministic(config)` reports whether a battle has no known or encountered randomness. It uses catalog metadata to short-circuit known-random configurations; otherwise it runs exactly one instrumented battle. It is also available as the top-level `isBattleDeterministic(config)` convenience function. `engine.probeBattleDeterminism(config)` additionally returns that one-battle simulation when a battle was needed, allowing callers to reuse its outcome.
 - `engine.projectLineupAfterEndTurn(baseConfig, side, lineup)` applies both teams' end-turn events and returns the selected side as a five-slot `PetConfig` lineup. It is available as a top-level convenience function too. Inputs are cloned, and seeded projections restart from the configured seed.
 - `hooks` supports `onProgress`, `progressInterval`, and `shouldAbort`, checked between battles. Counts describe completed battles. Reentrant calls through hooks use an isolated temporary engine.
 - `catalogs` exposes deeply frozen pets, toys, food, and perks metadata. `UPSTREAM_REVISION` identifies the compatibility baseline.
 
 Inputs are cloned before execution. Runs do not mutate caller inputs or previously returned results. Mutable queues, players, factories, RNG state, and overrides belong to one engine. A failed run rebuilds that engine's mutable state before its next use.
 
-`optimizeFight` uses this projection automatically when comparing positionings. SAP-Calculator's positioning optimizer can also use the engine directly as its projection callback:
+`optimizeFight` uses this projection automatically when comparing positionings. It also reuses the determinism probe for each matchup: deterministic matchups stop after that single battle, while random matchups continue to the configured sample count. SAP-Calculator's positioning optimizer can also use the engine directly as its projection callback:
 
 ```ts
 const engine = createBattleEngine();

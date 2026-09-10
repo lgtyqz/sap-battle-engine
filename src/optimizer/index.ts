@@ -11,7 +11,11 @@ export function optimizeFight(config: SimulationConfig, options: FightOptimizerO
   return runFightOptimizer(config, options, (battle, random, shouldAbort) => {
     entropy = random;
     return engine.runHeadlessSimulation(battle, {}, {shouldAbort});
-  }, (baseConfig, side, lineup) => engine.projectLineupAfterEndTurn(baseConfig, side, lineup));
+  }, (baseConfig, side, lineup) => engine.projectLineupAfterEndTurn(baseConfig, side, lineup),
+  (battle, random) => {
+    entropy = random;
+    return engine.probeBattleDeterminism(battle);
+  });
 }
 export { generatePositionings, getPetPositioningHint } from './positionings';
 export type { FightOptimizerOptions, FightOptimizerResult, Lineup, Positioning, MatchupEstimate, ResponseStep, OptimizerProgress, OptimizerSide, PetPositioningHint } from './types';
