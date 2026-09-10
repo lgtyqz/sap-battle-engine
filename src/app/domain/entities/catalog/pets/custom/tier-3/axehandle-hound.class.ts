@@ -1,4 +1,5 @@
 import type { EngineContext } from 'app/runtime/engine-context';
+import { Equipment } from '../../../../equipment.class';
 import { Pet } from '../../../../pet.class';
 import { LogService } from 'app/integrations/log.service';
 import { AbilityService } from 'app/integrations/ability/ability.service';
@@ -10,6 +11,12 @@ export class AxehandleHound extends Pet {
     logService: LogService,
     abilityService: AbilityService,
     parent: Player,
+    health?: number,
+    attack?: number,
+    mana?: number,
+    exp?: number,
+    equipment?: Equipment,
+    triggersConsumed?: number,
   ) {
     super(runtime, logService, abilityService, parent);
     this.name = 'Axehandle Hound';
@@ -17,6 +24,7 @@ export class AxehandleHound extends Pet {
     this.health = 3;
     this.tier = 3;
     this.pack = 'Custom';
+    this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
   }
 
   override initAbilities(): void {
@@ -88,4 +96,3 @@ export class AxehandleHoundAbility extends Ability {
     return copy;
   }
 }
-

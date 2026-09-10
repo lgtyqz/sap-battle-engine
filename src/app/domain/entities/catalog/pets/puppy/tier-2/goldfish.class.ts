@@ -7,7 +7,7 @@ import { Player } from '../../../../player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
 
 export class Goldfish extends Pet {
-  name = 'Goldfish';
+  name = 'Gold Fish';
   tier = 2;
   pack: Pack = 'Puppy';
   attack = 1;
@@ -74,4 +74,3 @@ export class GoldfishAbility extends Ability {
     return new GoldfishAbility(this.runtime, newOwner, this.logService, this.abilityService);
   }
 }
-

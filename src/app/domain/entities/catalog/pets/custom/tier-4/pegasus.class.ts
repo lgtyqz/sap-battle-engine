@@ -1,4 +1,5 @@
 import type { EngineContext } from 'app/runtime/engine-context';
+import { Equipment } from '../../../../equipment.class';
 import { Pet } from '../../../../pet.class';
 import { LogService } from 'app/integrations/log.service';
 import { AbilityService } from 'app/integrations/ability/ability.service';
@@ -10,6 +11,12 @@ export class Pegasus extends Pet {
     logService: LogService,
     abilityService: AbilityService,
     parent: Player,
+    health?: number,
+    attack?: number,
+    mana?: number,
+    exp?: number,
+    equipment?: Equipment,
+    triggersConsumed?: number,
   ) {
     super(runtime, logService, abilityService, parent);
     this.name = 'Pegasus';
@@ -17,6 +24,7 @@ export class Pegasus extends Pet {
     this.pack = 'Custom';
     this.attack = 2;
     this.health = 4;
+    this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
   }
 
   override initAbilities(): void {
@@ -94,4 +102,3 @@ export class PegasusAbility extends Ability {
     return new PegasusAbility(this.runtime, newOwner, this.logService);
   }
 }
-

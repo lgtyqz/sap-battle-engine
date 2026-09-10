@@ -6,7 +6,7 @@ import { Pack, Pet } from '../../../pet.class';
 import { Player } from '../../../player.class';
 
 export class CrackedEgg extends Pet {
-  name = 'CrackedEgg';
+  name = 'Cracked Egg';
   tier = 1;
   pack: Pack = 'Unicorn';
   hidden: boolean = true;
@@ -27,4 +27,3 @@ export class CrackedEgg extends Pet {
     this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
   }
 }
-

@@ -1,4 +1,5 @@
 import type { EngineContext } from 'app/runtime/engine-context';
+import { Equipment } from '../../../../equipment.class';
 import { Pet } from '../../../../pet.class';
 import { LogService } from 'app/integrations/log.service';
 import { AbilityService } from 'app/integrations/ability/ability.service';
@@ -10,6 +11,12 @@ export class BrazillianTreehopper extends Pet {
     logService: LogService,
     abilityService: AbilityService,
     parent: Player,
+    health?: number,
+    attack?: number,
+    mana?: number,
+    exp?: number,
+    equipment?: Equipment,
+    triggersConsumed?: number,
   ) {
     super(runtime, logService, abilityService, parent);
     this.name = 'Brazillian Treehopper';
@@ -17,6 +24,7 @@ export class BrazillianTreehopper extends Pet {
     this.pack = 'Custom';
     this.attack = 2;
     this.health = 3;
+    this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
   }
 
   initAbilities(): void {
@@ -86,4 +94,3 @@ export class BrazillianTreehopperAbility extends Ability {
     return new BrazillianTreehopperAbility(this.runtime, newOwner, this.logService);
   }
 }
-
