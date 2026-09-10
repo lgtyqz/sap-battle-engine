@@ -1,23 +1,31 @@
 import type { EngineContext } from 'app/runtime/engine-context';
-import { Pet } from '../../../../pet.class';
+import { Equipment } from '../../../../equipment.class';
+import { Pack, Pet } from '../../../../pet.class';
 import { LogService } from 'app/integrations/log.service';
 import { AbilityService } from 'app/integrations/ability/ability.service';
 import { Player } from '../../../../player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
-import { ToyService } from 'app/integrations/toy/toy.service';
 
 export class FlyingSquirrel extends Pet {
+  name = 'Flying Squirrel';
+  tier = 3;
+  pack: Pack = 'Custom';
+  attack = 3;
+  health = 3;
+
   constructor(runtime: EngineContext,
-    logService: LogService,
-    abilityService: AbilityService,
+    protected logService: LogService,
+    protected abilityService: AbilityService,
     parent: Player,
+    health?: number,
+    attack?: number,
+    mana?: number,
+    exp?: number,
+    equipment?: Equipment,
+    triggersConsumed?: number,
   ) {
     super(runtime, logService, abilityService, parent);
-    this.name = 'Flying Squirrel';
-    this.tier = 3;
-    this.pack = 'Custom';
-    this.attack = 3;
-    this.health = 3;
+    this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
   }
 
   initAbilities(): void {
@@ -86,4 +94,3 @@ export class FlyingSquirrelAbility extends Ability {
     return new FlyingSquirrelAbility(this.runtime, newOwner, this.logService);
   }
 }
-
