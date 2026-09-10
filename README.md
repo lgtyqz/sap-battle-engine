@@ -74,7 +74,7 @@ Reuse an engine for repeated queries to avoid rebuilding its registries and serv
 
 Inputs are cloned before execution. Runs do not mutate caller inputs or previously returned results. Mutable queues, players, factories, RNG state, and overrides belong to one engine. A failed run rebuilds that engine's mutable state before its next use.
 
-SAP-Calculator's positioning optimizer can use the engine directly as its projection callback:
+`optimizeFight` uses this projection automatically when comparing positionings. SAP-Calculator's positioning optimizer can also use the engine directly as its projection callback:
 
 ```ts
 const engine = createBattleEngine();

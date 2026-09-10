@@ -1,5 +1,6 @@
 import type { SimulationConfig, SimulationResult } from '../app/domain/interfaces/simulation-config.interface';
 import { createSeededRandom } from '../app/gameplay/simulation-randomness';
+import { createEndTurnLineupResolver, type EndTurnProjector } from './end-turn';
 import { generatePositionings, normalizeLineup } from './positionings';
 import { searchResponses } from './search';
 import type { FightOptimizerOptions, FightOptimizerResult, MatchupEstimate } from './types';
@@ -19,7 +20,7 @@ function integer(value: number | undefined, fallback: number, minimum: number, n
   if (!Number.isSafeInteger(resolved) || resolved < minimum) throw new Error(`${name} must be an integer >= ${minimum}`);
   return resolved;
 }
-export function runFightOptimizer(input: SimulationConfig, options: FightOptimizerOptions, sample: BattleSampler): FightOptimizerResult {
+export function runFightOptimizer(input: SimulationConfig, options: FightOptimizerOptions, sample: BattleSampler, projectEndTurn?: EndTurnProjector): FightOptimizerResult {
   const start = performance.now();
   const initial = integer(options.initialSimulations, 15, 1, 'initialSimulations');
   const refinement = integer(options.refinementSimulations, 50, initial, 'refinementSimulations');
@@ -33,8 +34,27 @@ export function runFightOptimizer(input: SimulationConfig, options: FightOptimiz
   const config = structuredClone(input);
   const playerPets = normalizeLineup(config.playerPets), opponentPets = normalizeLineup(config.opponentPets);
   const playerPositions = generatePositionings(playerPets), opponentPositions = generatePositionings(opponentPets);
-  const playerLineups = playerPositions.map(p => p.order.map(slot => playerPets[slot]));
-  const opponentLineups = opponentPositions.map(p => p.order.map(slot => opponentPets[slot]));
+  const projectionConfig = {...config, playerPets, opponentPets, seed};
+  const rawPlayerLineup = (position: number) => playerPositions[position].order.map(slot => playerPets[slot]);
+  const rawOpponentLineup = (position: number) => opponentPositions[position].order.map(slot => opponentPets[slot]);
+  const resolvePlayerLineup = projectEndTurn
+    ? createEndTurnLineupResolver(projectionConfig, 'player', playerPets, projectEndTurn)
+    : (position: typeof playerPositions[number]) => rawPlayerLineup(position.id);
+  const resolveOpponentLineup = projectEndTurn
+    ? createEndTurnLineupResolver(projectionConfig, 'opponent', opponentPets, projectEndTurn)
+    : (position: typeof opponentPositions[number]) => rawOpponentLineup(position.id);
+  const playerLineups = new Map<number, SimulationConfig['playerPets']>();
+  const opponentLineups = new Map<number, SimulationConfig['opponentPets']>();
+  const playerLineup = (position: number) => {
+    let lineup = playerLineups.get(position);
+    if (!lineup) { lineup = resolvePlayerLineup(playerPositions[position]); playerLineups.set(position, lineup); }
+    return lineup;
+  };
+  const opponentLineup = (position: number) => {
+    let lineup = opponentLineups.get(position);
+    if (!lineup) { lineup = resolveOpponentLineup(opponentPositions[position]); opponentLineups.set(position, lineup); }
+    return lineup;
+  };
   const potential = playerPositions.length * opponentPositions.length;
   const maxSteps = integer(options.maxResponseSteps, 2 * potential + 1, 0, 'maxResponseSteps');
   const cache = new Map<number, CachedMatchup>();
@@ -64,7 +84,7 @@ export function runFightOptimizer(input: SimulationConfig, options: FightOptimiz
     }
     const previous = entry.playerWins + entry.opponentWins + entry.draws;
     const requested = Math.min(target - previous, budget - simulations);
-    const outcome = sample({...base, playerPets: playerLineups[player], opponentPets: opponentLineups[opponent], simulationCount: requested}, entry.random, shouldAbort);
+    const outcome = sample({...base, playerPets: playerLineup(player), opponentPets: opponentLineup(opponent), simulationCount: requested}, entry.random, shouldAbort);
     const actual = outcome.playerWins + outcome.opponentWins + outcome.draws;
     if (![outcome.playerWins, outcome.opponentWins, outcome.draws].every(n => Number.isSafeInteger(n) && n >= 0) || actual > requested) throw new Error('Battle engine returned invalid sample counts');
     if (outcome.randomOverrideError) throw new Error(outcome.randomOverrideError);
@@ -78,12 +98,13 @@ export function runFightOptimizer(input: SimulationConfig, options: FightOptimiz
     initialSamples: initial, refinedSamples: refinement, collectAll: options.collectAllBestResponses ?? false, maxSteps,
     evaluate, interruption, onStep() { completedResponses++; progress('response'); }});
   const p = playerPositions[dynamics.player], o = opponentPositions[dynamics.opponent];
+  const finalPlayerLineup = playerLineup(dynamics.player), finalOpponentLineup = opponentLineup(dynamics.opponent);
   const finalMatch = cache.get(dynamics.player * opponentPositions.length + dynamics.opponent);
   return {
     evidence: 'sampled', termination: dynamics.termination, positionings: {player: playerPositions, opponent: opponentPositions}, steps: dynamics.steps,
     ...(dynamics.cycle ? {cycle: dynamics.cycle} : {}), ...(dynamics.unbeatenSide ? {unbeatenSide: dynamics.unbeatenSide} : {}),
     finalPosition: {playerOrder: p.order.slice(), opponentOrder: o.order.slice(),
-      playerPets: structuredClone(playerLineups[p.id]), opponentPets: structuredClone(opponentLineups[o.id]),
+      playerPets: structuredClone(finalPlayerLineup), opponentPets: structuredClone(finalOpponentLineup),
       ...(finalMatch ? {matchup: summarize(finalMatch)} : {})},
     matchups: Array.from(cache.values(), summarize),
     stats: {simulations, evaluatedMatchups: cache.size, potentialMatchups: potential, cacheHits, engineCalls, seed, elapsedMs: performance.now() - start},

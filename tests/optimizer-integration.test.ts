@@ -47,6 +47,47 @@ describe('fight optimizer integration', () => {
     expect(result.matchups.every(m=>m.simulations<=50)).toBe(true);
     expect(result.stats.cacheHits).toBeGreaterThan(0);
   });
+  it('remaps position-dependent end-turn effects onto each candidate lineup', () => {
+    const endTurnConfig = {
+      ...config,
+      playerPets: [
+        {name:'Fish', attack:5, health:7},
+        {name:'Monkey', attack:1, health:2},
+        {name:'Ant', attack:4, health:4},
+      ],
+    } as SimulationConfig;
+    const result = runFightOptimizer(endTurnConfig, {
+      initialSimulations:1, refinementSimulations:1, maxResponseSteps:1,
+    }, (battle) => battle.playerPets[0]?.name === 'Ant' && battle.playerPets[0].attack === 6
+      ? {playerWins:1, opponentWins:0, draws:0}
+      : {playerWins:0, opponentWins:1, draws:0},
+    (_base, side, lineup) => {
+      const projected = structuredClone(lineup);
+      if (side !== 'player') return projected;
+      const front = projected.find(pet => pet !== null);
+      if (front && projected.some(pet => pet?.name === 'Monkey')) {
+        front.attack = (front.attack ?? 0) + 2;
+        front.health = (front.health ?? 0) + 2;
+      }
+      return projected;
+    });
+    expect(result.finalPosition.playerPets[0]).toMatchObject({name:'Ant', attack:6, health:6});
+    expect(result.finalPosition.playerPets.find(pet => pet?.name === 'Fish')).toMatchObject({attack:3, health:5});
+  });
+  it('uses the engine end-turn projection in the public optimizer', () => {
+    const result = optimizeFight({
+      playerPack:'Turtle', opponentPack:'Turtle', turn:9, seed:17, simulationCount:1,
+      playerPets:[
+        {name:'Ant', attack:4, health:4},
+        {name:'Monkey', attack:1, health:2},
+        {name:'Fish', attack:5, health:5},
+      ],
+      opponentPets:[],
+    }, {maxResponseSteps:0});
+    expect(result.finalPosition.playerPets.filter(pet => pet).map(pet => pet?.name)).toEqual(['Fish', 'Ant', 'Monkey']);
+    expect(result.finalPosition.playerPets[0]).toMatchObject({attack:7, health:7});
+    expect(result.finalPosition.playerPets[1]).toMatchObject({attack:2, health:2});
+  });
   it('validates controls and rejects battle-specific overrides', () => {
     expect(()=>optimizeFight(config,{initialSimulations:0})).toThrow();
     expect(()=>optimizeFight(config,{refinementSimulations:14})).toThrow();
