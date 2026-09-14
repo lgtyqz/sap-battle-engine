@@ -5,7 +5,7 @@ import { Equipment } from 'app/domain/entities/equipment.class';
 import { Pack, Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
-import { Corncob } from 'app/domain/entities/catalog/equipment/custom/corncob.class';
+import { feedCorncob } from 'app/domain/entities/food-effects';
 
 export class FarmerMouse extends Pet {
   name = 'Farmer Mouse';
@@ -62,7 +62,7 @@ export class FarmerMouseAbility extends Ability {
     }
 
     for (const target of targets) {
-      target.givePetEquipment(new Corncob(this.runtime));
+      feedCorncob(target);
       if (this.logService.isEnabled()) this.logService.createLog({
         message: `${owner.name} fed ${target.name} Corncob.`,
         type: 'ability',
@@ -80,4 +80,3 @@ export class FarmerMouseAbility extends Ability {
     return new FarmerMouseAbility(this.runtime, newOwner, this.logService);
   }
 }
-

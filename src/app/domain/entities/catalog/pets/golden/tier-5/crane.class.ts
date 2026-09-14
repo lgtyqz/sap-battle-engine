@@ -60,14 +60,12 @@ export class CraneAbility extends Ability {
       ? { pets: [triggerPet], random: false }
       : owner.parent.nearestPetsAhead(1, owner);
     const target = targetResp.pets[0];
-    if (!target) {
+    // Hurt reactions can resolve after the damaged pet has already fainted.
+    // Crane only grants its buff to a surviving friend ahead.
+    if (!target || !target.alive) {
       return;
     }
-    if (target.alive) {
-      target.givePetEquipment(new Melon(this.runtime));
-    } else {
-      target.applyEquipment(new Melon(this.runtime));
-    }
+    target.givePetEquipment(new Melon(this.runtime));
     if (this.logService.isEnabled()) this.logService.createLog({
       message: `${owner.name} gave ${target.name} Melon.`,
       type: 'ability',
@@ -100,4 +98,3 @@ export class CraneAbility extends Ability {
     return new CraneAbility(this.runtime, newOwner, this.logService);
   }
 }
-

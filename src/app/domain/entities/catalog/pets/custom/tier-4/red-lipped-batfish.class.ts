@@ -97,4 +97,3 @@ export class RedLippedBatfishAbility extends Ability {
     );
   }
 }
-

@@ -1,0 +1,5560 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate",
+  "metadata": {
+    "replayId": "01a097ff-4e4b-76f4-9c92-e167d358184c",
+    "battleId": "222fdc55-d090-4b40-bf7c-8079acee685e",
+    "turn": 6,
+    "sapSeed": 992223094,
+    "reportedOutcome": "draw",
+    "inputHash": "14e44bb4613409d095eacb834e6f40b43e64950cb2d7704813d943c46ceec662",
+    "rngCompatibility": "unverified"
+  },
+  "engine": {
+    "package": "0.1.0",
+    "resolved": "git+ssh://git@github.com/lgtyqz/sap-battle-engine.git#e18c8b8a7560173efc3cc3748fb287ea100c5832",
+    "upstream": "d165eb0a02f8aa0b54d72ed1d5490a44390d07f4"
+  },
+  "config": {
+    "turn": 6,
+    "simulationCount": 1,
+    "logsEnabled": true,
+    "maxLoggedBattles": 1,
+    "captureRandomDraws": true,
+    "captureRandomDecisions": true,
+    "optimizeDeterministicSimulations": false,
+    "mana": true,
+    "seed": 992223094,
+    "playerPack": "Star",
+    "playerGoldSpent": 10,
+    "playerRollAmount": 7,
+    "playerSummonedAmount": 1,
+    "playerLevel3Sold": 0,
+    "playerTransformationAmount": 0,
+    "playerLostLastBattle": false,
+    "playerPets": [
+      {
+        "name": "Leech",
+        "attack": 5,
+        "health": 8,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Pug",
+        "attack": 5,
+        "health": 2,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Fairy Armadillo",
+        "attack": 3,
+        "health": 9,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Fairy Armadillo",
+        "attack": 3,
+        "health": 9,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Koala",
+        "attack": 6,
+        "health": 4,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "opponentPack": "Star",
+    "opponentGoldSpent": 11,
+    "opponentRollAmount": 5,
+    "opponentSummonedAmount": 1,
+    "opponentLevel3Sold": 0,
+    "opponentTransformationAmount": 0,
+    "opponentLostLastBattle": false,
+    "opponentPets": [
+      {
+        "name": "Anteater",
+        "attack": 3,
+        "health": 3,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Bass",
+        "attack": 5,
+        "health": 5,
+        "exp": 2,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Hummingbird",
+        "attack": 7,
+        "health": 9,
+        "exp": 1,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Marmoset",
+        "attack": 4,
+        "health": 4,
+        "exp": 1,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Toad",
+        "attack": 5,
+        "health": 5,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "randomDecisionOverrides": [
+      {
+        "index": 0,
+        "key": "target.random-pet",
+        "label": "O5 Toad -> Random pet target (player team, 4 options)",
+        "optionId": "player:4:Fairy Armadillo"
+      },
+      {
+        "index": 1,
+        "key": "target.random-pet",
+        "label": "O1 Ant -> Random pet target (opponent team, 4 options)",
+        "optionId": "opponent:5:Toad"
+      }
+    ],
+    "strictRandomOverrideValidation": true,
+    "randomDrawOverrides": [
+      {
+        "stream": "seeded",
+        "value": 0.3652868627104908
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7209599155467004
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7556663998402655
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8558368091471493
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2508897560182959
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9759525719564408
+      },
+      {
+        "stream": "seeded",
+        "value": 0.47003492875956
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8388453307561576
+      },
+      {
+        "stream": "seeded",
+        "value": 0.3704864592291415
+      },
+      {
+        "stream": "seeded",
+        "value": 0.44495772500522435
+      },
+      {
+        "stream": "seeded",
+        "value": 0.4426963054575026
+      },
+      {
+        "stream": "seeded",
+        "value": 0.08504971140064299
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7865970151033252
+      },
+      {
+        "stream": "seeded",
+        "value": 0.14499285421334207
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7028232032898813
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6169489431194961
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8858203256968409
+      },
+      {
+        "stream": "seeded",
+        "value": 0.11788648529909551
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8543115188367665
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2175680121872574
+      },
+      {
+        "stream": "seeded",
+        "value": 0.06873587728478014
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6857954922597855
+      },
+      {
+        "stream": "seeded",
+        "value": 0.009360464056953788
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5844411656726152
+      },
+      {
+        "stream": "seeded",
+        "value": 0.3390811525750905
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5038308342918754
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2902034791186452
+      },
+      {
+        "stream": "seeded",
+        "value": 0.11599926091730595
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6269673947244883
+      },
+      {
+        "stream": "seeded",
+        "value": 0.4718786575831473
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8965804255567491
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6129800290800631
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7772440572734922
+      },
+      {
+        "stream": "seeded",
+        "value": 0.35396455763839185
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6019991242792457
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2979199115652591
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2369178186636418
+      }
+    ]
+  },
+  "reference": {
+    "schemaVersion": 1,
+    "inputHash": "14e44bb4613409d095eacb834e6f40b43e64950cb2d7704813d943c46ceec662",
+    "complete": false,
+    "outcome": {
+      "winner": "draw",
+      "evidence": {
+        "frame": "terminal.png"
+      },
+      "method": "explicit-result-text",
+      "text": [
+        "DRAW"
+      ]
+    },
+    "captureComplete": true,
+    "coverage": "viewer-pauses",
+    "initialVerified": true,
+    "checkpoints": [
+      {
+        "timeMs": 1232,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Leech",
+              "attack": 5,
+              "health": 8
+            },
+            {
+              "name": "Pug",
+              "attack": 5,
+              "health": 2
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Anteater",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Bass",
+              "attack": 5,
+              "health": 5
+            },
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 9
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 5,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0000.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263220439691028,
+                "margin": 0.10453431372549019
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 9,
+                "error": 0.2370544277493606,
+                "margin": 0.12097630718954247
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21800402926322046,
+                "margin": 0.09159007352941176
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2658710264408794,
+                "margin": 0.10114379084967318
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2767194604290992,
+                "margin": 0.07178308823529417
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25805713383838386,
+                "margin": 0.08707618464052286
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.262020944741533,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2698065210932858,
+                "margin": 0.09221813725490197
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13698380867498514,
+                "margin": 0.21420547385620917
+              },
+              "health": {
+                "value": 9,
+                "error": 0.22958293371696506,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1983760034811026,
+                "margin": 0.19244791666666664
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18557362709576583,
+                "margin": 0.2004187091503268
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.27034406565656566,
+                "margin": 0.11740196078431375
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 45,
+                  "matches": 49,
+                  "scale": 0.9333917962419638,
+                  "ratio": 0.9183673469387755
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 48,
+                  "matches": 51,
+                  "scale": 0.9328001526704848,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 60,
+                  "matches": 67,
+                  "scale": 0.935348353246634,
+                  "ratio": 0.8955223880597015
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Pug",
+                  "inliers": 53,
+                  "matches": 54,
+                  "scale": 0.9341056780414735,
+                  "ratio": 0.9814814814814815
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Leech",
+                  "method": "template",
+                  "error": 0.012369033880531788
+                },
+                {
+                  "name": "Drop Bear",
+                  "method": "template",
+                  "error": 0.38399338722229004
+                },
+                {
+                  "name": "Emperor Tamarin",
+                  "method": "template",
+                  "error": 0.3883662819862366
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Anteater",
+                  "inliers": 26,
+                  "matches": 29,
+                  "scale": 0.9308304730571111,
+                  "ratio": 0.896551724137931
+                },
+                {
+                  "kind": "pets",
+                  "name": "Giant Eyes Dog",
+                  "inliers": 6,
+                  "matches": 12,
+                  "scale": 0.8958042745173425,
+                  "ratio": 0.5
+                },
+                {
+                  "kind": "pets",
+                  "name": "Jersey Devil",
+                  "inliers": 5,
+                  "matches": 6,
+                  "scale": 0.8603152966262981,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Bass",
+                  "inliers": 24,
+                  "matches": 27,
+                  "scale": 0.9298184964868088,
+                  "ratio": 0.8888888888888888
+                },
+                {
+                  "kind": "pets",
+                  "name": "Warthog",
+                  "inliers": 5,
+                  "matches": 10,
+                  "scale": 1.0597404225875828,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 20,
+                  "matches": 21,
+                  "scale": 0.9288479834712801,
+                  "ratio": 0.9523809523809523
+                },
+                {
+                  "kind": "pets",
+                  "name": "Buffalo",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.1274065018934114,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 44,
+                  "matches": 49,
+                  "scale": 0.9330849370235412,
+                  "ratio": 0.8979591836734694
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 30,
+                  "matches": 32,
+                  "scale": 0.9314615194722431,
+                  "ratio": 0.9375
+                },
+                {
+                  "kind": "pets",
+                  "name": "Buffalo",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.9196416005815473,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "PUG",
+        "kinds": [
+          "initial"
+        ]
+      },
+      {
+        "timeMs": 8522,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Leech",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Pug",
+              "attack": 5,
+              "health": 2
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Bass",
+              "attack": 5,
+              "health": 5
+            },
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 9
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 5,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0002.png"
+        },
+        "dying": [
+          {
+            "slot": 5,
+            "health": -3
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263220439691028,
+                "margin": 0.10453431372549019
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 9,
+                "error": 0.2370544277493606,
+                "margin": 0.12097630718954247
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21800402926322046,
+                "margin": 0.09159007352941176
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2259799279560309,
+                "margin": 0.10870098039215687
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2308001893939394,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": -3,
+                "error": 0.2866992535650624,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.262020944741533,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2698065210932858,
+                "margin": 0.09221813725490197
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13698380867498514,
+                "margin": 0.21420547385620917
+              },
+              "health": {
+                "value": 9,
+                "error": 0.22958293371696506,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1983760034811026,
+                "margin": 0.19244791666666664
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18557362709576583,
+                "margin": 0.2004187091503268
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.27034406565656566,
+                "margin": 0.11740196078431375
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 45,
+                  "matches": 51,
+                  "scale": 0.9317582132811557,
+                  "ratio": 0.8823529411764706
+                },
+                {
+                  "kind": "pets",
+                  "name": "Lynx",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.76585504102827,
+                  "ratio": 0.5714285714285714
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 48,
+                  "matches": 51,
+                  "scale": 0.9328001841411097,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 61,
+                  "matches": 67,
+                  "scale": 0.93528726818155,
+                  "ratio": 0.9104477611940298
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Pug",
+                  "inliers": 60,
+                  "matches": 60,
+                  "scale": 0.9355370475872093,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Leech",
+                  "inliers": 6,
+                  "matches": 6,
+                  "scale": 0.954972115126999,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Poodle",
+                  "method": "template",
+                  "error": 0.3263928294181824
+                },
+                {
+                  "name": "Sneaky Egg",
+                  "method": "template",
+                  "error": 0.3288384974002838
+                },
+                {
+                  "name": "Blowfish",
+                  "method": "template",
+                  "error": 0.33146506547927856
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Bass",
+                  "inliers": 24,
+                  "matches": 27,
+                  "scale": 0.9298184964868088,
+                  "ratio": 0.8888888888888888
+                },
+                {
+                  "kind": "pets",
+                  "name": "Warthog",
+                  "inliers": 5,
+                  "matches": 10,
+                  "scale": 1.0597404225875828,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 20,
+                  "matches": 21,
+                  "scale": 0.9288479834712801,
+                  "ratio": 0.9523809523809523
+                },
+                {
+                  "kind": "pets",
+                  "name": "Buffalo",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.1274065018934114,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 44,
+                  "matches": 49,
+                  "scale": 0.9330849370235412,
+                  "ratio": 0.8979591836734694
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 30,
+                  "matches": 36,
+                  "scale": 0.9314718417015916,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability",
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 21107,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Leech",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Pug",
+              "attack": 5,
+              "health": 2
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Bass",
+              "attack": 5,
+              "health": 5
+            },
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 9
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 5,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0003.png"
+        },
+        "dying": [
+          {
+            "slot": 5,
+            "health": -3
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263220439691028,
+                "margin": 0.10453431372549019
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 9,
+                "error": 0.2370544277493606,
+                "margin": 0.12097630718954247
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21800402926322046,
+                "margin": 0.09159007352941176
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2259799279560309,
+                "margin": 0.10870098039215687
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2308001893939394,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": -3,
+                "error": 0.2866992535650624,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.262020944741533,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2698065210932858,
+                "margin": 0.09221813725490197
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13698380867498514,
+                "margin": 0.21420547385620917
+              },
+              "health": {
+                "value": 9,
+                "error": 0.22958293371696506,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1983760034811026,
+                "margin": 0.19244791666666664
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18557362709576583,
+                "margin": 0.2004187091503268
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.27034406565656566,
+                "margin": 0.11740196078431375
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 45,
+                  "matches": 48,
+                  "scale": 0.9333921731091288,
+                  "ratio": 0.9375
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 48,
+                  "matches": 51,
+                  "scale": 0.93280015057269,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 61,
+                  "matches": 67,
+                  "scale": 0.935286834183497,
+                  "ratio": 0.9104477611940298
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Pug",
+                  "inliers": 60,
+                  "matches": 60,
+                  "scale": 0.9355370475872093,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Leech",
+                  "method": "template",
+                  "error": 0.10882221907377243
+                },
+                {
+                  "name": "Bear",
+                  "method": "template",
+                  "error": 0.3906850218772888
+                },
+                {
+                  "name": "Drop Bear",
+                  "method": "template",
+                  "error": 0.4035862684249878
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Eucalyptus",
+                  "inliers": 6,
+                  "matches": 9,
+                  "scale": 0.3926140722028044,
+                  "ratio": 0.6666666666666666
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "name": "Poodle",
+                  "method": "template",
+                  "error": 0.3263928294181824
+                },
+                {
+                  "name": "Sneaky Egg",
+                  "method": "template",
+                  "error": 0.3288384974002838
+                },
+                {
+                  "name": "Blowfish",
+                  "method": "template",
+                  "error": 0.33146506547927856
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Bass",
+                  "inliers": 24,
+                  "matches": 27,
+                  "scale": 0.9298184964868088,
+                  "ratio": 0.8888888888888888
+                },
+                {
+                  "kind": "pets",
+                  "name": "Warthog",
+                  "inliers": 5,
+                  "matches": 10,
+                  "scale": 1.0597404225875828,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 20,
+                  "matches": 21,
+                  "scale": 0.9288479834712801,
+                  "ratio": 0.9523809523809523
+                },
+                {
+                  "kind": "pets",
+                  "name": "Buffalo",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.1274065018934114,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 44,
+                  "matches": 49,
+                  "scale": 0.9330857845764419,
+                  "ratio": 0.8979591836734694
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 31,
+                  "matches": 33,
+                  "scale": 0.9315251126290448,
+                  "ratio": 0.9393939393939394
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "TOAD",
+        "kinds": []
+      },
+      {
+        "timeMs": 28911,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Leech",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Pug",
+              "attack": 5,
+              "health": 2
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Bass",
+              "attack": 5,
+              "health": 5
+            },
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 9
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 5,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0004.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263220439691028,
+                "margin": 0.10453431372549019
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 9,
+                "error": 0.2370544277493606,
+                "margin": 0.12097630718954247
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21800402926322046,
+                "margin": 0.09159007352941176
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2259799279560309,
+                "margin": 0.10870098039215687
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2308001893939394,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.262020944741533,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2698065210932858,
+                "margin": 0.09221813725490197
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13698380867498514,
+                "margin": 0.21420547385620917
+              },
+              "health": {
+                "value": 9,
+                "error": 0.22958293371696506,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1983760034811026,
+                "margin": 0.19244791666666664
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18557362709576583,
+                "margin": 0.2004187091503268
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.27034406565656566,
+                "margin": 0.11740196078431375
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 45,
+                  "matches": 48,
+                  "scale": 0.9333921731091288,
+                  "ratio": 0.9375
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 48,
+                  "matches": 51,
+                  "scale": 0.93280015057269,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 61,
+                  "matches": 67,
+                  "scale": 0.935286834183497,
+                  "ratio": 0.9104477611940298
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Pug",
+                  "inliers": 60,
+                  "matches": 60,
+                  "scale": 0.9355370276386721,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Leech",
+                  "method": "template",
+                  "error": 0.15826793015003204
+                },
+                {
+                  "name": "Bear",
+                  "method": "template",
+                  "error": 0.3799590766429901
+                },
+                {
+                  "name": "Drop Bear",
+                  "method": "template",
+                  "error": 0.3968261182308197
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Weak",
+                  "inliers": 6,
+                  "matches": 9,
+                  "scale": 0.37255193211505166,
+                  "ratio": 0.6666666666666666
+                }
+              ]
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Bass",
+                  "inliers": 24,
+                  "matches": 27,
+                  "scale": 0.9298184964868088,
+                  "ratio": 0.8888888888888888
+                },
+                {
+                  "kind": "pets",
+                  "name": "Warthog",
+                  "inliers": 5,
+                  "matches": 10,
+                  "scale": 1.0597404225875828,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 20,
+                  "matches": 21,
+                  "scale": 0.9288479834712801,
+                  "ratio": 0.9523809523809523
+                },
+                {
+                  "kind": "pets",
+                  "name": "Buffalo",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.1274065018934114,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 44,
+                  "matches": 49,
+                  "scale": 0.9330857845764419,
+                  "ratio": 0.8979591836734694
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 30,
+                  "matches": 35,
+                  "scale": 0.9314737146318774,
+                  "ratio": 0.8571428571428571
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "ANTEATER",
+        "kinds": []
+      },
+      {
+        "timeMs": 39702,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Leech",
+              "attack": 6,
+              "health": 2
+            },
+            {
+              "name": "Pug",
+              "attack": 5,
+              "health": 2
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Bass",
+              "attack": 5,
+              "health": 5
+            },
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 9
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 5,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0006.png"
+        },
+        "dying": [
+          {
+            "slot": 5,
+            "health": -5
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263220439691028,
+                "margin": 0.10453431372549019
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 9,
+                "error": 0.2370544277493606,
+                "margin": 0.12097630718954247
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21800402926322046,
+                "margin": 0.09159007352941176
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2259799279560309,
+                "margin": 0.10870098039215687
+              },
+              "health": {
+                "value": 2,
+                "error": 0.2304339349376114,
+                "margin": 0.10054636437908496
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.1304436831550802,
+                "margin": 0.18277165032679743
+              },
+              "health": {
+                "value": -5,
+                "error": 0.27342171717171715,
+                "margin": 0.09224877450980395
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.262020944741533,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2698065210932858,
+                "margin": 0.09221813725490197
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13698380867498514,
+                "margin": 0.21420547385620917
+              },
+              "health": {
+                "value": 9,
+                "error": 0.22958293371696506,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1983760034811026,
+                "margin": 0.19244791666666664
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18557362709576583,
+                "margin": 0.2004187091503268
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.27034406565656566,
+                "margin": 0.11740196078431375
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 45,
+                  "matches": 48,
+                  "scale": 0.9333921731091288,
+                  "ratio": 0.9375
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 48,
+                  "matches": 51,
+                  "scale": 0.93280015057269,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 61,
+                  "matches": 67,
+                  "scale": 0.935286834183497,
+                  "ratio": 0.9104477611940298
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Pug",
+                  "inliers": 60,
+                  "matches": 61,
+                  "scale": 0.9355370791371416,
+                  "ratio": 0.9836065573770492
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Leech",
+                  "method": "template",
+                  "error": 0.1415286362171173
+                },
+                {
+                  "name": "Emperor Tamarin",
+                  "method": "template",
+                  "error": 0.4261173605918884
+                },
+                {
+                  "name": "Bear",
+                  "method": "template",
+                  "error": 0.4309244751930237
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Adult Flounder",
+                  "method": "template",
+                  "error": 0.34439846873283386
+                },
+                {
+                  "name": "Blowfish",
+                  "method": "template",
+                  "error": 0.3562188446521759
+                },
+                {
+                  "name": "Sphinx",
+                  "method": "template",
+                  "error": 0.35983040928840637
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Bass",
+                  "inliers": 24,
+                  "matches": 27,
+                  "scale": 0.9298184964868088,
+                  "ratio": 0.8888888888888888
+                },
+                {
+                  "kind": "pets",
+                  "name": "Warthog",
+                  "inliers": 5,
+                  "matches": 10,
+                  "scale": 1.0597404225875828,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 20,
+                  "matches": 21,
+                  "scale": 0.9288479834712801,
+                  "ratio": 0.9523809523809523
+                },
+                {
+                  "kind": "pets",
+                  "name": "Buffalo",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.1274065018934114,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 44,
+                  "matches": 49,
+                  "scale": 0.9330857845764419,
+                  "ratio": 0.8979591836734694
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 30,
+                  "matches": 35,
+                  "scale": 0.9314733733112522,
+                  "ratio": 0.8571428571428571
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.35499071572284124,
+                  "ratio": 0.6666666666666666
+                }
+              ]
+            }
+          ]
+        },
+        "upcomingAbility": "ANT",
+        "kinds": [
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 49665,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Pug",
+              "attack": 5,
+              "health": 2
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 9
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0008.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22392723187759953,
+                "margin": 0.10717933006535948
+              },
+              "health": {
+                "value": 4,
+                "error": 0.17270087382779198,
+                "margin": 0.21482843137254903
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 9,
+                "error": 0.2370544277493606,
+                "margin": 0.12097630718954247
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 9,
+                "error": 0.228862958226769,
+                "margin": 0.10725081699346406
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2658710264408794,
+                "margin": 0.10114379084967318
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22731914735591208,
+                "margin": 0.10537683823529409
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13344381313131312,
+                "margin": 0.20949105020796202
+              },
+              "health": {
+                "value": 9,
+                "error": 0.23420005683432793,
+                "margin": 0.12098651960784312
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1850885372264848,
+                "margin": 0.20634191176470587
+              },
+              "health": {
+                "value": 4,
+                "error": 0.1744494578134284,
+                "margin": 0.21601307189542485
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.26272844735720374,
+                "margin": 0.09295343137254902
+              },
+              "health": {
+                "value": 8,
+                "error": 0.22717391304347825,
+                "margin": 0.10639297385620919
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 49,
+                  "matches": 52,
+                  "scale": 0.932695524469426,
+                  "ratio": 0.9423076923076923
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 61,
+                  "matches": 69,
+                  "scale": 0.9352863892869858,
+                  "ratio": 0.8840579710144928
+                },
+                {
+                  "kind": "pets",
+                  "name": "???",
+                  "inliers": 4,
+                  "matches": 5,
+                  "scale": 0.819723789977134,
+                  "ratio": 0.8
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 56,
+                  "matches": 61,
+                  "scale": 0.9347286565364027,
+                  "ratio": 0.9180327868852459
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Pug",
+                  "inliers": 46,
+                  "matches": 46,
+                  "scale": 0.9345309976491307,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 20,
+                  "matches": 23,
+                  "scale": 0.9299037955771136,
+                  "ratio": 0.8695652173913043
+                },
+                {
+                  "kind": "pets",
+                  "name": "African Wild Dog",
+                  "inliers": 4,
+                  "matches": 12,
+                  "scale": 0.8211051985725001,
+                  "ratio": 0.3333333333333333
+                },
+                {
+                  "kind": "pets",
+                  "name": "Tasmanian Devil",
+                  "inliers": 4,
+                  "matches": 12,
+                  "scale": 0.9913626231789424,
+                  "ratio": 0.3333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 54,
+                  "matches": 55,
+                  "scale": 0.9320877719865985,
+                  "ratio": 0.9818181818181818
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 29,
+                  "matches": 34,
+                  "scale": 0.9309649183392974,
+                  "ratio": 0.8529411764705882
+                },
+                {
+                  "kind": "pets",
+                  "name": "Great Potoo",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 1.1347507908237195,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 54774,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 4
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0009.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2554989230540701,
+                "margin": 0.07981004901960781
+              },
+              "health": {
+                "value": 4,
+                "error": 0.195349171865716,
+                "margin": 0.20099571078431372
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 9,
+                "error": 0.228862958226769,
+                "margin": 0.10725081699346406
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 9,
+                "error": 0.23126287652742258,
+                "margin": 0.11082516339869278
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13344381313131312,
+                "margin": 0.20949105020796202
+              },
+              "health": {
+                "value": 4,
+                "error": 0.15210840017825314,
+                "margin": 0.22950367647058825
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1850885372264848,
+                "margin": 0.20634191176470587
+              },
+              "health": {
+                "value": 4,
+                "error": 0.1744494578134284,
+                "margin": 0.21601307189542485
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.26272844735720374,
+                "margin": 0.09295343137254902
+              },
+              "health": {
+                "value": 8,
+                "error": 0.22717391304347825,
+                "margin": 0.10639297385620919
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 46,
+                  "matches": 51,
+                  "scale": 0.9339718140230079,
+                  "ratio": 0.9019607843137255
+                },
+                {
+                  "kind": "pets",
+                  "name": "Velociraptor",
+                  "inliers": 4,
+                  "matches": 11,
+                  "scale": 1.0100424927072635,
+                  "ratio": 0.36363636363636365
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 53,
+                  "matches": 59,
+                  "scale": 0.9354592706026236,
+                  "ratio": 0.8983050847457628
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 46,
+                  "matches": 49,
+                  "scale": 0.9330027933660998,
+                  "ratio": 0.9387755102040817
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 20,
+                  "matches": 23,
+                  "scale": 0.928710419609586,
+                  "ratio": 0.8695652173913043
+                },
+                {
+                  "kind": "pets",
+                  "name": "Goat",
+                  "inliers": 5,
+                  "matches": 10,
+                  "scale": 0.8913375798520381,
+                  "ratio": 0.5
+                },
+                {
+                  "kind": "pets",
+                  "name": "Lobster",
+                  "inliers": 4,
+                  "matches": 10,
+                  "scale": 1.0117536090199442,
+                  "ratio": 0.4
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 54,
+                  "matches": 55,
+                  "scale": 0.9320874975354543,
+                  "ratio": 0.9818181818181818
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 29,
+                  "matches": 34,
+                  "scale": 0.9309649183392974,
+                  "ratio": 0.8529411764705882
+                },
+                {
+                  "kind": "pets",
+                  "name": "Great Potoo",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 1.1347507908237195,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint",
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 57968,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 2
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 1
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0010.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2554989230540701,
+                "margin": 0.07981004901960781
+              },
+              "health": {
+                "value": 4,
+                "error": 0.195349171865716,
+                "margin": 0.20099571078431372
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 9,
+                "error": 0.228862958226769,
+                "margin": 0.10725081699346406
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 2,
+                "error": 0.2304339349376114,
+                "margin": 0.10054636437908496
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13344381313131312,
+                "margin": 0.20949105020796202
+              },
+              "health": {
+                "value": 1,
+                "error": 0.1600699086452763,
+                "margin": 0.1820874183006536
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1850885372264848,
+                "margin": 0.20634191176470587
+              },
+              "health": {
+                "value": 4,
+                "error": 0.1744494578134284,
+                "margin": 0.21601307189542485
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.26272844735720374,
+                "margin": 0.09295343137254902
+              },
+              "health": {
+                "value": 8,
+                "error": 0.22717391304347825,
+                "margin": 0.10639297385620919
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 46,
+                  "matches": 51,
+                  "scale": 0.9339718140230079,
+                  "ratio": 0.9019607843137255
+                },
+                {
+                  "kind": "pets",
+                  "name": "Velociraptor",
+                  "inliers": 4,
+                  "matches": 11,
+                  "scale": 1.0100424927072635,
+                  "ratio": 0.36363636363636365
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 59,
+                  "matches": 66,
+                  "scale": 0.9347693754668529,
+                  "ratio": 0.8939393939393939
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 61,
+                  "matches": 67,
+                  "scale": 0.9328239210612368,
+                  "ratio": 0.9104477611940298
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 17,
+                  "matches": 19,
+                  "scale": 0.9257974037783964,
+                  "ratio": 0.8947368421052632
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 54,
+                  "matches": 55,
+                  "scale": 0.9320877742887935,
+                  "ratio": 0.9818181818181818
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 29,
+                  "matches": 34,
+                  "scale": 0.9309649183392974,
+                  "ratio": 0.8529411764705882
+                },
+                {
+                  "kind": "pets",
+                  "name": "Great Potoo",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 1.1347507908237195,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "FAIRY ARMADILLO",
+        "kinds": [
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 60812,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Ball",
+              "attack": 3,
+              "health": 4
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 1
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0011.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2554989230540701,
+                "margin": 0.07981004901960781
+              },
+              "health": {
+                "value": 4,
+                "error": 0.195349171865716,
+                "margin": 0.20099571078431372
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 9,
+                "error": 0.228862958226769,
+                "margin": 0.10725081699346406
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23839962121212122,
+                "margin": 0.09965277777777776
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18589531827223643,
+                "margin": 0.19380106209150327
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13344381313131312,
+                "margin": 0.20949105020796202
+              },
+              "health": {
+                "value": 1,
+                "error": 0.1600699086452763,
+                "margin": 0.1820874183006536
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1850885372264848,
+                "margin": 0.20634191176470587
+              },
+              "health": {
+                "value": 4,
+                "error": 0.1744494578134284,
+                "margin": 0.21601307189542485
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.26272844735720374,
+                "margin": 0.09295343137254902
+              },
+              "health": {
+                "value": 8,
+                "error": 0.22717391304347825,
+                "margin": 0.10639297385620919
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 46,
+                  "matches": 51,
+                  "scale": 0.9339718140230079,
+                  "ratio": 0.9019607843137255
+                },
+                {
+                  "kind": "pets",
+                  "name": "Velociraptor",
+                  "inliers": 4,
+                  "matches": 11,
+                  "scale": 1.0100424927072635,
+                  "ratio": 0.36363636363636365
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 59,
+                  "matches": 65,
+                  "scale": 0.9347693740881877,
+                  "ratio": 0.9076923076923077
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Ball",
+                  "inliers": 28,
+                  "matches": 35,
+                  "scale": 0.9384687749223983,
+                  "ratio": 0.8
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 17,
+                  "matches": 19,
+                  "scale": 0.9257974037783964,
+                  "ratio": 0.8947368421052632
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 54,
+                  "matches": 55,
+                  "scale": 0.9320877742887935,
+                  "ratio": 0.9818181818181818
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 30,
+                  "matches": 34,
+                  "scale": 0.9319361956831009,
+                  "ratio": 0.8823529411764706
+                },
+                {
+                  "kind": "pets",
+                  "name": "Great Potoo",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 1.1331559694891504,
+                  "ratio": 0.5714285714285714
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "TOAD",
+        "kinds": [
+          "transformation-or-movement",
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 63542,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Ball",
+              "attack": 3,
+              "health": 4
+            },
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Hummingbird",
+              "attack": 7,
+              "health": 1
+            },
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0012.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2554989230540701,
+                "margin": 0.07981004901960781
+              },
+              "health": {
+                "value": 4,
+                "error": 0.195349171865716,
+                "margin": 0.20099571078431372
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 9,
+                "error": 0.228862958226769,
+                "margin": 0.10725081699346406
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23839962121212122,
+                "margin": 0.09965277777777776
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18589531827223643,
+                "margin": 0.19380106209150327
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13344381313131312,
+                "margin": 0.20949105020796202
+              },
+              "health": {
+                "value": 1,
+                "error": 0.1600699086452763,
+                "margin": 0.1820874183006536
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1850885372264848,
+                "margin": 0.20634191176470587
+              },
+              "health": {
+                "value": 4,
+                "error": 0.1744494578134284,
+                "margin": 0.21601307189542485
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.26272844735720374,
+                "margin": 0.09295343137254902
+              },
+              "health": {
+                "value": 8,
+                "error": 0.22717391304347825,
+                "margin": 0.10639297385620919
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 46,
+                  "matches": 51,
+                  "scale": 0.9339718140230079,
+                  "ratio": 0.9019607843137255
+                },
+                {
+                  "kind": "pets",
+                  "name": "Velociraptor",
+                  "inliers": 4,
+                  "matches": 11,
+                  "scale": 1.0100424927072635,
+                  "ratio": 0.36363636363636365
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 57,
+                  "matches": 65,
+                  "scale": 0.9339919181556268,
+                  "ratio": 0.8769230769230769
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Weak",
+                  "inliers": 4,
+                  "matches": 5,
+                  "scale": 0.23966808078513666,
+                  "ratio": 0.8
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Ball",
+                  "inliers": 20,
+                  "matches": 24,
+                  "scale": 0.9507890429261616,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Weak",
+                  "inliers": 7,
+                  "matches": 13,
+                  "scale": 0.380402422460501,
+                  "ratio": 0.5384615384615384
+                },
+                {
+                  "kind": "perks",
+                  "name": "Weak",
+                  "inliers": 4,
+                  "matches": 13,
+                  "scale": 0.4240893537928241,
+                  "ratio": 0.3076923076923077
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Hummingbird",
+                  "inliers": 22,
+                  "matches": 25,
+                  "scale": 0.929418501042737,
+                  "ratio": 0.88
+                },
+                {
+                  "kind": "pets",
+                  "name": "Okapi",
+                  "inliers": 4,
+                  "matches": 10,
+                  "scale": 1.0859290345346926,
+                  "ratio": 0.4
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 53,
+                  "matches": 53,
+                  "scale": 0.9319703310671065,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 29,
+                  "matches": 34,
+                  "scale": 0.9309649183392974,
+                  "ratio": 0.8529411764705882
+                },
+                {
+                  "kind": "pets",
+                  "name": "Great Potoo",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 1.1347507908237195,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": []
+      },
+      {
+        "timeMs": 66414,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0013.png"
+        },
+        "dying": [
+          {
+            "slot": 4,
+            "health": -4
+          },
+          {
+            "slot": 5,
+            "health": -2
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2554989230540701,
+                "margin": 0.07981004901960781
+              },
+              "health": {
+                "value": 4,
+                "error": 0.195349171865716,
+                "margin": 0.20099571078431372
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 9,
+                "error": 0.228862958226769,
+                "margin": 0.10725081699346406
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23839962121212122,
+                "margin": 0.09965277777777776
+              },
+              "health": {
+                "value": -4,
+                "error": 0.1601200423351159,
+                "margin": 0.22353451797385615
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13344381313131312,
+                "margin": 0.20949105020796202
+              },
+              "health": {
+                "value": -2,
+                "error": 0.21470031194295902,
+                "margin": 0.10100592320261437
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1850885372264848,
+                "margin": 0.20634191176470587
+              },
+              "health": {
+                "value": 4,
+                "error": 0.1744494578134284,
+                "margin": 0.21601307189542485
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.26272844735720374,
+                "margin": 0.09295343137254902
+              },
+              "health": {
+                "value": 8,
+                "error": 0.22717391304347825,
+                "margin": 0.10639297385620919
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 46,
+                  "matches": 51,
+                  "scale": 0.9339718140230079,
+                  "ratio": 0.9019607843137255
+                },
+                {
+                  "kind": "pets",
+                  "name": "Velociraptor",
+                  "inliers": 4,
+                  "matches": 11,
+                  "scale": 1.0100424927072635,
+                  "ratio": 0.36363636363636365
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 59,
+                  "matches": 66,
+                  "scale": 0.9347693852889741,
+                  "ratio": 0.8939393939393939
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Squirrel",
+                  "method": "template",
+                  "error": 0.3476811945438385
+                },
+                {
+                  "name": "Chinchilla",
+                  "method": "template",
+                  "error": 0.3623124361038208
+                },
+                {
+                  "name": "Tardigrade",
+                  "method": "template",
+                  "error": 0.37129005789756775
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Sphinx",
+                  "method": "template",
+                  "error": 0.2964496612548828
+                },
+                {
+                  "name": "Adult Flounder",
+                  "method": "template",
+                  "error": 0.2990041971206665
+                },
+                {
+                  "name": "Blowfish",
+                  "method": "template",
+                  "error": 0.3050207495689392
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 54,
+                  "matches": 55,
+                  "scale": 0.9320877742887935,
+                  "ratio": 0.9818181818181818
+                },
+                {
+                  "kind": "pets",
+                  "name": "Hirola",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 1.0567963400491058,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 29,
+                  "matches": 34,
+                  "scale": 0.9309649183392974,
+                  "ratio": 0.8529411764705882
+                },
+                {
+                  "kind": "pets",
+                  "name": "Great Potoo",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 1.1347507908237195,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "WUMMINGBIRD",
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 70139,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 9
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 4,
+              "equipment": "Strawberry"
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0014.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263986371063577,
+                "margin": 0.10189950980392157
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 9,
+                "error": 0.23126287652742258,
+                "margin": 0.11082516339869278
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.21897334114805342,
+                "margin": 0.19636437908496732
+              },
+              "health": {
+                "value": 4,
+                "error": 0.15210840017825314,
+                "margin": 0.22950367647058825
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.2933401712134129,
+                "margin": 0.07921772875816996
+              },
+              "health": {
+                "value": 8,
+                "error": 0.23967391304347826,
+                "margin": 0.10061274509803922
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 43,
+                  "matches": 49,
+                  "scale": 0.9334816578688001,
+                  "ratio": 0.8775510204081632
+                },
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 10,
+                  "matches": 15,
+                  "scale": 0.936239919240491,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 56,
+                  "matches": 61,
+                  "scale": 0.9333359808067516,
+                  "ratio": 0.9180327868852459
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 30,
+                  "matches": 32,
+                  "scale": 0.9304307879574274,
+                  "ratio": 0.9375
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Strawberry",
+                  "inliers": 6,
+                  "matches": 8,
+                  "scale": 0.4295965791481691,
+                  "ratio": 0.75
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 26,
+                  "matches": 28,
+                  "scale": 0.932292137832334,
+                  "ratio": 0.9285714285714286
+                },
+                {
+                  "kind": "pets",
+                  "name": "Farmer Pig",
+                  "inliers": 5,
+                  "matches": 16,
+                  "scale": 0.8124389918375022,
+                  "ratio": 0.3125
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "equipment-observation-change"
+        ]
+      },
+      {
+        "timeMs": 73051,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Armadillo",
+              "attack": 3,
+              "health": 5
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 1,
+              "equipment": "Strawberry"
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0015.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263986371063577,
+                "margin": 0.10189950980392157
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25252850193107546,
+                "margin": 0.12935049019607847
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.21897334114805342,
+                "margin": 0.19636437908496732
+              },
+              "health": {
+                "value": 1,
+                "error": 0.1600699086452763,
+                "margin": 0.1820874183006536
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.2933401712134129,
+                "margin": 0.07921772875816996
+              },
+              "health": {
+                "value": 8,
+                "error": 0.23967391304347826,
+                "margin": 0.10061274509803922
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 45,
+                  "matches": 50,
+                  "scale": 0.9336429771465049,
+                  "ratio": 0.9
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Armadillo",
+                  "inliers": 54,
+                  "matches": 59,
+                  "scale": 0.9327085260131365,
+                  "ratio": 0.9152542372881356
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9317867366112969,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Strawberry",
+                  "inliers": 8,
+                  "matches": 11,
+                  "scale": 0.4407036839701334,
+                  "ratio": 0.7272727272727273
+                },
+                {
+                  "kind": "perks",
+                  "name": "Strawberry",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.4333338731951909,
+                  "ratio": 0.5555555555555556
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 26,
+                  "matches": 28,
+                  "scale": 0.931213931631821,
+                  "ratio": 0.9285714285714286
+                },
+                {
+                  "kind": "pets",
+                  "name": "Farmer Pig",
+                  "inliers": 5,
+                  "matches": 13,
+                  "scale": 0.8124390037430979,
+                  "ratio": 0.38461538461538464
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "FAIRY ARMADILLO",
+        "kinds": [
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 76092,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Ball",
+              "attack": 3,
+              "health": 7
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Marmoset",
+              "attack": 4,
+              "health": 1,
+              "equipment": "Strawberry"
+            },
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0016.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263986371063577,
+                "margin": 0.10189950980392157
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23839962121212122,
+                "margin": 0.09965277777777776
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13723401292335116,
+                "margin": 0.2121936274509804
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.21897334114805342,
+                "margin": 0.19636437908496732
+              },
+              "health": {
+                "value": 1,
+                "error": 0.1600699086452763,
+                "margin": 0.1820874183006536
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.2933401712134129,
+                "margin": 0.07921772875816996
+              },
+              "health": {
+                "value": 8,
+                "error": 0.23967391304347826,
+                "margin": 0.10061274509803922
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 43,
+                  "matches": 47,
+                  "scale": 0.9333352814931641,
+                  "ratio": 0.9148936170212766
+                },
+                {
+                  "kind": "pets",
+                  "name": "Fairy Ball",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.9006594696078067,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Ball",
+                  "inliers": 27,
+                  "matches": 31,
+                  "scale": 0.9455251147215168,
+                  "ratio": 0.8709677419354839
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 19,
+                  "matches": 27,
+                  "scale": 0.9333168948597153,
+                  "ratio": 0.7037037037037037
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Strawberry",
+                  "inliers": 6,
+                  "matches": 7,
+                  "scale": 0.4366519312531601,
+                  "ratio": 0.8571428571428571
+                },
+                {
+                  "kind": "perks",
+                  "name": "Strawberry",
+                  "inliers": 6,
+                  "matches": 7,
+                  "scale": 0.4283084449250718,
+                  "ratio": 0.8571428571428571
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 26,
+                  "matches": 28,
+                  "scale": 0.9312139100425819,
+                  "ratio": 0.9285714285714286
+                },
+                {
+                  "kind": "pets",
+                  "name": "Farmer Pig",
+                  "inliers": 5,
+                  "matches": 15,
+                  "scale": 0.8124389918375022,
+                  "ratio": 0.3333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "transformation-or-movement",
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 79016,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Ball",
+              "attack": 3,
+              "health": 5
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Toad",
+              "attack": 8,
+              "health": 8
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0017.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263986371063577,
+                "margin": 0.10189950980392157
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23839962121212122,
+                "margin": 0.09965277777777776
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25252850193107546,
+                "margin": 0.12935049019607847
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.2933401712134129,
+                "margin": 0.07921772875816996
+              },
+              "health": {
+                "value": 8,
+                "error": 0.23967391304347826,
+                "margin": 0.10061274509803922
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 45,
+                  "matches": 51,
+                  "scale": 0.9336429812064556,
+                  "ratio": 0.8823529411764706
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Ball",
+                  "inliers": 37,
+                  "matches": 44,
+                  "scale": 0.9462148675506395,
+                  "ratio": 0.8409090909090909
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 26,
+                  "matches": 28,
+                  "scale": 0.931213931631821,
+                  "ratio": 0.9285714285714286
+                },
+                {
+                  "kind": "pets",
+                  "name": "Farmer Pig",
+                  "inliers": 5,
+                  "matches": 13,
+                  "scale": 0.8124390037430979,
+                  "ratio": 0.38461538461538464
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 81854,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Fairy Ball",
+              "attack": 3,
+              "health": 5
+            },
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Toad",
+              "attack": 9,
+              "health": 9
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0018.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2263986371063577,
+                "margin": 0.10189950980392157
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23839962121212122,
+                "margin": 0.09965277777777776
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25252850193107546,
+                "margin": 0.12935049019607847
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.22791889483065955,
+                "margin": 0.12056781045751633
+              },
+              "health": {
+                "value": 9,
+                "error": 0.23420005683432793,
+                "margin": 0.12098651960784312
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 44,
+                  "matches": 48,
+                  "scale": 0.9335426980942909,
+                  "ratio": 0.9166666666666666
+                },
+                {
+                  "kind": "pets",
+                  "name": "Fairy Ball",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.9021308227864447,
+                  "ratio": 0.5714285714285714
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Fairy Ball",
+                  "inliers": 27,
+                  "matches": 32,
+                  "scale": 0.936618477942101,
+                  "ratio": 0.84375
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Steak",
+                  "inliers": 4,
+                  "matches": 5,
+                  "scale": 0.19827422157997415,
+                  "ratio": 0.8
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 27,
+                  "matches": 29,
+                  "scale": 0.9317949593943416,
+                  "ratio": 0.9310344827586207
+                },
+                {
+                  "kind": "pets",
+                  "name": "Farmer Pig",
+                  "inliers": 5,
+                  "matches": 11,
+                  "scale": 0.8128377972822178,
+                  "ratio": 0.45454545454545453
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 85097,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Koala",
+              "attack": 6,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Toad",
+              "attack": 9,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0019.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2259799279560309,
+                "margin": 0.10870098039215687
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.22791889483065955,
+                "margin": 0.12056781045751633
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21512412730243613,
+                "margin": 0.10722017973856207
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Koala",
+                  "inliers": 42,
+                  "matches": 44,
+                  "scale": 0.9307232288957656,
+                  "ratio": 0.9545454545454546
+                },
+                {
+                  "kind": "pets",
+                  "name": "Cyclops",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.8384806821383569,
+                  "ratio": 0.5714285714285714
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "kind": "pets",
+                  "name": "Toad",
+                  "inliers": 28,
+                  "matches": 28,
+                  "scale": 0.9311487207527878,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint",
+          "damage-or-health-ability"
+        ]
+      }
+    ],
+    "gaps": [
+      {
+        "index": 1,
+        "frame": "frames/0001.png",
+        "timeMs": 4186,
+        "text": [
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.05277777777777781,
+            "text": "Lvill",
+            "width": 0.0359375,
+            "x": 0.018750000048828125,
+            "y": 0.45833333300347223
+          },
+          {
+            "confidence": 0.5,
+            "height": 0.02499999999999991,
+            "text": "Top 5%",
+            "width": 0.0390625,
+            "x": 0.068750000390625,
+            "y": 0.502777777638889
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.01388888888888884,
+            "text": "rsus",
+            "width": 0.021875000000000006,
+            "x": 0.09843750036458332,
+            "y": 0.5305555554166668
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.050000000000000044,
+            "text": "9",
+            "width": 0.02656249999999999,
+            "x": 0.165625000078125,
+            "y": 0.6916666670238094
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.02499999999999991,
+            "text": "*5",
+            "width": 0.012499999999999997,
+            "x": 0.05000000015624999,
+            "y": 0.9555555554513889
+          },
+          {
+            "confidence": 1,
+            "height": 0.017628962463802744,
+            "text": "BLAVITYO1",
+            "width": 0.04386278390884399,
+            "x": 0.07025610877339816,
+            "y": 0.9522966296779791
+          },
+          {
+            "confidence": 1,
+            "height": 0.01666666666666672,
+            "text": "THE ALLEGED GLASSES",
+            "width": 0.0875,
+            "x": 0.07031250109374998,
+            "y": 0.9666666665972221
+          },
+          {
+            "confidence": 1,
+            "height": 0.01666666666666672,
+            "text": "REWIND",
+            "width": 0.03437499999999999,
+            "x": 0.36093749942708336,
+            "y": 0.01388888898148144
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.04166666666666674,
+            "text": "K",
+            "width": 0.025000000000000022,
+            "x": 0.3656249997916666,
+            "y": 0.04166666678240738
+          },
+          {
+            "confidence": 1,
+            "height": 0.022222222222222143,
+            "text": "PLAY",
+            "width": 0.03437499999999999,
+            "x": 0.42187500034375003,
+            "y": 0.016666666500000038
+          },
+          {
+            "confidence": 1,
+            "height": 0.01388888888888895,
+            "text": "AUTOPLAY",
+            "width": 0.03437499999999993,
+            "x": 0.4828124994270834,
+            "y": 0.01388888902777774
+          },
+          {
+            "confidence": 1,
+            "height": 0.022222222222222254,
+            "text": "FAST",
+            "width": 0.034375000000000044,
+            "x": 0.5421874997135416,
+            "y": 0.016666666805555508
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.05925925572713209,
+            "text": "2",
+            "width": 0.04166666567325594,
+            "x": 0.34583333435087205,
+            "y": 0.6888888902845821
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.05833333333333324,
+            "text": "(3",
+            "width": 0.03749999999999998,
+            "x": 0.523437499953125,
+            "y": 0.6861111108194444
+          },
+          {
+            "confidence": 0.5,
+            "height": 0.047222222222222276,
+            "text": "3",
+            "width": 0.028124999999999956,
+            "x": 0.576562499765625,
+            "y": 0.6916666667824074
+          },
+          {
+            "confidence": 1,
+            "height": 0.04166666666666663,
+            "text": "5",
+            "width": 0.020312499999999956,
+            "x": 0.6281250000878906,
+            "y": 0.6944444447048612
+          },
+          {
+            "confidence": 1,
+            "height": 0.050000000000000044,
+            "text": "5",
+            "width": 0.026562500000000044,
+            "x": 0.670312500078125,
+            "y": 0.6916666669444443
+          },
+          {
+            "confidence": 1,
+            "height": 0.047222222222222276,
+            "text": "5",
+            "width": 0.0234375,
+            "x": 0.9515624999316407,
+            "y": 0.6916666663715277
+          },
+          {
+            "confidence": 1,
+            "height": 0.016666666666666607,
+            "text": "RETIRED.",
+            "width": 0.03749999999999998,
+            "x": 0.893750000625,
+            "y": 0.9527777776851852
+          },
+          {
+            "confidence": 0.5,
+            "height": 0.016666666666666607,
+            "text": "THE SOUR KNIGHTS",
+            "width": 0.07499999999999996,
+            "x": 0.8562500009375,
+            "y": 0.9694444443055557
+          }
+        ],
+        "issues": [
+          "slot 4: ambiguous pet"
+        ]
+      },
+      {
+        "index": 5,
+        "frame": "frames/0005.png",
+        "timeMs": 34239,
+        "text": [
+          {
+            "confidence": 0.5,
+            "height": 0.02499999999999991,
+            "text": "Top 5%",
+            "width": 0.03749999999999999,
+            "x": 0.07031250037499999,
+            "y": 0.502777777638889
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.01388888888888884,
+            "text": "rsus",
+            "width": 0.021875000000000006,
+            "x": 0.09843750036458332,
+            "y": 0.5305555554166668
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.050000000000000044,
+            "text": "9",
+            "width": 0.02656249999999999,
+            "x": 0.16562500008789063,
+            "y": 0.6916666669791667
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.02499999999999991,
+            "text": "*5",
+            "width": 0.012499999999999997,
+            "x": 0.05000000015624999,
+            "y": 0.9555555554513889
+          },
+          {
+            "confidence": 1,
+            "height": 0.01759370168050134,
+            "text": "BLAVITYO1",
+            "width": 0.04230030775070191,
+            "x": 0.07025609559782921,
+            "y": 0.9523142603519034
+          },
+          {
+            "confidence": 1,
+            "height": 0.01666666666666672,
+            "text": "THE ALLEGED GLASSES",
+            "width": 0.0875,
+            "x": 0.07031250109374998,
+            "y": 0.9666666665972221
+          },
+          {
+            "confidence": 1,
+            "height": 0.016900202963087252,
+            "text": "REWIND",
+            "width": 0.03441058993339535,
+            "x": 0.3609197044601907,
+            "y": 0.013772120829376178
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.04166666666666663,
+            "text": "K",
+            "width": 0.0234375,
+            "x": 0.367187499921875,
+            "y": 0.04166666643518524
+          },
+          {
+            "confidence": 1,
+            "height": 0.022222222222222143,
+            "text": "PLAY",
+            "width": 0.03437499999999999,
+            "x": 0.42187500034375003,
+            "y": 0.016666666500000038
+          },
+          {
+            "confidence": 1,
+            "height": 0.01388888888888895,
+            "text": "AUTOPLAY",
+            "width": 0.03437499999999999,
+            "x": 0.4828124995703125,
+            "y": 0.013888888993055515
+          },
+          {
+            "confidence": 1,
+            "height": 0.022222222222222254,
+            "text": "FAST",
+            "width": 0.034375000000000044,
+            "x": 0.5421874997135416,
+            "y": 0.016666666805555508
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.047222222222222165,
+            "text": "Lvl",
+            "width": 0.0390625,
+            "x": 0.39218750004882813,
+            "y": 0.4527777774826389
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.05833333333333335,
+            "text": "2",
+            "width": 0.03125,
+            "x": 0.3500000002232143,
+            "y": 0.6888888886706348
+          },
+          {
+            "confidence": 1,
+            "height": 0.047222222222222276,
+            "text": "5",
+            "width": 0.0234375,
+            "x": 0.9515624999316407,
+            "y": 0.6916666663715277
+          },
+          {
+            "confidence": 1,
+            "height": 0.016666666666666607,
+            "text": "RETIRED.",
+            "width": 0.03749999999999998,
+            "x": 0.893750000625,
+            "y": 0.9527777776851852
+          },
+          {
+            "confidence": 0.5,
+            "height": 0.016666666666666607,
+            "text": "THE SOUR KNIGHTS",
+            "width": 0.07499999999999996,
+            "x": 0.8562500009375,
+            "y": 0.9694444443055557
+          }
+        ],
+        "issues": [
+          "slot 4: ambiguous pet"
+        ]
+      },
+      {
+        "index": 7,
+        "frame": "frames/0007.png",
+        "timeMs": 46001,
+        "text": [
+          {
+            "confidence": 0.5,
+            "height": 0.02499999999999991,
+            "text": "Top 5%",
+            "width": 0.0390625,
+            "x": 0.068750000390625,
+            "y": 0.502777777638889
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.01388888888888884,
+            "text": "rsus",
+            "width": 0.021875000000000006,
+            "x": 0.09843750036458332,
+            "y": 0.5305555554166668
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.050000000000000044,
+            "text": "9",
+            "width": 0.02656249999999999,
+            "x": 0.16562500008789063,
+            "y": 0.6916666669791667
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.02499999999999991,
+            "text": "*5",
+            "width": 0.012499999999999997,
+            "x": 0.05000000015624999,
+            "y": 0.9555555554513889
+          },
+          {
+            "confidence": 1,
+            "height": 0.01759370168050134,
+            "text": "BLAVITYO1",
+            "width": 0.04230030775070191,
+            "x": 0.07025609559782921,
+            "y": 0.9523142603519034
+          },
+          {
+            "confidence": 1,
+            "height": 0.01666666666666672,
+            "text": "THE ALLEGED GLASSES",
+            "width": 0.0875,
+            "x": 0.07031250109374998,
+            "y": 0.9666666665972221
+          },
+          {
+            "confidence": 1,
+            "height": 0.01666666666666672,
+            "text": "REWIND",
+            "width": 0.03437499999999999,
+            "x": 0.36093749942708336,
+            "y": 0.01388888898148144
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.04166666666666674,
+            "text": "K",
+            "width": 0.025000000000000022,
+            "x": 0.3656249997916666,
+            "y": 0.04166666678240738
+          },
+          {
+            "confidence": 1,
+            "height": 0.02235745588938398,
+            "text": "PLAY",
+            "width": 0.034402588009834256,
+            "x": 0.42186120633903956,
+            "y": 0.01659904966777237
+          },
+          {
+            "confidence": 1,
+            "height": 0.01388888888888895,
+            "text": "AUTOPLAY",
+            "width": 0.03437499999999999,
+            "x": 0.4828124995703125,
+            "y": 0.013888888993055515
+          },
+          {
+            "confidence": 1,
+            "height": 0.022222222222222254,
+            "text": "FAST",
+            "width": 0.034375000000000044,
+            "x": 0.5421874997135416,
+            "y": 0.016666666805555508
+          },
+          {
+            "confidence": 1,
+            "height": 0.02777777777777779,
+            "text": "SKIP",
+            "width": 0.03281250000000002,
+            "x": 0.6046875002050781,
+            "y": 0.01388888875000005
+          },
+          {
+            "confidence": 0.30000001192092896,
+            "height": 0.047222222222222165,
+            "text": "9",
+            "width": 0.02656249999999999,
+            "x": 0.2593750002213542,
+            "y": 0.6944444443287037
+          },
+          {
+            "confidence": 1,
+            "height": 0.04166666666666674,
+            "text": "4",
+            "width": 0.0234375,
+            "x": 0.764062499921875,
+            "y": 0.6944444441468254
+          },
+          {
+            "confidence": 1,
+            "height": 0.019705409473843027,
+            "text": "RETIRED.",
+            "width": 0.03754254877567298,
+            "x": 0.8921662250385374,
+            "y": 0.9498695171652184
+          },
+          {
+            "confidence": 0.5,
+            "height": 0.01666666666666672,
+            "text": "THE SOUR KNIGHTS",
+            "width": 0.07499999999999996,
+            "x": 0.8562500009375,
+            "y": 0.9666666665972221
+          }
+        ],
+        "issues": [
+          "slot 4: ambiguous pet"
+        ]
+      }
+    ],
+    "recognition": "Local SIFT sprite geometry and Lapsus Pro digit masks; confidence is an acceptance flag, not a calibrated probability.",
+    "unobservedFields": [
+      "experience",
+      "mana",
+      "equipment absence",
+      "equipment uses",
+      "internal identities"
+    ],
+    "source": "artifacts/latest"
+  },
+  "search": {
+    "attempted": 64,
+    "budget": 64,
+    "pending": 149,
+    "selectedTrial": 8,
+    "targetMatched": false,
+    "termination": "budget-exhausted",
+    "exhaustive": false,
+    "reason": "Only instrumented choices are searched. Budget exhaustion does not prove an engine bug; matching observations does not establish unobserved behavior."
+  },
+  "observedDivergence": 6
+}

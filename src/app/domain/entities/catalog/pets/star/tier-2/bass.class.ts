@@ -57,7 +57,7 @@ export class BassAbility extends Ability {
     const owner = this.owner;
 
     const excludePets = owner.parent.petArray.filter((pet) => {
-      return pet == owner && !pet.isSellPet() && pet.level < 2;
+      return pet == owner || !pet.isSellPet() || pet.level !== 2;
     });
 
     let targetResp = owner.parent.getRandomPet(

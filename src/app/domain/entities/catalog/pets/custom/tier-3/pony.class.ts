@@ -5,6 +5,7 @@ import { Equipment } from 'app/domain/entities/equipment.class';
 import { Pack, Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+import { feedBetterApple } from 'app/domain/entities/food-effects';
 
 export class Pony extends Pet {
   name = 'Pony';
@@ -62,12 +63,8 @@ export class PonyAbility extends Ability {
       return;
     }
 
-    const abilityService = (player as Player & {
-      abilityService: AbilityService;
-    }).abilityService;
-
     for (let i = 0; i < apples; i++) {
-      this.applyBetterApple(target, abilityService);
+      feedBetterApple(target);
     }
 
     if (this.logService.isEnabled()) this.logService.createLog({
@@ -81,14 +78,7 @@ export class PonyAbility extends Ability {
     this.triggerTigerExecution(context);
   }
 
-  private applyBetterApple(target: Pet, abilityService?: AbilityService): void {
-    target.increaseAttack(2);
-    target.increaseHealth(2);
-    abilityService?.triggerFoodEvents(target, 'better apple');
-  }
-
   override copy(newOwner: Pet): PonyAbility {
     return new PonyAbility(this.runtime, newOwner, this.logService);
   }
 }
-

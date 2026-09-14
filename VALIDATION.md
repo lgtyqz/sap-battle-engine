@@ -1,5 +1,17 @@
 # Validation
 
+## Bug Squisher regressions
+
+`tests/bug-squisher.spec.ts` runs each JSON fixture in
+[`tests/bug-squisher-fixtures`](tests/bug-squisher-fixtures/README.md) independently,
+replaying recorded randomness and comparing browser checkpoints and any observed
+winner. Add generated fixtures there without changing the spec. Run this suite
+with `npx vitest run tests/bug-squisher.spec.ts` or as part of `npm test`.
+Candidate mismatches fail normally; incomplete captures cover only accepted
+observations. The imported turn-6 candidate currently reproduces a checkpoint
+mismatch, so the full test command is expected to report that failure until it
+is resolved.
+
 ## Compatibility evidence
 
 Reference: SAP-Calculator commit `d165eb0a02f8aa0b54d72ed1d5490a44390d07f4`.

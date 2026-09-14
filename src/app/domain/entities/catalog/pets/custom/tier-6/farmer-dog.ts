@@ -5,7 +5,7 @@ import { Equipment } from '../../../../equipment.class';
 import { Pack, Pet } from '../../../../pet.class';
 import { Player } from '../../../../player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
-import { Corncob } from 'app/domain/entities/catalog/equipment/custom/corncob.class';
+import { feedCorncob } from 'app/domain/entities/food-effects';
 
 export class FarmerDog extends Pet {
   name = 'Farmer Dog';
@@ -51,7 +51,6 @@ export class FarmerDogAbility extends Ability {
 
   private executeAbility(context: AbilityContext): void {
     const owner = this.owner;
-    const effectMultiplier = this.level;
     const friends = owner.parent.petArray.filter(
       (pet) => pet && pet.alive && pet !== owner,
     );
@@ -61,13 +60,13 @@ export class FarmerDogAbility extends Ability {
     }
 
     for (const friend of friends) {
-      const cob = new Corncob(this.runtime);
-      cob.effectMultiplier = effectMultiplier;
-      friend.givePetEquipment(cob);
+      for (let i = 0; i < this.level; i++) {
+        feedCorncob(friend);
+      }
     }
 
     if (this.logService.isEnabled()) this.logService.createLog({
-      message: `${owner.name} fed ${effectMultiplier} Corncob${effectMultiplier === 1 ? '' : 's'} to ${friends.length} friend${friends.length === 1 ? '' : 's'}.`,
+      message: `${owner.name} fed ${this.level} Corncob${this.level === 1 ? '' : 's'} to ${friends.length} friend${friends.length === 1 ? '' : 's'}.`,
       type: 'ability',
       player: owner.parent,
       tiger: context.tiger,
@@ -81,4 +80,3 @@ export class FarmerDogAbility extends Ability {
     return new FarmerDogAbility(this.runtime, newOwner, this.logService);
   }
 }
-

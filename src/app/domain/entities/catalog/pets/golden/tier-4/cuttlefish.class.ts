@@ -55,9 +55,14 @@ export class CuttlefishAbility extends Ability {
     const { gameApi, triggerPet, tiger, pteranodon } = context;
     const owner = this.owner;
 
+    let excludeInkTargets = owner.parent.getPetsWithEquipmentWithSillyFallback(
+      'Inked',
+      owner,
+    );
+
     let targetsResp = owner.parent.opponent.getLastPets(
       this.level,
-      undefined,
+      excludeInkTargets,
       owner,
     );
     let targets = targetsResp.pets;
@@ -76,23 +81,7 @@ export class CuttlefishAbility extends Ability {
         pteranodon: pteranodon,
         randomEvent: targetsResp.random,
       });
-    }
 
-    let excludeInkTargets = owner.parent.getPetsWithEquipmentWithSillyFallback(
-      'Inked',
-      owner,
-    );
-    let InkTargetsResp = owner.parent.opponent.getLastPets(
-      this.level,
-      excludeInkTargets,
-      owner,
-    );
-    let InkTargets = InkTargetsResp.pets;
-    if (InkTargets.length == 0) {
-      return;
-    }
-
-    for (let target of InkTargets) {
       target.givePetEquipment(new Inked(this.runtime));
       if (this.logService.isEnabled()) this.logService.createLog({
         message: `${owner.name} gave ${target.name} Inked.`,
@@ -100,7 +89,7 @@ export class CuttlefishAbility extends Ability {
         player: owner.parent,
         tiger: tiger,
         pteranodon: pteranodon,
-        randomEvent: InkTargetsResp.random,
+        randomEvent: targetsResp.random,
       });
     }
 

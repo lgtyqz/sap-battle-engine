@@ -254,7 +254,7 @@ export abstract class PetRuntimeFacade extends PetTargetingRuntimeFacade {
   }
 
   triggerHurtEventsFor(pet: Pet, damage: number): void {
-    this.abilityService.triggerHurtEvents(pet, damage);
+    this.abilityService.triggerHurtEvents(pet, damage, this.asPet());
   }
 
   triggerKillEventsFor(pet: Pet): void {

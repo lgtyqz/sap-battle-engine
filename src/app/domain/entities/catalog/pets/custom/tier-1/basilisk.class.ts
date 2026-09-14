@@ -81,7 +81,7 @@ export class BasiliskAbility extends Ability {
         friendAhead.equipment,
       );
 
-      owner.parent.transformPet(friendAhead, rock);
+      owner.parent.transformPet(friendAhead, rock, { preserveStats: false });
 
       if (this.logService.isEnabled()) this.logService.createLog({
         message: `${owner.name} transformed ${friendAhead.name} into a Rock with +${hpBonus} health.`,
@@ -99,4 +99,3 @@ export class BasiliskAbility extends Ability {
     return new BasiliskAbility(this.runtime, newOwner, this.logService, this.abilityService);
   }
 }
-

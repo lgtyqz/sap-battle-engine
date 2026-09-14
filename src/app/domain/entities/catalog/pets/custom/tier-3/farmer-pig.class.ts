@@ -5,7 +5,7 @@ import { Equipment } from 'app/domain/entities/equipment.class';
 import { Pack, Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
-import { Corncob } from 'app/domain/entities/catalog/equipment/custom/corncob.class';
+import { feedCorncob } from 'app/domain/entities/food-effects';
 
 export class FarmerPig extends Pet {
   name = 'Farmer Pig';
@@ -61,9 +61,7 @@ export class FarmerPigAbility extends Ability {
 
     for (const friend of friends) {
       for (let i = 0; i < this.level; i++) {
-        const cob = new Corncob(this.runtime);
-        cob.effectMultiplier = 2;
-        friend.givePetEquipment(cob);
+        feedCorncob(friend, 2);
       }
     }
 
@@ -84,4 +82,3 @@ export class FarmerPigAbility extends Ability {
     return new FarmerPigAbility(this.runtime, newOwner, this.logService);
   }
 }
-

@@ -168,11 +168,15 @@ export const getSpecificPet = (
     return getRandomLivingPet(player, undefined, true);
   }
 
-  if (!target || !target.alive) {
+  const currentTarget = target?.transformed && target.transformedInto
+    ? target.transformedInto
+    : target;
+
+  if (!currentTarget || !currentTarget.alive) {
     return { pet: null, random: false };
   }
 
-  return { pet: target, random: false };
+  return { pet: currentTarget, random: false };
 };
 
 export const nearestPetsAhead = (
@@ -238,24 +242,27 @@ export const getPetsWithinXSpaces = (
   const callingPosition = callingPet.savedPosition;
   const targets: Pet[] = [];
 
-  for (const pet of player.petArray) {
-    if (pet.alive && pet !== callingPet) {
-      const distance = Math.abs(pet.position - callingPosition);
-      if (distance > 0 && distance <= range) {
-        targets.push(pet);
-      }
-    }
-  }
+  // A fainted pet no longer occupies a battle-line space. Walk outwards from
+  // the caller and count living pets, so gaps and pending removals are skipped.
+  const behind = player.petArray
+    .filter(
+      (pet) =>
+        pet.alive && pet !== callingPet && pet.position > callingPosition,
+    )
+    .sort((a, b) => a.position - b.position)
+    .slice(0, range);
+  targets.push(...behind);
 
-  const livingOpponents = player.opponent.petArray.filter((pet) => pet.alive);
-  for (const [targetPosition, pet] of livingOpponents.entries()) {
-    if (pet.alive) {
-      const distance = callingPosition + targetPosition + 1;
-      if (distance <= range) {
-        targets.push(pet);
-      }
-    }
-  }
+  const ahead = player.petArray
+    .filter(
+      (pet) =>
+        pet.alive && pet !== callingPet && pet.position < callingPosition,
+    )
+    .sort((a, b) => b.position - a.position);
+  const enemies = player.opponent.petArray
+    .filter((pet) => pet.alive)
+    .sort((a, b) => a.position - b.position);
+  targets.push(...[...ahead, ...enemies].slice(0, range));
 
   return { pets: targets, random: false };
 };
@@ -289,4 +296,3 @@ export const getOppositeEnemyPet = (
 
   return { pet: null, random: false };
 };
-

@@ -171,13 +171,18 @@ export class Player extends PlayerSummonFacade {
     );
   }
 
-  transformPet(originalPet: Pet, newPet: Pet): void {
+  transformPet(
+    originalPet: Pet,
+    newPet: Pet,
+    options: { preserveStats?: boolean } = {},
+  ): void {
     transformPetImpl(
       this,
       originalPet,
       newPet,
       this.abilityService,
       this.gameService,
+      options,
     );
   }
   /**
@@ -246,4 +251,3 @@ export class Player extends PlayerSummonFacade {
     return getOpponent(this.gameService.gameApi, this);
   }
 }
-

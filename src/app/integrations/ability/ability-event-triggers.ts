@@ -186,9 +186,14 @@ export abstract class AbilityEventTriggers {
     }
   }
 
-  triggerHurtEvents(hurtedPet: Pet, damageAmount?: number): void {
-    const customParams =
-      damageAmount !== undefined ? { damageAmount } : undefined;
+  triggerHurtEvents(
+    hurtedPet: Pet,
+    damageAmount?: number,
+    damageSource?: Pet,
+  ): void {
+    const customParams = damageAmount !== undefined || damageSource
+      ? { damageAmount, damageSource }
+      : undefined;
 
     // check friends
     for (let pet of this.abilityQueueService.getTeam(hurtedPet)) {

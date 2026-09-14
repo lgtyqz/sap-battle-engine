@@ -77,6 +77,6 @@ describe('Inked damage reduction', () => {
     );
 
     expect(snipeLog).toBeDefined();
-    expect(String(snipeLog?.message ?? '')).toContain('Firefly sniped Pig for 0.');
+    expect(String(snipeLog?.message ?? '')).toContain('Firefly sniped Pig for 1.');
   });
 });

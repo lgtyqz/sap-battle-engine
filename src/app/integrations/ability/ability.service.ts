@@ -266,9 +266,9 @@ export class AbilityService extends AbilityEventTriggers {
   }
 
   executeBeforeAttackTriggerOnly() {
-    if (this.resolutionCoordinator.isNonPhaseExecutionLocked) {
-      return;
-    }
+    // Jump attacks can happen while StartBattle resolution is locked. Their
+    // before-attack effects are part of the attack itself and must resolve
+    // immediately; the trigger-only filter leaves every other phase queued.
     const beforeAttackTriggers = new Set([
       'BeforeFriendlyAttack',
       'BeforeThisAttacks',
@@ -343,4 +343,3 @@ export class AbilityService extends AbilityEventTriggers {
   }
 
 }
-

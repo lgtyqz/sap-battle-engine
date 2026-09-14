@@ -444,6 +444,10 @@ export function dealDamage(self: Pet, pet: Pet, damage: number): void {
   }
   pet.health -= damage;
 
+  if (damage > 0) {
+    pet.lastAttacker = self;
+  }
+
   // Track who killed this pet
   if (pet.health <= 0) {
     pet.killedBy = self;
@@ -461,4 +465,3 @@ export function dealDamage(self: Pet, pet: Pet, damage: number): void {
     self.triggerHurtEventsFor(pet, damage);
   }
 }
-

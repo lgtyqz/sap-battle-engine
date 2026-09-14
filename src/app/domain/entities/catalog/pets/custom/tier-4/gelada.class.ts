@@ -6,6 +6,7 @@ import { Pack, Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
 import { SleepingGelada } from 'app/domain/entities/catalog/pets/hidden/sleeping-gelada.class';
+import { feedPear } from 'app/domain/entities/food-effects';
 
 export class Gelada extends Pet {
   name = 'Gelada';
@@ -99,13 +100,14 @@ export class GeladaAbility extends Ability {
 
     const owner = this.owner;
     const player = owner.parent;
-    const friends = player.petArray.filter((friend) => friend && friend.alive);
+    const friends = player.petArray.filter(
+      (friend) =>
+        friend && friend.alive && friend !== owner.transformedInto,
+    );
 
     for (const friend of friends) {
       for (let i = 0; i < pears; i++) {
-        friend.increaseAttack(1);
-        friend.increaseHealth(1);
-        this.abilityService.triggerFoodEvents(friend, 'pear');
+        feedPear(friend);
       }
     }
   }
@@ -114,4 +116,3 @@ export class GeladaAbility extends Ability {
     return new GeladaAbility(this.runtime, newOwner, this.logService, this.abilityService);
   }
 }
-

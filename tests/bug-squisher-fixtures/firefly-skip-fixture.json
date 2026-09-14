@@ -1,0 +1,2127 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate",
+  "metadata": {
+    "replayId": "01a08efb-012b-75d1-970c-7c6336084788",
+    "battleId": "70df79f5-902a-4f8e-aee5-e3600db2d642",
+    "turn": 1,
+    "assumptions": [],
+    "sapSeed": 1484357086,
+    "reportedOutcome": "draw",
+    "inputHash": "5e077886825e32a6e81760c4b1ff88ae296f9af3a8c22efdc24ed96cdbc2063f",
+    "rngCompatibility": "unverified"
+  },
+  "engine": {
+    "package": "0.1.0",
+    "resolved": "git+ssh://git@github.com/lgtyqz/sap-battle-engine.git#e18c8b8a7560173efc3cc3748fb287ea100c5832",
+    "upstream": "d165eb0a02f8aa0b54d72ed1d5490a44390d07f4"
+  },
+  "config": {
+    "turn": 1,
+    "simulationCount": 1,
+    "logsEnabled": true,
+    "maxLoggedBattles": 1,
+    "captureRandomDraws": true,
+    "captureRandomDecisions": true,
+    "optimizeDeterministicSimulations": false,
+    "mana": true,
+    "seed": 1484357086,
+    "playerPack": "Unicorn",
+    "playerGoldSpent": 10,
+    "playerRollAmount": 1,
+    "playerSummonedAmount": 3,
+    "playerLevel3Sold": 0,
+    "playerTransformationAmount": 0,
+    "playerLostLastBattle": false,
+    "playerPets": [
+      {
+        "name": "???",
+        "attack": 3,
+        "health": 2,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Pengobble",
+        "attack": 1,
+        "health": 4,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Alchemedes",
+        "attack": 3,
+        "health": 2,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      null,
+      null
+    ],
+    "opponentPack": "Star",
+    "opponentGoldSpent": 10,
+    "opponentRollAmount": 1,
+    "opponentSummonedAmount": 3,
+    "opponentLevel3Sold": 0,
+    "opponentTransformationAmount": 0,
+    "opponentLostLastBattle": false,
+    "opponentPets": [
+      {
+        "name": "Marmoset",
+        "attack": 2,
+        "health": 3,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Firefly",
+        "attack": 3,
+        "health": 2,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      null,
+      null,
+      {
+        "name": "Firefly",
+        "attack": 3,
+        "health": 2,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "randomDecisionOverrides": [],
+    "strictRandomOverrideValidation": true,
+    "randomDrawOverrides": [
+      {
+        "stream": "seeded",
+        "value": 0.700122797396034
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6632216605357826
+      },
+      {
+        "stream": "seeded",
+        "value": 0.1413305380847305
+      },
+      {
+        "stream": "seeded",
+        "value": 0.03900818689726293
+      },
+      {
+        "stream": "seeded",
+        "value": 0.27019128925167024
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5147112475242466
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2612264270428568
+      },
+      {
+        "stream": "seeded",
+        "value": 0.839519294211641
+      },
+      {
+        "stream": "seeded",
+        "value": 0.09851717087440193
+      },
+      {
+        "stream": "seeded",
+        "value": 0.099097695434466
+      },
+      {
+        "stream": "seeded",
+        "value": 0.526347043691203
+      },
+      {
+        "stream": "seeded",
+        "value": 0.21021781326271594
+      },
+      {
+        "stream": "seeded",
+        "value": 0.36119351582601666
+      },
+      {
+        "stream": "seeded",
+        "value": 0.12981076212599874
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8770080399699509
+      }
+    ]
+  },
+  "reference": {
+    "schemaVersion": 1,
+    "inputHash": "5e077886825e32a6e81760c4b1ff88ae296f9af3a8c22efdc24ed96cdbc2063f",
+    "complete": true,
+    "outcome": {
+      "winner": "draw",
+      "evidence": {
+        "frame": "terminal.png"
+      },
+      "method": "explicit-result-text",
+      "text": [
+        "DRAW"
+      ]
+    },
+    "captureComplete": true,
+    "coverage": "viewer-pauses",
+    "initialVerified": true,
+    "initialChecks": [
+      {
+        "frame": "frames/0000.png",
+        "timeMs": 593,
+        "differences": []
+      }
+    ],
+    "checkpoints": [
+      {
+        "timeMs": 593,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "???",
+              "attack": 3,
+              "health": 2
+            },
+            {
+              "name": "Pengobble",
+              "attack": 1,
+              "health": 4
+            },
+            {
+              "name": "Alchemedes",
+              "attack": 3,
+              "health": 2
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Marmoset",
+              "attack": 2,
+              "health": 3
+            },
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            },
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0000.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22228813874034464,
+                "margin": 0.09572099673202616
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.19363302139037433,
+                "margin": 0.12805351307189541
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22731914735591208,
+                "margin": 0.10537683823529409
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.2184371891872691,
+                "margin": 0.09546058006535954
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25805713383838386,
+                "margin": 0.08707618464052286
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21778956847890674,
+                "margin": 0.09477634803921564
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2599835672905526,
+                "margin": 0.0844362745098039
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22650076128936425,
+                "margin": 0.0975388071895425
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Alchemedes",
+                  "inliers": 37,
+                  "matches": 39,
+                  "scale": 0.9332986592110681,
+                  "ratio": 0.9487179487179487
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pacific Fanfish",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.9305540714846263,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pengobble",
+                  "inliers": 19,
+                  "matches": 19,
+                  "scale": 0.9344726101562482,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "???",
+                  "inliers": 22,
+                  "matches": 27,
+                  "scale": 0.9322481120859789,
+                  "ratio": 0.8148148148148148
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 42,
+                  "matches": 43,
+                  "scale": 0.9325257176220986,
+                  "ratio": 0.9767441860465116
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 16,
+                  "matches": 17,
+                  "scale": 0.9281898875860198,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 14,
+                  "matches": 15,
+                  "scale": 0.927966556611998,
+                  "ratio": 0.9333333333333333
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "initial"
+        ]
+      },
+      {
+        "timeMs": 3274,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "???",
+              "attack": 3,
+              "health": 2
+            },
+            {
+              "name": "Pengobble",
+              "attack": 1,
+              "health": 4
+            },
+            {
+              "name": "Alchemedes",
+              "attack": 3,
+              "health": 2
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Marmoset",
+              "attack": 2,
+              "health": 3
+            },
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            },
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0001.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22228813874034464,
+                "margin": 0.09572099673202616
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.19363302139037433,
+                "margin": 0.12805351307189541
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22731914735591208,
+                "margin": 0.10537683823529409
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.2184371891872691,
+                "margin": 0.09546058006535954
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25805713383838386,
+                "margin": 0.08707618464052286
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21778956847890674,
+                "margin": 0.09477634803921564
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2599835672905526,
+                "margin": 0.0844362745098039
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22650076128936425,
+                "margin": 0.0975388071895425
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Alchemedes",
+                  "inliers": 37,
+                  "matches": 39,
+                  "scale": 0.9328248887988464,
+                  "ratio": 0.9487179487179487
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pacific Fanfish",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.9305549997934106,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pengobble",
+                  "inliers": 15,
+                  "matches": 17,
+                  "scale": 0.9295217606746315,
+                  "ratio": 0.8823529411764706
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "???",
+                  "inliers": 22,
+                  "matches": 27,
+                  "scale": 0.9322481120859789,
+                  "ratio": 0.8148148148148148
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 42,
+                  "matches": 43,
+                  "scale": 0.9325257176220986,
+                  "ratio": 0.9767441860465116
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 16,
+                  "matches": 17,
+                  "scale": 0.9281898875860198,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 14,
+                  "matches": 15,
+                  "scale": 0.927966556611998,
+                  "ratio": 0.9333333333333333
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "PENGOBBLE",
+        "kinds": []
+      },
+      {
+        "timeMs": 5907,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "???",
+              "attack": 3,
+              "health": 2
+            },
+            {
+              "name": "Pengobble",
+              "attack": 1,
+              "health": 4
+            },
+            {
+              "name": "Alchemedes",
+              "attack": 3,
+              "health": 2
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Marmoset",
+              "attack": 2,
+              "health": 3
+            },
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            },
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0002.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22228813874034464,
+                "margin": 0.09572099673202616
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.19363302139037433,
+                "margin": 0.12805351307189541
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22731914735591208,
+                "margin": 0.10537683823529409
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.2184371891872691,
+                "margin": 0.09546058006535954
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25805713383838386,
+                "margin": 0.08707618464052286
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21778956847890674,
+                "margin": 0.09477634803921564
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23177686794414737,
+                "margin": 0.09404616013071893
+              },
+              "health": {
+                "value": 2,
+                "error": 0.23318618166963756,
+                "margin": 0.10415134803921566
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Alchemedes",
+                  "inliers": 37,
+                  "matches": 39,
+                  "scale": 0.9328248887988464,
+                  "ratio": 0.9487179487179487
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pacific Fanfish",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.9305549997934106,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pengobble",
+                  "inliers": 13,
+                  "matches": 14,
+                  "scale": 0.9328439806186976,
+                  "ratio": 0.9285714285714286
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "???",
+                  "inliers": 9,
+                  "matches": 16,
+                  "scale": 0.9173794655850531,
+                  "ratio": 0.5625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "???",
+                  "inliers": 30,
+                  "matches": 36,
+                  "scale": 0.9341410204556037,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Marmoset",
+                  "inliers": 41,
+                  "matches": 43,
+                  "scale": 0.9307305666402033,
+                  "ratio": 0.9534883720930233
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 16,
+                  "matches": 17,
+                  "scale": 0.9281898875860198,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 15,
+                  "matches": 16,
+                  "scale": 0.9283091843942902,
+                  "ratio": 0.9375
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": []
+      },
+      {
+        "timeMs": 8573,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Pengobble",
+              "attack": 1,
+              "health": 4
+            },
+            {
+              "name": "Alchemedes",
+              "attack": 3,
+              "health": 2
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            },
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0003.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21800402926322046,
+                "margin": 0.09159007352941176
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.1441793857694593,
+                "margin": 0.20901756535947716
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": 2,
+                "error": 0.22770072043969106,
+                "margin": 0.0979268790849673
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21778956847890674,
+                "margin": 0.09477634803921564
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Alchemedes",
+                  "inliers": 37,
+                  "matches": 37,
+                  "scale": 0.9337590829595993,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hedgehog",
+                  "inliers": 4,
+                  "matches": 5,
+                  "scale": 1.0913265878132528,
+                  "ratio": 0.8
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pengobble",
+                  "inliers": 12,
+                  "matches": 12,
+                  "scale": 0.9322070103381829,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 13,
+                  "matches": 14,
+                  "scale": 0.9307385387190042,
+                  "ratio": 0.9285714285714286
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 13,
+                  "matches": 13,
+                  "scale": 0.9292520647579465,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 10389,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Pengobble",
+              "attack": 1,
+              "health": 1
+            },
+            {
+              "name": "Alchemedes",
+              "attack": 3,
+              "health": 2
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 1
+            },
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0004.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21800402926322046,
+                "margin": 0.09159007352941176
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.1441793857694593,
+                "margin": 0.20901756535947716
+              },
+              "health": {
+                "value": 1,
+                "error": 0.22306010472370766,
+                "margin": 0.10475898692810462
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": 1,
+                "error": 0.1600699086452763,
+                "margin": 0.1820874183006536
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21778956847890674,
+                "margin": 0.09477634803921564
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Alchemedes",
+                  "inliers": 36,
+                  "matches": 36,
+                  "scale": 0.9337200386075744,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hedgehog",
+                  "inliers": 4,
+                  "matches": 5,
+                  "scale": 1.0913265878132528,
+                  "ratio": 0.8
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pengobble",
+                  "inliers": 4,
+                  "matches": 11,
+                  "scale": 0.9312664362431965,
+                  "ratio": 0.36363636363636365
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pengobble",
+                  "inliers": 18,
+                  "matches": 18,
+                  "scale": 0.9342624665577516,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 18,
+                  "matches": 18,
+                  "scale": 0.9267830134458531,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 13,
+                  "matches": 14,
+                  "scale": 0.930618641922342,
+                  "ratio": 0.9285714285714286
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 12989,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Alchemedes",
+              "attack": 3,
+              "health": 2
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 2
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0005.png"
+        },
+        "dying": [
+          {
+            "slot": 4,
+            "health": -2
+          },
+          {
+            "slot": 5,
+            "health": 0
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21800402926322046,
+                "margin": 0.09159007352941176
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.1441793857694593,
+                "margin": 0.20901756535947716
+              },
+              "health": {
+                "value": -2,
+                "error": 0.21935346108140227,
+                "margin": 0.10660743464052283
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": 0,
+                "error": 0.1969991030832623,
+                "margin": 0.08117029873543619
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 2,
+                "error": 0.21778956847890674,
+                "margin": 0.09477634803921564
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Alchemedes",
+                  "inliers": 34,
+                  "matches": 37,
+                  "scale": 0.9326269737374886,
+                  "ratio": 0.918918918918919
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hedgehog",
+                  "inliers": 4,
+                  "matches": 5,
+                  "scale": 1.0913265878132528,
+                  "ratio": 0.8
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Chinchilla",
+                  "method": "template",
+                  "error": 0.3133832514286041
+                },
+                {
+                  "name": "Rock",
+                  "method": "template",
+                  "error": 0.31622734665870667
+                },
+                {
+                  "name": "Manatee",
+                  "method": "template",
+                  "error": 0.32367435097694397
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Sphinx",
+                  "method": "template",
+                  "error": 0.2752513587474823
+                },
+                {
+                  "name": "Adult Flounder",
+                  "method": "template",
+                  "error": 0.2809291481971741
+                },
+                {
+                  "name": "Eel",
+                  "method": "template",
+                  "error": 0.28883785009384155
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 16,
+                  "matches": 17,
+                  "scale": 0.9281898875860198,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "FIREFLY",
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 15588,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Alchemedes",
+              "attack": 3,
+              "health": 1
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Firefly",
+              "attack": 3,
+              "health": 1
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0006.png"
+        },
+        "dying": [
+          {
+            "slot": 4,
+            "health": -2
+          },
+          {
+            "slot": 5,
+            "health": 0
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 1,
+                "error": 0.14622697563874035,
+                "margin": 0.15415645424836602
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.1441793857694593,
+                "margin": 0.20901756535947716
+              },
+              "health": {
+                "value": -2,
+                "error": 0.21935346108140227,
+                "margin": 0.10660743464052283
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": 0,
+                "error": 0.1969991030832623,
+                "margin": 0.08117029873543619
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 1,
+                "error": 0.15485646910279263,
+                "margin": 0.1617136437908497
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Alchemedes",
+                  "inliers": 36,
+                  "matches": 36,
+                  "scale": 0.9337390101938741,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hedgehog",
+                  "inliers": 4,
+                  "matches": 5,
+                  "scale": 1.0913265878132528,
+                  "ratio": 0.8
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Chinchilla",
+                  "method": "template",
+                  "error": 0.3273575007915497
+                },
+                {
+                  "name": "Rock",
+                  "method": "template",
+                  "error": 0.33234694600105286
+                },
+                {
+                  "name": "Manatee",
+                  "method": "template",
+                  "error": 0.3393908143043518
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Sphinx",
+                  "method": "template",
+                  "error": 0.25743338465690613
+                },
+                {
+                  "name": "Adult Flounder",
+                  "method": "template",
+                  "error": 0.26662734150886536
+                },
+                {
+                  "name": "Desert Rain Frog",
+                  "method": "template",
+                  "error": 0.26887160539627075
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Firefly",
+                  "inliers": 16,
+                  "matches": 17,
+                  "scale": 0.9281898875860198,
+                  "ratio": 0.9411764705882353
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 19005,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Alchemedes",
+              "attack": 3,
+              "health": 1
+            }
+          ],
+          "opponent": []
+        },
+        "evidence": {
+          "frame": "frames/0007.png"
+        },
+        "dying": [
+          {
+            "slot": 4,
+            "health": -2
+          },
+          {
+            "slot": 5,
+            "health": 0
+          },
+          {
+            "slot": 6,
+            "health": -2
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 1,
+                "error": 0.14622697563874035,
+                "margin": 0.15415645424836602
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 1,
+                "error": 0.1441793857694593,
+                "margin": 0.20901756535947716
+              },
+              "health": {
+                "value": -2,
+                "error": 0.21935346108140227,
+                "margin": 0.10660743464052283
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": 0,
+                "error": 0.1969991030832623,
+                "margin": 0.08117029873543619
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": -2,
+                "error": 0.22182857991681523,
+                "margin": 0.09503676470588232
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Alchemedes",
+                  "inliers": 34,
+                  "matches": 37,
+                  "scale": 0.9326269737374886,
+                  "ratio": 0.918918918918919
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hedgehog",
+                  "inliers": 4,
+                  "matches": 5,
+                  "scale": 1.0913265878132528,
+                  "ratio": 0.8
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Koala",
+                  "method": "template",
+                  "error": 0.29588496685028076
+                },
+                {
+                  "name": "Rock",
+                  "method": "template",
+                  "error": 0.2984062731266022
+                },
+                {
+                  "name": "Chinchilla",
+                  "method": "template",
+                  "error": 0.2996593713760376
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Sphinx",
+                  "method": "template",
+                  "error": 0.25557899475097656
+                },
+                {
+                  "name": "Adult Flounder",
+                  "method": "template",
+                  "error": 0.26016566157341003
+                },
+                {
+                  "name": "Desert Rain Frog",
+                  "method": "template",
+                  "error": 0.26887160539627075
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Great Potoo",
+                  "method": "template",
+                  "error": 0.29359114170074463
+                },
+                {
+                  "name": "Sneaky Egg",
+                  "method": "template",
+                  "error": 0.2979099154472351
+                },
+                {
+                  "name": "Daycrawler",
+                  "method": "template",
+                  "error": 0.29910576343536377
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "FIREFLY",
+        "kinds": [
+          "faint"
+        ]
+      }
+    ],
+    "gaps": [],
+    "recognition": "Local SIFT sprite geometry and Lapsus Pro digit masks; confidence is an acceptance flag, not a calibrated probability.",
+    "unobservedFields": [
+      "experience",
+      "mana",
+      "equipment absence",
+      "equipment uses",
+      "internal identities"
+    ],
+    "source": "/Users/lgtyqz/Documents/The KY HS Experience/KEVIN 2016-17/Kevin's Stuff/Game Stuff/sap-battle-engine-bug-squisher/artifacts/bug-scenarios/gaped-battle-01a08efb-012b-75d1-970c-7c6336084788-turn-1"
+  },
+  "search": {
+    "attempted": 7,
+    "budget": 64,
+    "pending": 0,
+    "selectedTrial": 0,
+    "targetMatched": false,
+    "termination": "no-more-captured-choices",
+    "exhaustive": false,
+    "reason": "Only instrumented choices are searched. Budget exhaustion does not prove an engine bug; matching observations does not establish unobserved behavior."
+  },
+  "observedDivergence": null
+}

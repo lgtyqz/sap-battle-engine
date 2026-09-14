@@ -87,7 +87,7 @@ export class PygmyHogAbility extends Ability {
       tiger: tiger,
     });
 
-    owner.parent.transformPet(owner, angryPygmyHog);
+    owner.parent.transformPet(owner, angryPygmyHog, { preserveStats: false });
 
     // Tiger system: trigger Tiger execution at the end
     this.triggerTigerExecution(context);
@@ -97,4 +97,3 @@ export class PygmyHogAbility extends Ability {
     return new PygmyHogAbility(this.runtime, newOwner, this.logService, this.abilityService);
   }
 }
-

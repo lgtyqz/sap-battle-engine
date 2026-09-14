@@ -1,7 +1,6 @@
 import type { EngineContext } from 'app/runtime/engine-context';
 import { AbilityService } from 'app/integrations/ability/ability.service';
 import { LogService } from 'app/integrations/log.service';
-import { Corncob } from 'app/domain/entities/catalog/equipment/custom/corncob.class';
 import { Ambrosia } from 'app/domain/entities/catalog/equipment/unicorn/ambrosia.class';
 import { WhiteOkra } from 'app/domain/entities/catalog/equipment/danger/white-okra.class';
 import { Strawberry } from 'app/domain/entities/catalog/equipment/star/strawberry.class';
@@ -45,10 +44,6 @@ export abstract class PetEquipmentFacade extends PetAbilityFacade {
         player: this.parent,
       });
       this.removePerk();
-      return;
-    }
-
-    if (this.handleCorncobEquipment(equipment)) {
       return;
     }
 
@@ -148,21 +143,6 @@ export abstract class PetEquipmentFacade extends PetAbilityFacade {
     }
 
     return Math.max(...pantherLevels);
-  }
-
-  private handleCorncobEquipment(equipment: Equipment): boolean {
-    if (equipment.name !== 'Corncob') {
-      return false;
-    }
-    const cob = equipment as Corncob;
-    const multiplier = Math.max(1, Math.floor(cob.effectMultiplier ?? 1));
-    if (this.attack <= this.health) {
-      this.increaseAttack(multiplier);
-    } else {
-      this.increaseHealth(multiplier);
-    }
-    this.abilityService.triggerFoodEvents(this.asPet(), 'corn');
-    return true;
   }
 
   private applyAilmentEquipment(

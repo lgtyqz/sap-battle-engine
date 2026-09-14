@@ -51,16 +51,18 @@ export class PorcupineAbility extends Ability {
   }
 
   private executeAbility(context: AbilityContext): void {
-    const { triggerPet } = context;
     const owner = this.owner;
+    const attacker = context.damageSource instanceof Pet
+      ? context.damageSource
+      : owner.lastAttacker;
 
-    if (triggerPet && triggerPet.alive && triggerPet.parent !== owner.parent) {
+    if (attacker && attacker.alive && attacker.parent !== owner.parent) {
       const damage = 3 * this.level;
 
-      owner.dealDamage(triggerPet, damage);
+      owner.dealDamage(attacker, damage);
 
       if (this.logService.isEnabled()) this.logService.createLog({
-        message: `${owner.name} reflected ${damage} damage to ${triggerPet.name}.`,
+        message: `${owner.name} reflected ${damage} damage to ${attacker.name}.`,
         type: 'ability',
         player: owner.parent,
       });
@@ -73,4 +75,3 @@ export class PorcupineAbility extends Ability {
     return new PorcupineAbility(this.runtime, newOwner, this.logService);
   }
 }
-

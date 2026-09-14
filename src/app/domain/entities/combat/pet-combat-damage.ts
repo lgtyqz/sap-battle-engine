@@ -134,7 +134,7 @@ export function calculateDamage(
   );
 
   if (snipe && self.equipment?.name === 'Inked' && damage > 0) {
-    damage = Math.max(0, damage - 3);
+    damage = Math.max(1, damage - 3);
   }
   if (defenseEquipment instanceof Pepper) {
     damage = Math.min(damage, pet.health - 1);

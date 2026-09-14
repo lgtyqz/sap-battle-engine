@@ -131,8 +131,14 @@ export const transformPet = (
   newPet: Pet,
   abilityService: AbilityService,
   gameService: GameService,
+  options: { preserveStats?: boolean } = {},
 ): void => {
   const targetPlayer = originalPet?.parent ?? player;
+
+  if (options.preserveStats !== false) {
+    newPet.attack = originalPet.attack;
+    newPet.health = originalPet.health;
+  }
 
   const resolveTransformSlot = (): number => {
     for (let index = 0; index <= 4; index++) {
@@ -293,4 +299,3 @@ export const summonPetBehind = (
     gameService,
   );
 };
-
