@@ -34,6 +34,12 @@
   Sleeping Gelada form from the recipients.
 - Routed Pony's Better Apples through the same food-effect path so their +2/+2
   and food triggers resolve consistently.
+- Made equipment-granting abilities search past any number of friends that
+  already hold the granted perk, allowing Turtle, Tahr, Toucan, Snapping Turtle,
+  and Painted Terrapin to reach valid friends farther back.
+- Made Banggai Cardinalfish commit its attack assignment as non-temporary, so a
+  preceding Giant Otter buff cannot remove that attack after the first
+  non-jump attack.
 
 ### Changed
 

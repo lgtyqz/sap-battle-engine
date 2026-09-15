@@ -5,6 +5,7 @@ import { Equipment } from '../../../../equipment.class';
 import { Pack, Pet } from '../../../../pet.class';
 import { Player } from '../../../../player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+import { GiantOtterAbility } from 'app/domain/entities/catalog/pets/danger/tier-4/giant-otter.class';
 
 export class BanggaiCardinalfish extends Pet {
   name = 'Banggai Cardinalfish';
@@ -61,12 +62,22 @@ export class BanggaiCardinalfishAbility extends Ability {
 
     let targetResp = owner.parent.getAll(true, owner, true);
     for (const targetPet of targetResp.pets) {
+      const commitsAttack = targetPet.attack >= minimumAttack;
       const newAttack =
         targetPet.attack > minimumAttack
           ? Math.max(targetPet.attack - attackReduction, minimumAttack)
           : targetPet.attack;
 
       targetPet.attack = newAttack;
+      if (commitsAttack) {
+        for (const friend of owner.parent.petArray) {
+          for (const ability of friend.getAbilities(undefined, 'Pet')) {
+            if (ability instanceof GiantOtterAbility) {
+              ability.commitTemporaryAttack(targetPet);
+            }
+          }
+        }
+      }
       if (this.logService.isEnabled()) this.logService.createLog({
         message: `${owner.name} reduced ${targetPet.name} attack by ${attackReduction} to ${newAttack}.`,
         type: 'ability',
@@ -84,4 +95,3 @@ export class BanggaiCardinalfishAbility extends Ability {
     return new BanggaiCardinalfishAbility(this.runtime, newOwner, this.logService);
   }
 }
-

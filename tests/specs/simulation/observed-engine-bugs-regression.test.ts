@@ -41,6 +41,41 @@ describe('observed engine bug regressions', () => {
     expect(messages.some((message) => message.includes('Crane gave Ant'))).toBe(false);
   });
 
+  it('lets Turtle skip friends with Melon to equip a farther friend', () => {
+    const config = createBaseConfig('Turtle');
+    config.logsEnabled = true;
+    config.playerPets[0] = createPet('Turtle', { attack: 1, health: 1 });
+    config.playerPets[1] = createPet('Fish', {
+      attack: 1,
+      health: 20,
+      equipment: { name: 'Melon' },
+    });
+    config.playerPets[2] = createPet('Ant', {
+      attack: 1,
+      health: 20,
+      equipment: { name: 'Melon' },
+    });
+    config.playerPets[3] = createPet('Pig', { attack: 1, health: 20 });
+    config.opponentPets[0] = createPet('Fish', { attack: 20, health: 50 });
+
+    const logs = runBattleLogs(config);
+    const turtleIndex = logs.findIndex((log) =>
+      log.message.includes('Turtle gave Pig Melon.'),
+    );
+    const afterTurtle = logs.slice(turtleIndex + 1).find((log) =>
+      log.board.player.some(
+        (pet) => pet?.name === 'Pig' && pet.equipment === 'Melon',
+      ),
+    );
+    const pig = afterTurtle?.board.player.find((pet) => pet?.name === 'Pig');
+
+    expect(turtleIndex).toBeGreaterThan(-1);
+    expect(pig).toMatchObject({
+      name: 'Pig',
+      equipment: 'Melon',
+    });
+  });
+
   it('reflects Porcupine damage to the pet that hurt it', () => {
     const config = createBaseConfig('Custom');
     config.logsEnabled = true;
@@ -105,6 +140,43 @@ describe('observed engine bug regressions', () => {
       ).toBe(receivesExperience);
     },
   );
+
+  it('keeps Banggai attack changes after Giant Otter removes its buffs', () => {
+    const config = createBaseConfig('Danger');
+    config.logsEnabled = true;
+    config.playerPets[0] = createPet('Giant Otter', {
+      attack: 4,
+      health: 20,
+    });
+    config.playerPets[1] = createPet('Banggai Cardinalfish', {
+      attack: 6,
+      health: 20,
+    });
+    config.playerPets[2] = createPet('Fish', { attack: 2, health: 20 });
+    config.playerPets[3] = createPet('Ant', { attack: 1, health: 20 });
+    config.opponentPets[0] = createPet('Fish', { attack: 1, health: 50 });
+
+    const logs = runBattleLogs(config);
+    const removalIndex = logs.findIndex((log) =>
+      log.message.includes(
+        'Giant Otter removed its temporary buffs after the first non-jump attack',
+      ),
+    );
+    const afterRemoval = logs.slice(removalIndex).find((log) =>
+      log.message.includes('Ant lost 2 attack and 5 health'),
+    );
+    const fish = afterRemoval?.board.player.find((pet) => pet?.name === 'Fish');
+    const ant = afterRemoval?.board.player.find((pet) => pet?.name === 'Ant');
+
+    expect(removalIndex).toBeGreaterThan(-1);
+    expect(fish?.attack).toBe(4);
+    expect(ant?.attack).toBe(1);
+    expect(
+      logs.some((log) =>
+        log.message.includes('Fish lost 2 attack (Giant Otter Buffs removed)'),
+      ),
+    ).toBe(false);
+  });
 
   it('preserves attack and health when Red Lipped Batfish transforms an enemy', () => {
     const config = createBaseConfig('Custom');

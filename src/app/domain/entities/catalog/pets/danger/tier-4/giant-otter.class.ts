@@ -65,6 +65,13 @@ export class GiantOtterAbility extends Ability {
     super.reset();
   }
 
+  commitTemporaryAttack(friend: Pet): void {
+    const stats = this.buffedFriends.get(friend);
+    if (stats) {
+      stats.attack = 0;
+    }
+  }
+
   removeConditionalBuffs(): void {
     if (this.buffedFriends.size > 0) {
       if (this.logService.isEnabled()) this.logService.createLog({
@@ -175,4 +182,3 @@ export class GiantOtterAbility extends Ability {
     return new GiantOtterAbility(this.runtime, newOwner, this.logService);
   }
 }
-

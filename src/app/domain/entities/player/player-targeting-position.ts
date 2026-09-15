@@ -143,7 +143,10 @@ export const nearestPetsBehind = (
     return getRandomLivingPets(player, amt, true, localExclude);
   }
 
-  const allPetsBehind = callingPet.getPetsBehind(amt * 2);
+  // Search the entire space behind the caller before applying exclusions.
+  // A run of friends that already have the granted perk must not hide a valid
+  // target farther back.
+  const allPetsBehind = callingPet.getPetsBehind(player.petArray.length);
   const filteredPets = allPetsBehind.filter(
     (pet) => !excludePets || !excludePets.includes(pet),
   );
