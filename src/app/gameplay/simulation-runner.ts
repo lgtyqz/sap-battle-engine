@@ -228,7 +228,9 @@ export class SimulationRunner {
       optimizeDeterministicSimulations: false,
     });
     const encounteredRandomDecision =
-      (simulation.randomDecisions?.length ?? 0) > 0;
+      simulation.randomDecisions?.some(
+        (decision) => decision.outcomeRelevant !== false,
+      ) ?? false;
     const encounteredRandomEvent =
       simulation.battles?.some((battle) =>
         battle.logs.some((event) => event.randomEvent === true),
@@ -236,7 +238,9 @@ export class SimulationRunner {
 
     return {
       deterministic:
-        !encounteredRandomDecision && !encounteredRandomEvent,
+        !encounteredRandomDecision &&
+        !encounteredRandomEvent &&
+        !this.runtime.random.hasRelevantRandomness,
       simulation,
     };
   }

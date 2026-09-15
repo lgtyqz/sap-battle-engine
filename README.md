@@ -112,7 +112,7 @@ Events are emitted before upstream presentation merging and collapsing. HTML boa
 
 ## Random decisions and complete replay
 
-The existing `seed`, `captureRandomDecisions`, `randomDecisionOverrides`, and `strictRandomOverrideValidation` behavior is retained. Decision indices span a whole simulation run. Overrides can identify a decision by index or by its key and label; upstream fingerprint precedence and repeated-label behavior are preserved. Forced choices still consume the original random draw.
+The existing `seed`, `captureRandomDecisions`, `randomDecisionOverrides`, and `strictRandomOverrideValidation` behavior is retained. Decision indices span a whole simulation run. Overrides can identify a decision by index or by its key and label; upstream fingerprint precedence and repeated-label behavior are preserved. Forced choices still consume the original random draw. A captured decision with `outcomeRelevant: false` changes presentation only, such as the ordering of simultaneous death logs.
 
 ```ts
 const captured = engine.runSimulation({

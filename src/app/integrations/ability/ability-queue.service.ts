@@ -120,7 +120,29 @@ export class AbilityQueueService {
   }
 
   getNextHighestPriorityEvent(): AbilityEvent | null {
-    return this.globalEventQueue.shift() || null;
+    const first = this.globalEventQueue[0];
+    if (!first) {
+      return null;
+    }
+
+    const abilityPriority = this.getAbilityPriority(first.abilityType);
+    const tied = this.getSourceEligibleEvents(this.globalEventQueue.filter(
+      (event) =>
+        this.getAbilityPriority(event.abilityType) === abilityPriority &&
+        event.priority === first.priority,
+    ));
+    if (
+      tied.length > 1 &&
+      new Set(tied.map((event) => this.describeEvent(event))).size === tied.length &&
+      tied.some((event) => event.customParams?.isDeathLog !== true)
+    ) {
+      // General ability-cycle ties already use their queued random tie
+      // breakers. Record their gameplay relevance without adding a public
+      // decision-capture step or changing override indices.
+      this.runtime.random.markRelevantRandomness();
+    }
+
+    return this.globalEventQueue.shift() ?? null;
   }
 
   takeNextMatchingEvent(
@@ -178,6 +200,9 @@ export class AbilityQueueService {
     const distinctDescriptions = new Set(
       eligibleTied.map((event) => this.describeEvent(event)),
     );
+    const onlyDeathLogs = eligibleTied.every(
+      (event) => event.customParams?.isDeathLog === true,
+    );
     if (
       eligibleTied.length > 1 &&
       distinctDescriptions.size === eligibleTied.length
@@ -193,6 +218,9 @@ export class AbilityQueueService {
             id: this.describeEvent(event),
             label: `${this.describeEvent(event)} resolves first`,
           })),
+          // Preserve this choice in captures/replays (and preserve subsequent
+          // decision indices), while declaring that it only affects logs.
+          ...(onlyDeathLogs ? { outcomeRelevant: false } : {}),
         }),
         () => {
           let selectedIndex = 0;

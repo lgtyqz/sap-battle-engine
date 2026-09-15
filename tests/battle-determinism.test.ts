@@ -55,6 +55,29 @@ describe('battle determinism probe', () => {
     ))).toBe(true);
   });
 
+  it('ignores the cosmetic ordering of simultaneous death logs', () => {
+    const probe = createBattleEngine({ entropy: () => 0.375 })
+      .probeBattleDeterminism(battle(
+        [pet('Fish', 5, 4)],
+        [pet('Pig', 4, 5)],
+      ));
+
+    expect(probe.deterministic).toBe(true);
+    expect(probe.simulation).toMatchObject({
+      playerWins: 0,
+      opponentWins: 0,
+      draws: 1,
+      randomDecisions: [{
+        key: 'ability-queue.tie-order',
+        outcomeRelevant: false,
+      }],
+    });
+    expect(
+      probe.simulation?.battles?.[0]?.logs
+        .filter((event) => event.type === 'death'),
+    ).toHaveLength(2);
+  });
+
   it('short-circuits catalog-marked randomness before simulating', () => {
     const engine = createBattleEngine();
 
@@ -105,10 +128,17 @@ describe('battle determinism probe', () => {
     expect(isBattleDeterministic(tiedTriggers)).toBe(false);
   });
 
-  it('recognizes a random initial attacker when front pets have equal attack', () => {
+  it('does not treat an outcome-equivalent equal-attack matchup as random', () => {
     expect(isBattleDeterministic(battle(
       [pet('Fish', 5, 10)],
       [pet('Pig', 5, 10)],
+    ))).toBe(true);
+  });
+
+  it('still recognizes tied simultaneous Faint abilities as random', () => {
+    expect(isBattleDeterministic(battle(
+      [pet('Cricket', 5, 5)],
+      [pet('Cricket', 5, 5)],
     ))).toBe(false);
   });
 

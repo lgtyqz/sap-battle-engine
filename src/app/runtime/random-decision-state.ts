@@ -19,6 +19,7 @@ export interface RandomChoiceRequest {
   key: string;
   label: string;
   options: RandomDecisionOption[];
+  outcomeRelevant?: boolean;
 }
 
 export interface RandomChoiceResult {
@@ -45,12 +46,16 @@ export class RandomSource {
   private tape: readonly RandomDraw[] | undefined;
   private cursor = 0;
   private replayError: Error | null = null;
+  private relevantRandomnessEncountered = false;
   draws: RandomDraw[] = [];
   constructor(entropy: () => number = Math.random) { this.entropy = entropy; }
   begin(seed?: number | null, capture = false, tape?: readonly RandomDraw[]) {
     this.source = seed == null || !Number.isFinite(seed) ? this.entropy : createSeededRandom(Math.trunc(seed));
+    this.relevantRandomnessEncountered = false;
     this.captureDraws = capture; this.tape = tape; this.cursor = 0; this.draws = []; this.replayError = null;
   }
+  markRelevantRandomness(): void { this.relevantRandomnessEncountered = true; }
+  get hasRelevantRandomness(): boolean { return this.relevantRandomnessEncountered; }
   private draw(stream: 'seeded' | 'shuffle'): number {
     const entry = this.tape?.[this.cursor];
     if (this.tape && (!entry || entry.stream !== stream)) this.failReplay(`Random tape mismatch at draw ${this.cursor}`);
@@ -202,6 +207,9 @@ export class RandomSource {
         options,
         selectedOptionId: options[selectedIndex]?.id ?? null,
         forced,
+        ...(request.outcomeRelevant === false
+          ? { outcomeRelevant: false }
+          : {}),
       });
     }
 

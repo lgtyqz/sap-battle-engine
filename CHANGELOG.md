@@ -6,6 +6,9 @@
 
 - Restored the `Random` catalog metadata for 89 pets, 14 toys, and 18 foods so
   known-random battle configurations are not misclassified as deterministic.
+- Ignored cosmetic simultaneous death-log ordering when probing battle
+  determinism, while retaining detection of tied Faint and Friend Faints
+  ability resolution.
 - Monkey-Faced Bat 3 health -> 4 health.
 - Serpent, Beluga, etc. are no longer considered Faint pets.
 
@@ -22,8 +25,7 @@
 - Added `engine.probeBattleDeterminism(config)` so callers can retain the
   instrumented probe result instead of simulating the same battle again.
 - Added regression coverage for random pets, toys, equipment, mana fainting,
-  Silly, equal-attack starts, equal-priority triggers, and erased randomness
-  metadata.
+  Silly, equal-priority triggers, and erased randomness metadata.
 
 ## 2026-09-14
 

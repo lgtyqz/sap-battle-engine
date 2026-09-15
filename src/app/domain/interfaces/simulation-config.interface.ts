@@ -113,6 +113,8 @@ export interface RandomDecisionCapture {
   options: RandomDecisionOption[];
   selectedOptionId: string | null;
   forced: boolean;
+  /** False when the choice only changes presentation, not battle state. */
+  outcomeRelevant?: boolean;
 }
 
 export interface RandomDecisionOverride {

@@ -49,6 +49,19 @@ describe('fight optimizer integration', () => {
       matchup.simulations === 1 && matchup.playerWins === 1,
     )).toBe(true);
   });
+  it('uses one simulation when only simultaneous death-log order is random', () => {
+    const result = optimizeFight({
+      ...config,
+      playerPets: [{name:'Fish', attack:5, health:4}],
+      opponentPets: [{name:'Pig', attack:4, health:5}],
+    }, {maxSimulations:15});
+
+    expect(result.stats.simulations).toBe(5);
+    expect(result.matchups).toHaveLength(5);
+    expect(result.matchups.every(matchup =>
+      matchup.simulations === 1 && matchup.draws === 1,
+    )).toBe(true);
+  });
   it('honors exact budgets and publishes no incomplete random response', () => {
     const randomConfig = {
       ...config,
@@ -75,8 +88,8 @@ describe('fight optimizer integration', () => {
   it('reuses a runtime-random probe as the first optimizer sample', () => {
     const result = optimizeFight({
       ...config,
-      playerPets: [{name:'Fish', attack:5, health:10}],
-      opponentPets: [{name:'Pig', attack:5, health:10}],
+      playerPets: [{name:'Cricket', attack:5, health:5}],
+      opponentPets: [{name:'Cricket', attack:5, health:5}],
     }, {refinementSimulations:15, maxResponseSteps:1});
 
     expect(result.matchups).toHaveLength(5);
