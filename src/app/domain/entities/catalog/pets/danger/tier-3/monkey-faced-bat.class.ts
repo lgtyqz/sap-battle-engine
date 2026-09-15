@@ -12,7 +12,7 @@ export class MonkeyFacedBat extends Pet {
   tier = 3;
   pack: Pack = 'Danger';
   attack = 3;
-  health = 3;
+  health = 4;
   initAbilities(): void {
     this.addAbility(new MonkeyFacedBatAbility(this.runtime, this, this.logService));
     super.initAbilities();

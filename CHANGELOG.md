@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-09-15
+
+### Fixed
+
+- Restored the `Random` catalog metadata for 89 pets, 14 toys, and 18 foods so
+  known-random battle configurations are not misclassified as deterministic.
+- Monkey-Faced Bat 3 health -> 4 health.
+- Serpent, Beluga, etc. are no longer considered Faint pets.
+
+### Changed
+
+- Made the fight optimizer probe each matchup for determinism. Deterministic
+  matchups reuse the probe as their sole simulation, while random matchups
+  retain the probe as their first sample before continuing to 15 or 50.
+
+### Added
+
+- Added `isBattleDeterministic(config)` and the reusable-engine equivalent for
+  detecting known or encountered randomness after at most one battle.
+- Added `engine.probeBattleDeterminism(config)` so callers can retain the
+  instrumented probe result instead of simulating the same battle again.
+- Added regression coverage for random pets, toys, equipment, mana fainting,
+  Silly, equal-attack starts, equal-priority triggers, and erased randomness
+  metadata.
+
 ## 2026-09-14
 
 ### Fixed

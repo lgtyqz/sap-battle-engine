@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  catalogs,
   createBattleEngine,
   isBattleDeterministic,
   type PetConfig,
@@ -28,6 +29,25 @@ const battle = (
 });
 
 describe('battle determinism probe', () => {
+  it('retains the catalog randomness annotations used by the static probe', () => {
+    const randomNames = <T extends { Name: string; Random?: boolean }>(
+      entries: readonly T[],
+    ) => entries.filter((entry) => entry.Random).map((entry) => entry.Name);
+
+    expect(randomNames(catalogs.pets)).toHaveLength(89);
+    expect(randomNames(catalogs.pets)).toEqual(expect.arrayContaining([
+      'Ant',
+      'Tree Kangaroo',
+    ]));
+    expect(randomNames(catalogs.toys)).toHaveLength(14);
+    expect(randomNames(catalogs.toys)).toContain('Pandoras Box');
+    expect(randomNames(catalogs.food)).toHaveLength(18);
+    expect(randomNames(catalogs.food)).toEqual(expect.arrayContaining([
+      'Fortune Cookie',
+      'Popcorn',
+    ]));
+  });
+
   it('recognizes a battle with no random choices as deterministic', () => {
     expect(isBattleDeterministic(battle(
       [pet('Fish', 4, 5)],
@@ -35,16 +55,22 @@ describe('battle determinism probe', () => {
     ))).toBe(true);
   });
 
-  it('recognizes catalog-marked random pets and toys', () => {
-    expect(isBattleDeterministic(battle(
-      [pet('Ant', 2, 1), pet('Fish', 3, 3), pet('Pig', 3, 3)],
-      [pet('Fish', 10, 10)],
-    ))).toBe(false);
-    expect(isBattleDeterministic(battle(
-      [pet('Fish', 4, 5)],
-      [pet('Pig', 3, 4)],
+  it('short-circuits catalog-marked randomness before simulating', () => {
+    const engine = createBattleEngine();
+
+    expect(engine.probeBattleDeterminism(battle(
+      [pet('Ant', 100, 100)],
+      [],
+    ))).toEqual({ deterministic: false });
+    expect(engine.probeBattleDeterminism(battle(
+      [],
+      [],
       { playerToy: 'Pandoras Box', playerToyLevel: 1 },
-    ))).toBe(false);
+    ))).toEqual({ deterministic: false });
+    expect(engine.probeBattleDeterminism(battle(
+      [pet('Fish', 100, 100, { equipment: 'Fortune Cookie' })],
+      [],
+    ))).toEqual({ deterministic: false });
   });
 
   it('recognizes random mana faint targets', () => {
@@ -59,10 +85,10 @@ describe('battle determinism probe', () => {
       [pet('Fish', 4, 5, { equipment: 'Silly' })],
       [pet('Pig', 3, 4)],
     ))).toBe(false);
-    expect(isBattleDeterministic(battle(
+    expect(createBattleEngine().probeBattleDeterminism(battle(
       [pet('Tree Kangaroo', 3, 4)],
-      [pet('Fish', 4, 5)],
-    ))).toBe(false);
+      [],
+    ))).toEqual({ deterministic: false });
   });
 
   it('recognizes equal-priority trigger order at runtime', () => {

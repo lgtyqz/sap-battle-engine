@@ -251,14 +251,9 @@ export abstract class PetAbilityFacade {
   }
 
   isFaintPet(): boolean {
-    const abilities = [...this.originalAbilityList, ...this.abilityList];
-    return abilities.some((ability) => {
-      return (
-        (ability.matchesTrigger('PostRemovalFaint') ||
-          ability.matchesTrigger('Faint')) &&
-        ability.abilityType == 'Pet'
-      );
-    });
+    return this.runtime.services.petService?.isFaintPetName(
+      this.baseName ?? this.name,
+    ) ?? false;
   }
 
   protected asPet(): Pet {

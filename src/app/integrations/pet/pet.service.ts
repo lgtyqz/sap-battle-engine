@@ -25,6 +25,23 @@ interface PetJsonEntry {
   Random?: boolean;
 }
 
+const hasFaintTriggerText = (pet: PetJsonEntry): boolean =>
+  Array.isArray(pet.Abilities) &&
+  pet.Abilities.some((ability) => {
+    const about = ability?.About;
+    if (typeof about !== 'string') {
+      return false;
+    }
+
+    // The game treats "Faint" as an ability category expressed by the
+    // leading trigger in the pet text. Internal Faint/PostRemovalFaint
+    // triggers are also used to implement passive effects such as Sea
+    // Serpent and Beluga Whale, so those runtime triggers are not enough to
+    // identify a Faint pet. Keep combined triggers such as "Faint & Sell".
+    const plainText = about.replace(/<[^>]*>/g, '').trim();
+    return /^Faint(?:\s*&\s*[^:]+)?\s*:/i.test(plainText);
+  });
+
 const MIN_TIER = 1;
 const MAX_TIER = 6;
 const ALL_TIERS = [1, 2, 3, 4, 5, 6] as const;
@@ -287,17 +304,21 @@ export class PetService {
       if (!Array.isArray(pet.Abilities)) {
         continue;
       }
-      const hasFaintAbility = pet.Abilities.some((ability) => {
-        const about = ability?.About;
-        return typeof about === 'string' && about.includes('Faint:');
-      });
-      if (!hasFaintAbility) {
+      if (!hasFaintTriggerText(pet)) {
         continue;
       }
       faintMap.get(tier)?.push(pet.Name);
     }
     this.deduplicateTierMap(faintMap);
     return faintMap;
+  }
+
+  isFaintPetName(name: string): boolean {
+    let pet = this.petDataMap.get(name);
+    if (!pet) {
+      pet = this.getPetEntriesFromJson().find((entry) => entry.Name === name);
+    }
+    return pet ? hasFaintTriggerText(pet) : false;
   }
 
   getFaintPetNamesByTiers(tiers: number[]): string[] {
@@ -574,4 +595,3 @@ export class PetService {
     return `${sourceSide}${sourcePosition} ${sourcePet.name} (owner: ${ownerSide})`;
   }
 }
-

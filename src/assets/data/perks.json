@@ -55,6 +55,13 @@
     "NameId": "BokChoy"
   },
   {
+    "Ability": "End turn: Gain +7 health until next turn.",
+    "Positive": true,
+    "Id": "41",
+    "Name": "Bread",
+    "NameId": "Bread"
+  },
+  {
     "Ability": "Block being pushed or 5 damage, once.",
     "Positive": true,
     "Id": "66",
@@ -132,13 +139,6 @@
     "NameId": "Churros"
   },
   {
-    "Ability": "End turn: Gain +7 health until next turn.",
-    "Positive": true,
-    "Id": "124",
-    "Name": "Bread",
-    "NameId": "Bread"
-  },
-  {
     "Ability": "Before attack: Transform into a random summon pet.",
     "Positive": true,
     "Id": "94",
@@ -173,7 +173,7 @@
   },
   {
     "Ability": "Before attack: Move to the back, once.",
-    "Id": "125",
+    "Id": "124",
     "Name": "Cowardly",
     "NameId": "Cowardly"
   },
@@ -288,6 +288,13 @@
     "NameId": "Garlic"
   },
   {
+    "Ability": "Before attack: Remove 5 attack from target, once.",
+    "Positive": true,
+    "Id": "125",
+    "Name": "Geechee Red Pea",
+    "NameId": "GeecheeRedPea"
+  },
+  {
     "Ability": "Before battle: Gain +1 experience.",
     "Positive": true,
     "Id": "52",
@@ -351,6 +358,7 @@
   },
   {
     "Ability": "Attack and ability deal 3 less damage.",
+    "FinePrint": "Damage can't be reduced to less than 1.",
     "Id": "37",
     "Name": "Inked",
     "NameId": "Ink"
@@ -384,7 +392,7 @@
     "NameId": "Lime"
   },
   {
-    "Ability": "Activate ability at level 1.",
+    "Ability": "Immediately activate ability at level 1.",
     "Positive": true,
     "Id": "122",
     "Name": "Liquorice",
@@ -417,6 +425,13 @@
     "Id": "48",
     "Name": "Magic Beans",
     "NameId": "MagicBeans"
+  },
+  {
+    "Ability": "Before battle: Gain +6 mana.",
+    "Positive": true,
+    "Id": "61",
+    "Name": "Mana Potion",
+    "NameId": "ManaPotion"
   },
   {
     "Ability": "Attack for 50% damage and block 50% damage, thrice.",
