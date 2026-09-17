@@ -62,19 +62,29 @@ export class BanggaiCardinalfishAbility extends Ability {
 
     let targetResp = owner.parent.getAll(true, owner, true);
     for (const targetPet of targetResp.pets) {
-      const commitsAttack = targetPet.attack >= minimumAttack;
+      const startingAttack = targetPet.attack;
       const newAttack =
-        targetPet.attack > minimumAttack
-          ? Math.max(targetPet.attack - attackReduction, minimumAttack)
-          : targetPet.attack;
+        startingAttack > minimumAttack
+          ? Math.max(startingAttack - attackReduction, minimumAttack)
+          : startingAttack;
 
       targetPet.attack = newAttack;
-      if (commitsAttack) {
-        for (const friend of owner.parent.petArray) {
+      let remainingReduction = Math.max(0, startingAttack - newAttack);
+      if (remainingReduction > 0) {
+        for (const friend of targetPet.parent.petArray) {
           for (const ability of friend.getAbilities(undefined, 'Pet')) {
             if (ability instanceof GiantOtterAbility) {
-              ability.commitTemporaryAttack(targetPet);
+              remainingReduction -= ability.consumeTemporaryAttack(
+                targetPet,
+                remainingReduction,
+              );
+              if (remainingReduction <= 0) {
+                break;
+              }
             }
+          }
+          if (remainingReduction <= 0) {
+            break;
           }
         }
       }

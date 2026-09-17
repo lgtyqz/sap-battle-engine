@@ -1,5 +1,6 @@
 import type { Pet } from '../pet.class';
 import type { Equipment } from '../equipment.class';
+import { MapleSyrup } from 'app/domain/entities/catalog/equipment/golden/maple-syrup.class';
 
 const STRAWBERRY_BLOCK_PER_SPARROW_LEVEL = 5;
 const MANTICORE_AILMENTS = ['Weak', 'Cold', 'Icky', 'Spooked'];
@@ -54,6 +55,8 @@ export function appendSnipeDefenseEquipmentMessage(
 
   if (options.coconutAsBlock && defenseEquipment.name === 'Coconut') {
     message += ` (${defenseEquipment.name} block)`;
+  } else if (defenseEquipment instanceof MapleSyrup) {
+    message += ` (${defenseEquipment.name} x0.5)`;
   } else if (defenseEquipment.name === 'Strawberry') {
     const strawberryBlockAmount =
       defenseEquipment.power ?? getStrawberrySparrowBlockAmount(pet);

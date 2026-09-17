@@ -58,6 +58,7 @@ export class IbexAbility extends Ability {
         return (
           triggerPet &&
           triggerPet.alive &&
+          triggerPet.health > 1 &&
           !this.affectedEnemies.has(triggerPet)
         );
       },
@@ -79,7 +80,7 @@ export class IbexAbility extends Ability {
     }
 
     // Calculate 70% health reduction
-    let healthReduction = Math.floor(triggerPet.health * 0.7);
+    let healthReduction = Math.ceil(triggerPet.health * 0.7);
 
     // Apply damage
     target.increaseHealth(-healthReduction);

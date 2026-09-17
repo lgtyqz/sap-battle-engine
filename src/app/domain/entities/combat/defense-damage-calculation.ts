@@ -1,12 +1,10 @@
 import type { Pet } from '../pet.class';
 import type { Equipment } from '../equipment.class';
-import { MapleSyrup } from 'app/domain/entities/catalog/equipment/golden/maple-syrup.class';
 import { applyIckyMultiplier, applyManticoreMultiplier } from './damage-reduction';
 import { getStrawberrySparrowBlockAmount } from './combat-snipe-utils';
 
 type PrepareDefenseOptions = {
   includeShieldSnipe?: boolean;
-  nullifyMapleSyrupDefense?: boolean;
   manticoreDefenseAilments?: string[];
 };
 
@@ -24,7 +22,6 @@ export function prepareDefenseForIncomingDamage(
 ): PreparedDefense {
   let defenseMultiplier = pet.equipment?.multiplier ?? 1;
   const includeShieldSnipe = options.includeShieldSnipe ?? false;
-  const nullifyMapleSyrupDefense = options.nullifyMapleSyrupDefense ?? false;
   const manticoreDefenseAilments =
     options.manticoreDefenseAilments ?? DEFAULT_MANTICORE_DEFENSE_AILMENTS;
 
@@ -47,10 +44,6 @@ export function prepareDefenseForIncomingDamage(
     }
     defenseEquipment.power = strawberryBlockAmount;
     return { defenseEquipment, defenseMultiplier };
-  }
-
-  if (nullifyMapleSyrupDefense && defenseEquipment instanceof MapleSyrup) {
-    return { defenseEquipment: null, defenseMultiplier };
   }
 
   defenseMultiplier = applyManticoreMultiplier(

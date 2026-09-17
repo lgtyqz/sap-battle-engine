@@ -38,7 +38,7 @@ export function isBattleStaticallyDeterministic(
       const pet = pets[i];
       if (!pet || !pet.name) continue;
 
-      if (petService.isPetRandom(pet.name)) {
+      if (!pet.plainCopy && petService.isPetRandom(pet.name)) {
         return false;
       }
 

@@ -29,7 +29,7 @@ export class Nutcracker extends Toy {
 
   private queueSalmonSpawn() {
     this.pendingSpawn = true;
-    this.abilityService.setCounterEvent({
+    this.abilityService.setDeferredEvent({
       priority: 0,
       callback: (_trigger?: unknown, _gameApi?: GameAPI, _triggerPet?: Pet) => {
         this.pendingSpawn = false;
@@ -155,4 +155,3 @@ export class NutcrackerAbility extends Ability {
     );
   }
 }
-

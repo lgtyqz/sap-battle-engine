@@ -113,8 +113,9 @@ export class RandomSource {
       const label = `${override.label ?? ''}`.trim();
       if (key && label) {
         overridesByFingerprint.set(getDecisionFingerprint(key, label), optionId);
+      } else {
+        overridesByIndex.set(normalizedIndex, optionId);
       }
-      overridesByIndex.set(normalizedIndex, optionId);
     }
     this.activeSession = {
       capture: Boolean(options?.capture),

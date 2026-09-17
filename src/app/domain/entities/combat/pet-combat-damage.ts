@@ -43,7 +43,6 @@ export function calculateDamage(
   const manticoreAttackAilments = ['Inked'];
   const preparedDefense = prepareDefenseForIncomingDamage(pet, manticoreMult, {
     includeShieldSnipe: snipe,
-    nullifyMapleSyrupDefense: snipe,
   });
   let defenseEquipment = preparedDefense.defenseEquipment;
   defenseMultiplier = preparedDefense.defenseMultiplier;
@@ -91,8 +90,8 @@ export function calculateDamage(
     attackAmt = baseAttack + equipmentBonus;
   }
   let mapleSyrupReduction = 0;
-  if (pet.equipment instanceof MapleSyrup && pet.equipment.uses > 0 && !snipe) {
-    attackAmt = Math.floor(attackAmt * Math.pow(0.5, defenseMultiplier));
+  if (pet.equipment instanceof MapleSyrup && pet.equipment.uses > 0) {
+    attackAmt = Math.ceil(attackAmt * Math.pow(0.5, defenseMultiplier));
   }
 
   if (attackEquipment instanceof Salt && !snipe) {
@@ -100,7 +99,7 @@ export function calculateDamage(
   }
 
   if (attackEquipment instanceof MapleSyrupAttack && !snipe) {
-    attackAmt = Math.floor(attackAmt * Math.pow(0.5, attackMultiplier));
+    attackAmt = Math.ceil(attackAmt * Math.pow(0.5, attackMultiplier));
   }
 
   let fortuneCookie = false;

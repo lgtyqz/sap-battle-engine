@@ -10,6 +10,7 @@ export interface ResolutionPhase {
   nonPhaseFilter: AbilityEventFilter;
   interleaveNonPhaseEvents: boolean;
   lockNonPhaseExecution?: boolean;
+  drainNonPhaseEvents?: boolean;
 }
 
 /**
@@ -76,7 +77,10 @@ export class AbilityResolutionCoordinator {
       }
     }
 
-    if (!phase.interleaveNonPhaseEvents) {
+    if (
+      !phase.interleaveNonPhaseEvents &&
+      phase.drainNonPhaseEvents !== false
+    ) {
       this.drain(phase.nonPhaseFilter, { synchronizeDeaths: true });
     }
   }

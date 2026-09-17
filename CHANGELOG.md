@@ -1,5 +1,55 @@
 # Changelog
 
+## 2026-09-17
+
+### Fixed
+
+- Made African Wild Dogs summoned by Takhi inherit Takhi's level so their jump
+  damage scales correctly instead of always dealing 3 damage.
+- Rounded Maple Syrup attack and defense damage up, and applied its reduction
+  to ability, Chili, Crocodile, and toy snipes instead of bypassing it.
+- Rounded Ibex's 70% health removal up without allowing it to remove the last
+  health from a one-health target.
+- Prevented a Pygmy Hog killed by the triggering attack or snipe from executing
+  its queued Angry Pygmy Hog transformation.
+- Made Banggai Cardinalfish consume Giant Otter's temporary attack before
+  reducing base attack, preventing the temporary buff's later removal from
+  reducing the target twice.
+- Stopped fingerprinted random-decision overrides from falling back to an
+  unrelated decision at the same index, fixing Blowfish capture and replay
+  failures.
+- Made Bombus Dahlbomii deal its damage directly during counter-ability timing
+  instead of adding a second, incorrectly delayed callback.
+
+### Changed
+
+- Replaced the flat ability-priority table with canonical catalogs for the four
+  battle phases and all 26 normal-order slots. Newly activated abilities now
+  re-enter that order immediately.
+- Ordered start-of-battle sources as Churros pets, toys, then other pets before
+  normal reactions. Same-trigger pet abilities otherwise use higher attack
+  first with random ties, while retaining the Churros and Macaron exceptions.
+- Separated counter progress from counter execution. Enemy attacks, friend
+  hurts, food events, faints, summons, and other pet-specific sources only
+  increment their matching counters; completed counters queue a shared
+  priority-18 `CounterEvent` that retains the numbered ability as its execution
+  trigger. This places Mammoth's Faint before Wolverine's fourth-hurt ability
+  and keeps Aye-Aye and other Danger Pack counters out of after-attack timing.
+- Moved post-removal faint observers, including adjacent-friend faint events,
+  until after the fainted pet disappears while preserving Kitsune's pre-removal
+  exception. Empty Front Space and Golden Retriever checks now follow removal.
+- Kept chained Parrot abilities input-defined through `parrotCopyPet` metadata;
+  battle execution does not infer a new Parrot-to-Parrot copy.
+
+### Added
+
+- Added `PetConfig.plainCopy` support for named shop-created copies such as
+  Shima Enaga. Plain copies retain identity, stats, and equipment without the
+  named pet's native ability or randomness classification.
+- Added focused catalog, counter timing, faint timing, start-of-battle ordering,
+  damage-rounding, copy-metadata, randomness-capture, and engine regression
+  coverage.
+
 ## 2026-09-15
 
 ### Fixed

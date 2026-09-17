@@ -64,19 +64,12 @@ export class BombusDahlbomiiAbility extends Ability {
     const { gameApi, triggerPet, tiger, pteranodon } = context;
     const owner = this.owner;
 
-    // Set counter event to deal damage
-    this.abilityService.setCounterEvent({
-      callback: () => {
-        let targetResp = owner.parent.opponent.getFurthestUpPet(owner); // First enemy
-        let target = targetResp.pet;
-        if (target) {
-          let damage = this.level * 1;
-          owner.snipePet(target, damage, targetResp.random, tiger);
-        }
-      },
-      priority: owner.attack,
-      pet: owner,
-    });
+    const targetResp = owner.parent.opponent.getFurthestUpPet(owner);
+    const target = targetResp.pet;
+    if (target) {
+      const damage = this.level;
+      owner.snipePet(target, damage, targetResp.random, tiger);
+    }
     // Tiger system: trigger Tiger execution at the end
     this.triggerTigerExecution(context);
   }
@@ -89,4 +82,3 @@ export class BombusDahlbomiiAbility extends Ability {
     );
   }
 }
-

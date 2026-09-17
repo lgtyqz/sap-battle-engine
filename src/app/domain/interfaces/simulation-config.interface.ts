@@ -6,6 +6,8 @@ export interface PetConfig extends PetMemoryState {
   name: string | null;
   /** Internal simulation fixture; never exposed through the playable pet catalog. */
   benchmark?: boolean;
+  /** A shop-created copy that keeps the pet's identity but has no native pet ability. */
+  plainCopy?: boolean;
   attack?: number;
   health?: number;
   exp?: number;

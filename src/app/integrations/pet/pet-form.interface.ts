@@ -11,6 +11,7 @@ export interface PetForm extends PetMemoryState {
   timesGaveHealth?: number;
   exp: number;
   hasRandomEvents?: boolean;
+  plainCopy?: boolean;
   equipment?: string | Equipment | { name?: string } | null;
   battlesFought?: number;
   timesHurt?: number;

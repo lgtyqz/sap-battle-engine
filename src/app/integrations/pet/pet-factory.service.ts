@@ -130,7 +130,9 @@ export class PetFactoryService {
       friendsHurtBeforeBattle,
     } = normalizedPetForm;
     let hasRandomEvents = normalizedPetForm.hasRandomEvents;
-    if (
+    if (normalizedPetForm.plainCopy) {
+      hasRandomEvents = false;
+    } else if (
       hasRandomEvents === undefined &&
       typeof petService.isPetRandom === 'function'
     ) {
@@ -188,6 +190,11 @@ export class PetFactoryService {
       }
       if (hasRandomEvents) {
         pet.hasRandomEvents = true;
+      }
+      if (normalizedPetForm.plainCopy) {
+        pet.removeAbility(undefined, 'Pet');
+        pet.originalAbilityList = [...pet.abilityList];
+        pet.hasRandomEvents = false;
       }
       return pet;
     };
@@ -385,6 +392,7 @@ export class PetFactoryService {
 
     const name = petForm.name;
     const hasEquipmentUses = petForm.equipmentUses != null;
+    const hasPlainCopy = petForm.plainCopy === true;
     const hasParrotData =
       petForm.name === 'Parrot' &&
       hasNonDefaultFormValue(petForm, PARROT_FORM_FIELDS);
@@ -400,6 +408,7 @@ export class PetFactoryService {
     const hasFoodsEaten = petForm.foodsEaten != null;
     const needsPostInit =
       hasEquipmentUses ||
+      hasPlainCopy ||
       hasParrotData ||
       hasAbominationData ||
       hasSarcastic ||
@@ -531,4 +540,3 @@ type PetBuildPlan = {
   equipmentValue: PetForm['equipment'] | null;
   equipmentUses: number | null;
 };
-

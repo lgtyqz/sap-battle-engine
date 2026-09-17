@@ -54,6 +54,7 @@ export class PygmyHogAbility extends Ability {
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
+      condition: () => this.owner.alive,
       abilityFunction: (context) => {
         this.executeAbility(context);
       },

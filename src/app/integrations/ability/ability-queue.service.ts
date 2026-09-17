@@ -5,11 +5,15 @@ import {
   AbilityCustomParams,
   AbilityTrigger,
   AbilityType,
+  NumberedTriggerBase,
 } from 'app/domain/entities/ability.class';
 import { Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
 import { GameAPI } from 'app/domain/interfaces/gameAPI.interface';
-import { ABILITY_PRIORITIES } from './ability-priorities';
+import {
+  COUNTER_ABILITY_ORDER,
+  getAbilityPriority as getCatalogAbilityPriority,
+} from './ability-priorities';
 import {
   processEventQueue,
   executeEventWithTransform,
@@ -154,38 +158,6 @@ export class AbilityQueueService {
     }
 
     const first = matching[0];
-    const phaseOrderEvents = this.getSourceEligibleEvents(
-      first.abilityType === 'BeforeStartBattle'
-        ? matching.filter(
-          (event) => event.abilityType === first.abilityType,
-        )
-        : [],
-    );
-    if (phaseOrderEvents.length > 1) {
-      const ordered = [...phaseOrderEvents].sort((a, b) =>
-        this.describeEvent(a).localeCompare(this.describeEvent(b)),
-      );
-      const decision = this.runtime.random.chooseRandomOption(
-        () => ({
-          key: 'ability-queue.phase-order',
-          label: `${String(first.abilityType)} ability order (${ordered.map((event) => this.describeEvent(event)).join(', ')})`,
-          options: ordered.map((event) => ({
-            id: this.describeEvent(event),
-            label: `${this.describeEvent(event)} resolves first`,
-          })),
-        }),
-        () => {
-          const queuedFirst = phaseOrderEvents[0];
-          return Math.max(0, ordered.indexOf(queuedFirst));
-        }, (ordered).length
-      );
-      const selected = ordered[decision.index] ?? ordered[0];
-      this.markEventRandom(selected);
-      const selectedIndex = this.globalEventQueue.indexOf(selected);
-      const [event] = this.globalEventQueue.splice(selectedIndex, 1);
-      return event ?? null;
-    }
-
     const abilityPriority = this.getAbilityPriority(first.abilityType);
     const eventPriority = first.priority;
     const tied = matching.filter(
@@ -310,19 +282,7 @@ export class AbilityQueueService {
     if (typeof trigger !== 'string' || trigger.length === 0) {
       return 999;
     }
-    const direct = ABILITY_PRIORITIES[trigger];
-    if (direct != null) {
-      return direct;
-    }
-    const baseTrigger = this.removeNumericSuffix(trigger);
-    if (baseTrigger !== trigger) {
-      const basePriority = ABILITY_PRIORITIES[baseTrigger];
-      if (basePriority != null) {
-        return basePriority;
-      }
-      return ABILITY_PRIORITIES.CounterEvent ?? 999;
-    }
-    return 999;
+    return getCatalogAbilityPriority(trigger) ?? 999;
   }
 
   getPriorityNumber(abilityType: string): number {
@@ -420,8 +380,41 @@ export class AbilityQueueService {
       }
       pet.abilityCounter++;
       if (pet.abilityCounter % counter.modulo === 0) {
-        this.triggerAbility(pet, counter.trigger, triggerPet, customParams);
+        this.queueCounterAbility(
+          pet,
+          counter.trigger,
+          triggerPet,
+          customParams,
+        );
       }
+    }
+  }
+
+  private queueCounterAbility(
+    pet: Pet,
+    executionTrigger: AbilityTrigger,
+    triggerPet?: Pet,
+    customParams?: AbilityCustomParams,
+  ): void {
+    const abilitySourceTypes: AbilityType[] = ['Pet', 'Equipment'];
+    for (const abilitySourceType of abilitySourceTypes) {
+      if (!pet.hasTrigger(executionTrigger, abilitySourceType)) {
+        continue;
+      }
+      this.addEventToQueue({
+        priority: this.getPetEventPriority(pet),
+        pet,
+        triggerPet,
+        abilityType: COUNTER_ABILITY_ORDER.eventType,
+        executionTrigger,
+        abilitySourceType,
+        customParams: {
+          ...(customParams ?? {}),
+          trigger: executionTrigger,
+          counterSource: executionTrigger.replace(/\d+$/, ''),
+          tigerSupportPet: pet.petBehind(true, true) ?? null,
+        },
+      });
     }
   }
 
@@ -452,6 +445,21 @@ export class AbilityQueueService {
     }
 
     this.handleCounterTriggers(pet, triggerPet, customParams, counters);
+  }
+
+  /** Record one occurrence of a pet-specific counter source event. */
+  incrementCounterForSource(
+    pet: Pet,
+    sourceTrigger: NumberedTriggerBase,
+    triggerPet?: Pet,
+    customParams?: AbilityCustomParams,
+  ): void {
+    this.handleNumberedCounterTriggers(
+      pet,
+      triggerPet,
+      customParams,
+      this.getNumberedTriggersForPet(pet, sourceTrigger),
+    );
   }
 
   getNumberedTriggersForPet(pet: Pet, prefix: string): AbilityTrigger[] {
@@ -501,13 +509,6 @@ export class AbilityQueueService {
     }
     const match = value.match(/(\d+)$/);
     return match ? match[1] : null;
-  }
-
-  private removeNumericSuffix(value: string | null | undefined): string {
-    if (typeof value !== 'string' || value.length === 0) {
-      return '';
-    }
-    return this.getNumericSuffix(value) ? value.replace(/\d+$/, '') : value;
   }
 
   public getTeam(petOrPlayer?: Pet | Player | null): Pet[] {

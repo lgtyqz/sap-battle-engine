@@ -65,11 +65,14 @@ export class GiantOtterAbility extends Ability {
     super.reset();
   }
 
-  commitTemporaryAttack(friend: Pet): void {
+  consumeTemporaryAttack(friend: Pet, amount: number): number {
     const stats = this.buffedFriends.get(friend);
-    if (stats) {
-      stats.attack = 0;
+    if (!stats || amount <= 0) {
+      return 0;
     }
+    const consumed = Math.min(stats.attack, amount);
+    stats.attack -= consumed;
+    return consumed;
   }
 
   removeConditionalBuffs(): void {

@@ -22,6 +22,15 @@ function getAbilityExecutorTarget(event: AbilityEvent) {
     : executingPet;
 }
 
+function getExecutionTrigger(event: AbilityEvent): AbilityTrigger | undefined {
+  if (event.executionTrigger) {
+    return event.executionTrigger;
+  }
+  return event.abilityType === 'CounterEvent'
+    ? undefined
+    : event.abilityType;
+}
+
 function executeAndNotify(
   event: AbilityEvent,
   gameApi: GameAPI,
@@ -73,13 +82,14 @@ export function executeEventWithTransform(
   gameApi: GameAPI,
   customParams?: AbilityCustomParams,
 ): void {
+  const executionTrigger = getExecutionTrigger(event);
   if (event.callback) {
     const executingPet = event.pet;
     if (
       executingPet &&
       executingPet.transformed &&
       executingPet.transformedInto &&
-      event.abilityType
+      executionTrigger
     ) {
       const transformedPet = executingPet.transformedInto;
       // Replace the callback with the transformed pet's method
@@ -94,15 +104,15 @@ export function executeEventWithTransform(
         );
       };
     }
-    event.callback(event.abilityType, gameApi, event.triggerPet);
+    event.callback(executionTrigger, gameApi, event.triggerPet);
     return;
   }
 
   const targetPet = getAbilityExecutorTarget(event);
-  if (targetPet && event.abilityType) {
+  if (targetPet && executionTrigger) {
     // New optimize path
     targetPet.executeAbilities(
-      event.abilityType,
+      executionTrigger,
       gameApi,
       event.triggerPet,
       undefined,

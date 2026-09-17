@@ -46,7 +46,7 @@ export class AbilityEngine {
 
         if (
           nextEvent &&
-          this.abilityService.getPriorityNumber(nextEvent.abilityType) >= 27
+          this.abilityService.getPriorityNumber(nextEvent.abilityType) >= 25
         ) {
           this.checkPetsAlive();
           const petsWereRemoved = this.removeDeadPets();
@@ -58,7 +58,7 @@ export class AbilityEngine {
 
           // Post-removal faint events must finish before EmptyFrontSpace is
           // evaluated. At this point the next queued event is in the
-          // post-removal board-cleanup phase (priority 27 or later), so the
+          // post-removal board-cleanup phase (priority 25 or later), so the
           // board state produced by faint summons is final for this check.
           this.emptyFrontSpaceCheck();
         }
@@ -219,4 +219,3 @@ export class AbilityEngine {
     }
   }
 }
-

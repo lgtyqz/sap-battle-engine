@@ -51,14 +51,11 @@ export abstract class AbilityEventTriggers {
           'FriendSummoned',
           summonedPet,
         );
-        this.abilityQueueService.handleNumberedCounterTriggers(
+        this.abilityQueueService.incrementCounterForSource(
           pet,
+          'FriendSummoned',
           summonedPet,
           undefined,
-          this.abilityQueueService.getNumberedTriggersForPet(
-            pet,
-            'FriendSummoned',
-          ),
         );
         // Special summon types
         if (summonedPet.name === 'Bee') {
@@ -136,14 +133,11 @@ export abstract class AbilityEventTriggers {
           'FriendTransformed',
           transformedPet,
         );
-        this.abilityQueueService.handleNumberedCounterTriggers(
+        this.abilityQueueService.incrementCounterForSource(
           pet,
+          'FriendTransformed',
           transformedPet,
           undefined,
-          this.abilityQueueService.getNumberedTriggersForPet(
-            pet,
-            'FriendTransformed',
-          ),
         );
       }
     }
@@ -210,11 +204,11 @@ export abstract class AbilityEventTriggers {
           hurtedPet,
           customParams,
         );
-        this.abilityQueueService.handleNumberedCounterTriggers(
+        this.abilityQueueService.incrementCounterForSource(
           pet,
+          'ThisHurt',
           hurtedPet,
           customParams,
-          this.abilityQueueService.getNumberedTriggersForPet(pet, 'ThisHurt'),
         );
       } else {
         this.abilityQueueService.triggerAbility(
@@ -223,11 +217,11 @@ export abstract class AbilityEventTriggers {
           hurtedPet,
           customParams,
         );
-        this.abilityQueueService.handleNumberedCounterTriggers(
+        this.abilityQueueService.incrementCounterForSource(
           pet,
+          'FriendHurt',
           hurtedPet,
           customParams,
-          this.abilityQueueService.getNumberedTriggersForPet(pet, 'FriendHurt'),
         );
       }
       if (pet == hurtedPet.petBehind(undefined, true)) {
@@ -271,11 +265,11 @@ export abstract class AbilityEventTriggers {
         hurtedPet,
         customParams,
       );
-      this.abilityQueueService.handleNumberedCounterTriggers(
+      this.abilityQueueService.incrementCounterForSource(
         pet,
+        'EnemyHurt',
         hurtedPet,
         customParams,
-        this.abilityQueueService.getNumberedTriggersForPet(pet, 'EnemyHurt'),
       );
     }
   }
@@ -322,14 +316,11 @@ export abstract class AbilityEventTriggers {
           levelUpPet,
           levelContext,
         );
-        this.abilityQueueService.handleNumberedCounterTriggers(
+        this.abilityQueueService.incrementCounterForSource(
           pet,
+          'FriendlyLeveledUp',
           levelUpPet,
           levelContext,
-          this.abilityQueueService.getNumberedTriggersForPet(
-            pet,
-            'FriendlyLeveledUp',
-          ),
         );
       }
     }
@@ -381,14 +372,11 @@ export abstract class AbilityEventTriggers {
         // No action
       } else {
         this.abilityQueueService.triggerAbility(pet, 'FriendJumped', jumpPet);
-        this.abilityQueueService.handleNumberedCounterTriggers(
+        this.abilityQueueService.incrementCounterForSource(
           pet,
+          'FriendJumped',
           jumpPet,
           undefined,
-          this.abilityQueueService.getNumberedTriggersForPet(
-            pet,
-            'FriendJumped',
-          ),
         );
       }
     }

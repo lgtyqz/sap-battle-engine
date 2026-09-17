@@ -70,14 +70,11 @@ export class AttackEventService {
 
     for (let pet of team) {
       // Numbered counters
-      this.abilityQueueService.handleNumberedCounterTriggers(
+      this.abilityQueueService.incrementCounterForSource(
         pet,
+        'FriendlyAttacked',
+        attackingPet,
         undefined,
-        undefined,
-        this.abilityQueueService.getNumberedTriggersForPet(
-          pet,
-          'FriendlyAttacked',
-        ),
       );
 
       if (pet.hasTrigger('FriendlyAttacked')) {
@@ -107,14 +104,11 @@ export class AttackEventService {
             attackingPet,
           );
         }
-        this.abilityQueueService.handleNumberedCounterTriggers(
+        this.abilityQueueService.incrementCounterForSource(
           pet,
+          'FriendAttacked',
+          attackingPet,
           undefined,
-          undefined,
-          this.abilityQueueService.getNumberedTriggersForPet(
-            pet,
-            'FriendAttacked',
-          ),
         );
       }
 
@@ -156,16 +150,12 @@ export class AttackEventService {
         // "EnemyAttacked" = Enemy [has] Attacked
         this.abilityQueueService.triggerAbility(pet, 'EnemyAttacked');
       }
-      this.abilityQueueService.handleNumberedCounterTriggers(
+      this.abilityQueueService.incrementCounterForSource(
         pet,
+        'EnemyAttacked',
+        attackingPet,
         undefined,
-        undefined,
-        this.abilityQueueService.getNumberedTriggersForPet(
-          pet,
-          'EnemyAttacked',
-        ),
       );
     }
   }
 }
-

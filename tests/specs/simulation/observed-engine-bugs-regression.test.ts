@@ -141,20 +141,21 @@ describe('observed engine bug regressions', () => {
     },
   );
 
-  it('keeps Banggai attack changes after Giant Otter removes its buffs', () => {
+  it('lets Banggai consume Giant Otter temporary attack before reducing base attack', () => {
     const config = createBaseConfig('Danger');
     config.logsEnabled = true;
-    config.playerPets[0] = createPet('Giant Otter', {
+    config.playerPets[0] = createPet('Fish', {
+      attack: 10,
+      health: 20,
+    });
+    config.playerPets[1] = createPet('Giant Otter', {
       attack: 4,
       health: 20,
     });
-    config.playerPets[1] = createPet('Banggai Cardinalfish', {
-      attack: 6,
-      health: 20,
+    config.opponentPets[0] = createPet('Banggai Cardinalfish', {
+      attack: 1,
+      health: 50,
     });
-    config.playerPets[2] = createPet('Fish', { attack: 2, health: 20 });
-    config.playerPets[3] = createPet('Ant', { attack: 1, health: 20 });
-    config.opponentPets[0] = createPet('Fish', { attack: 1, health: 50 });
 
     const logs = runBattleLogs(config);
     const removalIndex = logs.findIndex((log) =>
@@ -162,15 +163,11 @@ describe('observed engine bug regressions', () => {
         'Giant Otter removed its temporary buffs after the first non-jump attack',
       ),
     );
-    const afterRemoval = logs.slice(removalIndex).find((log) =>
-      log.message.includes('Ant lost 2 attack and 5 health'),
-    );
-    const fish = afterRemoval?.board.player.find((pet) => pet?.name === 'Fish');
-    const ant = afterRemoval?.board.player.find((pet) => pet?.name === 'Ant');
+    const finalLog = logs[logs.length - 1];
+    const fish = finalLog?.board.player.find((pet) => pet?.name === 'Fish');
 
     expect(removalIndex).toBeGreaterThan(-1);
-    expect(fish?.attack).toBe(4);
-    expect(ant?.attack).toBe(1);
+    expect(fish?.attack).toBe(6);
     expect(
       logs.some((log) =>
         log.message.includes('Fish lost 2 attack (Giant Otter Buffs removed)'),

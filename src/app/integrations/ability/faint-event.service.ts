@@ -5,6 +5,8 @@ import { AbilityQueueService } from './ability-queue.service';
 import { ToyEventService } from './toy-event.service';
 
 export class FaintEventService {
+  private readonly postRemovalAdjacentFriends = new WeakMap<Pet, Pet[]>();
+
   constructor(public readonly runtime: EngineContext,
     private abilityQueueService: AbilityQueueService,
     private toyEventService: ToyEventService,
@@ -13,6 +15,7 @@ export class FaintEventService {
   triggerFaintEvents(faintedPet: Pet) {
     // Check friends
     const team = this.abilityQueueService.getTeam(faintedPet);
+    const adjacentFriends: Pet[] = [];
     for (let pet of team) {
       if (pet == faintedPet) {
         this.abilityQueueService.triggerAbility(
@@ -35,18 +38,14 @@ export class FaintEventService {
           faintedPet,
         );
       }
-      // Check for AdjacentFriendsFaint
       if (
         pet == faintedPet.petBehind(null, true) ||
         pet.petBehind(null, true) == faintedPet
       ) {
-        this.abilityQueueService.triggerAbility(
-          pet,
-          'AdjacentFriendsFaint',
-          faintedPet,
-        );
+        adjacentFriends.push(pet);
       }
     }
+    this.postRemovalAdjacentFriends.set(faintedPet, adjacentFriends);
   }
 
   triggerAfterFaintEvents(faintedPet: Pet) {
@@ -73,16 +72,29 @@ export class FaintEventService {
       faintedPet,
     );
 
+    // Adjacency is captured at faint time, but the ability waits until the
+    // fainted pet has disappeared with the other friend-faint observers.
+    const adjacentFriends =
+      this.postRemovalAdjacentFriends.get(faintedPet) ?? [];
+    this.postRemovalAdjacentFriends.delete(faintedPet);
+    for (const pet of adjacentFriends) {
+      this.abilityQueueService.triggerAbility(
+        pet,
+        'AdjacentFriendsFaint',
+        faintedPet,
+      );
+    }
+
     // Check friends (remaining team)
     const team = this.abilityQueueService.getTeam(faintedPet);
     for (let pet of team) {
       this.abilityQueueService.triggerAbility(pet, 'PetFainted', faintedPet);
       this.abilityQueueService.triggerAbility(pet, 'PostRemovalFriendFaints', faintedPet);
-      this.abilityQueueService.handleNumberedCounterTriggers(
+      this.abilityQueueService.incrementCounterForSource(
         pet,
+        'PostRemovalFriendFaints',
         faintedPet,
         undefined,
-        this.abilityQueueService.getNumberedTriggersForPet(pet, 'PostRemovalFriendFaints'),
       );
     }
 
@@ -94,15 +106,14 @@ export class FaintEventService {
       this.abilityQueueService.triggerAbility(pet, 'EnemyFainted', faintedPet);
       this.abilityQueueService.triggerAbility(pet, 'EnemyFaint', faintedPet);
       this.abilityQueueService.triggerAbility(pet, 'PetFainted', faintedPet);
-      this.abilityQueueService.handleNumberedCounterTriggers(
+      this.abilityQueueService.incrementCounterForSource(
         pet,
+        'EnemyFaint',
         faintedPet,
         undefined,
-        this.abilityQueueService.getNumberedTriggersForPet(pet, 'EnemyFaint'),
       );
     }
 
     this.toyEventService.executeFriendFaintsToyEvents();
   }
 }
-

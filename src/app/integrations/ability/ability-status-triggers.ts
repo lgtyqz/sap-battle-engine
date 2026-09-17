@@ -13,20 +13,20 @@ export function triggerFoodEvents(
       abilityQueueService.triggerAbility(pet, 'FoodEatenByThis', eatingPet);
       if (foodType === 'apple') {
         abilityQueueService.triggerAbility(pet, 'AppleEatenByThis', eatingPet);
-        abilityQueueService.handleNumberedCounterTriggers(
+        abilityQueueService.incrementCounterForSource(
           pet,
+          'AppleEatenByThis',
           eatingPet,
           undefined,
-          abilityQueueService.getNumberedTriggersForPet(pet, 'AppleEatenByThis'),
         );
       } else if (foodType === 'corn') {
         abilityQueueService.triggerAbility(pet, 'CornEatenByThis', eatingPet);
       }
-      abilityQueueService.handleNumberedCounterTriggers(
+      abilityQueueService.incrementCounterForSource(
         pet,
+        'Eat',
         eatingPet,
         undefined,
-        abilityQueueService.getNumberedTriggersForPet(pet, 'Eat'),
       );
     } else {
       abilityQueueService.triggerAbility(pet, 'FoodEatenByFriend', eatingPet);

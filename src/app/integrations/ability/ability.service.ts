@@ -2,7 +2,10 @@ import type { EngineContext } from 'app/runtime/engine-context';
 
 import { Player } from 'app/domain/entities/player.class';
 import { GameAPI } from 'app/domain/interfaces/gameAPI.interface';
-import { AbilityEvent } from 'app/domain/interfaces/ability-event.interface';
+import {
+  AbilityEvent,
+  AbilityEventType,
+} from 'app/domain/interfaces/ability-event.interface';
 import { GameService } from 'app/runtime/state/game.service';
 import { Pet } from 'app/domain/entities/pet.class';
 import { LogService } from '../log.service';
@@ -20,7 +23,7 @@ import {
 
 export class AbilityService extends AbilityEventTriggers {
   declare public gameApi: GameAPI;
-  declare protected lastLoggedTrigger?: AbilityTrigger;
+  declare protected lastLoggedTrigger?: AbilityEventType;
   private readonly resolutionCoordinator: AbilityResolutionCoordinator;
 
   constructor(runtime: EngineContext,
@@ -211,8 +214,8 @@ export class AbilityService extends AbilityEventTriggers {
     this.resolvePhaseEvents(new Set(['BeforeStartBattle']), false, true);
   }
 
-  // Counter
-  setCounterEvent(event: AbilityEvent) {
+  // Generic deferred callbacks that are not ability-trigger events.
+  setDeferredEvent(event: AbilityEvent) {
     this.abilityQueueService.addEventToQueue(event);
   }
 
@@ -231,8 +234,13 @@ export class AbilityService extends AbilityEventTriggers {
     }
   }
 
-  executeStartBattleEvents() {
-    this.resolvePhaseEvents(new Set(['StartBattle']), false, true);
+  executeStartBattleEvents(drainNormalEvents: boolean = true) {
+    this.resolvePhaseEvents(
+      new Set(['StartBattle']),
+      false,
+      true,
+      drainNormalEvents,
+    );
   }
 
   // Before Attack
@@ -304,15 +312,7 @@ export class AbilityService extends AbilityEventTriggers {
       'StartBattle',
     ]);
     this.executeQueueEvents(
-      (event) => {
-        const trigger = event.abilityType as string;
-        if (afterAttackTriggers.has(trigger)) {
-          return true;
-        }
-        return /^(FriendlyAttacked|FriendAttacked|EnemyAttacked)\d+$/.test(
-          trigger,
-        );
-      },
+      this.createTriggerFilter(afterAttackTriggers),
     );
     this.executeQueueEvents(
       (event) => !startBattleTriggers.has(event.abilityType as string),
@@ -325,6 +325,7 @@ export class AbilityService extends AbilityEventTriggers {
     phaseTriggers: ReadonlySet<string>,
     interleaveNonPhaseEvents: boolean,
     lockNonPhaseExecution: boolean = false,
+    drainNonPhaseEvents: boolean = true,
   ): void {
     const phaseFilter = this.createTriggerFilter(phaseTriggers);
     this.resolutionCoordinator.resolvePhase({
@@ -332,6 +333,7 @@ export class AbilityService extends AbilityEventTriggers {
       nonPhaseFilter: (event) => !phaseFilter(event),
       interleaveNonPhaseEvents,
       lockNonPhaseExecution,
+      drainNonPhaseEvents,
     });
     this.clearLastLoggedTrigger();
   }

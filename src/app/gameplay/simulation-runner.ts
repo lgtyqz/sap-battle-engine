@@ -487,7 +487,7 @@ export class SimulationRunner {
     });
     this.logService.printState(this.player, this.opponent);
     this.abilityService.triggerStartBattleEvents(hasChurros);
-    this.abilityService.executeStartBattleEvents();
+    this.abilityService.executeStartBattleEvents(false);
 
     // Execute toy SOB
     this.toyService.executeStartOfBattleEvents();

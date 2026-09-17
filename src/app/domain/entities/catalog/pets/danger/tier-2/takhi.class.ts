@@ -81,7 +81,7 @@ export class TakhiAbility extends Ability {
         name: 'African Wild Dog',
         attack: attackValue,
         health: healthValue,
-        exp: 0,
+        exp: this.minExpForLevel,
         mana: 0,
         equipment: null,
       },

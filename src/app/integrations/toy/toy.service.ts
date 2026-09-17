@@ -25,6 +25,7 @@ import {
   appendSnipeContextAndReductionMessages,
   appendSnipeDefenseEquipmentMessage,
 } from 'app/domain/entities/combat/combat-snipe-utils';
+import { MapleSyrup } from 'app/domain/entities/catalog/equipment/golden/maple-syrup.class';
 
 import { coerceLogService } from 'app/runtime/log-service-fallback';
 
@@ -207,13 +208,18 @@ export class ToyService {
       manticoreMult,
       {
         includeShieldSnipe: true,
-        nullifyMapleSyrupDefense: true,
       },
     );
     const defenseEquipment = preparedDefense.defenseEquipment;
+    let incomingPower = power ?? 0;
+    if (pet.equipment instanceof MapleSyrup && pet.equipment.uses > 0) {
+      incomingPower = Math.ceil(
+        incomingPower * Math.pow(0.5, preparedDefense.defenseMultiplier),
+      );
+    }
     const damageBeforeReductions = calculateIncomingDamageBeforeReductions(
       pet,
-      power ?? 0,
+      incomingPower,
       defenseEquipment,
       manticoreMult,
     );
@@ -313,4 +319,3 @@ export class ToyService {
     });
   }
 }
-
