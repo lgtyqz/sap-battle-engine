@@ -57,6 +57,24 @@ progressInterval: 1, onProgress() {
     const result = engine().runSimulation({ ...config, simulationCount: 10 }, { progressInterval: 1, onProgress: p => { completed = p.completed; }, shouldAbort: () => completed === 2 });
     expect(completed).toBe(2); expect(result.playerWins + result.opponentWins + result.draws).toBe(2);
   });
+  it.each([
+    ['player', [{ name: 'Fish', attack: 10, health: 10 }], []],
+    ['opponent', [], [{ name: 'Fish', attack: 10, health: 10 }]],
+    ['draw', [], []],
+  ] as const)('caps retained %s battle logs independently', (winner, playerPets, opponentPets) => {
+    const result = engine().runSimulation({
+      ...config,
+      simulationCount: 250,
+      optimizeDeterministicSimulations: false,
+      playerPets: [...playerPets],
+      opponentPets: [...opponentPets],
+      maxLoggedBattlesPerOutcome: 100,
+    });
+
+    expect(result.playerWins + result.opponentWins + result.draws).toBe(250);
+    expect(result.battles).toHaveLength(100);
+    expect(result.battles.every((battle) => battle.winner === winner)).toBe(true);
+  });
   it('exports serializable structured events with stable identities and snapshots', () => {
     const r = engine().runSimulation(config); expect(JSON.parse(JSON.stringify(r))).toEqual(r);
     for (const battle of r.battles) {

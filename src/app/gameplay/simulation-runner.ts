@@ -119,6 +119,11 @@ export class SimulationRunner {
       let battleCount = config.simulationCount || 1000;
       const logsEnabled = config.logsEnabled !== false;
       let loggedBattleCount = 0;
+      const loggedBattlesByOutcome: Record<Battle['winner'], number> = {
+        player: 0,
+        opponent: 0,
+        draw: 0,
+      };
       const progressInterval =
         hooks?.onProgress && hooks.progressInterval != null
           ? Math.max(1, hooks.progressInterval)
@@ -151,23 +156,41 @@ export class SimulationRunner {
       if (maxLoggedBattles > battleCount) {
         maxLoggedBattles = battleCount;
       }
+      const maxLoggedBattlesPerOutcome =
+        config.maxLoggedBattlesPerOutcome == null
+          ? null
+          : Math.max(0, Math.trunc(config.maxLoggedBattlesPerOutcome));
 
       for (let i = 0; i < battleCount; i++) {
         if (hooks?.shouldAbort?.()) {
           break;
         }
         const shouldLog =
-          logsEnabled &&
-          maxLoggedBattles > 0 &&
-          loggedBattleCount < maxLoggedBattles;
+          maxLoggedBattlesPerOutcome == null
+            ? logsEnabled &&
+              maxLoggedBattles > 0 &&
+              loggedBattleCount < maxLoggedBattles
+            : logsEnabled &&
+              maxLoggedBattlesPerOutcome > 0 &&
+              Object.values(loggedBattlesByOutcome).some(
+                (count) => count < maxLoggedBattlesPerOutcome,
+              );
         this.logService.setEnabled(shouldLog);
         this.initBattle(config, shouldLog);
-        if (shouldLog) {
+        if (shouldLog && maxLoggedBattlesPerOutcome == null) {
           loggedBattleCount += 1;
         }
         this.prepareBattle(config);
         this.executeBattleLoop();
         if (this.currBattle) this.currBattle.finalBoard = this.logService.snapshotBoard();
+        if (this.currBattle && maxLoggedBattlesPerOutcome != null) {
+          const outcome = this.currBattle.winner;
+          if (loggedBattlesByOutcome[outcome] < maxLoggedBattlesPerOutcome) {
+            loggedBattlesByOutcome[outcome] += 1;
+          } else {
+            this.battles.pop();
+          }
+        }
         this.reset();
 
         if (hooks?.onProgress && progressInterval != null) {

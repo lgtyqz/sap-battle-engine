@@ -82,6 +82,7 @@ export interface SimulationConfig {
   simulationCount?: number;
   logsEnabled?: boolean;
   maxLoggedBattles?: number;
+  maxLoggedBattlesPerOutcome?: number;
   captureRandomDecisions?: boolean;
   randomDecisionOverrides?: RandomDecisionOverride[];
   strictRandomOverrideValidation?: boolean;
