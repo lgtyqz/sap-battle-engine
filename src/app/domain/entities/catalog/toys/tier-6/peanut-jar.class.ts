@@ -38,7 +38,7 @@ export class PeanutJarAbility extends Ability {
     super(runtime, {
       name: 'PeanutJarAbility',
       owner: owner,
-      triggers: [],
+      triggers: ['StartBattle'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -82,4 +82,3 @@ export class PeanutJarAbility extends Ability {
     return new PeanutJarAbility(this.runtime, newOwner, this.logService);
   }
 }
-

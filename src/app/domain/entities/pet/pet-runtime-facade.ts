@@ -117,8 +117,8 @@ export abstract class PetRuntimeFacade extends PetTargetingRuntimeFacade {
   }
 
   jumpAttackPrep(target: Pet) {
-    this.abilityService.triggerBeforeAttackEvent(this as unknown as Pet);
-    this.abilityService.triggerBeforeAttackEvent(target);
+    this.abilityService.triggerBeforeAttackEvent(this as unknown as Pet, target);
+    this.abilityService.triggerBeforeAttackEvent(target, this as unknown as Pet);
     this.abilityService.executeBeforeAttackTriggerOnly();
   }
 

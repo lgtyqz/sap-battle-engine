@@ -62,6 +62,9 @@ export class MacaqueAbility extends Ability {
   private executeAbility(context: AbilityContext): void {
     const { gameApi, triggerPet, tiger, pteranodon } = context;
     const owner = this.owner;
+    const copiedEquipment = owner.equipment?.equipmentClass?.startsWith('ailment')
+      ? undefined
+      : owner.equipment;
 
     let power = this.level * 12;
     let monke = new Orangutan(this.runtime,
@@ -72,14 +75,14 @@ export class MacaqueAbility extends Ability {
       power,
       0,
       owner.minExpForLevel,
-      owner.equipment,
+      copiedEquipment,
     );
 
     let result = owner.parent.summonPetInFront(owner, monke);
     if (result.success) {
       let message = `${owner.name} spawned Orangutan ${monke.attack}/${monke.health}`;
-      if (owner.equipment != null) {
-        message += ` with ${owner.equipment.name}`;
+      if (copiedEquipment != null) {
+        message += ` with ${copiedEquipment.name}`;
       }
       message += `.`;
 
@@ -101,4 +104,3 @@ export class MacaqueAbility extends Ability {
     return new MacaqueAbility(this.runtime, newOwner, this.logService, this.abilityService);
   }
 }
-

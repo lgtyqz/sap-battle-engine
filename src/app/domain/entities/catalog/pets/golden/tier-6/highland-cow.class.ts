@@ -55,7 +55,7 @@ export class HighlandCowAbility extends Ability {
     const owner = this.owner;
 
     const trumpetAmt =
-      this.level * 4 + Math.floor(owner.health / 3) * this.level;
+      this.level * 4 + Math.floor(owner.health / 3 * this.level);
     const trumpetTargetResp = owner.parent.resolveTrumpetGainTarget(owner);
     trumpetTargetResp.player.gainTrumpets(
       trumpetAmt,

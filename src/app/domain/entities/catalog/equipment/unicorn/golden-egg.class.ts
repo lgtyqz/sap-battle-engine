@@ -38,17 +38,11 @@ export class GoldenEggAbility extends Ability {
 
   private executeAbility(context: AbilityContext): void {
     const owner = this.owner;
+    const attackPet = context.attackTarget instanceof Pet
+      ? context.attackTarget
+      : owner.parent.opponent.furthestUpPet;
 
-    let opponentPets = owner.parent.opponent.petArray;
-    let attackPet: Pet = null;
-    for (let opponentPet of opponentPets) {
-      if (opponentPet.alive) {
-        attackPet = opponentPet;
-        break;
-      }
-    }
-
-    if (attackPet == null) {
+    if (attackPet == null || !attackPet.alive) {
       return;
     }
 
@@ -63,4 +57,3 @@ export class GoldenEggAbility extends Ability {
     owner.removePerk();
   }
 }
-

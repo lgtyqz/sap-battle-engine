@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-09-18
+
+### Fixed
+
+- Prevented Macaque from copying ailments to its summoned Orangutan while
+  continuing to copy perks.
+- Made Chameleon's copied Peanut Jar ability activate at the start of battle,
+  allowing Peanut Jar, Chameleon, and Puma to resolve as three separate perk
+  grants like other perk-granting toys.
+- Passed the intended defender through before-attack resolution for regular and
+  jump attacks. Geechee Red Pea, Squash, Egg, and Golden Egg now affect the pet
+  being attacked instead of incorrectly falling back to the front-most enemy.
+  Perks with explicit targeting, such as Fig and Tomato, retain their own target
+  selection.
+- Applied Meerkat's level multiplier before rounding down its spent-gold
+  scaling, preserving partial four-gold increments at higher levels.
+- Applied Highland Cow's level multiplier before rounding down its health-based
+  trumpet scaling, preserving partial three-health increments at higher levels.
+
+### Added
+
+- Added regression coverage for Macaque perk and ailment copying, separate
+  Chameleon and Puma perk-toy activations, and defending-pet targeting by
+  before-attack perks during jump attacks.
+
 ## 2026-09-17
 
 ### Fixed

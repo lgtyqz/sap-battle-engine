@@ -8,7 +8,7 @@ export class AttackEventService {
 
   // --- Before Attack ---
 
-  triggerBeforeAttackEvents(attackingPet: Pet) {
+  triggerBeforeAttackEvents(attackingPet: Pet, attackTarget?: Pet) {
     const parent = attackingPet?.parent;
     const friends =
       parent && Array.isArray(parent.petArray) ? parent.petArray : [];
@@ -32,10 +32,20 @@ export class AttackEventService {
 
       if (pet == attackingPet) {
         if (pet.hasTrigger('BeforeThisAttacks')) {
-          this.abilityQueueService.triggerAbility(pet, 'BeforeThisAttacks');
+          this.abilityQueueService.triggerAbility(
+            pet,
+            'BeforeThisAttacks',
+            undefined,
+            { attackTarget },
+          );
         }
         if (pet.hasTrigger('BeforeFirstAttack')) {
-          this.abilityQueueService.triggerAbility(pet, 'BeforeFirstAttack');
+          this.abilityQueueService.triggerAbility(
+            pet,
+            'BeforeFirstAttack',
+            undefined,
+            { attackTarget },
+          );
         }
       } else {
         if (pet.hasTrigger('BeforeFriendAttacks')) {

@@ -32,9 +32,11 @@ export class SquashAbility extends Ability {
       native: true,
       maxUses: 1, // Squash is removed after one use
       abilitylevel: 1,
-      condition: () => {
-        const frontEnemy = this.owner.parent.opponent.pet0;
-        return !!frontEnemy && frontEnemy.alive;
+      condition: (context) => {
+        const attackTarget = context.attackTarget instanceof Pet
+          ? context.attackTarget
+          : this.owner.parent.opponent.pet0;
+        return !!attackTarget && attackTarget.alive;
       },
       abilityFunction: (context) => {
         this.executeAbility(context);
@@ -48,8 +50,9 @@ export class SquashAbility extends Ability {
     const owner = this.owner;
 
     for (let i = 0; i < this.equipment.multiplier; i++) {
-      // Squash targets the pet being attacked, need to get front pet from opponent
-      let targetPet = owner.parent.opponent.pet0;
+      const targetPet = context.attackTarget instanceof Pet
+        ? context.attackTarget
+        : owner.parent.opponent.pet0;
       if (targetPet == null || !targetPet.alive) {
         return;
       }
@@ -69,4 +72,3 @@ export class SquashAbility extends Ability {
     owner.removePerk();
   }
 }
-

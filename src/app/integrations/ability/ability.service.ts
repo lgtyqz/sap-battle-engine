@@ -244,8 +244,8 @@ export class AbilityService extends AbilityEventTriggers {
   }
 
   // Before Attack
-  triggerBeforeAttackEvent(AttackingPet: Pet) {
-    this.attackEventService.triggerBeforeAttackEvents(AttackingPet);
+  triggerBeforeAttackEvent(attackingPet: Pet, attackTarget?: Pet) {
+    this.attackEventService.triggerBeforeAttackEvents(attackingPet, attackTarget);
   }
 
   executeBeforeAttackEvents() {

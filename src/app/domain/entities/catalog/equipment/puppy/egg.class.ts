@@ -53,16 +53,11 @@ export class EggAbility extends Ability {
     }
 
     for (let i = 0; i < multiplier; i++) {
-      let opponentPets = owner.parent.opponent.petArray;
-      let attackPet: Pet = null;
-      for (let opponentPet of opponentPets) {
-        if (opponentPet.alive) {
-          attackPet = opponentPet;
-          break;
-        }
-      }
+      const attackPet = context.attackTarget instanceof Pet
+        ? context.attackTarget
+        : owner.parent.opponent.furthestUpPet;
 
-      if (attackPet == null) {
+      if (attackPet == null || !attackPet.alive) {
         continue;
       }
 
@@ -74,4 +69,3 @@ export class EggAbility extends Ability {
     owner.removePerk();
   }
 }
-

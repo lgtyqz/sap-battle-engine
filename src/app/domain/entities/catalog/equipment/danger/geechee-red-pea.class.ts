@@ -37,7 +37,9 @@ export class GeecheeRedPeaAbility extends Ability {
 
   private executeAbility(context: AbilityContext): void {
     const owner = this.owner;
-    const target = owner.parent.opponent?.furthestUpPet;
+    const target = context.attackTarget instanceof Pet
+      ? context.attackTarget
+      : owner.parent.opponent?.furthestUpPet;
     if (!target) {
       owner.removePerk();
       return;

@@ -116,11 +116,15 @@ export class EventProcessor {
       let originalOpponentAttackingPet = this.ctx.opponent.pet0;
 
       if (this.ctx.player.pet0) {
-        this.ctx.abilityService.triggerBeforeAttackEvent(this.ctx.player.pet0);
+        this.ctx.abilityService.triggerBeforeAttackEvent(
+          this.ctx.player.pet0,
+          this.ctx.opponent.pet0,
+        );
       }
       if (this.ctx.opponent.pet0) {
         this.ctx.abilityService.triggerBeforeAttackEvent(
           this.ctx.opponent.pet0,
+          this.ctx.player.pet0,
         );
       }
       this.ctx.abilityService.executeBeforeAttackEvents();
@@ -226,4 +230,3 @@ export class EventProcessor {
     return loser.alive();
   }
 }
-

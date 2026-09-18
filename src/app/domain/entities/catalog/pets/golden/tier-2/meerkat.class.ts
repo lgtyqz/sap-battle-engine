@@ -60,7 +60,7 @@ export class MeerkatAbility extends Ability {
     } else {
       gold = gameApi.opponentGoldSpent;
     }
-    let power = Math.floor(gold / 4) * this.level;
+    let power = Math.floor(gold / 4 * this.level);
 
     // Get pets ahead and behind with Silly-aware targeting
     let targetsBehindResp = owner.parent.nearestPetsBehind(1, owner);
