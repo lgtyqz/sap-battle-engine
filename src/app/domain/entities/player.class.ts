@@ -3,6 +3,7 @@ import { Pet } from './pet.class';
 import { LogService } from 'app/integrations/log.service';
 import { AbilityService } from 'app/integrations/ability/ability.service';
 import { Toy } from './toy.class';
+import { Equipment } from './equipment.class';
 import { GameService } from 'app/runtime/state/game.service';
 import { getOpponent } from 'app/runtime/player-opponent';
 import { alive as playerAlive, checkPetsAlive as checkPetsAliveImpl, createDeathLog as createDeathLogImpl, handleDeath as handleDeathImpl, removeDeadPets as removeDeadPetsImpl, removePet as removePetImpl, resetJumpedFlags as resetJumpedFlagsImpl, resetPets as resetPetsImpl } from './player/player-lifecycle';
@@ -41,6 +42,7 @@ export class Player extends PlayerSummonFacade {
 
   trumpets: number = 0;
   spawnedGoldenRetiever: boolean = false;
+  goldenRetrieverEquipment: Equipment | null = null;
   summonedBoatThisBattle: boolean = false;
   public isOpponent: boolean = false;
   public allPets: boolean = false;
@@ -174,7 +176,7 @@ export class Player extends PlayerSummonFacade {
   transformPet(
     originalPet: Pet,
     newPet: Pet,
-    options: { preserveStats?: boolean } = {},
+    options: { preserveStats?: boolean; emitEvents?: boolean } = {},
   ): void {
     transformPetImpl(
       this,

@@ -52,38 +52,57 @@ export class BrazillianTreehopperAbility extends Ability {
   private executeAbility(context: AbilityContext): void {
     const { tiger, pteranodon } = context;
     const owner = this.owner;
-    const targetCount = 2 * this.level;
-    const targetsResp = owner.parent.getRandomEnemyPetsWithSillyFallback(
-      targetCount,
-      [],
-      false,
-      false,
+    const targetsResp = owner.parent.opponent.getHighestHealthPets(
+      this.level,
+      undefined,
       owner,
     );
     const targets = targetsResp.pets;
 
-    if (targets.length > 1) {
-      let totalAttack = 0;
-      let totalHealth = 0;
-      for (const target of targets) {
-        totalAttack += target.attack;
-        totalHealth += target.health;
+    const changes: string[] = [];
+    let randomEvent = targetsResp.random;
+    for (const target of targets) {
+      const statTotal = target.attack + target.health;
+      const statCap = target.name === 'Behemoth' ? 100 : 50;
+      const minAttack = Math.max(1, statTotal - statCap);
+      const maxAttack = Math.min(statCap, statTotal - 1);
+      if (maxAttack < minAttack) {
+        continue;
       }
 
-      const avgAttack = Math.floor(totalAttack / targets.length);
-      const avgHealth = Math.floor(totalHealth / targets.length);
+      const decision = this.runtime.random.chooseRandomOption(
+        () => ({
+          key: 'pet.brazillian-treehopper-stats',
+          label: `${owner.name} stats for ${target.name}`,
+          options: Array.from(
+            { length: maxAttack - minAttack + 1 },
+            (_, index) => {
+              const attack = minAttack + index;
+              return {
+                id: `${attack}/${statTotal - attack}`,
+                label: `${attack}/${statTotal - attack}`,
+              };
+            },
+          ),
+        }),
+        () => this.runtime.random.getRandomInt(minAttack, maxAttack) - minAttack,
+        maxAttack - minAttack + 1,
+      );
+      randomEvent = randomEvent || decision.randomEvent;
+      const newAttack = minAttack + decision.index;
+      target.attack = newAttack;
+      target.health = statTotal - newAttack;
+      changes.push(`${target.name} to ${target.attack}/${target.health}`);
+    }
 
-      for (const target of targets) {
-        target.attack = Math.max(1, avgAttack);
-        target.health = Math.max(1, avgHealth);
-      }
-
-      if (this.logService.isEnabled()) this.logService.createLog({
-        message: `${owner.name} averaged stats of ${targets.length} enemies to ${avgAttack}/${avgHealth}.`,
+    if (changes.length > 0 && this.logService.isEnabled()) {
+      this.logService.createLog({
+        message: `${owner.name} redistributed ${changes.join(', ')}.`,
         type: 'ability',
         player: owner.parent,
-        tiger: tiger,
-        pteranodon: pteranodon,
+        tiger,
+        pteranodon,
+        randomEvent,
       });
     }
 

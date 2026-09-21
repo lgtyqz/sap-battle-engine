@@ -2,6 +2,7 @@ import type { Pet } from '../pet.class';
 import type { Equipment } from '../equipment.class';
 import { applyIckyMultiplier, applyManticoreMultiplier } from './damage-reduction';
 import { getStrawberrySparrowBlockAmount } from './combat-snipe-utils';
+import { getDeinocheirusLevel } from 'app/domain/entities/ability-resolution';
 
 type PrepareDefenseOptions = {
   includeShieldSnipe?: boolean;
@@ -53,7 +54,12 @@ export function prepareDefenseForIncomingDamage(
     manticoreDefenseAilments,
   );
   const basePower = defenseEquipment.originalPower ?? defenseEquipment.power ?? 0;
-  defenseEquipment.power = basePower * defenseMultiplier;
+  const deinocheirusLevel = getDeinocheirusLevel(pet);
+  defenseEquipment.power =
+    deinocheirusLevel > 0 &&
+    defenseEquipment.equipmentClass === 'ailment-defense'
+      ? Math.abs(basePower) * defenseMultiplier * deinocheirusLevel
+      : basePower * defenseMultiplier;
 
   return { defenseEquipment, defenseMultiplier };
 }
@@ -66,7 +72,7 @@ export function calculateIncomingDamageBeforeReductions(
 ): number {
   const adjustedIncomingPower = applyIckyMultiplier(
     incomingPower,
-    pet.equipment,
+    pet,
     manticoreMultipliers,
   );
   const defenseAmount = defenseEquipment?.power ?? 0;

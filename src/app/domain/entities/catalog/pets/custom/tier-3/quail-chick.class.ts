@@ -63,7 +63,7 @@ export class QuailChickAbility extends Ability {
     const { tiger, pteranodon } = context;
     const owner = this.owner;
     const buffAmount = 2 * this.level * 2;
-    const frontFriend = owner.petAhead;
+    const frontFriend = owner.parent.getFurthestUpPet(owner, [owner]).pet;
 
     if (frontFriend && frontFriend.alive) {
       frontFriend.increaseAttack(buffAmount);
@@ -111,4 +111,3 @@ export class QuailChickAbility extends Ability {
     );
   }
 }
-

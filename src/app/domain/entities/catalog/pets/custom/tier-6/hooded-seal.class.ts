@@ -62,18 +62,25 @@ export class HoodedSealAbility extends Ability {
     }
 
     const transformedPet = context.triggerPet;
-    if (!transformedPet) {
+    const transformedFrom = context.transformedFrom as Pet | undefined;
+    if (!transformedPet || !transformedFrom) {
       this.triggerTigerExecution(context);
       return;
     }
 
     this.usesThisTurn++;
     const desiredExp = minExpForLevel(this.level);
-    transformedPet.exp = Math.min(transformedPet.exp, desiredExp);
-    transformedPet.resetAbilityUses();
+    transformedFrom.exp = Math.min(transformedFrom.exp ?? 0, desiredExp);
+    transformedFrom.transformed = false;
+    transformedFrom.transformedInto = null;
+    transformedFrom.abilityCounter = 0;
+    transformedFrom.resetAbilityUses();
+    transformedPet.parent.transformPet(transformedPet, transformedFrom, {
+      emitEvents: false,
+    });
 
     if (this.logService.isEnabled()) this.logService.createLog({
-      message: `${this.owner.name} capped ${transformedPet.name} to level ${this.level}.`,
+      message: `${this.owner.name} transformed ${transformedPet.name} back into ${transformedFrom.name} at level ${this.level}.`,
       type: 'ability',
       player: this.owner.parent,
       tiger: context.tiger,
@@ -87,4 +94,3 @@ export class HoodedSealAbility extends Ability {
     return new HoodedSealAbility(this.runtime, newOwner, this.logService);
   }
 }
-

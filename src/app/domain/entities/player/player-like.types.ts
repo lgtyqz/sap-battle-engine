@@ -1,5 +1,6 @@
 import type { Pet } from '../pet.class';
 import type { Toy } from '../toy.class';
+import type { Equipment } from '../equipment.class';
 
 export interface PetLike {
   name: string;
@@ -22,6 +23,7 @@ export interface PlayerLike {
   brokenHardToy?: Toy | null;
   trumpets: number;
   spawnedGoldenRetiever: boolean;
+  goldenRetrieverEquipment: Equipment | null;
   getPet(index: number): Pet | undefined;
   setPet(index: number, pet: Pet, init?: boolean): void;
 }

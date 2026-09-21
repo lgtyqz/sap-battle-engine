@@ -128,6 +128,10 @@ export class AbilityService extends AbilityEventTriggers {
     this.abilityQueueService.simulateFriendHurtCounters(pet, count);
   }
 
+  simulateFoodEatenCounters(pet: Pet, count: number) {
+    this.abilityQueueService.simulateFoodEatenCounters(pet, count);
+  }
+
   queueDeathLog(pet: Pet): void {
     // The log belongs to the Faint phase, rather than death detection. This
     // lets higher-priority Hurt events resolve before it and KnockOut events

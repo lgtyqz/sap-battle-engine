@@ -6,7 +6,7 @@ function triggerFoodEvent(target: Pet, foodType: string): void {
 
 export function feedCorncob(target: Pet, effectMultiplier = 1): void {
   const statGain = Math.max(1, Math.floor(effectMultiplier));
-  if (target.attack <= target.health) {
+  if (target.attack < target.health) {
     target.increaseAttack(statGain);
   } else {
     target.increaseHealth(statGain);

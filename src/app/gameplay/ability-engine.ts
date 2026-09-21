@@ -33,6 +33,12 @@ export class AbilityEngine {
             pet.friendsHurtBeforeBattle,
           );
         }
+        if (pet?.foodsEaten) {
+          this.abilityService.simulateFoodEatenCounters(
+            pet,
+            pet.foodsEaten,
+          );
+        }
       }
     }
   }

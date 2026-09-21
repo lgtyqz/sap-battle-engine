@@ -67,7 +67,9 @@ export class SpinyBushViperAbility extends Ability {
 
     for (const target of targets) {
       const targetPosition = target.position ?? target.savedPosition ?? 0;
-      const distance = Math.max(1, Math.abs(ownerPosition - targetPosition));
+      // Opposing teams face one another: the two front slots are one space
+      // apart, so distance crosses both teams rather than subtracting indexes.
+      const distance = ownerPosition + targetPosition + 1;
       const damage = Math.max(1, this.level) * distance;
       owner.dealDamage(target, damage);
       damageLog.push(`${damage} to ${target.name}`);
@@ -90,4 +92,3 @@ export class SpinyBushViperAbility extends Ability {
     return new SpinyBushViperAbility(this.runtime, newOwner, this.logService);
   }
 }
-

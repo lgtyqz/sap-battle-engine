@@ -78,6 +78,9 @@ export class AnubisAbility extends Ability {
         pteranodon: pteranodon,
       });
 
+      // Faint pets use one of two internal timings. Activating the public
+      // Faint ability must support both without requiring the pet to die.
+      friend.activateAbilities('Faint', gameApi, 'Pet' as AbilityType);
       friend.activateAbilities('PostRemovalFaint', gameApi, 'Pet' as AbilityType);
     }
 
@@ -88,4 +91,3 @@ export class AnubisAbility extends Ability {
     return new AnubisAbility(this.runtime, newOwner, this.logService);
   }
 }
-

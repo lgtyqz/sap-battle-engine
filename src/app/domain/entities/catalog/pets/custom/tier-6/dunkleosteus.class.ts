@@ -6,7 +6,6 @@ import { Pack, Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
 import { cloneDeep } from 'app/runtime/clone';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
-import { canApplyAilment } from 'app/domain/entities/ability-resolution';
 
 export class Dunkleosteus extends Pet {
   name = 'Dunkleosteus';
@@ -67,11 +66,11 @@ export class DunkleosteusAbility extends Ability {
     }
 
     const copiedAilment = cloneDeep(ailment);
-    owner.removePerk(true);
+    owner.removePerk();
 
-    const targets = opponentPets
-      .filter((pet) => canApplyAilment(pet, copiedAilment.name))
-      .slice(0, 2);
+    // "First two enemies" is positional. Existing perks must not cause the
+    // ability to skip ahead to a later enemy.
+    const targets = opponentPets.slice(0, 2);
     if (targets.length === 0) {
       this.triggerTigerExecution(context);
       return;
@@ -113,4 +112,3 @@ export class DunkleosteusAbility extends Ability {
     return new DunkleosteusAbility(this.runtime, newOwner, this.logService);
   }
 }
-

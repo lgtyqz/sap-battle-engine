@@ -64,7 +64,7 @@ export class UnicornAbility extends Ability {
   private executeAbility(context: AbilityContext): void {
     const { gameApi, triggerPet, tiger, pteranodon } = context;
     const owner = this.owner;
-    let power = this.level * 2;
+    const power = 2;
     if (!triggerPet) {
       return;
     }
@@ -98,4 +98,3 @@ export class UnicornAbility extends Ability {
     return new UnicornAbility(this.runtime, newOwner, this.logService);
   }
 }
-

@@ -366,6 +366,16 @@ export class AbilityQueueService {
     }
   }
 
+  simulateFoodEatenCounters(pet: Pet, count: number) {
+    if (!pet || count <= 0) {
+      return;
+    }
+    const triggers = this.getNumberedTriggersForPet(pet, 'Eat');
+    for (let i = 0; i < count; i++) {
+      this.handleNumberedCounterTriggers(pet, pet, undefined, triggers);
+    }
+  }
+
   // --- Counter Helpers ---
 
   handleCounterTriggers(

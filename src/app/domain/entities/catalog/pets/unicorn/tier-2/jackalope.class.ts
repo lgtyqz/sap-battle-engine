@@ -44,6 +44,7 @@ export class JackalopeAbility extends Ability {
       triggers: ['BeforeFriendAttacks'],
       abilityType: 'Pet',
       native: true,
+      maxUses: 3,
       abilitylevel: owner.level,
       precondition: (context: AbilityContext) => {
         const { triggerPet } = context;
@@ -67,7 +68,7 @@ export class JackalopeAbility extends Ability {
       return;
     }
     let power = this.level;
-    if (owner.jumped) {
+    if (target.jumped) {
       power *= 2;
     }
     target.increaseAttack(power);
@@ -85,4 +86,3 @@ export class JackalopeAbility extends Ability {
     return new JackalopeAbility(this.runtime, newOwner, this.logService);
   }
 }
-

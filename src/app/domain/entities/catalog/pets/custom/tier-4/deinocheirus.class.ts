@@ -4,7 +4,7 @@ import { LogService } from 'app/integrations/log.service';
 import { Equipment } from 'app/domain/entities/equipment.class';
 import { Pack, Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
-import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+import { Ability } from 'app/domain/entities/ability.class';
 
 export class Deinocheirus extends Pet {
   name = 'Deinocheirus';
@@ -40,50 +40,17 @@ export class DeinocheirusAbility extends Ability {
     super(runtime, {
       name: 'Deinocheirus Ability',
       owner,
-      triggers: ['StartBattle'],
+      // Passive marker consumed by ailment resolution in the combat engine.
+      triggers: [],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
-      abilityFunction: (context) => this.executeAbility(context),
+      abilityFunction: () => {},
     });
     this.logService = logService;
-  }
-
-  private executeAbility(context: AbilityContext): void {
-    const { tiger, pteranodon } = context;
-    const owner = this.owner;
-    const equipment = owner.equipment;
-
-    if (!equipment) {
-      this.triggerTigerExecution(context);
-      return;
-    }
-
-    const eqClass = equipment.equipmentClass;
-    if (!eqClass?.startsWith('ailment')) {
-      this.triggerTigerExecution(context);
-      return;
-    }
-
-    const multiplier = this.level;
-    const attackBuff = multiplier;
-    const healthBuff = multiplier * 2;
-    owner.increaseAttack(attackBuff);
-    owner.increaseHealth(healthBuff);
-
-    if (this.logService.isEnabled()) this.logService.createLog({
-      message: `${owner.name} reversed ${equipment.name} and gained +${attackBuff}/+${healthBuff} (x${multiplier}).`,
-      type: 'ability',
-      player: owner.parent,
-      tiger,
-      pteranodon,
-    });
-
-    this.triggerTigerExecution(context);
   }
 
   override copy(newOwner: Pet): DeinocheirusAbility {
     return new DeinocheirusAbility(this.runtime, newOwner, this.logService);
   }
 }
-

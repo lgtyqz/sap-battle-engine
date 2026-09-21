@@ -1,5 +1,5 @@
 import type { Pet } from '../pet.class';
-import type { Equipment } from '../equipment.class';
+import { getDeinocheirusLevel } from 'app/domain/entities/ability-resolution';
 
 export interface DamageReductionResult {
   damage: number;
@@ -28,9 +28,10 @@ export function applyManticoreMultiplier(
 
 export function applyIckyMultiplier(
   basePower: number,
-  equipment: Equipment | null | undefined,
+  pet: Pet,
   manticoreMult: number[],
 ): number {
+  const equipment = pet.equipment;
   if (equipment?.name !== 'Icky') {
     return basePower;
   }
@@ -40,6 +41,10 @@ export function applyIckyMultiplier(
     totalMultiplier += mult;
   }
   totalMultiplier += (equipment.multiplier ?? 1) - 1;
+  const deinocheirusLevel = getDeinocheirusLevel(pet);
+  if (deinocheirusLevel > 0) {
+    return Math.floor(basePower / (totalMultiplier * deinocheirusLevel));
+  }
   return basePower * totalMultiplier;
 }
 

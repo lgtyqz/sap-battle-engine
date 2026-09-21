@@ -13,6 +13,13 @@ export class Saola extends Pet {
   attack = 2;
   health = 2;
 
+  override initAbilities(): void {
+    this.addAbility(
+      new SaolaAbility(this.runtime, this, this.logService, this.abilityService),
+    );
+    super.initAbilities();
+  }
+
   constructor(runtime: EngineContext,
     protected logService: LogService,
     protected abilityService: AbilityService,
@@ -41,7 +48,7 @@ export class SaolaAbility extends Ability {
     super(runtime, {
       name: 'SaolaAbility',
       owner: owner,
-      triggers: [],
+      triggers: ['EndTurn'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -54,7 +61,29 @@ export class SaolaAbility extends Ability {
   }
 
   private executeAbility(context: AbilityContext): void {
-    // Empty implementation - to be filled by user
+    const owner = this.owner;
+    const targetResp = owner.parent.getHighestAttackPets(
+      this.level,
+      [owner],
+      owner,
+    );
+
+    for (const target of targetResp.pets) {
+      target.increaseAttack(-1);
+      target.increaseHealth(2);
+    }
+
+    if (targetResp.pets.length > 0 && this.logService.isEnabled()) {
+      this.logService.createLog({
+        message: `${owner.name} gave ${targetResp.pets.map((pet) => pet.name).join(', ')} -1 attack and +2 health.`,
+        type: 'ability',
+        player: owner.parent,
+        tiger: context.tiger,
+        pteranodon: context.pteranodon,
+        randomEvent: targetResp.random,
+      });
+    }
+
     this.triggerTigerExecution(context);
   }
 
@@ -62,4 +91,3 @@ export class SaolaAbility extends Ability {
     return new SaolaAbility(this.runtime, newOwner, this.logService, this.abilityService);
   }
 }
-

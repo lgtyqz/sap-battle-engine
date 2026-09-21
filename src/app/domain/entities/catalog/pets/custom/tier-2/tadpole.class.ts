@@ -6,7 +6,6 @@ import { Pack, Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
 import { PetService } from 'app/integrations/pet/pet.service';
-import { levelToExp } from 'app/runtime/experience';
 
 export class Tadpole extends Pet {
   name = 'Tadpole';
@@ -56,7 +55,7 @@ export class TadpoleAbility extends Ability {
 
   private executeAbility(context: AbilityContext): void {
     const owner = this.owner;
-    const level = owner.level;
+    const experienceGain = owner.level * 2;
 
     // Create a new Frog
     const frog = this.petService.createPet(
@@ -65,7 +64,7 @@ export class TadpoleAbility extends Ability {
         attack: null,
         health: null,
         mana: 0,
-        exp: levelToExp(level),
+        exp: 0,
         equipment: null,
       },
       owner.parent,
@@ -74,9 +73,10 @@ export class TadpoleAbility extends Ability {
     if (frog) {
       // Transformation
       owner.parent.transformPet(owner, frog);
+      frog.increaseExp(experienceGain);
 
       if (this.logService.isEnabled()) this.logService.createLog({
-        message: `${owner.name} transformed into a level ${level} Frog.`,
+        message: `${owner.name} transformed into a Frog and gained +${experienceGain} experience.`,
         type: 'ability',
         player: owner.parent,
       });
@@ -89,4 +89,3 @@ export class TadpoleAbility extends Ability {
     return new TadpoleAbility(this.runtime, newOwner, this.logService, this.petService);
   }
 }
-

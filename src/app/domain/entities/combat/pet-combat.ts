@@ -18,6 +18,7 @@ import {
   getStrawberrySparrowBlockAmount,
 } from './combat-snipe-utils';
 import { calculateDamage } from './pet-combat-damage';
+import { getDeinocheirusLevel } from 'app/domain/entities/ability-resolution';
 export { calculateDamage } from './pet-combat-damage';
 
 type DamageResponse = ReturnType<typeof calculateDamage>;
@@ -114,7 +115,10 @@ export function attackPet(
   let damage = damageResp.damage;
   const usedSleepy = self.equipment instanceof Sleepy;
   if (usedSleepy) {
-    damage = Math.floor(damage / 2);
+    const deinocheirusLevel = getDeinocheirusLevel(self);
+    damage = deinocheirusLevel > 0
+      ? damage * 2 * deinocheirusLevel
+      : Math.floor(damage / 2);
   }
 
   let attackMultiplier = self.equipment?.multiplier ?? 1;

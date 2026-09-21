@@ -126,18 +126,20 @@ export abstract class AbilityEventTriggers {
           pet,
           'ThisTransformed',
           transformedPet,
+          { transformedFrom: originalPet },
         );
       } else {
         this.abilityQueueService.triggerAbility(
           pet,
           'FriendTransformed',
           transformedPet,
+          { transformedFrom: originalPet },
         );
         this.abilityQueueService.incrementCounterForSource(
           pet,
           'FriendTransformed',
           transformedPet,
-          undefined,
+          { transformedFrom: originalPet },
         );
       }
     }

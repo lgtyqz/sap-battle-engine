@@ -18,6 +18,7 @@ import {
   calculateIncomingDamageBeforeReductions,
   prepareDefenseForIncomingDamage,
 } from './defense-damage-calculation';
+import { getDeinocheirusLevel } from 'app/domain/entities/ability-resolution';
 
 export type CombatDamageResponse = {
   defenseEquipment: Equipment | null;
@@ -78,7 +79,12 @@ export function calculateDamage(
       );
       const basePower =
         attackEquipment.originalPower ?? attackEquipment.power ?? 0;
-      attackEquipment.power = basePower * attackMultiplier;
+      const deinocheirusLevel = getDeinocheirusLevel(self);
+      attackEquipment.power =
+        deinocheirusLevel > 0 &&
+        attackEquipment.equipmentClass === 'ailment-attack'
+          ? Math.abs(basePower) * attackMultiplier * deinocheirusLevel
+          : basePower * attackMultiplier;
     }
 
     let petAttack = self.attack;
@@ -133,7 +139,10 @@ export function calculateDamage(
   );
 
   if (snipe && self.equipment?.name === 'Inked' && damage > 0) {
-    damage = Math.max(1, damage - 3);
+    const deinocheirusLevel = getDeinocheirusLevel(self);
+    damage = deinocheirusLevel > 0
+      ? damage + 3 * deinocheirusLevel * (self.equipment.multiplier ?? 1)
+      : Math.max(1, damage - 3);
   }
   if (defenseEquipment instanceof Pepper) {
     damage = Math.min(damage, pet.health - 1);

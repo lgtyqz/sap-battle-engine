@@ -13,6 +13,7 @@ import { resetPetState } from '../combat/pet-state';
 import { Equipment } from '../equipment.class';
 import type { Pet } from '../pet.class';
 import { PetTargetingRuntimeFacade } from './pet-targeting-runtime-facade';
+import { getDeinocheirusLevel } from '../ability-resolution';
 
 interface AbilityLifecycle {
   reset(): void;
@@ -36,7 +37,10 @@ export abstract class PetRuntimeFacade extends PetTargetingRuntimeFacade {
       return false;
     }
 
-    if (this.equipment instanceof Dazed) {
+    if (
+      this.equipment instanceof Dazed &&
+      getDeinocheirusLevel(this as unknown as Pet) === 0
+    ) {
       if (this.logService.isEnabled()) this.logService.createLog({
         message: `${this.name}'s ability was not activated because of Dazed.`,
         type: 'ability',
@@ -205,7 +209,13 @@ export abstract class PetRuntimeFacade extends PetTargetingRuntimeFacade {
     if (this.name == 'Behemoth') {
       max = 100;
     }
-    if (amt > 0 && this.equipment?.name === 'Sad') {
+    const reversedSad =
+      this.equipment?.name === 'Sad' &&
+      getDeinocheirusLevel(this as unknown as Pet) > 0;
+    if (
+      this.equipment?.name === 'Sad' &&
+      ((amt > 0 && !reversedSad) || (amt < 0 && reversedSad))
+    ) {
       return 0;
     }
     if (!this.alive) {
@@ -221,7 +231,13 @@ export abstract class PetRuntimeFacade extends PetTargetingRuntimeFacade {
     if (this.name == 'Behemoth' || this.name == 'Giant Tortoise') {
       max = 100;
     }
-    if (amt > 0 && this.equipment?.name === 'Sad') {
+    const reversedSad =
+      this.equipment?.name === 'Sad' &&
+      getDeinocheirusLevel(this as unknown as Pet) > 0;
+    if (
+      this.equipment?.name === 'Sad' &&
+      ((amt > 0 && !reversedSad) || (amt < 0 && reversedSad))
+    ) {
       return 0;
     }
     if (!this.alive) {

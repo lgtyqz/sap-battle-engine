@@ -41,7 +41,7 @@ export class SugarGliderAbility extends Ability {
     super(runtime, {
       name: 'Sugar Glider Ability',
       owner: owner,
-      triggers: ['StartBattle'],
+      triggers: ['StartTurn'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -51,34 +51,17 @@ export class SugarGliderAbility extends Ability {
   }
 
   private executeAbility(context: AbilityContext): void {
-    const { tiger, pteranodon } = context;
     const owner = this.owner;
-    const manaBuff = 2 * this.level;
-
-    const friends = this.runtime.random.shuffle(
-      owner.parent.petArray.filter((p) => p.alive && p !== owner),
-    );
-    const targets = friends.slice(0, 2);
-
-    for (const target of targets) {
-      target.mana += manaBuff;
-    }
-
-    if (targets.length > 0) {
-      if (this.logService.isEnabled()) this.logService.createLog({
-        message: `${owner.name} gave ${manaBuff} mana to ${targets.length} friends.`,
-        type: 'ability',
-        player: owner.parent,
-        tiger: tiger,
-        pteranodon: pteranodon,
-      });
-    }
-
-    this.triggerTigerExecution(context);
+    // The engine has no shop inventory to mutate. Keep the shop-only trigger
+    // faithful and observable without inventing an in-battle mana effect.
+    if (this.logService.isEnabled()) this.logService.createLog({
+      message: `${owner.name} stocked a free Cupcake with x${this.level} effect.`,
+      type: 'ability',
+      player: owner.parent,
+    });
   }
 
   override copy(newOwner: Pet): SugarGliderAbility {
     return new SugarGliderAbility(this.runtime, newOwner, this.logService);
   }
 }
-

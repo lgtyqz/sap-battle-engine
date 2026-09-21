@@ -1,5 +1,5 @@
-import { Log } from 'app/domain/interfaces/log.interface';
-import { Pet } from './pet.class';
+import type { Log } from 'app/domain/interfaces/log.interface';
+import type { Pet } from './pet.class';
 import { LogService } from 'app/integrations/log.service';
 
 export function getAdjacentAlivePets(owner: Pet): Pet[] {
@@ -26,6 +26,13 @@ export function canApplyAilment(target: Pet, ailmentName: string): boolean {
     target.equipment && !target.equipment.equipmentClass?.startsWith('ailment');
   const alreadyAilment = target.equipment?.name === ailmentName;
   return !hasPerk && !alreadyAilment;
+}
+
+export function getDeinocheirusLevel(pet: Pet): number {
+  const levels = pet.abilityList
+    .filter((ability) => ability.name === 'Deinocheirus Ability')
+    .map((ability) => ability.level);
+  return levels.length > 0 ? Math.max(...levels) : 0;
 }
 
 export interface FriendSummonedTargetResult {
@@ -105,4 +112,3 @@ export function canUseAliveTriggerTarget(
 // Backward-compatible aliases for existing call sites.
 export const resolveTriggerTargetAlive = getAliveTriggerTarget;
 export const hasAliveTriggerTarget = canUseAliveTriggerTarget;
-

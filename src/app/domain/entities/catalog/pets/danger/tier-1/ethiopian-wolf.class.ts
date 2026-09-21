@@ -40,7 +40,7 @@ export class EthiopianWolfAbility extends Ability {
     super(runtime, {
       name: 'EthiopianWolfAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -83,4 +83,3 @@ export class EthiopianWolfAbility extends Ability {
     return new EthiopianWolfAbility(this.runtime, newOwner, this.logService);
   }
 }
-

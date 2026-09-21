@@ -47,7 +47,8 @@ export class LobsterAbility extends Ability {
     super(runtime, {
       name: 'LobsterAbility',
       owner: owner,
-      triggers: ['FriendSummoned'],
+      // Lobster is a shop-only ability. Battle summons must never receive it.
+      triggers: [],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -86,4 +87,3 @@ export class LobsterAbility extends Ability {
     return new LobsterAbility(this.runtime, newOwner, this.logService, this.abilityService);
   }
 }
-

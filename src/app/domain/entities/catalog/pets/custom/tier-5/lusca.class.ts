@@ -12,6 +12,7 @@ export class Lusca extends Pet {
   pack: Pack = 'Custom';
   attack = 7;
   health = 5;
+  override suppressManaSnipeOnFaint = true;
   initAbilities(): void {
     this.addAbility(new LuscaAbility(this.runtime, this, this.logService));
     super.initAbilities();
@@ -92,4 +93,3 @@ export class LuscaAbility extends Ability {
     return new LuscaAbility(this.runtime, newOwner, this.logService);
   }
 }
-

@@ -41,7 +41,7 @@ export class PeacockSpiderAbility extends Ability {
     super(runtime, {
       name: 'PeacockSpiderAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -62,7 +62,9 @@ export class PeacockSpiderAbility extends Ability {
     }
 
     for (const target of targets) {
-      if (!canApplyAilment(target, 'Spooked')) {
+      // Peacock Spider specifically requires perk-less targets. Other
+      // ailment sources may replace an existing ailment, but this one may not.
+      if (target.equipment || !canApplyAilment(target, 'Spooked')) {
         continue;
       }
       const spooked = new Spooked(this.runtime);
@@ -86,4 +88,3 @@ export class PeacockSpiderAbility extends Ability {
     return new PeacockSpiderAbility(this.runtime, newOwner, this.logService);
   }
 }
-

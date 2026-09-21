@@ -63,52 +63,51 @@ export class LeafGeckoAbility extends Ability {
     const ailmentNames = Array.from(
       equipmentService.getInstanceOfAllAilments().keys(),
     );
-    const targets = [
+    const eligibleTargets = [
       ...owner.parent.petArray,
       ...owner.parent.opponent.petArray,
-    ].filter((pet) => pet?.alive);
+    ].filter(
+      (pet) =>
+        pet?.alive &&
+        (!pet.equipment || pet.equipment.equipmentClass?.startsWith('ailment')),
+    );
 
-    if (ailmentNames.length === 0 || targets.length === 0) {
+    if (ailmentNames.length === 0 || eligibleTargets.length === 0) {
       this.triggerTigerExecution(context);
       return;
     }
 
     const requiredCount = this.level * 3;
-    let appliedCount = 0;
     const appliedDetails: string[] = [];
-    let attempts = 0;
-    const maxAttempts = requiredCount * 5;
     let randomEvent = false;
+    const targets = [...eligibleTargets];
 
-    while (appliedCount < requiredCount && attempts < maxAttempts) {
+    for (let index = 0; index < Math.min(requiredCount, targets.length); index++) {
       const targetDecision = this.runtime.random.chooseRandomOption(
         () => ({
           key: 'pet.leaf-gecko-target',
           label: formatPetScopedRandomLabel(
             owner,
             'Leaf Gecko cursed target',
-            attempts + 1,
+            index + 1,
           ),
-          options: targets.map((pet) => ({
+          options: targets.slice(index).map((pet) => ({
             id: `${pet.parent?.isOpponent ? 'O' : 'P'}:${pet.savedPosition + 1}:${pet.name}`,
             label: `${pet.parent?.isOpponent ? 'O' : 'P'}${pet.savedPosition + 1} ${pet.name}`,
           })),
         }),
-        () => this.runtime.random.getRandomInt(0, targets.length - 1), (targets).length
+        () => this.runtime.random.getRandomInt(index, targets.length - 1) - index,
+        targets.length - index,
       );
       randomEvent = randomEvent || targetDecision.randomEvent;
-      const target = targets[targetDecision.index];
-
-      if (!target) {
-        attempts++;
-        continue;
-      }
+      const selectedIndex = index + targetDecision.index;
+      [targets[index], targets[selectedIndex]] = [targets[selectedIndex], targets[index]];
+      const target = targets[index];
 
       const availableAilments = ailmentNames.filter((ailmentName) =>
         canApplyAilment(target, ailmentName),
       );
       if (availableAilments.length === 0) {
-        attempts++;
         continue;
       }
 
@@ -118,7 +117,7 @@ export class LeafGeckoAbility extends Ability {
           label: formatPetScopedRandomLabel(
             owner,
             `Leaf Gecko ailment for ${target.name}`,
-            attempts + 1,
+            index + 1,
           ),
           options: availableAilments.map((name) => ({ id: name, label: name })),
         }),
@@ -127,7 +126,6 @@ export class LeafGeckoAbility extends Ability {
       randomEvent = randomEvent || ailmentDecision.randomEvent;
       const ailmentName = availableAilments[ailmentDecision.index];
       if (!ailmentName) {
-        attempts++;
         continue;
       }
 
@@ -135,13 +133,11 @@ export class LeafGeckoAbility extends Ability {
         .getInstanceOfAllAilments()
         .get(ailmentName);
       if (!ailmentInstance) {
-        attempts++;
         continue;
       }
 
       const ailmentClone = cloneEquipment(ailmentInstance);
       if (!ailmentClone) {
-        attempts++;
         continue;
       }
       if (target.parent !== owner.parent) {
@@ -155,15 +151,13 @@ export class LeafGeckoAbility extends Ability {
         target.equipment?.name === ailmentName &&
         target.equipment?.equipmentClass?.startsWith('ailment')
       ) {
-        appliedCount++;
         appliedDetails.push(
           `${target.name} (${ailmentName}${target.parent !== owner.parent ? ' x2' : ''})`,
         );
       }
-
-      attempts++;
     }
 
+    const appliedCount = appliedDetails.length;
     const message =
       appliedCount > 0
         ? `${owner.name} cursed ${appliedCount} pet${appliedCount === 1 ? '' : 's'}: ${appliedDetails.join(', ')}.`
@@ -179,4 +173,3 @@ export class LeafGeckoAbility extends Ability {
     return new LeafGeckoAbility(this.runtime, newOwner, this.logService);
   }
 }
-

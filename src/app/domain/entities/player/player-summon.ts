@@ -3,6 +3,7 @@ import type { Player } from '../player.class';
 import { LogService } from 'app/integrations/log.service';
 import { AbilityService } from 'app/integrations/ability/ability.service';
 import { GameService } from 'app/runtime/state/game.service';
+import { cloneEquipment } from 'app/runtime/equipment-clone';
 
 import { hasSilly } from './player-utils';
 import { makeRoomForSlot, pushBackwardFromSlot, pushForwardFromSlot } from './player-movement';
@@ -120,6 +121,9 @@ export const summonPet = (
     }
     player.setPet(4, spawnPet);
   }
+  if (spawnPet.name === 'Golden Retriever' && player.goldenRetrieverEquipment) {
+    spawnPet.applyEquipment(cloneEquipment(player.goldenRetrieverEquipment));
+  }
   abilityService.triggerSummonEvents(spawnPet);
 
   return { success: true, randomEvent: false };
@@ -131,13 +135,16 @@ export const transformPet = (
   newPet: Pet,
   abilityService: AbilityService,
   gameService: GameService,
-  options: { preserveStats?: boolean } = {},
+  options: { preserveStats?: boolean; emitEvents?: boolean } = {},
 ): void => {
   const targetPlayer = originalPet?.parent ?? player;
 
   if (options.preserveStats !== false) {
     newPet.attack = originalPet.attack;
     newPet.health = originalPet.health;
+  }
+  if (originalPet.equipment) {
+    newPet.equipment = cloneEquipment(originalPet.equipment);
   }
 
   const resolveTransformSlot = (): number => {
@@ -183,7 +190,9 @@ export const transformPet = (
   originalPet.transformed = true;
   originalPet.transformedInto = newPet;
   newPet.applyEquipment(newPet.equipment);
-  abilityService.triggerTransformEvents(originalPet);
+  if (options.emitEvents !== false) {
+    abilityService.triggerTransformEvents(originalPet);
+  }
 };
 
 export const summonPetInFront = (

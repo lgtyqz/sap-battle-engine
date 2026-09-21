@@ -58,6 +58,7 @@ export const resetPets = (player: Player): void => {
   player.brokenHardToy = null;
   player.trumpets = 0;
   player.spawnedGoldenRetiever = false;
+  player.goldenRetrieverEquipment = null;
   player.summonedBoatThisBattle = false;
   player.cannedAilments = [];
 };
@@ -183,4 +184,3 @@ export const removePet = (player: Player, pet: Pet): boolean => {
 
   return false;
 };
-

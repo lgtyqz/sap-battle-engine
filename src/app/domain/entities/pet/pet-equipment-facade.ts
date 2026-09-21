@@ -8,6 +8,7 @@ import { Blackberry } from 'app/domain/entities/catalog/equipment/puppy/blackber
 import { Equipment } from '../equipment.class';
 import { Player } from '../player.class';
 import { PetAbilityFacade } from './pet-ability-facade';
+import { getDeinocheirusLevel } from '../ability-resolution';
 
 export abstract class PetEquipmentFacade extends PetAbilityFacade {
   protected abstract abilityService: AbilityService;
@@ -100,6 +101,16 @@ export abstract class PetEquipmentFacade extends PetAbilityFacade {
   setEquipmentMultiplier(pandorasBoxLevel: number = 1) {
     if (!this.equipment) {
       return;
+    }
+
+    const deinocheirusLevel = getDeinocheirusLevel(this.asPet());
+    if (
+      deinocheirusLevel > 0 &&
+      (this.equipment.name === 'Weak' || this.equipment.name === 'Spooked') &&
+      this.equipment.uses == null
+    ) {
+      this.equipment.uses = 3;
+      this.equipment.originalUses = 3;
     }
 
     let baseMultiplier = this.equipment.baseMultiplier ?? 1;
