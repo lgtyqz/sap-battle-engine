@@ -80,8 +80,12 @@ export class GrosMichelBananaAbility extends Ability {
         player: owner.parent,
       });
 
+      // The transformed Ant must not inherit this before-attack perk and
+      // transform again while the current attack trigger is resolving.
+      if (i === 0) {
+        owner.removePerk();
+      }
       owner.parent.transformPet(owner, antPet);
     }
   }
 }
-

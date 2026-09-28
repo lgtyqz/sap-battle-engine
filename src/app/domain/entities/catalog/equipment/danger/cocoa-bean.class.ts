@@ -122,6 +122,11 @@ export class CocoaBeanAbility extends Ability {
         randomEvent: choice.randomEvent,
       });
 
+      // A transformation copies the owner's equipment to the new pet. Consume
+      // Cocoa Bean first so the new pet cannot run it again for this attack.
+      if (i === 0) {
+        owner.removePerk();
+      }
       owner.parent.transformPet(owner, transformedPet);
     }
   }

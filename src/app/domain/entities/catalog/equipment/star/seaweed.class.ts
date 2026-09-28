@@ -75,7 +75,7 @@ export class SeaweedAbility extends Ability {
       player: owner.parent,
     });
 
+    owner.removePerk();
     owner.parent.transformPet(owner, babyUrchinPet);
   }
 }
-
