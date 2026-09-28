@@ -41,7 +41,7 @@ export class JewelCaterpillarAbility extends Ability {
     super(runtime, {
       name: 'Jewel Caterpillar Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

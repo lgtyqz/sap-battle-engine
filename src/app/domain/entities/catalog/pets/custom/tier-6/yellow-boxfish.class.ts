@@ -39,7 +39,7 @@ export class YellowBoxfishAbility extends Ability {
     super(runtime, {
       name: 'YellowBoxfishAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

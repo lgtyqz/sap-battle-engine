@@ -58,7 +58,9 @@ export class PatagonianMaraAbility extends Ability {
     const player = owner.parent;
     const trumpetsGained = 4 * this.level;
 
+    const trumpetsBefore = player.trumpets;
     player.gainTrumpets(trumpetsGained, owner, pteranodon);
+    const actualTrumpetsGained = player.trumpets - trumpetsBefore;
 
     const abilityService = this.runtime.services.abilityService;
     const retriever = new GoldenRetriever(this.runtime,
@@ -71,7 +73,9 @@ export class PatagonianMaraAbility extends Ability {
     player.summonPet(retriever, owner.position);
 
     if (this.logService.isEnabled()) this.logService.createLog({
-      message: `${owner.name} gained ${trumpetsGained} trumpets and summoned a Golden Retriever.`,
+      message: actualTrumpetsGained > 0
+        ? `${owner.name} gained ${actualTrumpetsGained} trumpets and summoned a Golden Retriever.`
+        : `${owner.name} summoned a Golden Retriever.`,
       type: 'ability',
       player: player,
       tiger: tiger,
@@ -85,4 +89,3 @@ export class PatagonianMaraAbility extends Ability {
     return new PatagonianMaraAbility(this.runtime, newOwner, this.logService);
   }
 }
-

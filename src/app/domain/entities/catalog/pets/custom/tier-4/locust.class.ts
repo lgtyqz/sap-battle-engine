@@ -114,7 +114,7 @@ export class LocustAbility extends Ability {
     super(runtime, {
       name: 'Locust Ability',
       owner: owner,
-      triggers: ['FoodEatenByThis', 'PostRemovalFaint'],
+      triggers: ['FoodEatenByThis', 'Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -154,7 +154,7 @@ export class LocustAbility extends Ability {
       return;
     }
 
-    if (context.trigger !== 'PostRemovalFaint') {
+    if (context.trigger !== 'Faint') {
       this.triggerTigerExecution(context);
       return;
     }

@@ -66,7 +66,7 @@ export class LampreyAbility extends Ability {
 
     const targets = targetsResp.pets;
     for (const target of targets) {
-      owner.dealDamage(target, 1);
+      owner.snipePet(target, 1);
     }
 
     const targetNames = targets.map((p) => p.name).join(', ');
@@ -86,4 +86,3 @@ export class LampreyAbility extends Ability {
     return new LampreyAbility(this.runtime, newOwner, this.logService);
   }
 }
-

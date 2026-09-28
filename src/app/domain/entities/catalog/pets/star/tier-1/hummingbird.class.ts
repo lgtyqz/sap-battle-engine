@@ -48,7 +48,7 @@ export class HummingbirdAbility extends Ability {
     super(runtime, {
       name: 'HummingbirdAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

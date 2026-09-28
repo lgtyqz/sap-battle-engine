@@ -44,7 +44,7 @@ export class ThornyDragonAbility extends Ability {
     super(runtime, {
       name: 'Thorny Dragon Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

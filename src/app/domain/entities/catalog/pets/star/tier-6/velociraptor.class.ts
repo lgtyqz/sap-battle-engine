@@ -5,6 +5,7 @@ import { Equipment } from '../../../../equipment.class';
 import { Pack, Pet } from '../../../../pet.class';
 import { Player } from '../../../../player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+import { cloneEquipment } from 'app/runtime/equipment-clone';
 
 export class Velociraptor extends Pet {
   name = 'Velociraptor';
@@ -81,9 +82,14 @@ export class VelociraptorAbility extends Ability {
       targetPet.equipment &&
       targetPet.equipment.name === 'Strawberry'
     ) {
+      const strawberry = cloneEquipment(targetPet.equipment);
       targetPet.removePerk();
+      if (owner.equipment) {
+        owner.removePerk();
+      }
+      owner.givePetEquipment(strawberry);
       if (this.logService.isEnabled()) this.logService.createLog({
-        message: `${owner.name} removed Strawberry from ${targetPet.name}`,
+        message: `${owner.name} stole Strawberry from ${targetPet.name}`,
         type: 'ability',
         player: owner.parent,
         tiger: tiger,
@@ -117,4 +123,3 @@ export class VelociraptorAbility extends Ability {
     return new VelociraptorAbility(this.runtime, newOwner, this.logService);
   }
 }
-

@@ -46,7 +46,7 @@ export class BigfootAbility extends Ability {
     super(runtime, {
       name: 'BigfootAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

@@ -39,7 +39,7 @@ export class EagleOwlAbility extends Ability {
     super(runtime, {
       name: 'Eagle Owl Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

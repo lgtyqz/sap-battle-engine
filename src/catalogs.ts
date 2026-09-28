@@ -24,6 +24,7 @@ export interface PetCatalogEntry {
   readonly PerkNote?: string;
   readonly CustomArchetypes: readonly string[];
   readonly Random?: boolean;
+  readonly BattleMetadata?: readonly string[];
 }
 
 export interface ToyCatalogEntry extends PetCatalogEntry {

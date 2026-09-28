@@ -41,7 +41,7 @@ export class PinkRobinAbility extends Ability {
     super(runtime, {
       name: 'Pink Robin Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       abilitylevel: owner.level,
       abilityFunction: (context) => this.executeAbility(context),

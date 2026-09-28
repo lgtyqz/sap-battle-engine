@@ -43,6 +43,9 @@ export const gainTrumpets = (
   cherry?: boolean,
   randomEvent?: boolean,
 ): void => {
+  if (player.spawnedGoldenRetiever) {
+    return;
+  }
   player.trumpets = Math.min(50, (player.trumpets += amt));
   const opponentGain =
     pet instanceof Pet && pet.parent != null && pet.parent !== player;
@@ -125,4 +128,3 @@ export const checkGoldenSpawn = (
 
   player.spawnedGoldenRetiever = true;
 };
-

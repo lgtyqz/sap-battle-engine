@@ -41,7 +41,7 @@ export class BlackBearAbility extends Ability {
     super(runtime, {
       name: 'Black Bear Ability',
       owner: owner,
-      triggers: ['StartTurn', 'FoodEatenByThis', 'PostRemovalFaint'],
+      triggers: ['StartTurn', 'FoodEatenByThis', 'Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -72,7 +72,7 @@ export class BlackBearAbility extends Ability {
       return;
     }
 
-    if (context.trigger === 'PostRemovalFaint') {
+    if (context.trigger === 'Faint') {
       const damagePerFood = this.level * 4;
       const totalDamage = damagePerFood * this.foodsEatenThisTurn;
       if (totalDamage <= 0) {

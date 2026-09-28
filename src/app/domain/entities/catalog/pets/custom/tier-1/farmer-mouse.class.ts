@@ -40,7 +40,7 @@ export class FarmerMouseAbility extends Ability {
     super(runtime, {
       name: 'FarmerMouseAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

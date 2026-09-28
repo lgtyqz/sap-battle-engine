@@ -39,7 +39,7 @@ export class GiantIsopodAbility extends Ability {
     super(runtime, {
       name: 'Giant Isopod Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

@@ -39,7 +39,7 @@ export class StonefishAbility extends Ability {
     super(runtime, {
       name: 'StonefishAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

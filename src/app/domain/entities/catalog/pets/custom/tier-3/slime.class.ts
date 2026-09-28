@@ -43,7 +43,7 @@ export class SlimeAbility extends Ability {
     super(runtime, {
       name: 'Slime Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

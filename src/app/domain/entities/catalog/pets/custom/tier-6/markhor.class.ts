@@ -39,7 +39,7 @@ export class MarkhorAbility extends Ability {
     super(runtime, {
       name: 'MarkhorAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

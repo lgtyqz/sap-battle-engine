@@ -4,6 +4,7 @@ import * as equipment from '../src/app/integrations/equipment/equipment-registry
 import * as toys from '../src/app/integrations/toy/toy-registry';
 import inventory from './fixtures/content-inventory.json';
 import fixtures from './fixtures/parity.json';
+import { catalogs } from '../src/catalogs';
 it('covers the parity inventory and the catalog additions', () => {
   const addedPets = ['Baby Mammoth', 'Tand & Tand'];
   const addedToys = ['Thunder Hammer'];
@@ -17,4 +18,10 @@ it('covers the parity inventory and the catalog additions', () => {
   for (const name of inventory.pets) for (const exp of [0, 2, 5]) expect(names.has(`pet:${name}:${exp}`)).toBe(true);
   for (const name of inventory.equipment) expect(names.has(`equipment:${name}`)).toBe(true);
   for (const name of inventory.toys) for (const level of [1, 2, 3]) expect(names.has(`toy:${name}:${level}`)).toBe(true);
+});
+
+it('exposes the foods eaten input for pets whose battle ability uses it', () => {
+  for (const name of ['Blue Jay', 'Locust', 'Dung Beetle', 'Black Bear']) {
+    expect(catalogs.pets.find((pet) => pet.Name === name)?.BattleMetadata).toContain('foodsEaten');
+  }
 });

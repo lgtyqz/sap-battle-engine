@@ -40,7 +40,7 @@ export class LuscaAbility extends Ability {
     super(runtime, {
       name: 'Lusca Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

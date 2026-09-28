@@ -46,7 +46,7 @@ export class SarcasticFringeheadAbility extends Ability {
     super(runtime, {
       name: 'SarcasticFringeheadAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

@@ -41,7 +41,7 @@ export class BlueFootedBoobyAbility extends Ability {
     super(runtime, {
       name: 'Blue-Footed Booby Ability',
       owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

@@ -39,7 +39,7 @@ export class DungBeetleAbility extends Ability {
     super(runtime, {
       name: 'DungBeetleAbility',
       owner: owner,
-      triggers: ['FoodEatenByFriendly', 'PostRemovalFaint'],
+      triggers: ['FoodEatenByFriendly', 'Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

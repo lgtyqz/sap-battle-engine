@@ -39,7 +39,7 @@ export class MalteseAbility extends Ability {
     super(runtime, {
       name: 'Maltese Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

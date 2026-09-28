@@ -40,7 +40,7 @@ export class WalrusAbility extends Ability {
     super(runtime, {
       name: 'WalrusAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
