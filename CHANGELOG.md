@@ -1,5 +1,51 @@
 # Changelog
 
+## 2026-09-28
+
+### Fixed
+
+- Ran before-attack preparation once in the shared jump-attack path. A jumper
+  that faints to Chocolate Cake no longer lands the jump attack, and
+  jump-specific effects such as Tasmanian Devil's Spooked wait until the
+  jumper survives preparation.
+- Made Eucalyptus block enemy damage without blocking friendly damage. Perk
+  gains now notify food listeners consistently, and Betta Fish can give Guava
+  to the same pet again after its previous Guava is consumed.
+- Made Peacock Spider target the nearest living pets past fainted neighbors,
+  prevented summoned Dirty Rats from triggering summon abilities, and placed
+  Falcon's faint summon at the front of the lineup.
+- Corrected Nightcrawler's summoned Daycrawler attack scaling, Olm's
+  roll-based Spooked scaling, Silkie Chicken's perk tier, and Dunkleosteus's
+  selection of enemies that do not already have its copied ailment.
+- Made Butterfly copy a level-scaled share of the strongest enemy's stats
+  instead of the full stats at every level.
+- Restored `Faint` timing for pets whose own faint abilities had been running
+  after removal, including food-scaled faint abilities and Giant Otter's
+  temporary-buff cleanup.
+- Routed Lamprey's damage through snipe protection, transferred stolen
+  Strawberry to Velociraptor, and stopped trumpet gains after a Golden
+  Retriever is summoned. Patagonian Mara's log now reports the trumpets
+  actually gained.
+
+### Changed
+
+- Made Flounder transform into Adult Flounder after its food condition is met;
+  Adult Flounder then grants experience to the two rearmost friends.
+- Added `BattleMetadata` catalog inputs for food counts on Dung Beetle,
+  Locust, Blue Jay, and Black Bear, and hurt counts on Tuna and Sabertooth
+  Tiger.
+
+### Added
+
+- Implemented missing abilities for Umbrella Bird, Giant Squirrel,
+  Angelshark, Giant Tortoise, Helmeted Hornbill, and Behemoth.
+- Added Baby Mammoth's faint buff and Tand & Tand's transformation ability,
+  which summons a level-matched Thunder Hammer. Thunder Hammer now buffs a
+  Tand & Tand at the start of battle.
+- Added Bug Squisher regression fixtures and focused tests for jump timing,
+  pet abilities, faint behavior, perk and food events, catalog metadata,
+  Lamprey, Velociraptor, and Golden Retriever.
+
 ## 2026-09-18
 
 ### Fixed
