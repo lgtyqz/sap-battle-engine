@@ -13,6 +13,11 @@ export class HelmetedHornbill extends Pet {
   health = 4;
   attack = 5;
 
+  override initAbilities(): void {
+    this.addAbility(new HelmetedHornbillAbility(this.runtime, this, this.logService, this.abilityService));
+    super.initAbilities();
+  }
+
   constructor(runtime: EngineContext,
     protected logService: LogService,
     protected abilityService: AbilityService,
@@ -41,7 +46,7 @@ export class HelmetedHornbillAbility extends Ability {
     super(runtime, {
       name: 'HelmetedHornbillAbility',
       owner: owner,
-      triggers: [],
+      triggers: ['EndTurn'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -54,7 +59,20 @@ export class HelmetedHornbillAbility extends Ability {
   }
 
   private executeAbility(context: AbilityContext): void {
-    // Empty implementation - to be filled by user
+    const owner = this.owner;
+    const targets = owner.parent.getRandomPets(3, [owner], false, false, owner);
+    for (const friend of targets.pets) {
+      if (friend.attack < friend.health) friend.increaseAttack(this.level * 2);
+      else friend.increaseHealth(this.level * 2);
+      if (this.logService.isEnabled()) this.logService.createLog({
+        message: `${owner.name} gave ${friend.name} +${this.level * 2} to its lowest stat.`,
+        type: 'ability',
+        player: owner.parent,
+        tiger: context.tiger,
+        pteranodon: context.pteranodon,
+        randomEvent: targets.random,
+      });
+    }
     this.triggerTigerExecution(context);
   }
 
@@ -66,4 +84,3 @@ export class HelmetedHornbillAbility extends Ability {
     );
   }
 }
-

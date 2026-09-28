@@ -57,11 +57,9 @@ export class WhiteTruffleAbility extends Ability {
         owner,
       );
       if (targetResp.pet) {
-        owner.jumpAttackPrep(targetResp.pet);
         owner.jumpAttack(targetResp.pet, tiger, null, targetResp.random);
       }
     }
     owner.removePerk();
   }
 }
-

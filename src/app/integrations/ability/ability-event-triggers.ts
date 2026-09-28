@@ -101,6 +101,10 @@ export abstract class AbilityEventTriggers {
   // Perk gain events handler
   triggerPerkGainEvents(perkPet: Pet, perkType?: string) {
     triggerPerkGainEvents(this.abilityQueueService, perkPet, perkType);
+    // Gaining a perk is also eating that perk's food. Keeping the two event
+    // families together makes every perk-granting source notify Rabbit, Seal,
+    // Gelada, and other food listeners consistently.
+    triggerFoodEvents(this.abilityQueueService, perkPet, perkType);
   }
 
   // Perk loss events handler

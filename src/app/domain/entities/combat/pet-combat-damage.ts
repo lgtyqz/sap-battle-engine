@@ -46,6 +46,14 @@ export function calculateDamage(
     includeShieldSnipe: snipe,
   });
   let defenseEquipment = preparedDefense.defenseEquipment;
+  // Eucalyptus explicitly blocks enemy damage. Friendly sources such as
+  // Leech and other friendly-fire abilities must pass through it untouched.
+  if (
+    defenseEquipment?.name === 'Eucalyptus' &&
+    self.parent === pet.parent
+  ) {
+    defenseEquipment = null;
+  }
   defenseMultiplier = preparedDefense.defenseMultiplier;
 
   let attackEquipment: Equipment | null;

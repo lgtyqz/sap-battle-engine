@@ -38,7 +38,6 @@ export class BettaFish extends Pet {
 
 export class BettaFishAbility extends Ability {
   private logService: LogService;
-  private targetedPets: Set<Pet> = new Set();
 
   constructor(runtime: EngineContext, owner: Pet, logService: LogService) {
     super(runtime, {
@@ -59,7 +58,7 @@ export class BettaFishAbility extends Ability {
         }
         const targetResp = resolveTriggerTargetAlive(owner, triggerPet);
         const target = targetResp.pet;
-        return !!target && !this.targetedPets.has(target);
+        return !!target;
       },
       abilityFunction: (context) => {
         this.executeAbility(context);
@@ -70,7 +69,6 @@ export class BettaFishAbility extends Ability {
 
   reset(): void {
     this.maxUses = this.level;
-    this.targetedPets.clear();
     super.reset();
   }
 
@@ -86,8 +84,6 @@ export class BettaFishAbility extends Ability {
     if (!target) {
       return;
     }
-    this.targetedPets.add(target);
-
     target.givePetEquipment(new Guava(this.runtime));
 
     if (this.logService.isEnabled()) this.logService.createLog({
@@ -105,4 +101,3 @@ export class BettaFishAbility extends Ability {
     return new BettaFishAbility(this.runtime, newOwner, this.logService);
   }
 }
-

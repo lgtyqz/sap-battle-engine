@@ -69,7 +69,7 @@ export class SilkieChickenAbility extends Ability {
 
     const equipmentService =
       this.runtime.services.equipmentService;
-    const perks = equipmentService.getUsefulPerksByTier(1);
+    const perks = equipmentService.getUsefulPerksByTier(this.level);
 
     if (perks.length === 0) {
       return;
@@ -102,4 +102,3 @@ export class SilkieChickenAbility extends Ability {
     return new SilkieChickenAbility(this.runtime, newOwner, this.logService);
   }
 }
-

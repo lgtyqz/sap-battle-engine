@@ -39,7 +39,7 @@ export class AkhlutAbility extends Ability {
     super(runtime, {
       name: 'Akhlut Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

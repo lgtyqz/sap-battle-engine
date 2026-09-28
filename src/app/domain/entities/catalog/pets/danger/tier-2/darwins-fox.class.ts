@@ -62,7 +62,6 @@ export class DarwinsFoxAbility extends Ability {
       if (!target) {
         return;
       }
-      owner.jumpAttackPrep(target);
       owner.jumpAttack(target, tiger, undefined, targetResp.random);
     } else {
       let targetResp = owner.parent.opponent.getFurthestUpPet(owner);
@@ -70,7 +69,6 @@ export class DarwinsFoxAbility extends Ability {
       if (!target) {
         return;
       }
-      owner.jumpAttackPrep(target);
       owner.jumpAttack(target, tiger, undefined, targetResp.random);
     }
 
@@ -85,4 +83,3 @@ export class DarwinsFoxAbility extends Ability {
     return new DarwinsFoxAbility(this.runtime, newOwner, this.logService);
   }
 }
-

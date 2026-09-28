@@ -68,7 +68,6 @@ export class AfricanWildDogAbility extends Ability {
 
     if (target) {
       let damage = this.level * 3;
-      owner.jumpAttackPrep(target);
       owner.jumpAttack(target, tiger, damage, targetResp.random);
     }
 
@@ -80,4 +79,3 @@ export class AfricanWildDogAbility extends Ability {
     return new AfricanWildDogAbility(this.runtime, newOwner, this.logService);
   }
 }
-

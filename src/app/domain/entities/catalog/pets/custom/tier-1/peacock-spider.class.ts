@@ -55,7 +55,7 @@ export class PeacockSpiderAbility extends Ability {
   private executeAbility(context: AbilityContext): void {
     const { tiger, pteranodon } = context;
     const owner = this.owner;
-    const targets = getAdjacentAlivePets(owner);
+    const targets = getAdjacentAlivePets(owner, { skipFainted: true });
 
     if (targets.length === 0) {
       return;

@@ -39,7 +39,7 @@ export class NamazuAbility extends Ability {
     super(runtime, {
       name: 'Namazu Ability',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,

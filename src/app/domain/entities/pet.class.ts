@@ -31,6 +31,7 @@ export abstract class Pet extends PetRuntimeFacade implements PetMemoryState {
   equipmentUsesOverride?: number | null;
   mana: number = 0;
   suppressManaSnipeOnFaint: boolean = false;
+  suppressSummonEvents: boolean = false;
   triggersConsumed: number = 0;
   foodsEaten: number = 0;
   timesGaveHealth: number = 0;
@@ -139,4 +140,3 @@ export abstract class Pet extends PetRuntimeFacade implements PetMemoryState {
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging, no-redeclare
 export interface Pet extends PetMemoryState { }
-

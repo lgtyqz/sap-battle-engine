@@ -77,7 +77,7 @@ export class OlmAbility extends Ability {
 
     const spooked = new Spooked(this.runtime);
     if (rolls > 0) {
-      spooked.multiplier += rolls;
+      spooked.multiplier += rolls * this.level;
     }
     const multiplierMessage =
       spooked.multiplier > 1 ? ` ${spooked.multiplier}x` : '';
@@ -98,4 +98,3 @@ export class OlmAbility extends Ability {
     return new OlmAbility(this.runtime, newOwner, this.logService);
   }
 }
-

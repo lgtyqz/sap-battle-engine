@@ -10,6 +10,7 @@ export class DirtyRat extends Pet {
   tier = 1;
   pack: Pack = 'Turtle';
   hidden: boolean = true;
+  override suppressSummonEvents = true;
   health = 1;
   attack = 1;
   constructor(runtime: EngineContext,
@@ -27,4 +28,3 @@ export class DirtyRat extends Pet {
     this.initPet(exp, health, attack, mana, equipment, triggersConsumed);
   }
 }
-

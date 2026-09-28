@@ -2,20 +2,32 @@ import type { Log } from 'app/domain/interfaces/log.interface';
 import type { Pet } from './pet.class';
 import { LogService } from 'app/integrations/log.service';
 
-export function getAdjacentAlivePets(owner: Pet): Pet[] {
+export function getAdjacentAlivePets(
+  owner: Pet,
+  options: { skipFainted?: boolean } = {},
+): Pet[] {
   const position = owner.position ?? owner.savedPosition;
   if (position == null) {
     return [];
   }
 
   const targets: Pet[] = [];
-  const left = owner.parent.getPetAtPosition(position - 1);
-  const right = owner.parent.getPetAtPosition(position + 1);
-  if (left && left.alive) {
-    targets.push(left);
-  }
-  if (right && right.alive) {
-    targets.push(right);
+  for (const direction of [-1, 1]) {
+    let targetPosition = position + direction;
+    while (targetPosition >= 0 && targetPosition <= 4) {
+      const target = owner.parent.getPetAtPosition(targetPosition);
+      if (!target) {
+        break;
+      }
+      if (target.alive) {
+        targets.push(target);
+        break;
+      }
+      if (!options.skipFainted) {
+        break;
+      }
+      targetPosition += direction;
+    }
   }
 
   return targets;

@@ -401,9 +401,11 @@ export function jumpAttack(
   tiger?: boolean,
   damage?: number,
   randomEvent: boolean = false,
-): void {
-  // Set current target for tracking
-  target.lastAttacker = self;
+  afterPreparation?: (attacker: Pet, target: Pet) => void,
+): boolean {
+  // Every jump attack owns its before-attack phase. In particular, Chocolate
+  // Cake must faint the jumper before any jump-specific effect can resolve.
+  self.jumpAttackPrep(target);
 
   let attackPet: Pet;
   if (self.transformed) {
@@ -417,8 +419,17 @@ export function jumpAttack(
   }
   // 3. Check if jumping pet is still alive
   if (!attackPet.alive || !target.alive) {
-    return;
+    return false;
   }
+
+  afterPreparation?.(attackPet, target);
+  if (!attackPet.alive || !target.alive) {
+    return false;
+  }
+
+  // Set current target for tracking only after the jump has survived its
+  // before-attack effects.
+  target.lastAttacker = attackPet;
 
   // 4. Perform the attack
   attackPet.attackPet(target, true, damage, randomEvent);
@@ -430,6 +441,7 @@ export function jumpAttack(
   attackPet.executeAfterAttackEvents();
   // 6. Trigger and execute friend/enemy jumped abilities
   attackPet.triggerJumpEventsFor();
+  return true;
 }
 
 export function dealDamage(self: Pet, pet: Pet, damage: number): void {

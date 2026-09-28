@@ -1,0 +1,6534 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate",
+  "metadata": {
+    "replayId": "01a0ba8f-512c-75bb-adf7-df92a579e94f",
+    "battleId": "596b972d-d097-4201-9fc2-7b417a8555f2",
+    "turn": 5,
+    "assumptions": [],
+    "sapSeed": 506529947,
+    "reportedOutcome": "player",
+    "inputHash": "d47259cfcc879617b5582ae94c594d135f4af6e5bc6013957cbfee9792648d28",
+    "rngCompatibility": "unverified"
+  },
+  "engine": {
+    "package": "0.1.0",
+    "resolved": "git+ssh://git@github.com/lgtyqz/sap-battle-engine.git#ab6534769fa2c2cf3514bef00be50c8343c81699",
+    "upstream": "d165eb0a02f8aa0b54d72ed1d5490a44390d07f4"
+  },
+  "config": {
+    "turn": 5,
+    "simulationCount": 1,
+    "logsEnabled": true,
+    "maxLoggedBattles": 1,
+    "captureRandomDraws": true,
+    "captureRandomDecisions": true,
+    "optimizeDeterministicSimulations": false,
+    "mana": true,
+    "seed": 506529947,
+    "playerPack": "Weekly",
+    "playerGoldSpent": 10,
+    "playerRollAmount": 1,
+    "playerSummonedAmount": 1,
+    "playerLevel3Sold": 0,
+    "playerTransformationAmount": 0,
+    "playerLostLastBattle": true,
+    "playerPets": [
+      {
+        "name": "Tsuchinoko",
+        "attack": 5,
+        "health": 4,
+        "exp": 3,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Lemming",
+        "attack": 5,
+        "health": 4,
+        "exp": 2,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Mandrake",
+        "attack": 4,
+        "health": 3,
+        "exp": 0,
+        "equipment": "Radish",
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Jellyfish",
+        "attack": 4,
+        "health": 4,
+        "exp": 0,
+        "equipment": "Sausage",
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Gelada",
+        "attack": 4,
+        "health": 5,
+        "exp": 0,
+        "equipment": "Radish",
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "opponentPack": "Weekly",
+    "opponentGoldSpent": 10,
+    "opponentRollAmount": 1,
+    "opponentSummonedAmount": 1,
+    "opponentLevel3Sold": 0,
+    "opponentTransformationAmount": 0,
+    "opponentLostLastBattle": false,
+    "opponentPets": [
+      {
+        "name": "Beetle",
+        "attack": 2,
+        "health": 5,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Moth",
+        "attack": 5,
+        "health": 7,
+        "exp": 4,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Dolphin",
+        "attack": 5,
+        "health": 7,
+        "exp": 1,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Robin",
+        "attack": 4,
+        "health": 8,
+        "exp": 2,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Orangutan",
+        "attack": 2,
+        "health": 5,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "randomDecisionOverrides": [
+      {
+        "index": 0,
+        "key": "ability-queue.tie-order",
+        "label": "BeforeStartBattle ability order (P3 Mandrake, P5 Gelada)",
+        "optionId": "P5 Gelada"
+      },
+      {
+        "index": 1,
+        "key": "equipment.radish-perk",
+        "label": "(P5) Radish perk",
+        "optionId": "Banana"
+      }
+    ],
+    "strictRandomOverrideValidation": true,
+    "randomDrawOverrides": [
+      {
+        "stream": "seeded",
+        "value": 0.6376025611534715
+      },
+      {
+        "stream": "seeded",
+        "value": 0.04542871029116213
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6985752377659082
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5542156654410064
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7413351291324943
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7575723885092884
+      },
+      {
+        "stream": "seeded",
+        "value": 0.35931295808404684
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9412513303104788
+      },
+      {
+        "stream": "seeded",
+        "value": 0.14843856263905764
+      },
+      {
+        "stream": "seeded",
+        "value": 0.06392149231396616
+      },
+      {
+        "stream": "seeded",
+        "value": 0.07952980254776776
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7755029201507568
+      },
+      {
+        "stream": "seeded",
+        "value": 0.3878598497249186
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9842189531773329
+      },
+      {
+        "stream": "seeded",
+        "value": 0.028298388235270977
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8460398877505213
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7668616112787277
+      },
+      {
+        "stream": "seeded",
+        "value": 0.32974429964087903
+      },
+      {
+        "stream": "seeded",
+        "value": 0.4583539392333478
+      },
+      {
+        "stream": "seeded",
+        "value": 0.3193406166974455
+      },
+      {
+        "stream": "seeded",
+        "value": 0.221823318162933
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7252229682635516
+      },
+      {
+        "stream": "seeded",
+        "value": 0.12601635046303272
+      },
+      {
+        "stream": "seeded",
+        "value": 0.146256641484797
+      },
+      {
+        "stream": "seeded",
+        "value": 0.4018940613605082
+      },
+      {
+        "stream": "seeded",
+        "value": 0.790022806962952
+      },
+      {
+        "stream": "seeded",
+        "value": 0.10047355876304209
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8680387400090694
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8061231069732457
+      },
+      {
+        "stream": "seeded",
+        "value": 0.4080388001166284
+      },
+      {
+        "stream": "seeded",
+        "value": 0.4913546587340534
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9117127710487694
+      }
+    ]
+  },
+  "reference": {
+    "schemaVersion": 1,
+    "inputHash": "d47259cfcc879617b5582ae94c594d135f4af6e5bc6013957cbfee9792648d28",
+    "complete": true,
+    "terminalFrame": "terminal.png",
+    "captureErrors": [],
+    "outcome": {
+      "winner": "player",
+      "evidence": {
+        "frame": "terminal.png"
+      },
+      "method": "explicit-result-text",
+      "text": [
+        "VICTORY"
+      ]
+    },
+    "captureComplete": true,
+    "coverage": "viewer-pauses",
+    "initialVerified": true,
+    "initialChecks": [
+      {
+        "frame": "frames/0000.png",
+        "timeMs": 1675,
+        "differences": []
+      }
+    ],
+    "checkpoints": [
+      {
+        "timeMs": 1675,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 5,
+              "health": 4
+            },
+            {
+              "name": "Lemming",
+              "attack": 5,
+              "health": 4
+            },
+            {
+              "name": "Mandrake",
+              "attack": 4,
+              "health": 3,
+              "equipment": "Radish"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 4,
+              "health": 4,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Radish"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 2,
+              "health": 5
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0000.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.15898048984086388,
+                "margin": 0.21319955065359475
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2557505199049317,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19303490870986076,
+                "margin": 0.20078635620915034
+              },
+              "health": {
+                "value": 4,
+                "error": 0.17270087382779198,
+                "margin": 0.21482843137254903
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19443800618073315,
+                "margin": 0.1989072712418301
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2528692253416518,
+                "margin": 0.0892718545751634
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2658710264408794,
+                "margin": 0.10114379084967318
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21071149474282466,
+                "margin": 0.0955524918300654
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 46,
+                  "matches": 54,
+                  "scale": 0.9322973841671892,
+                  "ratio": 0.8518518518518519
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 8,
+                  "matches": 19,
+                  "scale": 0.839248361868138,
+                  "ratio": 0.42105263157894735
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pillbug",
+                  "inliers": 4,
+                  "matches": 4,
+                  "scale": 0.8312841427133816,
+                  "ratio": 1
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Radish",
+                  "method": "template",
+                  "error": 0.1728191077709198
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.30508893728256226
+                },
+                {
+                  "kind": "perks",
+                  "name": "Salt",
+                  "method": "template",
+                  "error": 0.3168056905269623
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 29,
+                  "scale": 0.9302709549079861,
+                  "ratio": 0.8620689655172413
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Radish",
+                  "method": "template",
+                  "error": 0.16324903070926666
+                },
+                {
+                  "kind": "perks",
+                  "name": "Salt",
+                  "method": "template",
+                  "error": 0.375980943441391
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.41238802671432495
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314174609594655,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 8,
+                  "matches": 9,
+                  "scale": 0.9361450759015779,
+                  "ratio": 0.8888888888888888
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 40,
+                  "matches": 43,
+                  "scale": 0.9330746122716714,
+                  "ratio": 0.9302325581395349
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9267250431583546,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264847011498,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 11,
+                  "scale": 0.9322533913649246,
+                  "ratio": 0.8181818181818182
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pigeon",
+                  "inliers": 4,
+                  "matches": 4,
+                  "scale": 1.0441973024241968,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336409105839321,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "initial"
+        ]
+      },
+      {
+        "timeMs": 5375,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 5,
+              "health": 4
+            },
+            {
+              "name": "Lemming",
+              "attack": 5,
+              "health": 4
+            },
+            {
+              "name": "Mandrake",
+              "attack": 4,
+              "health": 3,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 4,
+              "health": 4,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 2,
+              "health": 5
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0001.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.15898048984086388,
+                "margin": 0.21319955065359475
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2557505199049317,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19303490870986076,
+                "margin": 0.20078635620915034
+              },
+              "health": {
+                "value": 4,
+                "error": 0.17270087382779198,
+                "margin": 0.21482843137254903
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19443800618073315,
+                "margin": 0.1989072712418301
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2528692253416518,
+                "margin": 0.0892718545751634
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2658710264408794,
+                "margin": 0.10114379084967318
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21071149474282466,
+                "margin": 0.0955524918300654
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 44,
+                  "matches": 53,
+                  "scale": 0.9323619903325532,
+                  "ratio": 0.8301886792452831
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 5,
+                  "matches": 17,
+                  "scale": 0.8310390075197879,
+                  "ratio": 0.29411764705882354
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.098759226500988
+                },
+                {
+                  "kind": "perks",
+                  "name": "Salt",
+                  "method": "template",
+                  "error": 0.3017825186252594
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.3236122727394104
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312110057677733,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174910247325897
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314174609594655,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 8,
+                  "matches": 9,
+                  "scale": 0.9361450759015779,
+                  "ratio": 0.8888888888888888
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 40,
+                  "matches": 43,
+                  "scale": 0.9330746122716714,
+                  "ratio": 0.9302325581395349
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9267250431583546,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264847011498,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 11,
+                  "scale": 0.9322533913649246,
+                  "ratio": 0.8181818181818182
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pigeon",
+                  "inliers": 4,
+                  "matches": 4,
+                  "scale": 1.0441973024241968,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336415431734443,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "GELADA",
+        "kinds": [
+          "equipment-observation-change"
+        ]
+      },
+      {
+        "timeMs": 9124,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 5,
+              "health": 4
+            },
+            {
+              "name": "Lemming",
+              "attack": 5,
+              "health": 4
+            },
+            {
+              "name": "Mandrake",
+              "attack": 4,
+              "health": 3,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 4,
+              "health": 4,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 2,
+              "health": 5
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0002.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19303490870986076,
+                "margin": 0.20078635620915034
+              },
+              "health": {
+                "value": 4,
+                "error": 0.17270087382779198,
+                "margin": 0.21482843137254903
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19443800618073315,
+                "margin": 0.1989072712418301
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2528692253416518,
+                "margin": 0.0892718545751634
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 4,
+                "error": 0.2034870766488414,
+                "margin": 0.21052900326797383
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2658710264408794,
+                "margin": 0.10114379084967318
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21071149474282466,
+                "margin": 0.0955524918300654
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 39,
+                  "matches": 47,
+                  "scale": 0.9332418756072653,
+                  "ratio": 0.8297872340425532
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 12,
+                  "matches": 27,
+                  "scale": 1.0528965624459907,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.09872683137655258
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.3069984018802643
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.3273797333240509
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312110057677733,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174910247325897
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314174609594655,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 8,
+                  "matches": 9,
+                  "scale": 0.9361450759015779,
+                  "ratio": 0.8888888888888888
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 40,
+                  "matches": 43,
+                  "scale": 0.9330746122716714,
+                  "ratio": 0.9302325581395349
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9267250431583546,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264847011498,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 11,
+                  "scale": 0.9322533913649246,
+                  "ratio": 0.8181818181818182
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pigeon",
+                  "inliers": 4,
+                  "matches": 4,
+                  "scale": 1.0441973024241968,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336457446387104,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "SLEEPING GELADA",
+        "kinds": [
+          "transformation-or-movement"
+        ]
+      },
+      {
+        "timeMs": 12908,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 5,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 2,
+              "health": 5
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0003.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22392723187759953,
+                "margin": 0.10717933006535948
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.23591661096256686,
+                "margin": 0.09888684640522874
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2610085227272727,
+                "margin": 0.09600694444444446
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13627404560308973,
+                "margin": 0.2079044117647059
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22365799539512776,
+                "margin": 0.10383986928104577
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.1368649732620321,
+                "margin": 0.20884766785502082
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22297747697563874,
+                "margin": 0.10040849673202612
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21071149474282466,
+                "margin": 0.0955524918300654
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 54,
+                  "scale": 0.9336308202792059,
+                  "ratio": 0.8148148148148148
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 13,
+                  "matches": 33,
+                  "scale": 1.0520932070534508,
+                  "ratio": 0.3939393939393939
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.09873303771018982
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.32746270298957825
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.33437156677246094
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312110057677733,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174910247325897
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314173055911207,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 7,
+                  "matches": 8,
+                  "scale": 0.9343635454547848,
+                  "ratio": 0.875
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 40,
+                  "matches": 43,
+                  "scale": 0.9330746122716714,
+                  "ratio": 0.9302325581395349
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9267250431583546,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264847011498,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 11,
+                  "scale": 0.9322533913649246,
+                  "ratio": 0.8181818181818182
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pigeon",
+                  "inliers": 4,
+                  "matches": 4,
+                  "scale": 1.0441973024241968,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336383995140967,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "TSUCHINOKO",
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 17372,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 9,
+              "health": 8
+            },
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 5,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 2,
+              "health": 5
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0004.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22392723187759953,
+                "margin": 0.10717933006535948
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.23591661096256686,
+                "margin": 0.09888684640522874
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2610085227272727,
+                "margin": 0.09600694444444446
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13627404560308973,
+                "margin": 0.2079044117647059
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22365799539512776,
+                "margin": 0.10383986928104577
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 8,
+                "error": 0.27957893755328217,
+                "margin": 0.07169117647058826
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21071149474282466,
+                "margin": 0.0955524918300654
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 54,
+                  "scale": 0.9336307692925743,
+                  "ratio": 0.8148148148148148
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 13,
+                  "matches": 33,
+                  "scale": 1.0520931916375453,
+                  "ratio": 0.3939393939393939
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.09874985367059708
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.32696932554244995
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.3386704921722412
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 29,
+                  "scale": 0.9304629734589099,
+                  "ratio": 0.8620689655172413
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08047667890787125
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.31917086243629456
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314174609594655,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 8,
+                  "matches": 9,
+                  "scale": 0.9361450759015779,
+                  "ratio": 0.8888888888888888
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 40,
+                  "matches": 43,
+                  "scale": 0.9330746122716714,
+                  "ratio": 0.9302325581395349
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9267250431583546,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264847011498,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 11,
+                  "scale": 0.9322533913649246,
+                  "ratio": 0.8181818181818182
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pigeon",
+                  "inliers": 4,
+                  "matches": 4,
+                  "scale": 1.0441973024241968,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336407399104808,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "MANDRAKE",
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 21072,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 9,
+              "health": 8
+            },
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 5,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 2,
+              "health": 5
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0005.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22392723187759953,
+                "margin": 0.10717933006535948
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.23591661096256686,
+                "margin": 0.09888684640522874
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2610085227272727,
+                "margin": 0.09600694444444446
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13627404560308973,
+                "margin": 0.2079044117647059
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22365799539512776,
+                "margin": 0.10383986928104577
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 8,
+                "error": 0.27957893755328217,
+                "margin": 0.07169117647058826
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21071149474282466,
+                "margin": 0.0955524918300654
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 54,
+                  "scale": 0.9336307587146536,
+                  "ratio": 0.8148148148148148
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 14,
+                  "matches": 32,
+                  "scale": 1.0389760958481038,
+                  "ratio": 0.4375
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tand & Tand",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.1129869871863711,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.09875043481588364
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.3269883394241333
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.3387649953365326
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312110057677733,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174910247325897
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314174609594655,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 8,
+                  "matches": 9,
+                  "scale": 0.9361450759015779,
+                  "ratio": 0.8888888888888888
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 40,
+                  "matches": 43,
+                  "scale": 0.9330746122716714,
+                  "ratio": 0.9302325581395349
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 23,
+                  "matches": 26,
+                  "scale": 0.9247419043775338,
+                  "ratio": 0.8846153846153846
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264847011498,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 12,
+                  "scale": 0.9322533876434769,
+                  "ratio": 0.75
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.08254578709602356
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.38279232382774353
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.4264199733734131
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336405245898901,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "equipment-observation-change"
+        ]
+      },
+      {
+        "timeMs": 25758,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 9,
+              "health": 8
+            },
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 5,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 6,
+              "health": 5
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0006.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22392723187759953,
+                "margin": 0.10717933006535948
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.23591661096256686,
+                "margin": 0.09888684640522874
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2610085227272727,
+                "margin": 0.09600694444444446
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13627404560308973,
+                "margin": 0.2079044117647059
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22365799539512776,
+                "margin": 0.10383986928104577
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 8,
+                "error": 0.27957893755328217,
+                "margin": 0.07169117647058826
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2397834038918598,
+                "margin": 0.09451593137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 54,
+                  "scale": 0.9336308192583553,
+                  "ratio": 0.8148148148148148
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 14,
+                  "matches": 31,
+                  "scale": 1.0389761113105886,
+                  "ratio": 0.45161290322580644
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.09874916821718216
+                },
+                {
+                  "kind": "perks",
+                  "name": "Salt",
+                  "method": "template",
+                  "error": 0.31346437335014343
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.32556018233299255
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312110057677733,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174910247325897
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314174609594655,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 8,
+                  "matches": 9,
+                  "scale": 0.9361450759015779,
+                  "ratio": 0.8888888888888888
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 33,
+                  "matches": 35,
+                  "scale": 0.93057120999174,
+                  "ratio": 0.9428571428571428
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9267250431583546,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264847011498,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 12,
+                  "scale": 0.9322533876434769,
+                  "ratio": 0.75
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.08254578709602356
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.38279232382774353
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.4264199733734131
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336465893287769,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "BEETLE",
+        "kinds": [
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 31178,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 9,
+              "health": 8
+            },
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 5,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 6,
+              "health": 5,
+              "equipment": "Walnut"
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0007.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22392723187759953,
+                "margin": 0.10717933006535948
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.23591661096256686,
+                "margin": 0.09888684640522874
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2610085227272727,
+                "margin": 0.09600694444444446
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13627404560308973,
+                "margin": 0.2079044117647059
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22365799539512776,
+                "margin": 0.10383986928104577
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 8,
+                "error": 0.27957893755328217,
+                "margin": 0.07169117647058826
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2397834038918598,
+                "margin": 0.09451593137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 54,
+                  "scale": 0.9336307866962786,
+                  "ratio": 0.8148148148148148
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 14,
+                  "matches": 32,
+                  "scale": 1.0389760958481038,
+                  "ratio": 0.4375
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.0987510085105896
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.32699185609817505
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.33888480067253113
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312110057677733,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174910247325897
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314174609594655,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 8,
+                  "matches": 9,
+                  "scale": 0.9361450759015779,
+                  "ratio": 0.8888888888888888
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 40,
+                  "matches": 44,
+                  "scale": 0.9330746210466067,
+                  "ratio": 0.9090909090909091
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Walnut",
+                  "method": "template",
+                  "error": 0.054057177156209946
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cashew Nut",
+                  "method": "template",
+                  "error": 0.1843288391828537
+                },
+                {
+                  "kind": "perks",
+                  "name": "Bread",
+                  "method": "template",
+                  "error": 0.22076940536499023
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9267250431583546,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 26,
+                  "matches": 28,
+                  "scale": 0.9313256832781954,
+                  "ratio": 0.9285714285714286
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 11,
+                  "scale": 0.9322533913649246,
+                  "ratio": 0.8181818181818182
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.08254578709602356
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.38279232382774353
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.4264199733734131
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336404247903402,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "DOLPHIN",
+        "kinds": [
+          "equipment-observation-change"
+        ]
+      },
+      {
+        "timeMs": 38596,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 9,
+              "health": 8
+            },
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 1,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 6,
+              "health": 5,
+              "equipment": "Walnut"
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0008.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22392723187759953,
+                "margin": 0.10717933006535948
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.23591661096256686,
+                "margin": 0.09888684640522874
+              },
+              "health": {
+                "value": 1,
+                "error": 0.15974821746880571,
+                "margin": 0.16789215686274508
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13627404560308973,
+                "margin": 0.2079044117647059
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22365799539512776,
+                "margin": 0.10383986928104577
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 8,
+                "error": 0.27957893755328217,
+                "margin": 0.07169117647058826
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2397834038918598,
+                "margin": 0.09451593137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19779389563796534,
+                "margin": 0.19231515522875814
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 55,
+                  "scale": 0.9336308645287649,
+                  "ratio": 0.8
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 14,
+                  "matches": 31,
+                  "scale": 1.0389761042411696,
+                  "ratio": 0.45161290322580644
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tand & Tand",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 1.1129869871863711,
+                  "ratio": 0.5714285714285714
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.09873972088098526
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.32735198736190796
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.33954864740371704
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 44,
+                  "matches": 50,
+                  "scale": 0.9351622246384104,
+                  "ratio": 0.88
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.3556986451148987
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312110057677733,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174910247325897
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 34,
+                  "scale": 0.9314174609594655,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tahr",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8985027381158757,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 8,
+                  "matches": 9,
+                  "scale": 0.9361450759015779,
+                  "ratio": 0.8888888888888888
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 40,
+                  "matches": 44,
+                  "scale": 0.9330746210466067,
+                  "ratio": 0.9090909090909091
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Walnut",
+                  "method": "template",
+                  "error": 0.054057177156209946
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cashew Nut",
+                  "method": "template",
+                  "error": 0.1843288391828537
+                },
+                {
+                  "kind": "perks",
+                  "name": "Bread",
+                  "method": "template",
+                  "error": 0.22076940536499023
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9267250431583546,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264847011498,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 12,
+                  "scale": 0.9322533876434769,
+                  "ratio": 0.75
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.08254578709602356
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.38279232382774353
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.4264199733734131
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336391654797354,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "JELLYFISH",
+        "kinds": [
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 43954,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 9,
+              "health": 8
+            },
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 1,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 7,
+              "health": 7,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Beetle",
+              "attack": 6,
+              "health": 5,
+              "equipment": "Walnut"
+            },
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0009.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13613478535353535,
+                "margin": 0.2165171939988117
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13506898024361258,
+                "margin": 0.21715686274509804
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.23591661096256686,
+                "margin": 0.09888684640522874
+              },
+              "health": {
+                "value": 1,
+                "error": 0.15974821746880571,
+                "margin": 0.16789215686274508
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13627404560308973,
+                "margin": 0.2079044117647059
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22365799539512776,
+                "margin": 0.10383986928104577
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 8,
+                "error": 0.27957893755328217,
+                "margin": 0.07169117647058826
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2397834038918598,
+                "margin": 0.09451593137254902
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585180852644088,
+                "margin": 0.11075367647058826
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13806493241235887,
+                "margin": 0.21369856654783123
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19513866687979542,
+                "margin": 0.1951184640522876
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2716285699062233,
+                "margin": 0.06375612745098047
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21744147840295538,
+                "margin": 0.09142667483660136
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 54,
+                  "scale": 0.9336307654220636,
+                  "ratio": 0.8148148148148148
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 14,
+                  "matches": 32,
+                  "scale": 1.0389760958481038,
+                  "ratio": 0.4375
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.098720483481884
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.32700368762016296
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.3388111889362335
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751853939386,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363316535949707
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.355730801820755
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312110057677733,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174905478954315
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 33,
+                  "matches": 33,
+                  "scale": 0.9304978563530478,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 9,
+                  "matches": 11,
+                  "scale": 0.9365374420287623,
+                  "ratio": 0.8181818181818182
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Beetle",
+                  "inliers": 28,
+                  "matches": 34,
+                  "scale": 0.9325573004695774,
+                  "ratio": 0.8235294117647058
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Walnut",
+                  "method": "template",
+                  "error": 0.054057177156209946
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cashew Nut",
+                  "method": "template",
+                  "error": 0.1843288391828537
+                },
+                {
+                  "kind": "perks",
+                  "name": "Bread",
+                  "method": "template",
+                  "error": 0.22080621123313904
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 21,
+                  "matches": 24,
+                  "scale": 0.9293190641116178,
+                  "ratio": 0.875
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9321264864190079,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 9,
+                  "matches": 12,
+                  "scale": 0.9322533876434769,
+                  "ratio": 0.75
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.08251774311065674
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.38278478384017944
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.4263972342014313
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 26,
+                  "scale": 0.9336404698801213,
+                  "ratio": 0.8076923076923077
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 54684,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tsuchinoko",
+              "attack": 9,
+              "health": 2
+            },
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 1,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 7,
+              "health": 7,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Moth",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0010.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16195230356635407,
+                "margin": 0.2131893382352941
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2592840166369578,
+                "margin": 0.12935049019607842
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13613478535353535,
+                "margin": 0.2165171939988117
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13506898024361258,
+                "margin": 0.21715686274509804
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.23591661096256686,
+                "margin": 0.09888684640522874
+              },
+              "health": {
+                "value": 1,
+                "error": 0.15974821746880571,
+                "margin": 0.16789215686274508
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13627404560308973,
+                "margin": 0.2079044117647059
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22365799539512776,
+                "margin": 0.10383986928104577
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 2,
+                "error": 0.2304339349376114,
+                "margin": 0.10054636437908496
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2680003156565657,
+                "margin": 0.1278390522875817
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13498217468805704,
+                "margin": 0.22877859477124182
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26519700683303626,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13096730169340465,
+                "margin": 0.21835542929292928
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.16482709931798806,
+                "margin": 0.21657475490196082
+              },
+              "health": {
+                "value": 8,
+                "error": 0.22957383134413187,
+                "margin": 0.10725081699346409
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21775806337027565,
+                "margin": 0.09928002450980394
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2484384284016637,
+                "margin": 0.13207720588235294
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 52,
+                  "scale": 0.933628852236057,
+                  "ratio": 0.8461538461538461
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 14,
+                  "matches": 32,
+                  "scale": 1.0389449501743888,
+                  "ratio": 0.4375
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.09871833771467209
+                },
+                {
+                  "kind": "perks",
+                  "name": "Salt",
+                  "method": "template",
+                  "error": 0.3142774701118469
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.32701021432876587
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 60,
+                  "scale": 0.9351751801485553,
+                  "ratio": 0.8666666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1214095801115036
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.35363638401031494
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.3557233512401581
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 25,
+                  "matches": 32,
+                  "scale": 0.9312076587668636,
+                  "ratio": 0.78125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08046374469995499
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3174905478954315
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.3419632613658905
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 33,
+                  "matches": 33,
+                  "scale": 0.9304921305425038,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tsuchinoko",
+                  "inliers": 9,
+                  "matches": 12,
+                  "scale": 0.9356328487523601,
+                  "ratio": 0.75
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Moth",
+                  "inliers": 28,
+                  "matches": 29,
+                  "scale": 0.9287918864432574,
+                  "ratio": 0.9655172413793104
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 28,
+                  "matches": 30,
+                  "scale": 0.9304868456452089,
+                  "ratio": 0.9333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 17,
+                  "matches": 20,
+                  "scale": 0.9241111706069702,
+                  "ratio": 0.85
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.08982349932193756
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.37234601378440857
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.42802584171295166
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 23,
+                  "scale": 0.9288179729213294,
+                  "ratio": 0.9130434782608695
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 60353,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 6
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 1,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 7,
+              "health": 7,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Dolphin",
+              "attack": 5,
+              "health": 7
+            },
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0011.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19042052962489345,
+                "margin": 0.20031658496732027
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2450274806892454,
+                "margin": 0.12874795751633988
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.1366964683600713,
+                "margin": 0.20385379530600115
+              },
+              "health": {
+                "value": 7,
+                "error": 0.1349566436423054,
+                "margin": 0.22855392156862744
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22334512403446227,
+                "margin": 0.1078737745098039
+              },
+              "health": {
+                "value": 1,
+                "error": 0.14622697563874035,
+                "margin": 0.15415645424836602
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.1368649732620321,
+                "margin": 0.20884766785502082
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22297747697563874,
+                "margin": 0.10040849673202612
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2680003156565657,
+                "margin": 0.1278390522875817
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13498217468805704,
+                "margin": 0.22877859477124182
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.18349539997158282,
+                "margin": 0.2095792483660131
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2426150895140665,
+                "margin": 0.10061274509803922
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.2220779163114521,
+                "margin": 0.0912122140522876
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2557913695781343,
+                "margin": 0.13695874183006534
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 34,
+                  "matches": 46,
+                  "scale": 0.9312647574654793,
+                  "ratio": 0.7391304347826086
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 10,
+                  "matches": 28,
+                  "scale": 1.0092275664148636,
+                  "ratio": 0.35714285714285715
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.11857476830482483
+                },
+                {
+                  "kind": "perks",
+                  "name": "Bread",
+                  "method": "template",
+                  "error": 0.3420937657356262
+                },
+                {
+                  "kind": "perks",
+                  "name": "Faint Bread",
+                  "method": "template",
+                  "error": 0.3483026921749115
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 56,
+                  "scale": 0.9351211591757945,
+                  "ratio": 0.9285714285714286
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sage-Grouse",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.129518700882829,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.11287155002355576
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.3453424870967865
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.34554940462112427
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 24,
+                  "matches": 32,
+                  "scale": 0.9326696332369218,
+                  "ratio": 0.75
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.10516006499528885
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3089320659637451
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.34221842885017395
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 35,
+                  "matches": 37,
+                  "scale": 0.9322026890171371,
+                  "ratio": 0.9459459459459459
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dolphin",
+                  "inliers": 26,
+                  "matches": 29,
+                  "scale": 0.9280026316921752,
+                  "ratio": 0.896551724137931
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 13,
+                  "matches": 16,
+                  "scale": 0.9277229094188131,
+                  "ratio": 0.8125
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.11685484647750854
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.3780493140220642
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.4340505301952362
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 22,
+                  "matches": 25,
+                  "scale": 0.933546731197076,
+                  "ratio": 0.88
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bunyip",
+                  "inliers": 4,
+                  "matches": 12,
+                  "scale": 0.81726795901577,
+                  "ratio": 0.3333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 64476,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Lemming",
+              "attack": 7,
+              "health": 1
+            },
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 1,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 7,
+              "health": 7,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 8,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0012.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19042052962489345,
+                "margin": 0.20031658496732027
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2450274806892454,
+                "margin": 0.12874795751633988
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.1366964683600713,
+                "margin": 0.20385379530600115
+              },
+              "health": {
+                "value": 7,
+                "error": 0.1349566436423054,
+                "margin": 0.22855392156862744
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.22334512403446227,
+                "margin": 0.1078737745098039
+              },
+              "health": {
+                "value": 1,
+                "error": 0.14622697563874035,
+                "margin": 0.15415645424836602
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.1368649732620321,
+                "margin": 0.20884766785502082
+              },
+              "health": {
+                "value": 1,
+                "error": 0.22306010472370766,
+                "margin": 0.10475898692810462
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.21291227088661552,
+                "margin": 0.19810049019607845
+              },
+              "health": {
+                "value": 8,
+                "error": 0.2704796728473998,
+                "margin": 0.07607230392156866
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21929614236999148,
+                "margin": 0.1046926062091503
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2698065210932858,
+                "margin": 0.09221813725490197
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 34,
+                  "matches": 46,
+                  "scale": 0.9312647574654793,
+                  "ratio": 0.7391304347826086
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 10,
+                  "matches": 28,
+                  "scale": 1.0092275664148636,
+                  "ratio": 0.35714285714285715
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.11857476830482483
+                },
+                {
+                  "kind": "perks",
+                  "name": "Bread",
+                  "method": "template",
+                  "error": 0.3420937657356262
+                },
+                {
+                  "kind": "perks",
+                  "name": "Faint Bread",
+                  "method": "template",
+                  "error": 0.3483026921749115
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 52,
+                  "matches": 56,
+                  "scale": 0.9351211591757945,
+                  "ratio": 0.9285714285714286
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sage-Grouse",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.129518700882829,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.11287155002355576
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.3453424870967865
+                },
+                {
+                  "kind": "perks",
+                  "name": "Garlic",
+                  "method": "template",
+                  "error": 0.34554940462112427
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 23,
+                  "matches": 31,
+                  "scale": 0.9327463157502844,
+                  "ratio": 0.7419354838709677
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.10516006499528885
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.3089320659637451
+                },
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.34221842885017395
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Lemming",
+                  "inliers": 34,
+                  "matches": 35,
+                  "scale": 0.9319092041477339,
+                  "ratio": 0.9714285714285714
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 10,
+                  "matches": 10,
+                  "scale": 0.9234723201302736,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.955467842742252,
+                  "ratio": 0.5714285714285714
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.0920538604259491
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.3778952658176422
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.42926663160324097
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 14,
+                  "matches": 18,
+                  "scale": 0.9338584104835278,
+                  "ratio": 0.7777777777777778
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 68285,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 1,
+              "equipment": "Fig"
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 7,
+              "health": 7,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Robin",
+              "attack": 4,
+              "health": 1,
+              "equipment": "Dazed"
+            },
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0013.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19443800618073315,
+                "margin": 0.1989072712418301
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25821171271538923,
+                "margin": 0.11110089869281042
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13910288547237076,
+                "margin": 0.20679125816993466
+              },
+              "health": {
+                "value": 7,
+                "error": 0.14303838012477718,
+                "margin": 0.21871286393345216
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.21499136586452763,
+                "margin": 0.1036662581699346
+              },
+              "health": {
+                "value": 1,
+                "error": 0.22306010472370766,
+                "margin": 0.10475898692810462
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.21291227088661552,
+                "margin": 0.19810049019607845
+              },
+              "health": {
+                "value": 1,
+                "error": 0.1600699086452763,
+                "margin": 0.1820874183006536
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21929614236999148,
+                "margin": 0.1046926062091503
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2698065210932858,
+                "margin": 0.09221813725490197
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 50,
+                  "scale": 0.9329846173085975,
+                  "ratio": 0.88
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 13,
+                  "matches": 29,
+                  "scale": 1.0293721574223667,
+                  "ratio": 0.4482758620689655
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.10607606917619705
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.3501344323158264
+                },
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.35387444496154785
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 46,
+                  "matches": 50,
+                  "scale": 0.9363618896276439,
+                  "ratio": 0.92
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.1255502849817276
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.3551886975765228
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.3569476008415222
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 27,
+                  "matches": 29,
+                  "scale": 0.9323683414187225,
+                  "ratio": 0.9310344827586207
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Fig",
+                  "method": "template",
+                  "error": 0.08697229623794556
+                },
+                {
+                  "kind": "perks",
+                  "name": "Guava",
+                  "method": "template",
+                  "error": 0.30155807733535767
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.31933751702308655
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Robin",
+                  "inliers": 15,
+                  "matches": 15,
+                  "scale": 0.9185842918860226,
+                  "ratio": 1
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Dazed",
+                  "method": "template",
+                  "error": 0.0920538604259491
+                },
+                {
+                  "kind": "perks",
+                  "name": "Yggdrasil Fruit",
+                  "method": "template",
+                  "error": 0.3778952658176422
+                },
+                {
+                  "kind": "perks",
+                  "name": "Honeydew Melon",
+                  "method": "template",
+                  "error": 0.42926663160324097
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 19,
+                  "matches": 20,
+                  "scale": 0.9332555591421647,
+                  "ratio": 0.95
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sealion",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.9670532968554102,
+                  "ratio": 0.6666666666666666
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bee",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.1215652310831472,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint",
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 73752,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Mandrake",
+              "attack": 6,
+              "health": 1
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 7,
+              "health": 7,
+              "equipment": "Sausage"
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 4,
+              "health": 5,
+              "equipment": "Banana"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Orangutan",
+              "attack": 2,
+              "health": 5
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0014.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.19443800618073315,
+                "margin": 0.1989072712418301
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25821171271538923,
+                "margin": 0.11110089869281042
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 7,
+                "error": 0.13910288547237076,
+                "margin": 0.20679125816993466
+              },
+              "health": {
+                "value": 7,
+                "error": 0.14303838012477718,
+                "margin": 0.21871286393345216
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.21499136586452763,
+                "margin": 0.1036662581699346
+              },
+              "health": {
+                "value": 1,
+                "error": 0.22306010472370766,
+                "margin": 0.10475898692810462
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 2,
+                "error": 0.21071149474282466,
+                "margin": 0.0955524918300654
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25486714572192515,
+                "margin": 0.1111111111111111
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 44,
+                  "matches": 50,
+                  "scale": 0.9329846173085975,
+                  "ratio": 0.88
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 13,
+                  "matches": 29,
+                  "scale": 1.0293721574223667,
+                  "ratio": 0.4482758620689655
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Banana",
+                  "method": "template",
+                  "error": 0.10607606917619705
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.3501344323158264
+                },
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.35387444496154785
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 46,
+                  "matches": 52,
+                  "scale": 0.9363618928163544,
+                  "ratio": 0.8846153846153846
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Sausage",
+                  "method": "template",
+                  "error": 0.12334861606359482
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cake",
+                  "method": "template",
+                  "error": 0.3551886975765228
+                },
+                {
+                  "kind": "perks",
+                  "name": "Oyster Mushroom",
+                  "method": "template",
+                  "error": 0.3569476008415222
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mandrake",
+                  "inliers": 26,
+                  "matches": 29,
+                  "scale": 0.9307155106611054,
+                  "ratio": 0.896551724137931
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Orangutan",
+                  "inliers": 21,
+                  "matches": 24,
+                  "scale": 0.9325736454274001,
+                  "ratio": 0.875
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jackalope",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 1.0355669309143487,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "equipment-observation-change",
+          "faint"
+        ]
+      }
+    ],
+    "gaps": [],
+    "recognition": "Local SIFT sprite geometry and Lapsus Pro digit masks; confidence is an acceptance flag, not a calibrated probability.",
+    "unobservedFields": [
+      "experience",
+      "mana",
+      "equipment absence",
+      "equipment uses",
+      "internal identities"
+    ],
+    "source": "/Users/lgtyqz/Documents/The KY HS Experience/KEVIN 2016-17/Kevin's Stuff/Game Stuff/sap-battle-engine-bug-squisher/artifacts/bug-scenarios/gaped-battle-01a0ba8f-512c-75bb-adf7-df92a579e94f-turn-5"
+  },
+  "search": {
+    "attempted": 64,
+    "budget": 64,
+    "pending": 522,
+    "selectedTrial": 11,
+    "targetMatched": false,
+    "termination": "budget-exhausted",
+    "exhaustive": false,
+    "reason": "Only instrumented choices are searched. Budget exhaustion does not prove an engine bug; matching observations does not establish unobserved behavior."
+  },
+  "observedDivergence": 2
+}

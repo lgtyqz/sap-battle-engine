@@ -5,6 +5,7 @@ import { Equipment } from 'app/domain/entities/equipment.class';
 import { Pack, Pet } from 'app/domain/entities/pet.class';
 import { Player } from 'app/domain/entities/player.class';
 import { Ability, AbilityContext } from 'app/domain/entities/ability.class';
+import { AdultFlounder } from 'app/domain/entities/catalog/pets/hidden/adult-flounder.class';
 
 export class Flounder extends Pet {
   name = 'Flounder';
@@ -72,23 +73,25 @@ export class FlounderAbility extends Ability {
       return;
     }
 
-    const expGain = this.level;
-    const targetsResp = owner.parent.nearestPetsBehind(2, owner);
-    for (const target of targetsResp.pets) {
-      if (this.logService.isEnabled()) this.logService.createLog({
-        message: `${owner.name} gave ${target.name} ${expGain} exp.`,
-        type: 'ability',
-        player: owner.parent,
-        sourcePet: owner,
-        targetPet: target,
-        tiger: context.tiger,
-        pteranodon: context.pteranodon,
-        randomEvent: targetsResp.random,
-      });
-      target.increaseExp(expGain);
-    }
-
     this.triggeredThisTurn = true;
+    const adult = new AdultFlounder(this.runtime,
+      this.logService,
+      this.runtime.services.abilityService,
+      owner.parent,
+      owner.health,
+      owner.attack,
+      owner.mana,
+      owner.exp,
+      owner.equipment,
+    );
+    owner.parent.transformPet(owner, adult);
+    if (this.logService.isEnabled()) this.logService.createLog({
+      message: `${owner.name} transformed into ${adult.name}.`,
+      type: 'ability',
+      player: owner.parent,
+      tiger: context.tiger,
+      pteranodon: context.pteranodon,
+    });
     this.triggerTigerExecution(context);
   }
 
@@ -96,4 +99,3 @@ export class FlounderAbility extends Ability {
     return new FlounderAbility(this.runtime, newOwner, this.logService);
   }
 }
-

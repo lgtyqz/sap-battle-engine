@@ -59,7 +59,6 @@ export class SumatranTigerAbility extends Ability {
 
     if (oppositeEnemy) {
       // Jump-attack the opposite enemy
-      owner.jumpAttackPrep(oppositeEnemy);
       owner.jumpAttack(oppositeEnemy, tiger, null, targetResp.random);
 
       // Level 2 and 3: Deal damage to adjacent enemies
@@ -96,4 +95,3 @@ export class SumatranTigerAbility extends Ability {
     return new SumatranTigerAbility(this.runtime, newOwner, this.logService);
   }
 }
-

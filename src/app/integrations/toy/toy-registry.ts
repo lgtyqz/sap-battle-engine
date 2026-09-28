@@ -36,6 +36,7 @@ import { ToiletPaper } from 'app/domain/entities/catalog/toys/tier-3/toilet-pape
 import { OvenMitts } from 'app/domain/entities/catalog/toys/tier-3/oven-mitts.class';
 import { MelonHelmet } from 'app/domain/entities/catalog/toys/tier-4/melon-helmet.class';
 import { FoamSword } from 'app/domain/entities/catalog/toys/tier-4/foam-sword.class';
+import { ThunderHammer } from 'app/domain/entities/catalog/toys/tier-4/thunder-hammer.class';
 import { ToyGun } from 'app/domain/entities/catalog/toys/tier-4/toy-gun.class';
 import { CashRegister } from 'app/domain/entities/catalog/toys/tier-4/cash-register.class';
 import { Camera } from 'app/domain/entities/catalog/toys/tier-5/camera.class';
@@ -97,6 +98,7 @@ type AbilityServiceToyConstructor = new (runtime: EngineContext,
 
 // Standard toys (logService, toyService, parent, level)
 export const STANDARD_TOYS: Record<string, StandardToyConstructor> = {
+  'Thunder Hammer': ThunderHammer,
   'Action Figure': ActionFigure,
   'Balloon': Balloon,
   'Chocolate Box': ChocolateBox,
@@ -212,4 +214,3 @@ export const SPECIAL_TOY_BUILDERS: {
       deps.level,
     ),
 };
-

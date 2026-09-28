@@ -47,7 +47,7 @@ export class GiantTortoiseAbility extends Ability {
     super(runtime, {
       name: 'GiantTortoiseAbility',
       owner: owner,
-      triggers: [],
+      triggers: ['EndTurn'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -60,7 +60,16 @@ export class GiantTortoiseAbility extends Ability {
   }
 
   private executeAbility(context: AbilityContext): void {
-    // Empty implementation - to be filled by user
+    const owner = this.owner;
+    owner.increaseHealth(this.level * 2);
+    owner.attack = this.level * 4;
+    if (this.logService.isEnabled()) this.logService.createLog({
+      message: `${owner.name} gained +${this.level * 2} health and set attack to ${owner.attack}.`,
+      type: 'ability',
+      player: owner.parent,
+      tiger: context.tiger,
+      pteranodon: context.pteranodon,
+    });
     this.triggerTigerExecution(context);
   }
 
@@ -72,4 +81,3 @@ export class GiantTortoiseAbility extends Ability {
     );
   }
 }
-

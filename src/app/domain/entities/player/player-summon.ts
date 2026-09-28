@@ -124,7 +124,9 @@ export const summonPet = (
   if (spawnPet.name === 'Golden Retriever' && player.goldenRetrieverEquipment) {
     spawnPet.applyEquipment(cloneEquipment(player.goldenRetrieverEquipment));
   }
-  abilityService.triggerSummonEvents(spawnPet);
+  if (!spawnPet.suppressSummonEvents) {
+    abilityService.triggerSummonEvents(spawnPet);
+  }
 
   return { success: true, randomEvent: false };
 };

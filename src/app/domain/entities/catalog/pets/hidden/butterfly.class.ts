@@ -66,8 +66,9 @@ export class ButterflyAbility extends Ability {
       return;
     }
 
-    owner.health = targetResp.pet.health;
-    owner.attack = targetResp.pet.attack;
+    const fraction = this.level === 3 ? 1 : this.level * 0.33;
+    owner.health = Math.max(1, Math.floor(targetResp.pet.health * fraction));
+    owner.attack = Math.max(1, Math.floor(targetResp.pet.attack * fraction));
     if (this.logService.isEnabled()) this.logService.createLog({
       message: `${owner.name} copied stats from the strongest enemy (${owner.attack}/${owner.health}).`,
       type: 'ability',
@@ -84,4 +85,3 @@ export class ButterflyAbility extends Ability {
     return new ButterflyAbility(this.runtime, newOwner, this.logService);
   }
 }
-

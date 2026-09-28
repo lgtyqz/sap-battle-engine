@@ -60,18 +60,24 @@ export class TasmanianDevilAbility extends Ability {
     let targetResp = owner.parent.opponent.getLowestAttackPet(undefined, owner);
 
     if (targetResp.pet && targetResp.pet.alive) {
-      let spookedAilment = new Spooked(this.runtime);
-      spookedAilment.multiplier += this.level * 5 - 1;
-      if (this.logService.isEnabled()) this.logService.createLog({
-        message: `${owner.name} gave ${targetResp.pet.name} ${spookedAilment.multiplier}x Spooked.`,
-        type: 'ability',
-        player: owner.parent,
-        tiger: tiger,
-        randomEvent: targetResp.random,
-      });
-      targetResp.pet.givePetEquipment(spookedAilment);
-      owner.jumpAttackPrep(targetResp.pet);
-      owner.jumpAttack(targetResp.pet, tiger, null, targetResp.random);
+      owner.jumpAttack(
+        targetResp.pet,
+        tiger,
+        null,
+        targetResp.random,
+        (_attacker, attackTarget) => {
+          const spookedAilment = new Spooked(this.runtime);
+          spookedAilment.multiplier += this.level * 5 - 1;
+          if (this.logService.isEnabled()) this.logService.createLog({
+            message: `${owner.name} gave ${attackTarget.name} ${spookedAilment.multiplier}x Spooked.`,
+            type: 'ability',
+            player: owner.parent,
+            tiger: tiger,
+            randomEvent: targetResp.random,
+          });
+          attackTarget.givePetEquipment(spookedAilment);
+        },
+      );
     }
 
     // Tiger system: trigger Tiger execution at the end
@@ -82,4 +88,3 @@ export class TasmanianDevilAbility extends Ability {
     return new TasmanianDevilAbility(this.runtime, newOwner, this.logService);
   }
 }
-

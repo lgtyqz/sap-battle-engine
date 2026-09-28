@@ -131,8 +131,16 @@ export abstract class PetRuntimeFacade extends PetTargetingRuntimeFacade {
     tiger?: boolean,
     damage?: number,
     randomEvent: boolean = false,
+    afterPreparation?: (attacker: Pet, target: Pet) => void,
   ) {
-    jumpAttackImpl(this.asPet(), target, tiger, damage, randomEvent);
+    return jumpAttackImpl(
+      this.asPet(),
+      target,
+      tiger,
+      damage,
+      randomEvent,
+      afterPreparation,
+    );
   }
 
   get alive(): boolean {

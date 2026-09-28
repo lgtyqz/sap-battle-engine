@@ -1,0 +1,3905 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate",
+  "metadata": {
+    "replayId": "01a0c55a-3953-7beb-aaaa-e6f4dc18e2dc",
+    "battleId": "a6c525f5-040c-44b8-a9be-b50795dde0cb",
+    "turn": 4,
+    "assumptions": [],
+    "sapSeed": -1559573737,
+    "reportedOutcome": "draw",
+    "inputHash": "90af9a44c7d3c2248ac327c3caefb43ae090c8b5d3e4d3ff383ae27edf513ff9",
+    "rngCompatibility": "unverified"
+  },
+  "engine": {
+    "package": "0.1.0",
+    "resolved": "git+ssh://git@github.com/lgtyqz/sap-battle-engine.git#ab6534769fa2c2cf3514bef00be50c8343c81699",
+    "upstream": "d165eb0a02f8aa0b54d72ed1d5490a44390d07f4"
+  },
+  "config": {
+    "turn": 4,
+    "simulationCount": 1,
+    "logsEnabled": true,
+    "maxLoggedBattles": 1,
+    "captureRandomDraws": true,
+    "captureRandomDecisions": true,
+    "optimizeDeterministicSimulations": false,
+    "mana": true,
+    "seed": -1559573737,
+    "playerPack": "Weekly",
+    "playerGoldSpent": 12,
+    "playerRollAmount": 0,
+    "playerSummonedAmount": 3,
+    "playerLevel3Sold": 0,
+    "playerTransformationAmount": 0,
+    "playerLostLastBattle": true,
+    "playerPets": [
+      {
+        "name": "Sneaky Egg",
+        "attack": 3,
+        "health": 5,
+        "exp": 1,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Pheasant",
+        "attack": 5,
+        "health": 6,
+        "exp": 2,
+        "equipment": "Strawberry",
+        "mana": 0,
+        "triggersConsumed": 2
+      },
+      {
+        "name": "Tropical Fish",
+        "attack": 3,
+        "health": 3,
+        "exp": 0,
+        "equipment": "Strawberry",
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Dung Beetle",
+        "attack": 3,
+        "health": 6,
+        "exp": 0,
+        "equipment": "Strawberry",
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Farmer Chicken",
+        "attack": 3,
+        "health": 4,
+        "exp": 1,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "opponentPack": "Weekly",
+    "opponentGoldSpent": 14,
+    "opponentRollAmount": 3,
+    "opponentSummonedAmount": 1,
+    "opponentLevel3Sold": 0,
+    "opponentTransformationAmount": 0,
+    "opponentLostLastBattle": true,
+    "opponentPets": [
+      null,
+      {
+        "name": "Weasel",
+        "attack": 6,
+        "health": 7,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Hoopoe Bird",
+        "attack": 3,
+        "health": 3,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Jellyfish",
+        "attack": 6,
+        "health": 6,
+        "exp": 1,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Fish",
+        "attack": 5,
+        "health": 6,
+        "exp": 3,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "randomDecisionOverrides": [],
+    "strictRandomOverrideValidation": true,
+    "randomDrawOverrides": [
+      {
+        "stream": "seeded",
+        "value": 0.26496128202416
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6498968179803342
+      },
+      {
+        "stream": "seeded",
+        "value": 0.06245648697949946
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9340001777745783
+      },
+      {
+        "stream": "seeded",
+        "value": 0.03588935174047947
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6604672551620752
+      },
+      {
+        "stream": "seeded",
+        "value": 0.20980837033130229
+      },
+      {
+        "stream": "seeded",
+        "value": 0.27436838671565056
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6285384390503168
+      },
+      {
+        "stream": "seeded",
+        "value": 0.3385812833439559
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2917712884955108
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9601421181578189
+      },
+      {
+        "stream": "seeded",
+        "value": 0.0897487981710583
+      },
+      {
+        "stream": "seeded",
+        "value": 0.530792934121564
+      },
+      {
+        "stream": "seeded",
+        "value": 0.17538778390735388
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8963488230947405
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6229355959221721
+      },
+      {
+        "stream": "seeded",
+        "value": 0.20118096563965082
+      },
+      {
+        "stream": "seeded",
+        "value": 0.902441053185612
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5510533982887864
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8756310595199466
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9205624100286514
+      }
+    ]
+  },
+  "reference": {
+    "schemaVersion": 1,
+    "inputHash": "90af9a44c7d3c2248ac327c3caefb43ae090c8b5d3e4d3ff383ae27edf513ff9",
+    "complete": true,
+    "terminalFrame": "terminal.png",
+    "captureErrors": [],
+    "outcome": {
+      "winner": "draw",
+      "evidence": {
+        "frame": "terminal.png"
+      },
+      "method": "explicit-result-text",
+      "text": [
+        "DRAW"
+      ]
+    },
+    "captureComplete": true,
+    "coverage": "viewer-pauses",
+    "initialVerified": true,
+    "initialChecks": [
+      {
+        "frame": "frames/0000.png",
+        "timeMs": 1451,
+        "differences": []
+      }
+    ],
+    "checkpoints": [
+      {
+        "timeMs": 1451,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Sneaky Egg",
+              "attack": 3,
+              "health": 5
+            },
+            {
+              "name": "Pheasant",
+              "attack": 5,
+              "health": 6
+            },
+            {
+              "name": "Tropical Fish",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 6
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 3,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Weasel",
+              "attack": 6,
+              "health": 7
+            },
+            {
+              "name": "Hoopoe Bird",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0000.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2350448418003565,
+                "margin": 0.10052083333333334
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2528692253416518,
+                "margin": 0.0892718545751634
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23127645944741534,
+                "margin": 0.09318831699346405
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 5,
+                "error": 0.24920946598336305,
+                "margin": 0.12936070261437907
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.24159982174688058,
+                "margin": 0.10031658496732024
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13081922162804516,
+                "margin": 0.2147300207961973
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23177686794414737,
+                "margin": 0.09404616013071893
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25990697415329767,
+                "margin": 0.0957056781045752
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.21602792632204398,
+                "margin": 0.11513480392156861
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2208328691325015,
+                "margin": 0.11381740196078427
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.27034406565656566,
+                "margin": 0.11740196078431375
+              },
+              "health": {
+                "value": 6,
+                "error": 0.20844009952465836,
+                "margin": 0.11066176470588235
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 18,
+                  "matches": 23,
+                  "scale": 0.9312295554733901,
+                  "ratio": 0.782608695652174
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 5,
+                  "matches": 6,
+                  "scale": 0.8036550074460919,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 36,
+                  "matches": 37,
+                  "scale": 0.9307131836239491,
+                  "ratio": 0.972972972972973
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.7806526079993868,
+                  "ratio": 0.5555555555555556
+                }
+              ],
+              "perks": [
+                {
+                  "colorError": 8,
+                  "kind": "perks",
+                  "name": "Peanut Butter",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.5691020912623123,
+                  "ratio": 0.5714285714285714
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tropical Fish",
+                  "inliers": 42,
+                  "matches": 45,
+                  "scale": 0.9355933291563006,
+                  "ratio": 0.9333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pheasant",
+                  "inliers": 46,
+                  "matches": 50,
+                  "scale": 0.9342596817578536,
+                  "ratio": 0.92
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Eagle",
+                  "inliers": 4,
+                  "matches": 11,
+                  "scale": 0.9746455668943574,
+                  "ratio": 0.36363636363636365
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Sneaky Egg",
+                  "method": "template",
+                  "error": 0.007883341982960701
+                },
+                {
+                  "name": "Duckling",
+                  "method": "template",
+                  "error": 0.24330855906009674
+                },
+                {
+                  "name": "Cracked Egg",
+                  "method": "template",
+                  "error": 0.24478261172771454
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Weasel",
+                  "inliers": 22,
+                  "matches": 23,
+                  "scale": 0.9334654002507878,
+                  "ratio": 0.9565217391304348
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hoopoe Bird",
+                  "inliers": 23,
+                  "matches": 24,
+                  "scale": 0.9323760082326119,
+                  "ratio": 0.9583333333333334
+                }
+              ],
+              "perks": [
+                {
+                  "colorError": 6,
+                  "kind": "perks",
+                  "name": "Toasty",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.34700128408577724,
+                  "ratio": 0.6666666666666666
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 37,
+                  "matches": 37,
+                  "scale": 0.9354555450985864,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 17,
+                  "matches": 20,
+                  "scale": 0.9328168648554785,
+                  "ratio": 0.85
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "SNEAKY EGG",
+        "kinds": [
+          "initial"
+        ]
+      },
+      {
+        "timeMs": 6785,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Pheasant",
+              "attack": 5,
+              "health": 6
+            },
+            {
+              "name": "Tropical Fish",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 6
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 3,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Weasel",
+              "attack": 6,
+              "health": 7
+            },
+            {
+              "name": "Hoopoe Bird",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0001.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2350448418003565,
+                "margin": 0.10052083333333334
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2528692253416518,
+                "margin": 0.0892718545751634
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23127645944741534,
+                "margin": 0.09318831699346405
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.24159982174688058,
+                "margin": 0.10031658496732024
+              },
+              "health": {
+                "value": 7,
+                "error": 0.13081922162804516,
+                "margin": 0.2147300207961973
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23177686794414737,
+                "margin": 0.09404616013071893
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25990697415329767,
+                "margin": 0.0957056781045752
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.21602792632204398,
+                "margin": 0.11513480392156861
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2208328691325015,
+                "margin": 0.11381740196078427
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.27034406565656566,
+                "margin": 0.11740196078431375
+              },
+              "health": {
+                "value": 6,
+                "error": 0.20844009952465836,
+                "margin": 0.11066176470588235
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 18,
+                  "matches": 22,
+                  "scale": 0.931229672101732,
+                  "ratio": 0.8181818181818182
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.8377989026734024,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 36,
+                  "matches": 37,
+                  "scale": 0.9307131836239491,
+                  "ratio": 0.972972972972973
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.7806526079993868,
+                  "ratio": 0.5555555555555556
+                }
+              ],
+              "perks": [
+                {
+                  "colorError": 8,
+                  "kind": "perks",
+                  "name": "Peanut Butter",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.5691020912623123,
+                  "ratio": 0.5714285714285714
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tropical Fish",
+                  "inliers": 42,
+                  "matches": 45,
+                  "scale": 0.9355933291563006,
+                  "ratio": 0.9333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pheasant",
+                  "inliers": 47,
+                  "matches": 49,
+                  "scale": 0.9331831512760128,
+                  "ratio": 0.9591836734693877
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Eagle",
+                  "inliers": 4,
+                  "matches": 12,
+                  "scale": 0.9058799976580502,
+                  "ratio": 0.3333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Weasel",
+                  "inliers": 22,
+                  "matches": 23,
+                  "scale": 0.9334654002507878,
+                  "ratio": 0.9565217391304348
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hoopoe Bird",
+                  "inliers": 23,
+                  "matches": 24,
+                  "scale": 0.9323760082326119,
+                  "ratio": 0.9583333333333334
+                }
+              ],
+              "perks": [
+                {
+                  "colorError": 6,
+                  "kind": "perks",
+                  "name": "Toasty",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.34700128408577724,
+                  "ratio": 0.6666666666666666
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 37,
+                  "matches": 37,
+                  "scale": 0.9354555450985864,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 17,
+                  "matches": 20,
+                  "scale": 0.9328168648554785,
+                  "ratio": 0.85
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "SNEAKY EGG",
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 10753,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Cracked Egg",
+              "attack": 4,
+              "health": 2
+            },
+            {
+              "name": "Pheasant",
+              "attack": 5,
+              "health": 6
+            },
+            {
+              "name": "Tropical Fish",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 6
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 3,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Weasel",
+              "attack": 6,
+              "health": 7
+            },
+            {
+              "name": "Hoopoe Bird",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0002.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2350448418003565,
+                "margin": 0.10052083333333334
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19482607807615798,
+                "margin": 0.1938419117647059
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22091456847890673,
+                "margin": 0.10775122549019606
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2528692253416518,
+                "margin": 0.0892718545751634
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23127645944741534,
+                "margin": 0.09318831699346405
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.1562588803637397,
+                "margin": 0.21876531862745097
+              },
+              "health": {
+                "value": 2,
+                "error": 0.2304339349376114,
+                "margin": 0.10054636437908496
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.25357527480689246,
+                "margin": 0.0986825980392157
+              },
+              "health": {
+                "value": 7,
+                "error": 0.1388628936423054,
+                "margin": 0.2301674836601307
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.226419061942959,
+                "margin": 0.11060049019607845
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23530386586452764,
+                "margin": 0.08786764705882352
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2802742498514557,
+                "margin": 0.08296568627450984
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2208328691325015,
+                "margin": 0.11381740196078427
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 18,
+                  "matches": 23,
+                  "scale": 0.9312295908661644,
+                  "ratio": 0.782608695652174
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.837798841705425,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 36,
+                  "matches": 37,
+                  "scale": 0.9307131836239491,
+                  "ratio": 0.972972972972973
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.7806526079993868,
+                  "ratio": 0.5555555555555556
+                }
+              ],
+              "perks": [
+                {
+                  "colorError": 8,
+                  "kind": "perks",
+                  "name": "Peanut Butter",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.5691020912623123,
+                  "ratio": 0.5714285714285714
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tropical Fish",
+                  "inliers": 42,
+                  "matches": 45,
+                  "scale": 0.9355933291563006,
+                  "ratio": 0.9333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pheasant",
+                  "inliers": 46,
+                  "matches": 49,
+                  "scale": 0.9330380676260661,
+                  "ratio": 0.9387755102040817
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Eagle",
+                  "inliers": 4,
+                  "matches": 10,
+                  "scale": 0.8684760709033277,
+                  "ratio": 0.4
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Cracked Egg",
+                  "inliers": 33,
+                  "matches": 33,
+                  "scale": 0.9297329541857611,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sneaky Egg",
+                  "inliers": 13,
+                  "matches": 17,
+                  "scale": 0.8869633258480125,
+                  "ratio": 0.7647058823529411
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Weasel",
+                  "inliers": 16,
+                  "matches": 16,
+                  "scale": 0.9353806298215487,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Amami Rabbit",
+                  "inliers": 4,
+                  "matches": 4,
+                  "scale": 0.890531267519604,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hoopoe Bird",
+                  "inliers": 23,
+                  "matches": 27,
+                  "scale": 0.9327977446429168,
+                  "ratio": 0.8518518518518519
+                }
+              ],
+              "perks": [
+                {
+                  "colorError": 7,
+                  "kind": "perks",
+                  "name": "Toasty",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.3449158537976007,
+                  "ratio": 0.5
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 36,
+                  "matches": 36,
+                  "scale": 0.9357449926207291,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 17,
+                  "matches": 20,
+                  "scale": 0.933166144233234,
+                  "ratio": 0.85
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "summon"
+        ]
+      },
+      {
+        "timeMs": 14666,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Pheasant",
+              "attack": 5,
+              "health": 6
+            },
+            {
+              "name": "Tropical Fish",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 6
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 3,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Weasel",
+              "attack": 6,
+              "health": 3
+            },
+            {
+              "name": "Hoopoe Bird",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0003.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 4,
+                "error": 0.17270087382779198,
+                "margin": 0.21482843137254903
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2094409165181224,
+                "margin": 0.10856821895424834
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 3,
+                "error": 0.27476093657159834,
+                "margin": 0.09106924019607843
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2658710264408794,
+                "margin": 0.10114379084967318
+              },
+              "health": {
+                "value": 6,
+                "error": 0.22940619429590017,
+                "margin": 0.1
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.25357527480689246,
+                "margin": 0.0986825980392157
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25805713383838386,
+                "margin": 0.08707618464052286
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.226419061942959,
+                "margin": 0.11060049019607845
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23530386586452764,
+                "margin": 0.08786764705882352
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2802742498514557,
+                "margin": 0.08296568627450984
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2208328691325015,
+                "margin": 0.11381740196078427
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 19,
+                  "matches": 23,
+                  "scale": 0.9313248617240554,
+                  "ratio": 0.8260869565217391
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Thunderbird",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.9071714682069719,
+                  "ratio": 0.5714285714285714
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 0.8839507497253845,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 42,
+                  "matches": 42,
+                  "scale": 0.9321516859822564,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tropical Fish",
+                  "inliers": 36,
+                  "matches": 40,
+                  "scale": 0.9356387809641175,
+                  "ratio": 0.9
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Guineafowl",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9735047678391334,
+                  "ratio": 0.7142857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mana Hound",
+                  "inliers": 4,
+                  "matches": 14,
+                  "scale": 0.9877566345353423,
+                  "ratio": 0.2857142857142857
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pheasant",
+                  "inliers": 46,
+                  "matches": 46,
+                  "scale": 0.9322579939543075,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Weasel",
+                  "inliers": 22,
+                  "matches": 22,
+                  "scale": 0.936430191102551,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Amami Rabbit",
+                  "inliers": 5,
+                  "matches": 6,
+                  "scale": 0.8832368030722085,
+                  "ratio": 0.8333333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hoopoe Bird",
+                  "inliers": 23,
+                  "matches": 26,
+                  "scale": 0.9327981172841605,
+                  "ratio": 0.8846153846153846
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 36,
+                  "matches": 36,
+                  "scale": 0.9357449926207291,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 17,
+                  "matches": 20,
+                  "scale": 0.933166144233234,
+                  "ratio": 0.85
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint",
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 18200,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tropical Fish",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 6
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 3,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Hoopoe Bird",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0004.png"
+        },
+        "dying": [
+          {
+            "slot": 4,
+            "health": 0
+          },
+          {
+            "slot": 5,
+            "health": -2
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 4,
+                "error": 0.17270087382779198,
+                "margin": 0.21482843137254903
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2094409165181224,
+                "margin": 0.10856821895424834
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 3,
+                "error": 0.27476093657159834,
+                "margin": 0.09106924019607843
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2658710264408794,
+                "margin": 0.10114379084967318
+              },
+              "health": {
+                "value": 0,
+                "error": 0.22894354752770674,
+                "margin": 0.0521976680164819
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.25357527480689246,
+                "margin": 0.0986825980392157
+              },
+              "health": {
+                "value": -2,
+                "error": 0.21470031194295902,
+                "margin": 0.10100592320261437
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.226419061942959,
+                "margin": 0.11060049019607845
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23530386586452764,
+                "margin": 0.08786764705882352
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2802742498514557,
+                "margin": 0.08296568627450984
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2208328691325015,
+                "margin": 0.11381740196078427
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 19,
+                  "matches": 23,
+                  "scale": 0.9313248617240554,
+                  "ratio": 0.8260869565217391
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Thunderbird",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.9071714682069719,
+                  "ratio": 0.5714285714285714
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 0.8839507497253845,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 42,
+                  "matches": 42,
+                  "scale": 0.9321516859822564,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tropical Fish",
+                  "inliers": 36,
+                  "matches": 40,
+                  "scale": 0.9356387809641175,
+                  "ratio": 0.9
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mana Hound",
+                  "inliers": 4,
+                  "matches": 15,
+                  "scale": 0.8878075733697256,
+                  "ratio": 0.26666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Desert Rain Frog",
+                  "method": "template",
+                  "error": 0.2866630554199219
+                },
+                {
+                  "name": "Dumbo Octopus",
+                  "method": "template",
+                  "error": 0.3017984926700592
+                },
+                {
+                  "name": "Tardigrade",
+                  "method": "template",
+                  "error": 0.30228108167648315
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Tardigrade",
+                  "method": "template",
+                  "error": 0.3241133689880371
+                },
+                {
+                  "name": "Desert Rain Frog",
+                  "method": "template",
+                  "error": 0.3258313238620758
+                },
+                {
+                  "name": "Chinchilla",
+                  "method": "template",
+                  "error": 0.3272095024585724
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hoopoe Bird",
+                  "inliers": 23,
+                  "matches": 27,
+                  "scale": 0.9327976997412427,
+                  "ratio": 0.8518518518518519
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 36,
+                  "matches": 36,
+                  "scale": 0.9357449926207291,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 17,
+                  "matches": 20,
+                  "scale": 0.933166144233234,
+                  "ratio": 0.85
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "WEASEL",
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 22084,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tropical Fish",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 6
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 3,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Hoopoe Bird",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0005.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2785088940879382,
+                "margin": 0.07283496732026146
+              },
+              "health": {
+                "value": 4,
+                "error": 0.17270087382779198,
+                "margin": 0.21482843137254903
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2094409165181224,
+                "margin": 0.10856821895424834
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 3,
+                "error": 0.27476093657159834,
+                "margin": 0.09106924019607843
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.24567596925133692,
+                "margin": 0.0857128267973856
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.226419061942959,
+                "margin": 0.11060049019607845
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23530386586452764,
+                "margin": 0.08786764705882352
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2802742498514557,
+                "margin": 0.08296568627450984
+              },
+              "health": {
+                "value": 6,
+                "error": 0.2208328691325015,
+                "margin": 0.11381740196078427
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 19,
+                  "matches": 23,
+                  "scale": 0.9313248617240554,
+                  "ratio": 0.8260869565217391
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Thunderbird",
+                  "inliers": 4,
+                  "matches": 7,
+                  "scale": 0.9071714682069719,
+                  "ratio": 0.5714285714285714
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 0.8839507497253845,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 42,
+                  "matches": 42,
+                  "scale": 0.9321516859822564,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tropical Fish",
+                  "inliers": 36,
+                  "matches": 40,
+                  "scale": 0.9356387809641175,
+                  "ratio": 0.9
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mana Hound",
+                  "inliers": 4,
+                  "matches": 15,
+                  "scale": 0.8868349988218186,
+                  "ratio": 0.26666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hoopoe Bird",
+                  "inliers": 23,
+                  "matches": 27,
+                  "scale": 0.9327976997412427,
+                  "ratio": 0.8518518518518519
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 36,
+                  "matches": 36,
+                  "scale": 0.9357449926207291,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 17,
+                  "matches": 20,
+                  "scale": 0.933166144233234,
+                  "ratio": 0.85
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": []
+      },
+      {
+        "timeMs": 26402,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Tropical Fish",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 6
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 4,
+              "health": 5
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Hoopoe Bird",
+              "attack": 3,
+              "health": 3
+            },
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0006.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.18876500781472008,
+                "margin": 0.20435049019607845
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2610085227272727,
+                "margin": 0.09600694444444446
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23127645944741534,
+                "margin": 0.09318831699346405
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 3,
+                "error": 0.24606404114676175,
+                "margin": 0.09814644607843134
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25805713383838386,
+                "margin": 0.08707618464052286
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.24159982174688058,
+                "margin": 0.10031658496732024
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21322972370766488,
+                "margin": 0.1118157679738562
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23530386586452764,
+                "margin": 0.08786764705882352
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 22,
+                  "matches": 25,
+                  "scale": 0.9288210481978109,
+                  "ratio": 0.88
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 6,
+                  "matches": 6,
+                  "scale": 0.8559886031598105,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 42,
+                  "matches": 42,
+                  "scale": 0.9327079733794001,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Tropical Fish",
+                  "inliers": 38,
+                  "matches": 38,
+                  "scale": 0.933269393249427,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Hoopoe Bird",
+                  "inliers": 20,
+                  "matches": 20,
+                  "scale": 0.9323502140161296,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 39,
+                  "matches": 40,
+                  "scale": 0.9364079331878514,
+                  "ratio": 0.975
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 15,
+                  "matches": 16,
+                  "scale": 0.9363365011188688,
+                  "ratio": 0.9375
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Kappa",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 1.1111215253345854,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 32649,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 6
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 4,
+              "health": 5
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0007.png"
+        },
+        "dying": [
+          {
+            "slot": 4,
+            "health": 0
+          },
+          {
+            "slot": 5,
+            "health": 0
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.18876500781472008,
+                "margin": 0.20435049019607845
+              },
+              "health": {
+                "value": 5,
+                "error": 0.2610085227272727,
+                "margin": 0.09600694444444446
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23127645944741534,
+                "margin": 0.09318831699346405
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 0,
+                "error": 0.22894354752770674,
+                "margin": 0.0521976680164819
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.263052398989899,
+                "margin": 0.08404820261437906
+              },
+              "health": {
+                "value": 0,
+                "error": 0.1969991030832623,
+                "margin": 0.08117029873543619
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.24159982174688058,
+                "margin": 0.10031658496732024
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21322972370766488,
+                "margin": 0.1118157679738562
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23530386586452764,
+                "margin": 0.08786764705882352
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 22,
+                  "matches": 25,
+                  "scale": 0.9288210481978109,
+                  "ratio": 0.88
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 6,
+                  "matches": 6,
+                  "scale": 0.8559886031598105,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 43,
+                  "matches": 43,
+                  "scale": 0.9314586556237129,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Desert Rain Frog",
+                  "method": "template",
+                  "error": 0.3012763559818268
+                },
+                {
+                  "name": "Sphinx",
+                  "method": "template",
+                  "error": 0.3148142099380493
+                },
+                {
+                  "name": "Brain Cramp",
+                  "method": "template",
+                  "error": 0.3162992298603058
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Chinchilla",
+                  "method": "template",
+                  "error": 0.2706173360347748
+                },
+                {
+                  "name": "Rock",
+                  "method": "template",
+                  "error": 0.2767413556575775
+                },
+                {
+                  "name": "Manatee",
+                  "method": "template",
+                  "error": 0.2839643657207489
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 41,
+                  "matches": 41,
+                  "scale": 0.9367134042687902,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Egyptian Vulture",
+                  "inliers": 4,
+                  "matches": 10,
+                  "scale": 0.9603880145469055,
+                  "ratio": 0.4
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 15,
+                  "matches": 16,
+                  "scale": 0.9363365011188688,
+                  "ratio": 0.9375
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Kappa",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 1.1111215253345854,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "HOOPOE BIRD",
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 37233,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 4
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 4,
+              "health": 3
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0008.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 4,
+                "error": 0.18876500781472008,
+                "margin": 0.20435049019607845
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2528692253416518,
+                "margin": 0.0892718545751634
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.22925440062388594,
+                "margin": 0.09217728758169932
+              },
+              "health": {
+                "value": 4,
+                "error": 0.20286922534165183,
+                "margin": 0.21267361111111113
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.24159982174688058,
+                "margin": 0.10031658496732024
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21322972370766488,
+                "margin": 0.1118157679738562
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 6,
+                "error": 0.23530386586452764,
+                "margin": 0.08786764705882352
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 22,
+                  "matches": 25,
+                  "scale": 0.9288210481978109,
+                  "ratio": 0.88
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 6,
+                  "matches": 6,
+                  "scale": 0.8559886031598105,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 43,
+                  "matches": 43,
+                  "scale": 0.9314586556237129,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 41,
+                  "matches": 41,
+                  "scale": 0.9367134042687902,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Egyptian Vulture",
+                  "inliers": 4,
+                  "matches": 10,
+                  "scale": 0.9603880145469055,
+                  "ratio": 0.4
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 15,
+                  "matches": 16,
+                  "scale": 0.9363365011188688,
+                  "ratio": 0.9375
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Kappa",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 1.1111215253345854,
+                  "ratio": 0.625
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 41317,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Dung Beetle",
+              "attack": 3,
+              "health": 4
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 5,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 6
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0009.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.255474784610814,
+                "margin": 0.12224264705882354
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19643540181224006,
+                "margin": 0.20994689542483663
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18433368612596557,
+                "margin": 0.21280637254901963
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.25357527480689246,
+                "margin": 0.0986825980392157
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21512412730243613,
+                "margin": 0.10722017973856207
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.262020944741533,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21322972370766488,
+                "margin": 0.1118157679738562
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 20,
+                  "matches": 24,
+                  "scale": 0.9343579348751885,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 6,
+                  "matches": 9,
+                  "scale": 0.8088424580007785,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Dung Beetle",
+                  "inliers": 34,
+                  "matches": 36,
+                  "scale": 0.9312574220978955,
+                  "ratio": 0.9444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 42,
+                  "matches": 45,
+                  "scale": 0.9356945562362895,
+                  "ratio": 0.9333333333333333
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 14,
+                  "matches": 16,
+                  "scale": 0.9316609151754823,
+                  "ratio": 0.875
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 44530,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Farmer Chicken",
+              "attack": 5,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Jellyfish",
+              "attack": 6,
+              "health": 3
+            },
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0010.png"
+        },
+        "dying": [
+          {
+            "slot": 4,
+            "health": -2
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.255474784610814,
+                "margin": 0.12224264705882354
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19643540181224006,
+                "margin": 0.20994689542483663
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 3,
+                "error": 0.23278789735591207,
+                "margin": 0.10609681372549021
+              },
+              "health": {
+                "value": -2,
+                "error": 0.21935346108140227,
+                "margin": 0.10660743464052283
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.25357527480689246,
+                "margin": 0.0986825980392157
+              },
+              "health": {
+                "value": 3,
+                "error": 0.25805713383838386,
+                "margin": 0.08707618464052286
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.262020944741533,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21322972370766488,
+                "margin": 0.1118157679738562
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 20,
+                  "matches": 24,
+                  "scale": 0.9343581766390568,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 6,
+                  "matches": 9,
+                  "scale": 0.8088424580007785,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Pygmy Seahorse",
+                  "method": "template",
+                  "error": 0.3359919786453247
+                },
+                {
+                  "name": "Meerkat",
+                  "method": "template",
+                  "error": 0.3375505805015564
+                },
+                {
+                  "name": "Tardigrade",
+                  "method": "template",
+                  "error": 0.33847129344940186
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Jellyfish",
+                  "inliers": 35,
+                  "matches": 37,
+                  "scale": 0.9356017578426029,
+                  "ratio": 0.9459459459459459
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 14,
+                  "matches": 16,
+                  "scale": 0.9316608675349358,
+                  "ratio": 0.875
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "DUNG BEETLE",
+        "kinds": [
+          "faint",
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 49747,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Farmer Chicken",
+              "attack": 5,
+              "health": 4
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0011.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.255474784610814,
+                "margin": 0.12224264705882354
+              },
+              "health": {
+                "value": 4,
+                "error": 0.19643540181224006,
+                "margin": 0.20994689542483663
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.262020944741533,
+                "margin": 0.1232843137254902
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21322972370766488,
+                "margin": 0.1118157679738562
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 20,
+                  "matches": 24,
+                  "scale": 0.9343581766390568,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 6,
+                  "matches": 9,
+                  "scale": 0.8088424580007785,
+                  "ratio": 0.6666666666666666
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 14,
+                  "matches": 16,
+                  "scale": 0.9316608675349358,
+                  "ratio": 0.875
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 53849,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Farmer Chicken",
+              "attack": 6,
+              "health": 5
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Fish",
+              "attack": 5,
+              "health": 6
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0012.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 6,
+                "error": 0.2259799279560309,
+                "margin": 0.10870098039215687
+              },
+              "health": {
+                "value": 5,
+                "error": 0.25252850193107546,
+                "margin": 0.12935049019607847
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.27112531565656567,
+                "margin": 0.12796160130718953
+              },
+              "health": {
+                "value": 6,
+                "error": 0.21512412730243613,
+                "margin": 0.10722017973856207
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 21,
+                  "matches": 23,
+                  "scale": 0.9304471043404741,
+                  "ratio": 0.9130434782608695
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 5,
+                  "matches": 10,
+                  "scale": 0.813455372482176,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Fish",
+                  "inliers": 14,
+                  "matches": 16,
+                  "scale": 0.9338632849910584,
+                  "ratio": 0.875
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      }
+    ],
+    "gaps": [],
+    "recognition": "Local SIFT sprite geometry and Lapsus Pro digit masks; confidence is an acceptance flag, not a calibrated probability.",
+    "unobservedFields": [
+      "experience",
+      "mana",
+      "equipment absence",
+      "equipment uses",
+      "internal identities"
+    ],
+    "source": "/Users/lgtyqz/Documents/The KY HS Experience/KEVIN 2016-17/Kevin's Stuff/Game Stuff/sap-battle-engine-bug-squisher/artifacts/bug-scenarios/gaped-battle-01a0c55a-3953-7beb-aaaa-e6f4dc18e2dc-turn-4"
+  },
+  "search": {
+    "attempted": 15,
+    "budget": 64,
+    "pending": 0,
+    "selectedTrial": 0,
+    "targetMatched": false,
+    "termination": "no-more-captured-choices",
+    "exhaustive": false,
+    "reason": "Only instrumented choices are searched. Budget exhaustion does not prove an engine bug; matching observations does not establish unobserved behavior."
+  },
+  "observedDivergence": 11
+}

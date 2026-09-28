@@ -19,7 +19,6 @@ export class Falcon extends Pet {
         this,
         this.logService,
         this.petService,
-        this.abilityService,
       ),
     );
     super.initAbilities();
@@ -44,13 +43,11 @@ export class Falcon extends Pet {
 export class FalconAbility extends Ability {
   private logService: LogService;
   private petService: PetService;
-  private abilityService: AbilityService;
 
   constructor(runtime: EngineContext,
     owner: Pet,
     logService: LogService,
     petService: PetService,
-    abilityService: AbilityService,
   ) {
     super(runtime, {
       name: 'FalconAbility',
@@ -66,7 +63,6 @@ export class FalconAbility extends Ability {
     });
     this.logService = logService;
     this.petService = petService;
-    this.abilityService = abilityService;
   }
 
   private executeAbility(context: AbilityContext): void {
@@ -85,9 +81,13 @@ export class FalconAbility extends Ability {
       },
       owner.parent,
     );
+
+    // Falcon inserts its copy at the front. The shared summon placement then
+    // pushes every occupied slot backward, including pets that are currently
+    // fainting but have not yet been removed.
     let summonResult = owner.parent.summonPet(
       summonPet,
-      owner.savedPosition,
+      0,
       false,
       owner,
     );
@@ -111,8 +111,6 @@ export class FalconAbility extends Ability {
       newOwner,
       this.logService,
       this.petService,
-      this.abilityService,
     );
   }
 }
-

@@ -63,35 +63,40 @@ export class AmamiRabbitAbility extends Ability {
 
     // Then jump-attack the highest attack enemy
     if (targetResp.pet && targetResp.pet.alive) {
-      owner.jumpAttackPrep(targetResp.pet);
-
-      // Apply attack gain to transformed pet if transformed, otherwise to target pet
-      if (owner.transformed && owner.transformedInto) {
-        let selfTargetResp = owner.parent.getThis(owner.transformedInto);
-        if (selfTargetResp.pet) {
-          owner.transformedInto.increaseAttack(attackGain);
-          if (this.logService.isEnabled()) this.logService.createLog({
-            message: `${owner.name} gave ${owner.transformedInto.name} ${attackGain} attack`,
-            type: 'ability',
-            player: owner.parent,
-            tiger: tiger,
-            randomEvent: selfTargetResp.random,
-          });
-        }
-      } else {
-        let selfTargetResp = owner.parent.getThis(owner);
-        if (selfTargetResp.pet) {
-          selfTargetResp.pet.increaseAttack(attackGain);
-          if (this.logService.isEnabled()) this.logService.createLog({
-            message: `${owner.name} gave ${selfTargetResp.pet.name} ${attackGain} attack`,
-            type: 'ability',
-            player: owner.parent,
-            tiger: tiger,
-            randomEvent: selfTargetResp.random,
-          });
-        }
-      }
-      owner.jumpAttack(targetResp.pet, tiger, undefined, targetResp.random);
+      owner.jumpAttack(
+        targetResp.pet,
+        tiger,
+        undefined,
+        targetResp.random,
+        () => {
+          // Apply attack gain to transformed pet if transformed, otherwise to target pet
+          if (owner.transformed && owner.transformedInto) {
+            let selfTargetResp = owner.parent.getThis(owner.transformedInto);
+            if (selfTargetResp.pet) {
+              owner.transformedInto.increaseAttack(attackGain);
+              if (this.logService.isEnabled()) this.logService.createLog({
+                message: `${owner.name} gave ${owner.transformedInto.name} ${attackGain} attack`,
+                type: 'ability',
+                player: owner.parent,
+                tiger: tiger,
+                randomEvent: selfTargetResp.random,
+              });
+            }
+          } else {
+            let selfTargetResp = owner.parent.getThis(owner);
+            if (selfTargetResp.pet) {
+              selfTargetResp.pet.increaseAttack(attackGain);
+              if (this.logService.isEnabled()) this.logService.createLog({
+                message: `${owner.name} gave ${selfTargetResp.pet.name} ${attackGain} attack`,
+                type: 'ability',
+                player: owner.parent,
+                tiger: tiger,
+                randomEvent: selfTargetResp.random,
+              });
+            }
+          }
+        },
+      );
     }
 
     // Tiger system: trigger Tiger execution at the end
@@ -102,4 +107,3 @@ export class AmamiRabbitAbility extends Ability {
     return new AmamiRabbitAbility(this.runtime, newOwner, this.logService);
   }
 }
-

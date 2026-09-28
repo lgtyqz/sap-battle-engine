@@ -48,7 +48,7 @@ export class BehemothAbility extends Ability {
     super(runtime, {
       name: 'BehemothAbility',
       owner: owner,
-      triggers: [],
+      triggers: ['EndTurn'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -60,10 +60,22 @@ export class BehemothAbility extends Ability {
     this.abilityService = abilityService;
   }
 
-  private executeAbility(context: AbilityContext): void { }
+  private executeAbility(context: AbilityContext): void {
+    const owner = this.owner;
+    const gain = this.level * 2;
+    owner.increaseAttack(gain);
+    owner.increaseHealth(gain);
+    if (this.logService.isEnabled()) this.logService.createLog({
+      message: `${owner.name} gained +${gain} attack and +${gain} health.`,
+      type: 'ability',
+      player: owner.parent,
+      tiger: context.tiger,
+      pteranodon: context.pteranodon,
+    });
+    this.triggerTigerExecution(context);
+  }
 
   copy(newOwner: Pet): BehemothAbility {
     return new BehemothAbility(this.runtime, newOwner, this.logService, this.abilityService);
   }
 }
-

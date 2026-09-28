@@ -226,6 +226,5 @@ export abstract class PetEquipmentFacade extends PetAbilityFacade {
     }
 
     this.abilityService.triggerPerkGainEvents(this.asPet(), equipment.name);
-    this.abilityService.triggerFoodEvents(this.asPet(), equipment.name);
   }
 }

@@ -68,9 +68,11 @@ export class DunkleosteusAbility extends Ability {
     const copiedAilment = cloneDeep(ailment);
     owner.removePerk();
 
-    // "First two enemies" is positional. Existing perks must not cause the
-    // ability to skip ahead to a later enemy.
-    const targets = opponentPets.slice(0, 2);
+    // Ordinary perks can be replaced, but applying the same ailment again is
+    // a no-op, so continue to the next enemy in that case.
+    const targets = opponentPets
+      .filter((pet) => pet.equipment?.name !== copiedAilment.name)
+      .slice(0, 2);
     if (targets.length === 0) {
       this.triggerTigerExecution(context);
       return;

@@ -67,37 +67,42 @@ export class SnowLeopardAbility extends Ability {
 
     // Then jump-attack random enemy
     if (targetResp.pet && targetResp.pet.alive) {
-      owner.jumpAttackPrep(targetResp.pet);
-
-      // Apply stat gain to transformed pet if transformed, otherwise use Silly-aware self-targeting
-      if (owner.transformed && owner.transformedInto) {
-        let selfTargetResp = owner.parent.getThis(owner.transformedInto);
-        if (selfTargetResp.pet) {
-          owner.transformedInto.increaseAttack(statGain);
-          owner.transformedInto.increaseHealth(statGain);
-          if (this.logService.isEnabled()) this.logService.createLog({
-            message: `${owner.name} gave ${owner.transformedInto.name} ${statGain} attack and ${statGain} health`,
-            type: 'ability',
-            player: owner.parent,
-            tiger: tiger,
-            randomEvent: selfTargetResp.random,
-          });
-        }
-      } else {
-        let selfTargetResp = owner.parent.getThis(owner);
-        if (selfTargetResp.pet) {
-          selfTargetResp.pet.increaseAttack(statGain);
-          selfTargetResp.pet.increaseHealth(statGain);
-          if (this.logService.isEnabled()) this.logService.createLog({
-            message: `${owner.name} gave ${selfTargetResp.pet.name} ${statGain} attack and ${statGain} health`,
-            type: 'ability',
-            player: owner.parent,
-            tiger: tiger,
-            randomEvent: selfTargetResp.random,
-          });
-        }
-      }
-      owner.jumpAttack(targetResp.pet, tiger, null, targetResp.random);
+      owner.jumpAttack(
+        targetResp.pet,
+        tiger,
+        null,
+        targetResp.random,
+        () => {
+          // Apply stat gain to transformed pet if transformed, otherwise use Silly-aware self-targeting
+          if (owner.transformed && owner.transformedInto) {
+            let selfTargetResp = owner.parent.getThis(owner.transformedInto);
+            if (selfTargetResp.pet) {
+              owner.transformedInto.increaseAttack(statGain);
+              owner.transformedInto.increaseHealth(statGain);
+              if (this.logService.isEnabled()) this.logService.createLog({
+                message: `${owner.name} gave ${owner.transformedInto.name} ${statGain} attack and ${statGain} health`,
+                type: 'ability',
+                player: owner.parent,
+                tiger: tiger,
+                randomEvent: selfTargetResp.random,
+              });
+            }
+          } else {
+            let selfTargetResp = owner.parent.getThis(owner);
+            if (selfTargetResp.pet) {
+              selfTargetResp.pet.increaseAttack(statGain);
+              selfTargetResp.pet.increaseHealth(statGain);
+              if (this.logService.isEnabled()) this.logService.createLog({
+                message: `${owner.name} gave ${selfTargetResp.pet.name} ${statGain} attack and ${statGain} health`,
+                type: 'ability',
+                player: owner.parent,
+                tiger: tiger,
+                randomEvent: selfTargetResp.random,
+              });
+            }
+          }
+        },
+      );
     }
 
     // Tiger system: trigger Tiger execution at the end
@@ -108,4 +113,3 @@ export class SnowLeopardAbility extends Ability {
     return new SnowLeopardAbility(this.runtime, newOwner, this.logService);
   }
 }
-

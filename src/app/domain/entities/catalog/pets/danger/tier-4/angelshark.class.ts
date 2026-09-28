@@ -13,6 +13,11 @@ export class Angelshark extends Pet {
   attack = 3;
   health = 3;
 
+  override initAbilities(): void {
+    this.addAbility(new AngelsharkAbility(this.runtime, this, this.logService, this.abilityService));
+    super.initAbilities();
+  }
+
   constructor(runtime: EngineContext,
     protected logService: LogService,
     protected abilityService: AbilityService,
@@ -41,7 +46,7 @@ export class AngelsharkAbility extends Ability {
     super(runtime, {
       name: 'AngelsharkAbility',
       owner: owner,
-      triggers: [],
+      triggers: ['EndTurn'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -54,7 +59,19 @@ export class AngelsharkAbility extends Ability {
   }
 
   private executeAbility(context: AbilityContext): void {
-    // Empty implementation - to be filled by user
+    const owner = this.owner;
+    for (const friend of owner.parent.petArray) {
+      if (friend === owner || !friend.alive) continue;
+      if (friend.attack > friend.health) friend.increaseAttack(this.level);
+      else friend.increaseHealth(this.level);
+      if (this.logService.isEnabled()) this.logService.createLog({
+        message: `${owner.name} gave ${friend.name} +${this.level} to its highest stat.`,
+        type: 'ability',
+        player: owner.parent,
+        tiger: context.tiger,
+        pteranodon: context.pteranodon,
+      });
+    }
     this.triggerTigerExecution(context);
   }
 
@@ -66,4 +83,3 @@ export class AngelsharkAbility extends Ability {
     );
   }
 }
-

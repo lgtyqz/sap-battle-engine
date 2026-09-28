@@ -1,5 +1,6 @@
 import { PetRegistryMap } from '../pet-registry.types';
 import { Basilisk } from 'app/domain/entities/catalog/pets/custom/tier-1/basilisk.class';
+import { BabyMammoth } from 'app/domain/entities/catalog/pets/custom/token/baby-mammoth.class';
 import { Budgie } from 'app/domain/entities/catalog/pets/custom/tier-1/budgie.class';
 import { Duckling } from 'app/domain/entities/catalog/pets/custom/tier-1/duckling.class';
 import { FarmerMouse } from 'app/domain/entities/catalog/pets/custom/tier-1/farmer-mouse.class';
@@ -184,6 +185,7 @@ import { YellowBoxfish } from 'app/domain/entities/catalog/pets/custom/tier-6/ye
 import { CuckooChick } from 'app/domain/entities/catalog/pets/custom/token/cuckoo-chick.class';
 
 export const CUSTOM_PET_REGISTRY: PetRegistryMap = {
+  'Baby Mammoth': BabyMammoth,
   Basilisk: Basilisk,
   Budgie: Budgie,
   Duckling: Duckling,
@@ -368,4 +370,3 @@ export const CUSTOM_PET_REGISTRY: PetRegistryMap = {
   'Yellow Boxfish': YellowBoxfish,
   'Cuckoo Chick': CuckooChick,
 };
-

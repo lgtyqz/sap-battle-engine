@@ -47,7 +47,7 @@ export class NightcrawlerAbility extends Ability {
     super(runtime, {
       name: 'NightcrawlerAbility',
       owner: owner,
-      triggers: ['PostRemovalFaint'],
+      triggers: ['Faint'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -73,7 +73,7 @@ export class NightcrawlerAbility extends Ability {
     }
 
     let health = Math.min(50, this.level * summonedAmount);
-    let attack = 6;
+    let attack = 3 * this.level;
 
     let dayCrawler = new Daycrawler(this.runtime,
       this.logService,

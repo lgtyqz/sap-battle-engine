@@ -1,0 +1,4253 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate",
+  "metadata": {
+    "replayId": "01a0be6c-293b-7d7f-8946-81bd4145726e",
+    "battleId": "ff2b2b86-690b-443e-b3b6-9c5a890213a4",
+    "turn": 10,
+    "assumptions": [],
+    "sapSeed": -2046828897,
+    "reportedOutcome": "draw",
+    "inputHash": "ad19dcd36157a99ad0909997fc5d0f758199b8352c6b5f1ed3c924c03b293801",
+    "rngCompatibility": "unverified"
+  },
+  "engine": {
+    "package": "0.1.0",
+    "resolved": "git+ssh://git@github.com/lgtyqz/sap-battle-engine.git#ab6534769fa2c2cf3514bef00be50c8343c81699",
+    "upstream": "d165eb0a02f8aa0b54d72ed1d5490a44390d07f4"
+  },
+  "config": {
+    "turn": 10,
+    "simulationCount": 1,
+    "logsEnabled": true,
+    "maxLoggedBattles": 1,
+    "captureRandomDraws": true,
+    "captureRandomDecisions": true,
+    "optimizeDeterministicSimulations": false,
+    "mana": true,
+    "seed": -2046828897,
+    "playerPack": "Weekly",
+    "playerGoldSpent": 11,
+    "playerRollAmount": 5,
+    "playerSummonedAmount": 1,
+    "playerLevel3Sold": 1,
+    "playerTransformationAmount": 0,
+    "playerLostLastBattle": true,
+    "playerPets": [
+      {
+        "name": "Rooster",
+        "attack": 18,
+        "health": 17,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Sleeping Gelada",
+        "attack": 12,
+        "health": 13,
+        "exp": 0,
+        "equipment": "White Truffle",
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Polar Bear",
+        "attack": 10,
+        "health": 14,
+        "exp": 4,
+        "equipment": "White Truffle",
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Ostrich",
+        "attack": 8,
+        "health": 9,
+        "exp": 0,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Mimic",
+        "attack": 5,
+        "health": 10,
+        "exp": 0,
+        "equipment": "Potato",
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "opponentPack": "Weekly",
+    "opponentGoldSpent": 11,
+    "opponentRollAmount": 5,
+    "opponentSummonedAmount": 1,
+    "opponentLevel3Sold": 0,
+    "opponentTransformationAmount": 0,
+    "opponentLostLastBattle": false,
+    "opponentPets": [
+      null,
+      {
+        "name": "Farmer Pig",
+        "attack": 13,
+        "health": 11,
+        "exp": 2,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Blue Jay",
+        "attack": 9,
+        "health": 9,
+        "exp": 2,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Farmer Chicken",
+        "attack": 14,
+        "health": 11,
+        "exp": 4,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      },
+      {
+        "name": "Bluebird",
+        "attack": 14,
+        "health": 10,
+        "exp": 2,
+        "equipment": null,
+        "mana": 0,
+        "triggersConsumed": 0
+      }
+    ],
+    "randomDecisionOverrides": [],
+    "strictRandomOverrideValidation": true,
+    "randomDrawOverrides": [
+      {
+        "stream": "seeded",
+        "value": 0.25863911700434983
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5913765630684793
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6305011899676174
+      },
+      {
+        "stream": "seeded",
+        "value": 0.10390829620882869
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7594374900218099
+      },
+      {
+        "stream": "seeded",
+        "value": 0.16437201900407672
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7205482707358897
+      },
+      {
+        "stream": "seeded",
+        "value": 0.15577804460190237
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7968594250269234
+      },
+      {
+        "stream": "seeded",
+        "value": 0.12202523718588054
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7642122383695096
+      },
+      {
+        "stream": "seeded",
+        "value": 0.4537221980281174
+      },
+      {
+        "stream": "seeded",
+        "value": 0.6741266218014061
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5209733231458813
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2525901256594807
+      },
+      {
+        "stream": "seeded",
+        "value": 0.46700509916990995
+      },
+      {
+        "stream": "seeded",
+        "value": 0.42692614113911986
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9677435567136854
+      },
+      {
+        "stream": "seeded",
+        "value": 0.456513510318473
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9262638562358916
+      },
+      {
+        "stream": "seeded",
+        "value": 0.2443111448083073
+      },
+      {
+        "stream": "seeded",
+        "value": 0.08419926022179425
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9966855661477894
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5455520791001618
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5728761472273618
+      },
+      {
+        "stream": "seeded",
+        "value": 0.25144614349119365
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7646763725206256
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7286091009154916
+      },
+      {
+        "stream": "seeded",
+        "value": 0.3251456650905311
+      },
+      {
+        "stream": "seeded",
+        "value": 0.790273568360135
+      },
+      {
+        "stream": "seeded",
+        "value": 0.5769041276071221
+      },
+      {
+        "stream": "seeded",
+        "value": 0.7106244068127126
+      },
+      {
+        "stream": "seeded",
+        "value": 0.9418693843763322
+      },
+      {
+        "stream": "seeded",
+        "value": 0.8377803608309478
+      },
+      {
+        "stream": "seeded",
+        "value": 0.1954106013290584
+      }
+    ]
+  },
+  "reference": {
+    "schemaVersion": 1,
+    "inputHash": "ad19dcd36157a99ad0909997fc5d0f758199b8352c6b5f1ed3c924c03b293801",
+    "complete": true,
+    "terminalFrame": "terminal.png",
+    "captureErrors": [],
+    "outcome": {
+      "winner": "draw",
+      "evidence": {
+        "frame": "terminal.png"
+      },
+      "method": "explicit-result-text",
+      "text": [
+        "DRAW"
+      ]
+    },
+    "captureComplete": true,
+    "coverage": "viewer-pauses",
+    "initialVerified": true,
+    "initialChecks": [
+      {
+        "frame": "frames/0000.png",
+        "timeMs": 1471,
+        "differences": []
+      }
+    ],
+    "checkpoints": [
+      {
+        "timeMs": 1471,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Rooster",
+              "attack": 18,
+              "health": 17
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 12,
+              "health": 13,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Polar Bear",
+              "attack": 10,
+              "health": 14,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Farmer Pig",
+              "attack": 13,
+              "health": 11
+            },
+            {
+              "name": "Blue Jay",
+              "attack": 9,
+              "health": 9
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 14,
+              "health": 11
+            },
+            {
+              "name": "Bluebird",
+              "attack": 14,
+              "health": 10
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0000.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2260085873117363,
+                "margin": 0.06826491013071895
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.24076153559249788,
+                "margin": 0.1065972222222222
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 10,
+                "error": 0.21654736705288175,
+                "margin": 0.06622242647058829
+              },
+              "health": {
+                "value": 14,
+                "error": 0.17218694295900178,
+                "margin": 0.1644403594771242
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 12,
+                "error": 0.21627326655299803,
+                "margin": 0.1060508578431372
+              },
+              "health": {
+                "value": 13,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 18,
+                "error": 0.2668542643506678,
+                "margin": 0.09310661764705885
+              },
+              "health": {
+                "value": 17,
+                "error": 0.16060095439691027,
+                "margin": 0.16244893790849677
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 13,
+                "error": 0.2536569741532977,
+                "margin": 0.08421160130718952
+              },
+              "health": {
+                "value": 11,
+                "error": 0.16060095439691027,
+                "margin": 0.15415645424836602
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.24611371063576945,
+                "margin": 0.13610089869281047
+              },
+              "health": {
+                "value": 9,
+                "error": 0.22958293371696506,
+                "margin": 0.09952001633986926
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 14,
+                "error": 0.15017227905655015,
+                "margin": 0.20852736928104576
+              },
+              "health": {
+                "value": 11,
+                "error": 0.22527109328579917,
+                "margin": 0.10019403594771245
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 14,
+                "error": 0.18601897733731174,
+                "margin": 0.18744893790849673
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2022431798806479,
+                "margin": 0.07164211246092636
+              },
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 50,
+                  "matches": 51,
+                  "scale": 0.9332144018038439,
+                  "ratio": 0.9803921568627451
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.0640350803732872
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.22702158987522125
+                },
+                {
+                  "kind": "perks",
+                  "name": "Melon Slice",
+                  "method": "template",
+                  "error": 0.2587909400463104
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 68,
+                  "matches": 68,
+                  "scale": 0.9349767006905174,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9732398971587849,
+                  "ratio": 0.7142857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Raccoon",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.7900208252825919,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Polar Bear",
+                  "inliers": 27,
+                  "matches": 27,
+                  "scale": 0.9333915064208904,
+                  "ratio": 1
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.05950227007269859
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.22618088126182556
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.23005636036396027
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 42,
+                  "matches": 52,
+                  "scale": 0.9335679322904323,
+                  "ratio": 0.8076923076923077
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 9,
+                  "matches": 29,
+                  "scale": 1.0128011325740194,
+                  "ratio": 0.3103448275862069
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Porcupine",
+                  "inliers": 4,
+                  "matches": 16,
+                  "scale": 1.0507475681977119,
+                  "ratio": 0.25
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.07356120645999908
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.21938283741474152
+                },
+                {
+                  "kind": "perks",
+                  "name": "Golden Egg",
+                  "method": "template",
+                  "error": 0.22117112576961517
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Rooster",
+                  "inliers": 42,
+                  "matches": 49,
+                  "scale": 0.9353498977846594,
+                  "ratio": 0.8571428571428571
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Parrot",
+                  "inliers": 10,
+                  "matches": 18,
+                  "scale": 1.0337427110848305,
+                  "ratio": 0.5555555555555556
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Pig",
+                  "inliers": 75,
+                  "matches": 78,
+                  "scale": 0.9329026294012623,
+                  "ratio": 0.9615384615384616
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pig",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9856215486572456,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Blue Jay",
+                  "inliers": 54,
+                  "matches": 57,
+                  "scale": 0.9319218624165684,
+                  "ratio": 0.9473684210526315
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 24,
+                  "matches": 29,
+                  "scale": 0.9312044021064395,
+                  "ratio": 0.8275862068965517
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 7,
+                  "matches": 11,
+                  "scale": 0.8568951800460874,
+                  "ratio": 0.6363636363636364
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Capybara",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.1304125019902194,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 28,
+                  "matches": 32,
+                  "scale": 0.9298508198978025,
+                  "ratio": 0.875
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 9,
+                  "matches": 15,
+                  "scale": 0.9236503146506517,
+                  "ratio": 0.6
+                }
+              ],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "FARMER PIG",
+        "kinds": [
+          "initial"
+        ]
+      },
+      {
+        "timeMs": 5557,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Rooster",
+              "attack": 18,
+              "health": 17
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 12,
+              "health": 13,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Polar Bear",
+              "attack": 10,
+              "health": 14,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Farmer Pig",
+              "attack": 13,
+              "health": 11
+            },
+            {
+              "name": "Blue Jay",
+              "attack": 11,
+              "health": 11
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 14,
+              "health": 11
+            },
+            {
+              "name": "Bluebird",
+              "attack": 14,
+              "health": 10
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0001.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2260085873117363,
+                "margin": 0.06826491013071895
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.24076153559249788,
+                "margin": 0.1065972222222222
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 10,
+                "error": 0.21654736705288175,
+                "margin": 0.06622242647058829
+              },
+              "health": {
+                "value": 14,
+                "error": 0.17218694295900178,
+                "margin": 0.1644403594771242
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 12,
+                "error": 0.21627326655299803,
+                "margin": 0.1060508578431372
+              },
+              "health": {
+                "value": 13,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 18,
+                "error": 0.2668542643506678,
+                "margin": 0.09310661764705885
+              },
+              "health": {
+                "value": 17,
+                "error": 0.16060095439691027,
+                "margin": 0.16244893790849677
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 13,
+                "error": 0.2721414512774807,
+                "margin": 0.07912581699346405
+              },
+              "health": {
+                "value": 11,
+                "error": 0.18319082367795603,
+                "margin": 0.13820465686274513
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 11,
+                "error": 0.20006173871063576,
+                "margin": 0.1252859477124183
+              },
+              "health": {
+                "value": 11,
+                "error": 0.1463699494949495,
+                "margin": 0.15102124183006538
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 14,
+                "error": 0.20006173871063576,
+                "margin": 0.1252859477124183
+              },
+              "health": {
+                "value": 11,
+                "error": 0.22951945929887108,
+                "margin": 0.10071486928104573
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 14,
+                "error": 0.15017227905655015,
+                "margin": 0.20852736928104576
+              },
+              "health": {
+                "value": 10,
+                "error": 0.222213563867576,
+                "margin": 0.05208533141517474
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 50,
+                  "matches": 51,
+                  "scale": 0.9332142990213272,
+                  "ratio": 0.9803921568627451
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.06402719765901566
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.22678571939468384
+                },
+                {
+                  "kind": "perks",
+                  "name": "Melon Slice",
+                  "method": "template",
+                  "error": 0.2587037980556488
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 68,
+                  "matches": 68,
+                  "scale": 0.9349766991634846,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9732398971587849,
+                  "ratio": 0.7142857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Raccoon",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.7900208252825919,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Polar Bear",
+                  "inliers": 27,
+                  "matches": 27,
+                  "scale": 0.9333915064208904,
+                  "ratio": 1
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.05950227007269859
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.22618088126182556
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.23005636036396027
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 41,
+                  "matches": 51,
+                  "scale": 0.9336863541775189,
+                  "ratio": 0.803921568627451
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 10,
+                  "matches": 28,
+                  "scale": 1.0088363428330065,
+                  "ratio": 0.35714285714285715
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.07356120645999908
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.21938283741474152
+                },
+                {
+                  "kind": "perks",
+                  "name": "Golden Egg",
+                  "method": "template",
+                  "error": 0.22117112576961517
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Rooster",
+                  "inliers": 41,
+                  "matches": 46,
+                  "scale": 0.9342973398382202,
+                  "ratio": 0.8913043478260869
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Parrot",
+                  "inliers": 7,
+                  "matches": 15,
+                  "scale": 1.0345894654371743,
+                  "ratio": 0.4666666666666667
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Pig",
+                  "inliers": 71,
+                  "matches": 75,
+                  "scale": 0.9327327625568986,
+                  "ratio": 0.9466666666666667
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Pig",
+                  "inliers": 6,
+                  "matches": 11,
+                  "scale": 0.98064222091438,
+                  "ratio": 0.5454545454545454
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Blue Jay",
+                  "inliers": 50,
+                  "matches": 52,
+                  "scale": 0.9314726108195185,
+                  "ratio": 0.9615384615384616
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 28,
+                  "matches": 32,
+                  "scale": 0.9326428740906019,
+                  "ratio": 0.875
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 8,
+                  "matches": 13,
+                  "scale": 0.8398465421042071,
+                  "ratio": 0.6153846153846154
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Wolverine",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.1281882569535349,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9259976261244899,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.8269857774818031,
+                  "ratio": 0.5555555555555556
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 8686,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Rooster",
+              "attack": 18,
+              "health": 4
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 12,
+              "health": 13,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Polar Bear",
+              "attack": 10,
+              "health": 14,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Blue Jay",
+              "attack": 11,
+              "health": 11
+            },
+            {
+              "name": "Farmer Chicken",
+              "attack": 14,
+              "health": 11
+            },
+            {
+              "name": "Bluebird",
+              "attack": 14,
+              "health": 10
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0002.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2260085873117363,
+                "margin": 0.06826491013071895
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.24076153559249788,
+                "margin": 0.1065972222222222
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 10,
+                "error": 0.21654736705288175,
+                "margin": 0.06622242647058829
+              },
+              "health": {
+                "value": 14,
+                "error": 0.17218694295900178,
+                "margin": 0.1644403594771242
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 12,
+                "error": 0.21627326655299803,
+                "margin": 0.1060508578431372
+              },
+              "health": {
+                "value": 13,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 18,
+                "error": 0.2668542643506678,
+                "margin": 0.09310661764705885
+              },
+              "health": {
+                "value": 4,
+                "error": 0.18433368612596557,
+                "margin": 0.21280637254901963
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 11,
+                "error": 0.18775438205585263,
+                "margin": 0.12642973856209153
+              },
+              "health": {
+                "value": 11,
+                "error": 0.17120144459298872,
+                "margin": 0.16006944444444446
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 14,
+                "error": 0.19361590650753055,
+                "margin": 0.11961805555555557
+              },
+              "health": {
+                "value": 11,
+                "error": 0.16060095439691027,
+                "margin": 0.15415645424836602
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 14,
+                "error": 0.20006173871063576,
+                "margin": 0.1252859477124183
+              },
+              "health": {
+                "value": 10,
+                "error": 0.23128330136402386,
+                "margin": 0.060268586601307184
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 50,
+                  "matches": 51,
+                  "scale": 0.9332142594703502,
+                  "ratio": 0.9803921568627451
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.06402719765901566
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.22678335011005402
+                },
+                {
+                  "kind": "perks",
+                  "name": "Melon Slice",
+                  "method": "template",
+                  "error": 0.2587037980556488
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 68,
+                  "matches": 68,
+                  "scale": 0.9349766991634846,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9732398971587849,
+                  "ratio": 0.7142857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Raccoon",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.7900208252825919,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Polar Bear",
+                  "inliers": 27,
+                  "matches": 27,
+                  "scale": 0.9333915064208904,
+                  "ratio": 1
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.05950227007269859
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.22618088126182556
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.23005636036396027
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 41,
+                  "matches": 51,
+                  "scale": 0.9336862274779812,
+                  "ratio": 0.803921568627451
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 10,
+                  "matches": 30,
+                  "scale": 0.9802094802227012,
+                  "ratio": 0.3333333333333333
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.07356120645999908
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.21938283741474152
+                },
+                {
+                  "kind": "perks",
+                  "name": "Golden Egg",
+                  "method": "template",
+                  "error": 0.22117112576961517
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Rooster",
+                  "inliers": 41,
+                  "matches": 45,
+                  "scale": 0.9340096037050709,
+                  "ratio": 0.9111111111111111
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Parrot",
+                  "inliers": 7,
+                  "matches": 12,
+                  "scale": 1.0335660849227637,
+                  "ratio": 0.5833333333333334
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Blue Jay",
+                  "inliers": 48,
+                  "matches": 57,
+                  "scale": 0.9314373727245662,
+                  "ratio": 0.8421052631578947
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 27,
+                  "matches": 30,
+                  "scale": 0.9312794084683679,
+                  "ratio": 0.9
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 7,
+                  "matches": 14,
+                  "scale": 0.8244488689709802,
+                  "ratio": 0.5
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Cow",
+                  "inliers": 4,
+                  "matches": 9,
+                  "scale": 1.11125152270575,
+                  "ratio": 0.4444444444444444
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9291136700647992,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.8298191764254624,
+                  "ratio": 0.5555555555555556
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Giant Squirrel",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.1212890363554362,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "damage-or-health-ability",
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 11969,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Sleeping Gelada",
+              "attack": 12,
+              "health": 13,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Polar Bear",
+              "attack": 10,
+              "health": 14,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Farmer Chicken",
+              "attack": 14,
+              "health": 11
+            },
+            {
+              "name": "Bluebird",
+              "attack": 14,
+              "health": 10
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0003.png"
+        },
+        "dying": [
+          {
+            "slot": 4,
+            "health": -7
+          },
+          {
+            "slot": 5,
+            "health": -7
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2260085873117363,
+                "margin": 0.06826491013071895
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.24076153559249788,
+                "margin": 0.1065972222222222
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 10,
+                "error": 0.21654736705288175,
+                "margin": 0.06622242647058829
+              },
+              "health": {
+                "value": 14,
+                "error": 0.17218694295900178,
+                "margin": 0.1644403594771242
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 12,
+                "error": 0.21627326655299803,
+                "margin": 0.1060508578431372
+              },
+              "health": {
+                "value": 13,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 18,
+                "error": 0.2668542643506678,
+                "margin": 0.09310661764705885
+              },
+              "health": {
+                "value": -7,
+                "error": 0.13506898024361258,
+                "margin": 0.21715686274509804
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 11,
+                "error": 0.18775438205585263,
+                "margin": 0.12642973856209153
+              },
+              "health": {
+                "value": -7,
+                "error": 0.13081922162804516,
+                "margin": 0.2147300207961973
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 14,
+                "error": 0.19361590650753055,
+                "margin": 0.11961805555555557
+              },
+              "health": {
+                "value": 11,
+                "error": 0.16060095439691027,
+                "margin": 0.15415645424836602
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 14,
+                "error": 0.20006173871063576,
+                "margin": 0.1252859477124183
+              },
+              "health": {
+                "value": 10,
+                "error": 0.23128330136402386,
+                "margin": 0.060268586601307184
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 50,
+                  "matches": 51,
+                  "scale": 0.9332142754005143,
+                  "ratio": 0.9803921568627451
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.06402719765901566
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.22677525877952576
+                },
+                {
+                  "kind": "perks",
+                  "name": "Melon Slice",
+                  "method": "template",
+                  "error": 0.2587037980556488
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 68,
+                  "matches": 68,
+                  "scale": 0.9349766991634846,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9732398971587849,
+                  "ratio": 0.7142857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Raccoon",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.7900208252825919,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Polar Bear",
+                  "inliers": 27,
+                  "matches": 27,
+                  "scale": 0.9333915064208904,
+                  "ratio": 1
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.05950227007269859
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.22618088126182556
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.23005636036396027
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 42,
+                  "matches": 52,
+                  "scale": 0.9335679322904323,
+                  "ratio": 0.8076923076923077
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 9,
+                  "matches": 29,
+                  "scale": 1.0128011325740194,
+                  "ratio": 0.3103448275862069
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Porcupine",
+                  "inliers": 4,
+                  "matches": 16,
+                  "scale": 1.0507475681977119,
+                  "ratio": 0.25
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.07356120645999908
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.21938283741474152
+                },
+                {
+                  "kind": "perks",
+                  "name": "Golden Egg",
+                  "method": "template",
+                  "error": 0.22117112576961517
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "name": "Desert Rain Frog",
+                  "method": "template",
+                  "error": 0.3051448166370392
+                },
+                {
+                  "name": "Tardigrade",
+                  "method": "template",
+                  "error": 0.3242347240447998
+                },
+                {
+                  "name": "Dumbo Octopus",
+                  "method": "template",
+                  "error": 0.32898810505867004
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "name": "Groundhog",
+                  "method": "template",
+                  "error": 0.3309251666069031
+                },
+                {
+                  "name": "Fan Mussel",
+                  "method": "template",
+                  "error": 0.3352140486240387
+                },
+                {
+                  "name": "Pygmy Seahorse",
+                  "method": "template",
+                  "error": 0.34326720237731934
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 28,
+                  "matches": 31,
+                  "scale": 0.9309071524251341,
+                  "ratio": 0.9032258064516129
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 8,
+                  "matches": 13,
+                  "scale": 0.839212968815083,
+                  "ratio": 0.6153846153846154
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Cow",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.11125152270575,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9291136700647992,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.8298191764254624,
+                  "ratio": 0.5555555555555556
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Giant Squirrel",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.1212890363554362,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "BLUE JAY",
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 15920,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Sleeping Gelada",
+              "attack": 12,
+              "health": 13,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Polar Bear",
+              "attack": 10,
+              "health": 14,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Farmer Chicken",
+              "attack": 22,
+              "health": 19
+            },
+            {
+              "name": "Bluebird",
+              "attack": 22,
+              "health": 18
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0004.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2260085873117363,
+                "margin": 0.06826491013071895
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.24076153559249788,
+                "margin": 0.1065972222222222
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 10,
+                "error": 0.21654736705288175,
+                "margin": 0.06622242647058829
+              },
+              "health": {
+                "value": 14,
+                "error": 0.17218694295900178,
+                "margin": 0.1644403594771242
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 12,
+                "error": 0.21627326655299803,
+                "margin": 0.1060508578431372
+              },
+              "health": {
+                "value": 13,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.21735067668371696,
+                "margin": 0.10549938725490193
+              },
+              "health": {
+                "value": 19,
+                "error": 0.23453196042909918,
+                "margin": 0.10732230392156863
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.2191214212134129,
+                "margin": 0.0912122140522876
+              },
+              "health": {
+                "value": 18,
+                "error": 0.23359752415458937,
+                "margin": 0.0982434640522876
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 50,
+                  "matches": 51,
+                  "scale": 0.9332144579629528,
+                  "ratio": 0.9803921568627451
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.06403565406799316
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.22505666315555573
+                },
+                {
+                  "kind": "perks",
+                  "name": "Melon Slice",
+                  "method": "template",
+                  "error": 0.25878480076789856
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 68,
+                  "matches": 68,
+                  "scale": 0.9349767006905174,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9732398971587849,
+                  "ratio": 0.7142857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Raccoon",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.7900208252825919,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Polar Bear",
+                  "inliers": 27,
+                  "matches": 27,
+                  "scale": 0.9333915064208904,
+                  "ratio": 1
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.05950227007269859
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.22618088126182556
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.23005636036396027
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 42,
+                  "matches": 52,
+                  "scale": 0.9335679322904323,
+                  "ratio": 0.8076923076923077
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 9,
+                  "matches": 29,
+                  "scale": 1.0128011325740194,
+                  "ratio": 0.3103448275862069
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Porcupine",
+                  "inliers": 4,
+                  "matches": 16,
+                  "scale": 1.0507475681977119,
+                  "ratio": 0.25
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.07356120645999908
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.21938283741474152
+                },
+                {
+                  "kind": "perks",
+                  "name": "Golden Egg",
+                  "method": "template",
+                  "error": 0.22117112576961517
+                }
+              ]
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 28,
+                  "matches": 31,
+                  "scale": 0.9309071524251341,
+                  "ratio": 0.9032258064516129
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 8,
+                  "matches": 13,
+                  "scale": 0.839212968815083,
+                  "ratio": 0.6153846153846154
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Cow",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.11125152270575,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9291136700647992,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.8298191764254624,
+                  "ratio": 0.5555555555555556
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Giant Squirrel",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.1212890363554362,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "ROOSTER",
+        "kinds": [
+          "damage-or-health-ability",
+          "stat-ability"
+        ]
+      },
+      {
+        "timeMs": 19253,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Chick",
+              "attack": 9,
+              "health": 1
+            },
+            {
+              "name": "Sleeping Gelada",
+              "attack": 12,
+              "health": 13,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Polar Bear",
+              "attack": 10,
+              "health": 14,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Farmer Chicken",
+              "attack": 22,
+              "health": 19
+            },
+            {
+              "name": "Bluebird",
+              "attack": 22,
+              "health": 18
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0005.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2260085873117363,
+                "margin": 0.06826491013071895
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.24076153559249788,
+                "margin": 0.1065972222222222
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 10,
+                "error": 0.21654736705288175,
+                "margin": 0.06622242647058829
+              },
+              "health": {
+                "value": 14,
+                "error": 0.17218694295900178,
+                "margin": 0.1644403594771242
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 12,
+                "error": 0.21627326655299803,
+                "margin": 0.1060508578431372
+              },
+              "health": {
+                "value": 13,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 1,
+                "error": 0.22306010472370766,
+                "margin": 0.10475898692810462
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.21735067668371696,
+                "margin": 0.10549938725490193
+              },
+              "health": {
+                "value": 19,
+                "error": 0.23453196042909918,
+                "margin": 0.10732230392156863
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.2191214212134129,
+                "margin": 0.0912122140522876
+              },
+              "health": {
+                "value": 18,
+                "error": 0.23359752415458937,
+                "margin": 0.0982434640522876
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 50,
+                  "matches": 51,
+                  "scale": 0.9332144036898268,
+                  "ratio": 0.9803921568627451
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.0640350803732872
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.2269551306962967
+                },
+                {
+                  "kind": "perks",
+                  "name": "Melon Slice",
+                  "method": "template",
+                  "error": 0.2587909400463104
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 68,
+                  "matches": 68,
+                  "scale": 0.9349767006905174,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9732398971587849,
+                  "ratio": 0.7142857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Raccoon",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.7900208252825919,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Polar Bear",
+                  "inliers": 27,
+                  "matches": 27,
+                  "scale": 0.9334255042577401,
+                  "ratio": 1
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.05950227007269859
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.22618088126182556
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.23005636036396027
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Sleeping Gelada",
+                  "inliers": 34,
+                  "matches": 42,
+                  "scale": 0.9322380635848146,
+                  "ratio": 0.8095238095238095
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Gelada",
+                  "inliers": 8,
+                  "matches": 25,
+                  "scale": 1.0000489048147685,
+                  "ratio": 0.32
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.07356299459934235
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.22630895674228668
+                },
+                {
+                  "kind": "perks",
+                  "name": "Golden Egg",
+                  "method": "template",
+                  "error": 0.2371000349521637
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 25,
+                  "matches": 26,
+                  "scale": 0.937824292362482,
+                  "ratio": 0.9615384615384616
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.9424655944635661,
+                  "ratio": 0.5555555555555556
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 28,
+                  "matches": 31,
+                  "scale": 0.9309071524251341,
+                  "ratio": 0.9032258064516129
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 8,
+                  "matches": 13,
+                  "scale": 0.839212968815083,
+                  "ratio": 0.6153846153846154
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Cow",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.11125152270575,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9291136700647992,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.8298191764254624,
+                  "ratio": 0.5555555555555556
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Giant Squirrel",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.1212890363554362,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "summon"
+        ]
+      },
+      {
+        "timeMs": 23253,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Chick",
+              "attack": 9,
+              "health": 1
+            },
+            {
+              "name": "Polar Bear",
+              "attack": 10,
+              "health": 14,
+              "equipment": "White Truffle"
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Farmer Chicken",
+              "attack": 22,
+              "health": 3
+            },
+            {
+              "name": "Bluebird",
+              "attack": 22,
+              "health": 18
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0006.png"
+        },
+        "dying": [
+          {
+            "slot": 3,
+            "health": -9
+          }
+        ],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2260085873117363,
+                "margin": 0.06826491013071895
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.24076153559249788,
+                "margin": 0.1065972222222222
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 10,
+                "error": 0.21654736705288175,
+                "margin": 0.06622242647058829
+              },
+              "health": {
+                "value": 14,
+                "error": 0.17218694295900178,
+                "margin": 0.1644403594771242
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 16,
+                "error": 0.2262097073677956,
+                "margin": 0.10396241830065356
+              },
+              "health": {
+                "value": -9,
+                "error": 0.22813277031827225,
+                "margin": 0.10881331699346405
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 1,
+                "error": 0.22306010472370766,
+                "margin": 0.10475898692810462
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.21735067668371696,
+                "margin": 0.10549938725490193
+              },
+              "health": {
+                "value": 3,
+                "error": 0.2834976604278075,
+                "margin": 0.09107945261437911
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.2191214212134129,
+                "margin": 0.0912122140522876
+              },
+              "health": {
+                "value": 18,
+                "error": 0.23359752415458937,
+                "margin": 0.0982434640522876
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 50,
+                  "matches": 51,
+                  "scale": 0.9332143422430773,
+                  "ratio": 0.9803921568627451
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.06402765214443207
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.2269895225763321
+                },
+                {
+                  "kind": "perks",
+                  "name": "Melon Slice",
+                  "method": "template",
+                  "error": 0.25875207781791687
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 68,
+                  "matches": 68,
+                  "scale": 0.9349767006905174,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9732398971587849,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Polar Bear",
+                  "inliers": 25,
+                  "matches": 26,
+                  "scale": 0.9341798951231498,
+                  "ratio": 0.9615384615384616
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.05950227007269859
+                },
+                {
+                  "kind": "perks",
+                  "name": "Egg",
+                  "method": "template",
+                  "error": 0.22746899724006653
+                },
+                {
+                  "kind": "perks",
+                  "name": "Golden Egg",
+                  "method": "template",
+                  "error": 0.23585599660873413
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "name": "Duckling",
+                  "method": "template",
+                  "error": 0.27296555042266846
+                },
+                {
+                  "name": "Sneaky Egg",
+                  "method": "template",
+                  "error": 0.27785444259643555
+                },
+                {
+                  "name": "Nest",
+                  "method": "template",
+                  "error": 0.27950775623321533
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "White Truffle",
+                  "method": "template",
+                  "error": 0.07356120645999908
+                },
+                {
+                  "kind": "perks",
+                  "name": "Ambrosia",
+                  "method": "template",
+                  "error": 0.21938283741474152
+                },
+                {
+                  "kind": "perks",
+                  "name": "Golden Egg",
+                  "method": "template",
+                  "error": 0.22117112576961517
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 25,
+                  "matches": 26,
+                  "scale": 0.937824292362482,
+                  "ratio": 0.9615384615384616
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.9843486282070851,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Farmer Chicken",
+                  "inliers": 28,
+                  "matches": 31,
+                  "scale": 0.9309071524251341,
+                  "ratio": 0.9032258064516129
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chicken",
+                  "inliers": 8,
+                  "matches": 13,
+                  "scale": 0.839212968815083,
+                  "ratio": 0.6153846153846154
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Cow",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.11125152270575,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 25,
+                  "matches": 30,
+                  "scale": 0.9291136700647992,
+                  "ratio": 0.8333333333333334
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 9,
+                  "scale": 0.8298191764254624,
+                  "ratio": 0.5555555555555556
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Giant Squirrel",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.1212890363554362,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint",
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 27885,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Chick",
+              "attack": 9,
+              "health": 1
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Bluebird",
+              "attack": 22,
+              "health": 18
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0007.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2589929627153892,
+                "margin": 0.10593341503267972
+              },
+              "health": {
+                "value": 10,
+                "error": 0.2260085873117363,
+                "margin": 0.06826491013071895
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.24076153559249788,
+                "margin": 0.1065972222222222
+              },
+              "health": {
+                "value": 9,
+                "error": 0.24500479539641945,
+                "margin": 0.11195874183006532
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 1,
+                "error": 0.22306010472370766,
+                "margin": 0.10475898692810462
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.2191214212134129,
+                "margin": 0.0912122140522876
+              },
+              "health": {
+                "value": 18,
+                "error": 0.23359752415458937,
+                "margin": 0.0982434640522876
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 51,
+                  "matches": 52,
+                  "scale": 0.9304863057539821,
+                  "ratio": 0.9807692307692307
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.06415638327598572
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.23120993375778198
+                },
+                {
+                  "kind": "perks",
+                  "name": "Melon Slice",
+                  "method": "template",
+                  "error": 0.2640714645385742
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 68,
+                  "matches": 68,
+                  "scale": 0.9349767006905174,
+                  "ratio": 1
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 0.9732398971587849,
+                  "ratio": 0.7142857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Raccoon",
+                  "inliers": 4,
+                  "matches": 10,
+                  "scale": 0.7900208331730486,
+                  "ratio": 0.4
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 25,
+                  "matches": 26,
+                  "scale": 0.937824292362482,
+                  "ratio": 0.9615384615384616
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 0.9843486282070851,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 25,
+                  "matches": 29,
+                  "scale": 0.9291136584963126,
+                  "ratio": 0.8620689655172413
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.8298193133344705,
+                  "ratio": 0.625
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Giant Squirrel",
+                  "inliers": 4,
+                  "matches": 8,
+                  "scale": 1.1212890363554362,
+                  "ratio": 0.5
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": "MIMIС",
+        "kinds": [
+          "faint"
+        ]
+      },
+      {
+        "timeMs": 31135,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Chick",
+              "attack": 9,
+              "health": 1
+            },
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Bluebird",
+              "attack": 22,
+              "health": 18
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0008.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.26556976010101013,
+                "margin": 0.12428513071895425
+              },
+              "health": {
+                "value": 10,
+                "error": 0.19815310635123615,
+                "margin": 0.08152773337595906
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.27816451761864164,
+                "margin": 0.08352736928104582
+              },
+              "health": {
+                "value": 9,
+                "error": 0.228862958226769,
+                "margin": 0.10725081699346406
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 9,
+                "error": 0.23639148841354723,
+                "margin": 0.14400531045751636
+              },
+              "health": {
+                "value": 1,
+                "error": 0.22306010472370766,
+                "margin": 0.10475898692810462
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.21553686238988348,
+                "margin": 0.09545036764705883
+              },
+              "health": {
+                "value": 18,
+                "error": 0.2673495666382495,
+                "margin": 0.06977124183006539
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 48,
+                  "matches": 49,
+                  "scale": 0.9326352354562001,
+                  "ratio": 0.9795918367346939
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.06053179129958153
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.2294570356607437
+                },
+                {
+                  "kind": "perks",
+                  "name": "Cheese",
+                  "method": "template",
+                  "error": 0.26533493399620056
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 66,
+                  "matches": 71,
+                  "scale": 0.933438636434191,
+                  "ratio": 0.9295774647887324
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Baby Urchin",
+                  "inliers": 5,
+                  "matches": 7,
+                  "scale": 1.0756168533340098,
+                  "ratio": 0.7142857142857143
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 22,
+                  "matches": 23,
+                  "scale": 0.9322416957128892,
+                  "ratio": 0.9565217391304348
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 5,
+                  "matches": 12,
+                  "scale": 0.9479533379117322,
+                  "ratio": 0.4166666666666667
+                }
+              ],
+              "perks": [
+                {
+                  "colorError": 4,
+                  "kind": "perks",
+                  "name": "Honey",
+                  "inliers": 5,
+                  "matches": 8,
+                  "scale": 0.14617701847285053,
+                  "ratio": 0.625
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 27,
+                  "matches": 28,
+                  "scale": 0.9286050087029422,
+                  "ratio": 0.9642857142857143
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Centipede",
+                  "inliers": 4,
+                  "matches": 10,
+                  "scale": 0.9494524779316987,
+                  "ratio": 0.4
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": []
+      },
+      {
+        "timeMs": 34300,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Ostrich",
+              "attack": 8,
+              "health": 9
+            },
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Bluebird",
+              "attack": 22,
+              "health": 9
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0009.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2585895721925134,
+                "margin": 0.12227328431372547
+              },
+              "health": {
+                "value": 10,
+                "error": 0.231426275220233,
+                "margin": 0.04140624999999998
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 8,
+                "error": 0.2639845748081841,
+                "margin": 0.08723447712418309
+              },
+              "health": {
+                "value": 9,
+                "error": 0.23126287652742258,
+                "margin": 0.11082516339869278
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.21553686238988348,
+                "margin": 0.09545036764705883
+              },
+              "health": {
+                "value": 9,
+                "error": 0.23420005683432793,
+                "margin": 0.12098651960784312
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 47,
+                  "matches": 49,
+                  "scale": 0.9346611141056814,
+                  "ratio": 0.9591836734693877
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.08185605704784393
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.22946852445602417
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.2658664584159851
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Ostrich",
+                  "inliers": 66,
+                  "matches": 70,
+                  "scale": 0.9327512421173969,
+                  "ratio": 0.9428571428571428
+                }
+              ],
+              "perks": [
+                {
+                  "colorError": 4,
+                  "kind": "perks",
+                  "name": "Honey",
+                  "inliers": 4,
+                  "matches": 6,
+                  "scale": 0.15270556385049114,
+                  "ratio": 0.6666666666666666
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 24,
+                  "matches": 28,
+                  "scale": 0.929553689816854,
+                  "ratio": 0.8571428571428571
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 5,
+                  "scale": 0.8498687762842624,
+                  "ratio": 1
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint",
+          "damage-or-health-ability"
+        ]
+      },
+      {
+        "timeMs": 38467,
+        "confidence": 1,
+        "board": {
+          "player": [
+            {
+              "name": "Mimic",
+              "attack": 5,
+              "health": 10,
+              "equipment": "Potato"
+            }
+          ],
+          "opponent": [
+            {
+              "name": "Bluebird",
+              "attack": 22,
+              "health": 1
+            }
+          ]
+        },
+        "evidence": {
+          "frame": "frames/0010.png"
+        },
+        "dying": [],
+        "visualMetrics": {
+          "stats": [
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 5,
+                "error": 0.2658710264408794,
+                "margin": 0.10114379084967318
+              },
+              "health": {
+                "value": 10,
+                "error": 0.24004846256684492,
+                "margin": 0.06834660947712418
+              },
+              "badges": 0
+            },
+            {
+              "attack": {
+                "value": 22,
+                "error": 0.21553686238988348,
+                "margin": 0.09545036764705883
+              },
+              "health": {
+                "value": 1,
+                "error": 0.1600699086452763,
+                "margin": 0.1820874183006536
+              },
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            },
+            {
+              "attack": null,
+              "health": null,
+              "badges": 0
+            }
+          ],
+          "sprites": [
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Mimic",
+                  "inliers": 45,
+                  "matches": 46,
+                  "scale": 0.9347453590084308,
+                  "ratio": 0.9782608695652174
+                }
+              ],
+              "perks": [
+                {
+                  "kind": "perks",
+                  "name": "Potato",
+                  "method": "template",
+                  "error": 0.061150748282670975
+                },
+                {
+                  "kind": "perks",
+                  "name": "Peanut",
+                  "method": "template",
+                  "error": 0.22310611605644226
+                },
+                {
+                  "kind": "perks",
+                  "name": "Pancakes",
+                  "method": "template",
+                  "error": 0.2677665948867798
+                }
+              ]
+            },
+            {
+              "pets": [
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Bluebird",
+                  "inliers": 24,
+                  "matches": 28,
+                  "scale": 0.9303774556412244,
+                  "ratio": 0.8571428571428571
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Chick",
+                  "inliers": 5,
+                  "matches": 10,
+                  "scale": 0.8296600450671369,
+                  "ratio": 0.5
+                },
+                {
+                  "colorError": null,
+                  "kind": "pets",
+                  "name": "Daycrawler",
+                  "inliers": 4,
+                  "matches": 13,
+                  "scale": 0.8086233352140995,
+                  "ratio": 0.3076923076923077
+                }
+              ],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            },
+            {
+              "pets": [],
+              "perks": []
+            }
+          ]
+        },
+        "upcomingAbility": null,
+        "kinds": [
+          "faint",
+          "damage-or-health-ability"
+        ]
+      }
+    ],
+    "gaps": [],
+    "recognition": "Local SIFT sprite geometry and Lapsus Pro digit masks; confidence is an acceptance flag, not a calibrated probability.",
+    "unobservedFields": [
+      "experience",
+      "mana",
+      "equipment absence",
+      "equipment uses",
+      "internal identities"
+    ],
+    "source": "/Users/lgtyqz/Documents/The KY HS Experience/KEVIN 2016-17/Kevin's Stuff/Game Stuff/sap-battle-engine-bug-squisher/artifacts/bug-scenarios/gaped-battle-01a0be6c-293b-7d7f-8946-81bd4145726e-turn-10"
+  },
+  "search": {
+    "attempted": 31,
+    "budget": 64,
+    "pending": 0,
+    "selectedTrial": 0,
+    "targetMatched": false,
+    "termination": "no-more-captured-choices",
+    "exhaustive": false,
+    "reason": "Only instrumented choices are searched. Budget exhaustion does not prove an engine bug; matching observations does not establish unobserved behavior."
+  },
+  "observedDivergence": 4
+}

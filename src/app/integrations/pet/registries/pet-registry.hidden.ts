@@ -80,8 +80,8 @@ export const HIDDEN_PET_REGISTRY: PetRegistryMap = {
   'Smallest Slug': SmallestSlug,
   'Summoned Cockroach': SummonedCockroach,
   'Tand and Tand': TandAndTand,
+  'Tand & Tand': TandAndTand,
   'Young Phoenix': YoungPhoenix,
   'Zombie Cricket': ZombieCricket,
   'Zombie Fly': ZombieFly,
 };
-
