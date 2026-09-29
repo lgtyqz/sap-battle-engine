@@ -51,16 +51,17 @@ export class QuetzalcoatlusAbility extends Ability {
   }
 
   private executeAbility(context: AbilityContext): void {
-    const { triggerPet, tiger, pteranodon } = context;
+    const { tiger, pteranodon } = context;
     const owner = this.owner;
+    const killer = owner.killedBy;
 
-    if (!triggerPet || !triggerPet.alive) {
+    if (!killer || !killer.alive) {
       this.triggerTigerExecution(context);
       return;
     }
 
     const buff = this.level;
-    const targets = triggerPet.parent.petArray.filter((p) => p.alive);
+    const targets = killer.parent.petArray.filter((p) => p.alive);
 
     for (const target of targets) {
       target.increaseAttack(buff);
@@ -68,7 +69,7 @@ export class QuetzalcoatlusAbility extends Ability {
     }
 
     if (this.logService.isEnabled()) this.logService.createLog({
-      message: `${owner.name} (Faint) gave +${buff}/+${buff} to ${triggerPet.name} and its friends.`,
+      message: `${owner.name} (Faint) gave +${buff}/+${buff} to ${killer.name} and its friends.`,
       type: 'ability',
       player: owner.parent,
       tiger: tiger,
@@ -82,4 +83,3 @@ export class QuetzalcoatlusAbility extends Ability {
     return new QuetzalcoatlusAbility(this.runtime, newOwner, this.logService);
   }
 }
-

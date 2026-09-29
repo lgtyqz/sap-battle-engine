@@ -420,7 +420,6 @@ export class SimulationRunner {
     // Create pets
     this.createPets(this.player, config.playerPets);
     this.createPets(this.opponent, config.opponentPets);
-    this.applyPreBattleFriendDeathCounts();
 
     // Create Toys
     if (config.playerToy) {
@@ -479,6 +478,9 @@ export class SimulationRunner {
       config.opponentHardToyLevel ?? 1;
 
     this.startBattle();
+    // startBattle resets each pet's abilityCounter. Seed shop counters only
+    // after that reset so battle-time food, hurt, and faint events continue them.
+    this.applyPreBattleFriendDeathCounts();
     this.initToys();
     this.abilityService.initSpecialEndTurnAbility(this.player);
     this.abilityService.initSpecialEndTurnAbility(this.opponent);
