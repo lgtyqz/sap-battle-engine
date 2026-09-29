@@ -31,13 +31,14 @@ describe('Cyclops per-turn experience limit', () => {
     expect(target.increaseMana).toHaveBeenLastCalledWith(level * 2);
   });
 
-  it('preserves the turn count through the reset used when Cyclops levels up', () => {
+  it('refreshes the experience allowance when Cyclops levels up', () => {
     const { owner, target, ability, trigger } = abilityFixture(1, 2);
     Object.assign(owner, { level: 2 });
     ability.reset();
-    trigger();
-    expect(target.increaseExp).not.toHaveBeenCalled();
-    expect(target.increaseMana).toHaveBeenCalledWith(4);
+    trigger(); trigger(); trigger();
+    expect(target.increaseExp).toHaveBeenCalledTimes(2);
+    expect(target.increaseMana).toHaveBeenCalledTimes(3);
+    expect(target.increaseMana).toHaveBeenLastCalledWith(4);
   });
 
   it('starts a new turn with a fresh experience allowance without granting mana on StartTurn', () => {
@@ -59,7 +60,7 @@ describe('Cyclops per-turn experience limit', () => {
     expect(target.increaseMana).toHaveBeenCalledTimes(4);
   });
 
-  it('keeps consumed triggers when Cyclops levels up before battle', () => {
+  it('refreshes experience when Cyclops levels up before battle', () => {
     const config = createBaseConfig('Unicorn');
     config.logsEnabled = true;
     config.playerPets = [
@@ -71,7 +72,7 @@ describe('Cyclops per-turn experience limit', () => {
     const messages = runSimulation(config).battles?.[0]?.logs.map((log) => log.message) ?? [];
     expect(messages).toContain('Cyclops leveled up to level 2.');
     expect(messages).toContain('Cyclops gave Ant 4 mana.');
-    expect(messages).not.toContain('Cyclops gave Ant 1 exp.');
+    expect(messages).toContain('Cyclops gave Ant 1 exp.');
   });
 
   it.each([0, 1, 2, 3])('honors %i consumed triggers through the public simulation API', (triggersConsumed) => {

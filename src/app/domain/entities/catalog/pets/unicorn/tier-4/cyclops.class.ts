@@ -110,11 +110,6 @@ export class CyclopsAbility extends Ability {
     this.triggerTigerExecution(context);
   }
 
-  override reset(): void {
-    // Level-ups reset ordinary ability uses, but this limit belongs to the turn.
-    // StartTurn clears it; initUses restores configured progress between battles.
-  }
-
   copy(newOwner: Pet): CyclopsAbility {
     return new CyclopsAbility(this.runtime, newOwner, this.logService);
   }
