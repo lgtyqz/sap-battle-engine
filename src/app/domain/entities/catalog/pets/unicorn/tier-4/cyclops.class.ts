@@ -40,11 +40,12 @@ export class CyclopsAbility extends Ability {
     super(runtime, {
       name: 'CyclopsAbility',
       owner: owner,
-      triggers: ['FriendLeveledUp'],
+      triggers: ['FriendLeveledUp', 'StartTurn'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
       precondition: (context: AbilityContext) => {
+        if (context.trigger === 'StartTurn') return true;
         const { triggerPet } = context;
         const owner = this.owner;
         const targetResp = resolveTriggerTargetAlive(owner, triggerPet);
@@ -59,8 +60,14 @@ export class CyclopsAbility extends Ability {
   }
 
   private executeAbility(context: AbilityContext): void {
-    const { gameApi, triggerPet, tiger, pteranodon } = context;
+    const { triggerPet, tiger } = context;
     const owner = this.owner;
+
+    if (context.trigger === 'StartTurn') {
+      super.reset();
+      owner.triggersConsumed = 0;
+      return;
+    }
 
     let manaGain = this.level * 2;
     let manaTargetResp = resolveTriggerTargetAlive(owner, triggerPet);
@@ -101,6 +108,11 @@ export class CyclopsAbility extends Ability {
 
     // Tiger system: trigger Tiger execution at the end
     this.triggerTigerExecution(context);
+  }
+
+  override reset(): void {
+    // Level-ups reset ordinary ability uses, but this limit belongs to the turn.
+    // StartTurn clears it; initUses restores configured progress between battles.
   }
 
   copy(newOwner: Pet): CyclopsAbility {

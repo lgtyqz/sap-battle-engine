@@ -7689,6 +7689,7 @@
     ],
     "Id": "630",
     "Name": "Cyclops",
+    "BattleMetadata": ["triggersConsumed"],
     "NameId": "Cyclops",
     "Tier": 4,
     "TierMax": 2147483647,
