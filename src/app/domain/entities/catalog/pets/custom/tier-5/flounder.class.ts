@@ -35,14 +35,13 @@ export class Flounder extends Pet {
 
 export class FlounderAbility extends Ability {
   private logService: LogService;
-  private foodsEaten = 0;
   private triggeredThisTurn = false;
 
   constructor(runtime: EngineContext, owner: Pet, logService: LogService) {
     super(runtime, {
       name: 'Flounder Ability',
       owner: owner,
-      triggers: ['FoodEatenByThis', 'StartTurn'],
+      triggers: ['Eat2', 'StartTurn'],
       abilityType: 'Pet',
       native: true,
       abilitylevel: owner.level,
@@ -55,20 +54,12 @@ export class FlounderAbility extends Ability {
     const owner = this.owner;
 
     if (context.trigger === 'StartTurn') {
-      this.foodsEaten = 0;
       this.triggeredThisTurn = false;
       this.triggerTigerExecution(context);
       return;
     }
 
     if (this.triggeredThisTurn) {
-      this.triggerTigerExecution(context);
-      return;
-    }
-
-    this.foodsEaten++;
-
-    if (this.foodsEaten < 2) {
       this.triggerTigerExecution(context);
       return;
     }

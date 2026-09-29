@@ -10354,6 +10354,7 @@
     ],
     "Id": "776",
     "Name": "Flounder",
+    "BattleMetadata": ["foodsEaten"],
     "NameId": "FlounderYoung",
     "Tier": 5,
     "TierMax": 2147483647,
